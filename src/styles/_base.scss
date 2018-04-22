@@ -195,6 +195,21 @@ html,body {
     width: 100%;
     height: 100%;
 }
+.circle-primary{
+    background-color: $primary-color;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    line-height: 58px;
+    svg{
+        vertical-align: middle;
+    }
+}
+.circle-primary.big{
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+}
 .el-carousel__indicators{
     top: 50%;
     right: 10px;
@@ -221,11 +236,17 @@ html,body {
     .text-l3{
         line-height: 4rem;
     }
-    .el-carousel__container, .s1-image{
+    .introduce .el-carousel__container,
+    .brand .el-carousel__container{
+        height: 500px!important;
+    }
+    .home .el-carousel__container,.home .s1-image{
         height: calc(100vh - 60px)!important;
     }
+    .section{margin-top:60px;}
 }
 .mobile-app{
+    .section{margin-top:30px;}
     .text-l1{
         line-height: 2rem;
     }

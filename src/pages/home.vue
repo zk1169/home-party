@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="home">
         <div class="section1 section1-fixed text-center" :style="{top:`${firstScreenTop}px`}" ref="firstScreen">
             <el-carousel arrow="never" :interval="5000">
                 <el-carousel-item v-for="item in carouselList" :key="item">
@@ -297,16 +297,6 @@
 
 <style lang="scss" scoped>
     @import '../styles/var';
-    .circle-primary{
-        background-color: $primary-color;
-        border-radius: 50%;
-        height: 60px;
-        width: 60px;
-        line-height: 58px;
-        svg{
-            vertical-align: middle;
-        }
-    }
     .section-border-title{
         padding: 0 3rem;
         border-left: solid 4px $primary-color;

@@ -4,7 +4,7 @@
             <!-- <hp-image src="./static/images/index-carousel-2.jpg" alt=""></hp-image> -->
             <el-carousel arrow="never" :interval="5000">
                 <el-carousel-item v-for="item in carouselList" :key="item">
-                    <hp-image class="s1-image" :src="item" alt=""></hp-image>
+                    <hp-image :src="item" alt=""></hp-image>
                 </el-carousel-item>
             </el-carousel>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
@@ -133,7 +133,6 @@
         }
     }
     .pc-app{
-        .section{margin-top:60px;}
         .s1-text-wrap{
             .title{
                 font-size: 4.7rem;
@@ -150,7 +149,6 @@
         }
     }
     .mobile-app{
-        .section{margin-top:30px;}
         .s1-text-wrap{
             .title{
                 font-size: 3rem;
