@@ -51,21 +51,21 @@
                     <div class="p1-item text-center" flex="1">
                         <svg class="icon yizhanshi fs-60" aria-hidden="true">
                             <use xlink:href="#icon-yizhanshi"></use>
-                        </svg>
+                        </svg><br><br>
                         <div class="fs-24 text-l2">一站式服务</div><br>
                         <div class="fs-16 text-l1">为客户提供吃、喝、玩、住一站式服务，打造多种娱乐场景的集合，最适合年轻人聚会的轰趴品牌</div>
                     </div>
                     <div class="p1-item text-center" flex="1">
-                        <svg class="icon yizhanshi fs-60" aria-hidden="true">
-                            <use xlink:href="#icon-yizhanshi"></use>
-                        </svg>
+                        <svg class="icon dunpai fs-60" aria-hidden="true">
+                            <use xlink:href="#icon-dunpai"></use>
+                        </svg><br><br>
                         <div class="fs-24 text-l2">标准化管理</div><br>
                         <div class="fs-16 text-l1">打造轰趴行业标准化管理的行业准则，让客户享受到轰趴行业的五星级服务。</div>
                     </div>
                     <div class="p1-item text-center" flex="1">
-                        <svg class="icon yizhanshi fs-60" aria-hidden="true">
-                            <use xlink:href="#icon-yizhanshi"></use>
-                        </svg>
+                        <svg class="icon guanjia fs-60" aria-hidden="true">
+                            <use xlink:href="#icon-guanjia"></use>
+                        </svg><br><br>
                         <div class="fs-24 text-l2">管家式服务</div><br>
                         <div class="fs-16 text-l1">通过专业化培训，让每位管家=初级厨师+活动策划师+布场达人+轰趴运营专员。</div>
                     </div>
