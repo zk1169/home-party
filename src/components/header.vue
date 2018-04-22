@@ -5,7 +5,7 @@
         <div class="menu-container inline-block pull-right" :class="{'hide':isMobile}">
             <span :class="['menu', {'active':$route.name==='home'}]" @click="menuClick('home')">首页</span>
             <span :class="['menu', {'active':$route.name==='introduce'}]" @click="menuClick('introduce')">行业介绍</span>
-            <span class="menu">品牌介绍</span>
+            <span :class="['menu', {'active':$route.name==='brand'}]" @click="menuClick('brand')">品牌介绍</span>
             <span class="menu">门店展示</span>
             <span class="menu">故事</span>
             <span class="menu">加盟合作</span>

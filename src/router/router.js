@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-// import Home from '../pages/home';
+// const Home = resolve => require(['../pages/home'], resolve);
+// const Introduce = resolve => require(['../pages/introduce'], resolve);
 
-const Home = resolve => require(['../pages/home'], resolve);
-const Introduce = resolve => require(['../pages/introduce'], resolve);
+import Home from '../pages/home';
+import Introduce from '../pages/introduce';
+import Brand from '../pages/brand';
 
 Vue.use(Router);
 
@@ -22,6 +24,11 @@ let router = new Router({
       path: '/introduce',
       name: 'introduce',
       component: Introduce
+    },
+    {
+      path: '/brand',
+      name: 'brand',
+      component: Brand
     },
   ],
   // eslint-disable-next-line
