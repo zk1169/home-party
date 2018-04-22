@@ -10,7 +10,7 @@
                 <img class="logo" src="../assets/images/logo.png" alt="">
                 <span class="s1-text-1 block fs-34">让聚会变得更简单</span>
                 <span class="s1-text-2 block fs-16">打造中国最懂年轻人的派对连锁品牌</span>
-                <a class="s1-btn btn btn-primary block">了解品质策略 >></a>
+                <a class="s1-btn btn btn-primary bg block">了解品质策略 >></a>
             </div>
             <svg class="icon double-caret-down" aria-hidden="true" @click="downClick">
                 <use xlink:href="#icon-double-caret-down"></use>
@@ -18,7 +18,7 @@
         </div>
         <div class="section2 relative">
             <div class="section2-1 relative text-center">
-                <hp-image src="/static/images/index-carousel-2.jpg" alt=""></hp-image>
+                <hp-image src="./static/images/index-carousel-2.jpg" alt=""></hp-image>
                 <div class="s21-text-wrap image-text-wrap" layout="column" layout-align="center center">
                     <div class="title">轰趴，消费升级时代中的必然产物</div>
                     <div class="p1" layout="row">
@@ -217,6 +217,7 @@
     import Carousel from 'element-ui/lib/carousel';
     import CarouselItem from 'element-ui/lib/carousel-item';
     import HpImage from '../components/hp-image';
+    import $ from 'jquery';
 
     export default {
         name: 'home',
@@ -269,7 +270,14 @@
                     this.firstScreenTop = 60;
                     return;
                 }
-                this.firstScreenTop -= ev.deltaY * 0.5;
+                // console.log(`this.firstScreenTop=${this.firstScreenTop},deltaY=${ev.deltaY}`);
+                var _deltaY = ev.deltaY * 0.3;
+                // if (ev.deltaY > 0) {
+                //     _deltaY = ev.deltaY * 0.3;
+                // } else if (ev.deltaY < 0) {
+                //     _deltaY = ev.deltaY * 1.1;
+                // }
+                this.firstScreenTop -= _deltaY;
                 if (this.firstScreenTop > 60) {
                     this.firstScreenTop = 60;
                 }
@@ -301,12 +309,13 @@
             },
             downClick() {
                 this.$refs.firstScreen.style.transition = 'all 1s ease';
-                this.$nextTick(()=>{
-                    this.firstScreenTop = 60 - this.$refs.firstScreen.clientHeight;
-                });
+                $('body,html').animate({ scrollTop: this.$refs.firstScreen.clientHeight+60 }, 800);
+                setTimeout(()=>{
+                    this.firstScreenTop = 60 - this.$refs.firstScreen.clientHeight / 4;
+                },100);
                 setTimeout(()=>{
                     this.$refs.firstScreen.style.transition = 'none';
-                    window.scrollTo(0,this.$refs.firstScreen.clientHeight+60);
+                    // window.scrollTo(0,this.$refs.firstScreen.clientHeight+60);
                 },1000);
             }
         },
@@ -458,7 +467,7 @@
                         font-size: 3.6rem;
                     }
                     .p1{
-                        margin-top: 10pxm;
+                        margin-top: 100px;
                         .p1-item{
                             .title2{
                                 font-size: 2.4rem;

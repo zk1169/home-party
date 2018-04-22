@@ -148,28 +148,33 @@ html,body {
     color: #fff;
     background-color: transparent;
     border: solid 1px #fff;
-    border-radius: 5px;
+    border-radius: 10px;
   }
   
   .btn-primary{
     color: $primary-color;
     background-color: transparent;
     border: solid 1px $primary-color;
-    border-radius: 5px;
+    border-radius: 10px;
+  }
+
+  .btn-primary.bg{
+    color: #fff;
+    background-color: $primary-color;
   }
   
-  .one-half{ width:50%; }
-  .one-third{ width: 33.333333%; }
-  .two-third{ width: 66.666667%; }
-  .one-fourth{ width:25%; }
-  .three-fourth{ width:75%; }
-  .one-fifth{ width:20%; }
-  .two-fifth{ width:40%; }
-  .three-fifth{ width:60%; }
-  .four-fifth{ width:80%; }
-  .one-half,.one-third,.two-third,.three-fourth,.one-fourth,.one-fifth,.two-fifth,.three-fifth,.four-fifth,.float{ position:relative; float:left; }
-  .last{ margin-right:0 !important; clear:right; }
-  .clearboth {clear:both;display:block;font-size:0;height:0;line-height:0;width:100%;}
+//   .one-half{ width:50%; }
+//   .one-third{ width: 33.333333%; }
+//   .two-third{ width: 66.666667%; }
+//   .one-fourth{ width:25%; }
+//   .three-fourth{ width:75%; }
+//   .one-fifth{ width:20%; }
+//   .two-fifth{ width:40%; }
+//   .three-fifth{ width:60%; }
+//   .four-fifth{ width:80%; }
+//   .one-half,.one-third,.two-third,.three-fourth,.one-fourth,.one-fifth,.two-fifth,.three-fifth,.four-fifth,.float{ position:relative; float:left; }
+//   .last{ margin-right:0 !important; clear:right; }
+//   .clearboth {clear:both;display:block;font-size:0;height:0;line-height:0;width:100%;}
 
 .color-grey{
     color:#999;

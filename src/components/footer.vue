@@ -35,7 +35,7 @@
                     <a class="call-phone" href="tel:+027-59277860">拨打</a>
                 </div>
                 <br>
-                <img src="/static/images/erweima.jpg" alt="">
+                <img src="../../static/images/erweima.jpg" alt="">
             </div>
         </div>
         <div class="map-container" id="baidu_map"></div>
