@@ -1,15 +1,15 @@
 <template>
-    <div class="hp-footer">
+    <div class="hp-footer fs-16">
         <div class="text-center">
-            <div class="contact-us inline-block">
+            <div class="contact-us inline-block fs-36">
                 <span>联系我们</span><br>
-                <span>GET IN TOUCH WITH US INSTANTLY</span>
+                <!-- <span>GET IN TOUCH WITH US INSTANTLY</span> -->
             </div>
         </div>
         <div class="form-container" layout="row" layout-wrap>
             <div class="form" flex="60" flex-xs="100">
                 <div class="form-inner">
-                    <span>留下您的联系方式，我们将联系你</span>
+                    <span class="color-grey">留下您的联系方式，我们将联系你</span>
                     <input type="text" placeholder="名字"/>
                     <input type="text" placeholder="电话"/>
                     <input type="text" placeholder="所在城市"/>
@@ -18,16 +18,24 @@
                 </div>
             </div>
             <div class="form-right" flex>
-                <span>或者，您也可以联系我们</span>
+                <span class="fs-14 color-grey">或者，您也可以联系我们</span>
                 <br><br>
                 <div>
-                    <span class="inline-block cirle-grey"></span>
-                    <span class="inline-block">武汉光谷CBD<br>2栋9楼1203</span>
+                    <!-- <span class="inline-block cirle-grey"></span> -->
+                    <svg class="icon location fs-24" aria-hidden="true">
+                        <use xlink:href="#icon-location"></use>
+                    </svg>
+                    <span class="inline-block">&nbsp;&nbsp;武汉市江夏区光谷大道CBD大厦10层</span>
                 </div><br>
                 <div>
-                    <span class="inline-block cirle-grey"></span>
-                    <span class="inline-block">+44 123-456-4895<br>321-568-4562</span>
+                    <svg class="icon telphone fs-24" aria-hidden="true">
+                        <use xlink:href="#icon-telphone"></use>
+                    </svg>
+                    <a class="inline-block">&nbsp;&nbsp;+027-59277860</a>
+                    <a class="call-phone" href="tel:+027-59277860">拨打</a>
                 </div>
+                <br>
+                <img src="/static/images/erweima.jpg" alt="">
             </div>
         </div>
         <div class="map-container" id="baidu_map"></div>
@@ -86,7 +94,7 @@
             input,textarea{
                 display: block;
                 background-color: #F3F3F3;
-                margin: 10px 0px;
+                margin: 20px 0px;
                 width: 100%;
             }
             input{
@@ -112,6 +120,12 @@
                 width: 30px;
                 height: 30px;
                 background-color: #D2D2D2;
+            }
+            .call-phone{
+                color: #4A90E2;
+                font-size: 18px;
+                text-decoration: underline;
+                cursor: pointer;
             }
         }
     }

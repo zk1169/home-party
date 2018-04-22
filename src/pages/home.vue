@@ -230,8 +230,8 @@
                 cIndex: 0,
                 firstScreenTop: this.isMobile?0:60,
                 carouselList: [
-                    '/static/images/index-carousel-1.jpg',
-                    '/static/images/index-carousel-1.jpg'
+                    './static/images/index-carousel-1.jpg',
+                    './static/images/index-carousel-1.jpg'
                 ],
                 positionList: [
                     'translateX(200px) scale(0.83)',
