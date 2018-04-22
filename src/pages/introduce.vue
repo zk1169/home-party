@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="section3 section text-center">
-            <div class="title fs-36">一栋别墅，花样百出</div>
+            <div class="title fs-36">为什么轰人们需要新的聚会形式？</div>
             <img class="s3-image" src="../../static/images/s3-1.jpg" alt="">
             <div layout="row" class="text-left paragrap">
                 <div flex="50" style="padding-right: 10%;">
@@ -54,7 +54,7 @@
             <div class="fs-36">国内聚会存在的问题是什么？</div>
             <div class="body" layout="row" layout-wrap>
                 <div flex="40" flex-xs="100" class="overflow-hidden">
-                    <img src="../../static/images/s4-1.jpg" alt="">
+                    <img src="../../static/images/s4-1.jpg" alt="" class="width100">
                 </div>
                 <div flex class="text-right">
                     <div class="fs-36 text-l3">服务单一，转场难</div><br>
@@ -88,8 +88,8 @@
         data() {
             return {
                 carouselList: [
-                    './static/images/index-carousel-1.jpg',
-                    './static/images/index-carousel-1.jpg'
+                    './static/images/i-s1.jpg',
+                    './static/images/i-s1.jpg'
                 ],
             };
         },

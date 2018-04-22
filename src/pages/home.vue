@@ -154,7 +154,7 @@
                             <img src="../../static/images/anli4.jpg" alt="">
                         </div>
                     </div>
-                    <div flex="20" style="padding-left: 3px;" class="overflow-hidden">
+                    <div flex="20" flex-xs="100" style="padding-left: 3px;" class="overflow-hidden">
                         <img src="../../static/images/anli5.jpg" alt="">
                     </div>
                 </div>
@@ -227,18 +227,10 @@
         },
         data() {
             return {
-                cIndex: 0,
                 firstScreenTop: this.isMobile?0:60,
                 carouselList: [
                     './static/images/index-carousel-1.jpg',
                     './static/images/index-carousel-1.jpg'
-                ],
-                positionList: [
-                    'translateX(200px) scale(0.83)',
-                    'translateX(300px) scale(0.9)',
-                    'translateX(500px) scale(1)',
-                    'translateX(700px) scale(0.9)',
-                    'translateX(800px) scale(0.83)'
                 ]
             };
         },
@@ -283,28 +275,6 @@
                 if (this.firstScreenTop < minTop) {
                     this.firstScreenTop = minTop;
                 }
-            },
-            setPos() {
-                // -827.16,-76.84, 452,980.84,1731.16
-                // if (this.$refs.carousel) {
-                //     this.$refs.carousel[0].style.transform = this.positionList[0];
-                //     this.$refs.carousel[1].style.transform = this.positionList[1];
-                //     this.$refs.carousel[2].style.transform = this.positionList[2];
-                //     this.$refs.carousel[3].style.transform = this.positionList[3];
-                //     this.$refs.carousel[4].style.transform = this.positionList[4];
-                // }
-                for(var i=0;i<5;i++) {
-                    var index = (i + this.cIndex) % 5;
-                    var zIndex = index % 3;
-                    if (index === 3) {
-                        zIndex = 1;
-                    } else if (index === 4) {
-                        zIndex = 0;
-                    }
-                    this.$refs.carousel[i].style.transform = this.positionList[index];
-                    this.$refs.carousel[i].style.zIndex = zIndex;
-                }
-                this.cIndex++;
             },
             downClick() {
                 this.$refs.firstScreen.style.transition = 'all 1s ease';
