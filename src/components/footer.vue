@@ -25,7 +25,7 @@
                     <svg class="icon location fs-24" aria-hidden="true">
                         <use xlink:href="#icon-location"></use>
                     </svg>
-                    <span class="inline-block">&nbsp;&nbsp;武汉市江夏区光谷大道CBD大厦10层</span>
+                    <span class="inline-block">&nbsp;&nbsp;武汉市江夏区光谷大道CBC大厦10层</span>
                 </div><br>
                 <div>
                     <svg class="icon telphone fs-24" aria-hidden="true">
@@ -53,17 +53,31 @@
             return {};
         },
         mounted() {
-            // // 百度地图API功能
-	        // var map = new BMap.Map("baidu_map");    // 创建Map实例
-	        // map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
-	        // //添加地图类型控件
-	        // map.addControl(new BMap.MapTypeControl({
-	        // 	mapTypes:[
-            //         BMAP_NORMAL_MAP,
-            //         BMAP_HYBRID_MAP
-            //     ]}));	  
-	        // map.setCurrentCity("武汉");          // 设置地图显示的城市 此项是必须设置的
-	        // map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+            // 百度地图API功能
+            var map = new BMap.Map("baidu_map");    // 创建Map实例
+            var point = new BMap.Point(114.440484,30.436733);
+	        map.centerAndZoom(point, 15);  // 初始化地图,设置中心点坐标和地图级别
+	        //添加地图类型控件
+	        map.addControl(new BMap.MapTypeControl({
+	        	mapTypes:[
+                    BMAP_NORMAL_MAP,
+                    BMAP_HYBRID_MAP
+                ]}));	  
+	        map.setCurrentCity("武汉");          // 设置地图显示的城市 此项是必须设置的
+            map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+            var myIcon = new BMap.Icon("./static/images/map-marker.png", new BMap.Size(88, 87), {    
+                // 指定定位位置。   
+                // 当标注显示在地图上时，其所指向的地理位置距离图标左上    
+                // 角各偏移10像素和25像素。您可以看到在本例中该位置即是   
+                // 图标中央下端的尖角位置。    
+                anchor: new BMap.Size(10, 25),    
+                // 设置图片偏移。   
+                // 当您需要从一幅较大的图片中截取某部分作为标注图标时，您   
+                // 需要指定大图的偏移位置，此做法与css sprites技术类似。    
+                // imageOffset: new BMap.Size(0, 0 - index * 25)   // 设置图片偏移    
+            }); 
+            var marker = new BMap.Marker(point, {icon: myIcon});
+            map.addOverlay(marker); 
         },
         methods: {
 
