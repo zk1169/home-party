@@ -10,7 +10,7 @@
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title">因为更懂年轻人，所以我们受欢迎</div><br>
                 <div class="sub-tilte fs-18">目前华中最大互联网+连锁轰趴品牌</div>
-                <a class="btn btn-white block">了解加盟详情</a>
+                <a class="btn btn-white block">了解加盟合作</a>
             </div>
         </div>
         <div class="section2 section text-center">
@@ -68,6 +68,70 @@
                         </svg><br><br>
                         <div class="fs-24 text-l2">管家式服务</div><br>
                         <div class="fs-16 text-l1">通过专业化培训，让每位管家=初级厨师+活动策划师+布场达人+轰趴运营专员。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section5 section text-center">
+            <div class="title fs-36">多元化盈利模式</div>
+            <div class="inline-block">
+                <div class="image-wrap" layout="column">
+                    <div layout="row" layout-wrap>
+                        <div flex="50" flex-xs="100"><img src="../../static/images/b-s4-1.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/b-s4-2.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:6px;">
+                            <div class="s5-text" layout="row" layout-align="center center">
+                                <span>场地出租<br>餐饮服务</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div layout="row" layout-wrap>
+                        <div flex="25" flex-xs="50" class="s5-text" layout="row" layout-align="center center">
+                            <span>产品销售<br>主题活动</span>
+                        </div>
+                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/b-s4-3.jpg" alt=""></div>
+                        <div flex="50" flex-xs="100" style="padding-left:6px;"><img src="../../static/images/b-s4-4.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap>
+                        <div flex="50" flex-xs="100"><img src="../../static/images/b-s4-5.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" style="padding-left:6px;">
+                            <div class="s5-text" layout="row" layout-align="center center">
+                                <span>内容电商<br>广告收入</span>
+                            </div>
+                        </div>
+                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/b-s4-6.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section6 section text-center">
+            <div class="title fs-36">竞争优势</div>
+            <img class="width100" src="../../static/images/b-s6.jpg" alt="">
+        </div>
+
+        <div class="section7 section text-center">
+            <div class="title fs-36">战略优势</div>
+            <div class="body" layout="row" layout-wrap>
+                <div flex="60" flex-xs="100" class="text-wrap" layout="column" layout-align="center center">
+                    <div class="text-left">
+                        <div class="fs-24">2个基本点：装修+定制</div>
+                        <div class="fs-18">装修：专业的装修团队，优质的材料与设备供应渠道，打造主题鲜明性价比一流的轰趴馆<br>定制：每月主题活动派对，专业布场，打造特色活动IP，创造粉丝效益，建立行业壁垒</div>
+                    </div>
+                </div>
+                <div flex>
+                    <img src="../../static/images/b-s7-1.jpg" alt="">
+                </div>
+            </div>
+            <div class="body" layout="row" layout-wrap>
+                <div flex="40" flex-xs="100">
+                    <img src="../../static/images/b-s7-2.jpg" alt="">
+                </div>
+                <div flex class="text-wrap" layout="column" layout-align="center center">
+                    <div class="text-left">
+                        <div class="fs-24">3大核心：服务+SEO+地推</div>
+                        <div class="fs-18">服务：一流的管理团队及培训体系，标准化的服务流程，完善的售后回访机制，以服务打动客户<br>SEO：强大的SEO推广团队，全渠道推广，海量曝光和优质口碑集群，强大的业务壁垒<br>地推：狼性的地推团队，强大的地推网络，完善的校园以及地域合伙人制度</div>
                     </div>
                 </div>
             </div>
@@ -184,7 +248,9 @@
     }
     .section3{
         position: relative;
-        background-color: #D2D2D2;
+        // background-color: #D2D2D2;
+        background-color: $primary-color;
+        color: #fff;
         padding: 50px;
         padding-bottom: 110px;
         .title{
@@ -211,6 +277,32 @@
     .section4{
         .p1-item{
             padding: 0 6%;
+        }
+    }
+    .section5{
+        .image-wrap{
+            margin-top: 30px;
+            .s5-text{
+                height:270px;
+                width:353px;
+                background-color: $primary-color;
+                color: #fff;
+                font-size: 2.4rem;
+            }
+        }
+    }
+    .section6{
+        .title{
+            margin-bottom: 30px;
+        }
+    }
+    .section7{
+        .body{
+            margin-top: 30px;
+        }
+        .text-wrap{
+            background-color: #f5f5f5;
+            line-height: 36px;
         }
     }
     .pc-app{

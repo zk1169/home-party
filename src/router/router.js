@@ -7,6 +7,8 @@ import Router from 'vue-router';
 import Home from '../pages/home';
 import Introduce from '../pages/introduce';
 import Brand from '../pages/brand';
+import StoreList from '../pages/store-list';
+import StoreDetail from '../pages/store-detail';
 
 Vue.use(Router);
 
@@ -29,6 +31,16 @@ let router = new Router({
       path: '/brand',
       name: 'brand',
       component: Brand
+    },
+    {
+      path: '/store-list',
+      name: 'store-list',
+      component: StoreList
+    },
+    {
+      path: '/store-detail/:id',
+      name: 'store-detail',
+      component: StoreDetail
     },
   ],
   // eslint-disable-next-line

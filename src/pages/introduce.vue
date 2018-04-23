@@ -17,22 +17,24 @@
                 <div class="title fs-36">一栋别墅，花样百出</div>
                 <div class="p1 text-l3 fs-18">轰趴，是将单一娱乐场地或活动进行集中，在一个空间能体验到不同空间的娱乐项目。消费升级时代的来临，别墅轰趴行业是刚兴起的一个朝阳行业，市场潜力巨大，可成为取代KTV一类的新型娱乐消费场所。现在行业还处于萌芽阶段，红利期将保持很长一段时间，正式进入的最佳时期</div>
             </div>
-            <div class="image-wrap" layout="column">
-                <div layout="row" layout-wrap>
-                    <div flex="50" flex-xs="100"><img src="../../static/images/s2-1.jpg" alt=""></div>
-                    <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-2.jpg" alt=""></div>
-                    <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-3.jpg" alt=""></div>
-                </div>
-                <div layout="row" layout-wrap>
-                    <div flex="25" flex-xs="50"><img src="../../static/images/s2-4.jpg" alt=""></div>
-                    <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-5.jpg" alt=""></div>
-                    <div flex="50" flex-xs="100" style="padding-left:6px;"><img src="../../static/images/s2-6.jpg" alt=""></div>
-                </div>
-                <div layout="row" layout-wrap>
-                    <div flex="25" flex-xs="50"><img src="../../static/images/s2-7.jpg" alt=""></div>
-                    <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-8.jpg" alt=""></div>
-                    <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-9.jpg" alt=""></div>
-                    <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-10.jpg" alt=""></div>
+            <div class="inline-block">
+                <div class="image-wrap" layout="column">
+                    <div layout="row" layout-wrap>
+                        <div flex-xs="100"><img src="../../static/images/s2-1.jpg" alt=""></div>
+                        <div flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-2.jpg" alt=""></div>
+                        <div flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-3.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap>
+                        <div flex-xs="50"><img src="../../static/images/s2-4.jpg" alt=""></div>
+                        <div flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-5.jpg" alt=""></div>
+                        <div flex-xs="100" style="padding-left:6px;"><img src="../../static/images/s2-6.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap>
+                        <div flex-xs="50"><img src="../../static/images/s2-7.jpg" alt=""></div>
+                        <div flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-8.jpg" alt=""></div>
+                        <div flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-9.jpg" alt=""></div>
+                        <div flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-10.jpg" alt=""></div>
+                    </div>
                 </div>
             </div>
         </div>

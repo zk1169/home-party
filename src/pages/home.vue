@@ -138,27 +138,27 @@
                 <div class="fs-36 section-border-title">加盟店案例</div>
                 <a class="inline-block view-all fs-20">查看所有 >></a><br>
                 <div class="inline-block">
-                <div class="body" layout="row" layout-wrap>
-                    <div flex-xs="100" flex-md="100" style="padding-right: 3px;" class="overflow-hidden">
-                        <img src="../../static/images/anli1.jpg" alt="">
-                    </div>
-                    <div flex-xs="100" flex-md="100" style="padding: 0 3px;" layout="column">
-                        <div flex="50" layout="row">
-                            <div flex="50" style="padding-right: 3px;padding-bottom: 3px;" class="overflow-hidden">
-                                <img src="../../static/images/anli2.jpg" alt="">
+                    <div class="body" layout="row" layout-wrap>
+                        <div flex-xs="100" flex-md="100" style="padding-right: 3px;" class="overflow-hidden">
+                            <img src="../../static/images/anli1.jpg" alt="">
+                        </div>
+                        <div flex-xs="100" flex-md="100" style="padding: 0 3px;" layout="column">
+                            <div flex="50" layout="row">
+                                <div flex="50" style="padding-right: 3px;padding-bottom: 3px;" class="overflow-hidden">
+                                    <img src="../../static/images/anli2.jpg" alt="">
+                                </div>
+                                <div flex="50" style="padding-left: 3px;padding-bottom: 3px;" class="overflow-hidden">
+                                    <img src="../../static/images/anli3.jpg" alt="">
+                                </div>
                             </div>
-                            <div flex="50" style="padding-left: 3px;padding-bottom: 3px;" class="overflow-hidden">
-                                <img src="../../static/images/anli3.jpg" alt="">
+                            <div flex="50" class="overflow-hidden">
+                                <img src="../../static/images/anli4.jpg" alt="">
                             </div>
                         </div>
-                        <div flex="50" class="overflow-hidden">
-                            <img src="../../static/images/anli4.jpg" alt="">
+                        <div flex-xs="100" style="padding-left: 3px;" class="overflow-hidden">
+                            <img src="../../static/images/anli5.jpg" alt="">
                         </div>
                     </div>
-                    <div flex-xs="100" style="padding-left: 3px;" class="overflow-hidden">
-                        <img src="../../static/images/anli5.jpg" alt="">
-                    </div>
-                </div>
                 </div>
             </div>
 
@@ -230,6 +230,7 @@
         data() {
             return {
                 firstScreenTop: this.isMobile?0:60,
+                lastScrollTop: 0,
                 carouselList: [
                     './static/images/index-carousel-1.jpg',
                     './static/images/index-carousel-1.jpg'
@@ -257,28 +258,32 @@
         methods: {
             onScroll(ev) {
                 if (ev.deltaY === undefined) {
+                    ev.preventDefault();
+                    ev.stopPropagation();
                   let scrollTop = $('body,html').scrollTop();
-                  this.firstScreenTop = 60 - scrollTop * 0.3;
-                  return;
+                  let deltaTop = scrollTop - this.lastScrollTop;
+                  this.lastScrollTop = scrollTop;
+                  this.firstScreenTop -= deltaTop * 0.3;
+                } else {
+                    var top = parseInt(this.$refs.firstScreen.style.top);
+                    var minTop = 60 - this.$refs.firstScreen.clientHeight;
+                    if (top < minTop) {
+                        this.firstScreenTop = minTop
+                        return false;
+                    }
+                    if (top > 60) {
+                        this.firstScreenTop = 60;
+                        return;
+                    }
+                    // console.log(`this.firstScreenTop=${this.firstScreenTop},deltaY=${ev.deltaY}`);
+                    var _deltaY = ev.deltaY * 0.3;
+                    // if (ev.deltaY > 0) {
+                    //     _deltaY = ev.deltaY * 0.3;
+                    // } else if (ev.deltaY < 0) {
+                    //     _deltaY = ev.deltaY * 1.1;
+                    // }
+                    this.firstScreenTop -= _deltaY;
                 }
-                var top = parseInt(this.$refs.firstScreen.style.top);
-                var minTop = 60 - this.$refs.firstScreen.clientHeight;
-                if (top < minTop) {
-                    this.firstScreenTop = minTop
-                    return false;
-                }
-                if (top > 60) {
-                    this.firstScreenTop = 60;
-                    return;
-                }
-                // console.log(`this.firstScreenTop=${this.firstScreenTop},deltaY=${ev.deltaY}`);
-                var _deltaY = ev.deltaY * 0.3;
-                // if (ev.deltaY > 0) {
-                //     _deltaY = ev.deltaY * 0.3;
-                // } else if (ev.deltaY < 0) {
-                //     _deltaY = ev.deltaY * 1.1;
-                // }
-                this.firstScreenTop -= _deltaY;
                 if (this.firstScreenTop > 60) {
                     this.firstScreenTop = 60;
                 }
@@ -315,8 +320,8 @@
         display: inline-block;
     }
     .section1{
-        transition: all .3s ease;
-        -ms-transition: all 1s ease;
+        // transition: all .3s ease;
+        // -ms-transition: all 1s ease;
         .double-caret-down{
             position: absolute;
             bottom: 10px;
