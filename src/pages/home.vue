@@ -2,7 +2,7 @@
     <div class="home">
         <div class="section1 section1-fixed text-center" :style="{top:`${firstScreenTop}px`}" ref="firstScreen">
             <el-carousel arrow="never" :interval="5000">
-                <el-carousel-item v-for="item in carouselList" :key="item">
+                <el-carousel-item v-for="(item, index) in carouselList" :key="index">
                     <hp-image class="s1-image" :src="item" alt=""></hp-image>
                 </el-carousel-item>
             </el-carousel>
@@ -27,7 +27,7 @@
                                 <svg class="icon house fs-40" aria-hidden="true">
                                     <use xlink:href="#icon-house"></use>
                                 </svg>
-                            </div>
+                            </div> 
                             <div class="title2 text-l2">轰趴</div>
                             <span class="p2 text-l1">将单一娱乐场地或活动进行集中，让人在一个空间能体验多个空间的娱乐</span>
                         </div>
@@ -136,12 +136,13 @@
 
             <div class="section2-4 text-center">
                 <div class="fs-36 section-border-title">加盟店案例</div>
-                <a class="inline-block view-all fs-20">查看所有 >></a>
+                <a class="inline-block view-all fs-20">查看所有 >></a><br>
+                <div class="inline-block">
                 <div class="body" layout="row" layout-wrap>
-                    <div flex="40" flex-xs="100" flex-md="100" style="padding-right: 3px;" class="overflow-hidden">
+                    <div flex-xs="100" flex-md="100" style="padding-right: 3px;" class="overflow-hidden">
                         <img src="../../static/images/anli1.jpg" alt="">
                     </div>
-                    <div flex="40" flex-xs="100" flex-md="100" style="padding: 0 3px;" layout="column">
+                    <div flex-xs="100" flex-md="100" style="padding: 0 3px;" layout="column">
                         <div flex="50" layout="row">
                             <div flex="50" style="padding-right: 3px;padding-bottom: 3px;" class="overflow-hidden">
                                 <img src="../../static/images/anli2.jpg" alt="">
@@ -154,9 +155,10 @@
                             <img src="../../static/images/anli4.jpg" alt="">
                         </div>
                     </div>
-                    <div flex="20" flex-xs="100" style="padding-left: 3px;" class="overflow-hidden">
+                    <div flex-xs="100" style="padding-left: 3px;" class="overflow-hidden">
                         <img src="../../static/images/anli5.jpg" alt="">
                     </div>
+                </div>
                 </div>
             </div>
 
@@ -246,11 +248,19 @@
             // }
             if (this.browser === 'pc') {
                 document.onmousewheel = this.onScroll;
+                // document.body.addEventListener('onscroll', this.onScroll);
+                $(document).scroll(this.onScroll);
+                // window.onscroll = this.onScroll;
             }
             // document.onmousewheel = this.onScroll;
         },
         methods: {
             onScroll(ev) {
+                if (ev.deltaY === undefined) {
+                  let scrollTop = $('body,html').scrollTop();
+                  this.firstScreenTop = 60 - scrollTop * 0.3;
+                  return;
+                }
                 var top = parseInt(this.$refs.firstScreen.style.top);
                 var minTop = 60 - this.$refs.firstScreen.clientHeight;
                 if (top < minTop) {
@@ -290,7 +300,8 @@
         },
         computed: {},
         destroyed() {
-            document.onmousewheel = null;
+            // document.onmousewheel = null;
+            // document.body.removeEventListener('scroll', this.onScroll);
         }
     }
 </script>
@@ -304,6 +315,8 @@
         display: inline-block;
     }
     .section1{
+        transition: all .3s ease;
+        -ms-transition: all 1s ease;
         .double-caret-down{
             position: absolute;
             bottom: 10px;
