@@ -139,10 +139,10 @@
                 <a class="inline-block view-all fs-20">查看所有 >></a><br>
                 <div class="inline-block">
                     <div class="body" layout="row" layout-wrap>
-                        <div flex-xs="100" flex-md="100" style="padding-right: 3px;" class="overflow-hidden">
+                        <div flex="40" flex-xs="100" style="padding-right: 3px;" class="overflow-hidden">
                             <img src="../../static/images/anli1.jpg" alt="">
                         </div>
-                        <div flex-xs="100" flex-md="100" style="padding: 0 3px;" layout="column">
+                        <div flex="40" flex-xs="100" style="padding: 0 3px;" class="overflow-hidden" layout="column">
                             <div flex="50" layout="row">
                                 <div flex="50" style="padding-right: 3px;padding-bottom: 3px;" class="overflow-hidden">
                                     <img src="../../static/images/anli2.jpg" alt="">
@@ -155,7 +155,7 @@
                                 <img src="../../static/images/anli4.jpg" alt="">
                             </div>
                         </div>
-                        <div flex-xs="100" style="padding-left: 3px;" class="overflow-hidden">
+                        <div flex="20" flex-xs="100" style="padding-left: 3px;" class="overflow-hidden">
                             <img src="../../static/images/anli5.jpg" alt="">
                         </div>
                     </div>
