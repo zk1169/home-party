@@ -305,8 +305,8 @@
         },
         computed: {},
         destroyed() {
-            // document.onmousewheel = null;
-            // document.body.removeEventListener('scroll', this.onScroll);
+            document.onmousewheel = null;
+            $(document).off('scroll', this.onScroll);
         }
     }
 </script>

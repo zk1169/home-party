@@ -65,7 +65,7 @@
                 ]}));	  
 	        map.setCurrentCity("武汉");          // 设置地图显示的城市 此项是必须设置的
             map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
-            var myIcon = new BMap.Icon("./static/images/map-marker.png", new BMap.Size(88, 87), {    
+            var myIcon = new BMap.Icon("./static/images/map-marker2.png", new BMap.Size(88, 87), {    
                 // 指定定位位置。   
                 // 当标注显示在地图上时，其所指向的地理位置距离图标左上    
                 // 角各偏移10像素和25像素。您可以看到在本例中该位置即是   

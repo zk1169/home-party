@@ -20,20 +20,20 @@
             <div class="inline-block">
                 <div class="image-wrap" layout="column">
                     <div layout="row" layout-wrap>
-                        <div flex-xs="100"><img src="../../static/images/s2-1.jpg" alt=""></div>
-                        <div flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-2.jpg" alt=""></div>
-                        <div flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-3.jpg" alt=""></div>
+                        <div flex="50" flex-xs="100"><img src="../../static/images/s2-1.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-2.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-3.jpg" alt=""></div>
                     </div>
                     <div layout="row" layout-wrap>
-                        <div flex-xs="50"><img src="../../static/images/s2-4.jpg" alt=""></div>
-                        <div flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-5.jpg" alt=""></div>
-                        <div flex-xs="100" style="padding-left:6px;"><img src="../../static/images/s2-6.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50"><img src="../../static/images/s2-4.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-5.jpg" alt=""></div>
+                        <div flex="50" flex-xs="100" style="padding-left:6px;"><img src="../../static/images/s2-6.jpg" alt=""></div>
                     </div>
                     <div layout="row" layout-wrap>
-                        <div flex-xs="50"><img src="../../static/images/s2-7.jpg" alt=""></div>
-                        <div flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-8.jpg" alt=""></div>
-                        <div flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-9.jpg" alt=""></div>
-                        <div flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-10.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50"><img src="../../static/images/s2-7.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-8.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-9.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-10.jpg" alt=""></div>
                     </div>
                 </div>
             </div>

@@ -26,8 +26,8 @@
                 </div>
                 <div class="p1-item text-center" flex="1">
                     <div class="circle-primary big inline-block">
-                        <svg class="icon zuanshi fs-60" aria-hidden="true">
-                            <use xlink:href="#icon-zuanshi"></use>
+                        <svg class="icon location-web fs-60" aria-hidden="true">
+                            <use xlink:href="#icon-location-web"></use>
                         </svg>
                     </div><br><br>
                     <div class="fs-24 text-l3">打造中国最大本地化互联网<br>+轰趴创业联盟</div>
@@ -121,12 +121,12 @@
                     </div>
                 </div>
                 <div flex>
-                    <img src="../../static/images/b-s7-1.jpg" alt="">
+                    <img class="width100" src="../../static/images/b-s7-1.jpg" alt="">
                 </div>
             </div>
             <div class="body" layout="row" layout-wrap>
                 <div flex="40" flex-xs="100">
-                    <img src="../../static/images/b-s7-2.jpg" alt="">
+                    <img class="width100" src="../../static/images/b-s7-2.jpg" alt="">
                 </div>
                 <div flex class="text-wrap" layout="column" layout-align="center center">
                     <div class="text-left">
@@ -141,12 +141,18 @@
             <div class="title fs-36">我们有牛掰的团队</div>
             <div class="team-container relative">
                 <div v-for="(item, index) in teamList" :key="item" class="team-item" ref="teams" @click="teamMemberClick(index)">
-                    <img style="width: 250px;height:350px;" :src="item" alt="">
+                    <img :src="item" alt="">
                 </div>
             </div>
             <div class="team-indicator">
                 <span v-for="item in teamList" :key="item" class="team-indicator-item"></span>
             </div>
+            <svg class="icon caret-left fs-28" aria-hidden="true" @click="teamMemberClick(activeIndex+1)">
+                <use xlink:href="#icon-caret-left"></use>
+            </svg>
+            <svg class="icon caret-right fs-28" aria-hidden="true" @click="teamMemberClick(activeIndex-1)">
+                <use xlink:href="#icon-caret-right"></use>
+            </svg>
         </div>
         
     </div>
@@ -169,16 +175,17 @@
         data() {
             return {
                 cIndex: 0,
+                activeIndex: 2,
                 carouselList: [
                     './static/images/b-s1.jpg',
                     './static/images/b-s1.jpg'
                 ],
                 teamList: [
-                    './static/images/s2-1.jpg',
-                    './static/images/s2-2.jpg',
-                    './static/images/s2-3.jpg',
-                    './static/images/s2-4.jpg',
-                    './static/images/s2-5.jpg',
+                    './static/images/team-m1.png',
+                    './static/images/team-m2.png',
+                    './static/images/team-m3.png',
+                    './static/images/team-m4.png',
+                    './static/images/team-m5.png',
                 ],
                 positionList: [
                     'translateX(-190%) scale(0.83)',
@@ -199,7 +206,7 @@
             this.timer = setInterval(this.setPos, 3000);
         },
         methods: {
-            setPos() {
+            setPos(isClick) {
                 // -827.16,-76.84, 452,980.84,1731.16
                 // if (this.$refs.carousel) {
                 //     this.$refs.carousel[0].style.transform = this.positionList[0];
@@ -220,13 +227,20 @@
                     this.$refs.teams[i].style.zIndex = zIndex;
                 }
                 this.cIndex++;
+                if(!isClick) {
+                    this.activeIndex--;
+                    if (this.activeIndex<0){
+                        this.activeIndex += 5;
+                    }
+                }
             },
             teamMemberClick(index) {
+                this.activeIndex = index;
                 if (this.timer) {
                     clearInterval(this.timer);
                 }
                 this.cIndex = 2-index+5;
-                this.setPos();
+                this.setPos(true);
                 this.timer = setInterval(this.setPos, 3000);
             }
         },
@@ -273,6 +287,13 @@
                 margin-left: 10px;
             }
         }
+        svg.icon{
+            position: absolute;
+            top: 55%;
+            cursor: pointer;
+        }
+        svg.caret-left{left: 20px;}
+        svg.caret-right{right: 20px;}
     }
     .section4{
         .p1-item{
@@ -340,20 +361,25 @@
         }
     }
     .team-container{
-        height: 300px;
+        height: 500px;
         width: 100%;
         .team-item{
             width: 20%;
             display: inline-block;
             transition: .4s ease-in-out;
+            -ms-transition: .4s ease-in-out;
             overflow: hidden;
             z-index: 0;
             position: absolute;
             left: 50%;
             top: 0;
-            width: 250px;
-            height: 350px;
+            width: 323px;
+            height: 566px;
             cursor: pointer;
+            img{
+                width: 323px;
+                height: 566px;
+            }
         }
     }
 </style>

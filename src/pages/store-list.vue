@@ -1,7 +1,7 @@
 <template>
     <div class="store-list">
         <div class="section1 relative">
-            <hp-image src="./static/images/index-carousel-2.jpg" alt=""></hp-image>
+            <hp-image src="./static/images/sd-s1.jpg" alt=""></hp-image>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title fs-47">初夏5月，苏州太湖高大上新店开业</div><br>
                 <a class="btn btn-white block">查看店铺</a>
@@ -11,7 +11,7 @@
             <div v-for="city in cityList" :key="city.cityName">
                 <div class="city-name">{{city.cityName}}</div>
                 <div class="store-list" layout="row" layout-wrap>
-                    <div v-for="store in city.storeList" :key="store.storeName" class="store-item">
+                    <div v-for="store in city.storeList" :key="store.storeName" class="store-item" @click="storeClick(store.id)">
                         <img class="cover" :src="store.cover" alt="">
                         <div class="store-name">{{store.storeName}}</div>
                         <div class="store-address">{{store.address}}</div>
@@ -42,12 +42,18 @@
         mounted() {
         },
         methods: {
+            storeClick(id=1){
+                this.$router.push(`/store-detail/${id}`);
+            }
         },
     }
 </script>
 
 <style lang="scss" scoped>
     @import '../styles/var';
+    .section1 .title{
+        margin-bottom: 60px;
+    }
     .store-wrap{
         padding: 0 2%;
         padding-bottom: 50px;
