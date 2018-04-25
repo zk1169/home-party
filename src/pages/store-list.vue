@@ -11,7 +11,7 @@
             <div v-for="city in cityList" :key="city.cityName">
                 <div class="city-name">{{city.cityName}}</div>
                 <div class="store-list" layout="row" layout-wrap>
-                    <div v-for="store in city.storeList" :key="store.storeName" class="store-item" @click="storeClick(store.id)">
+                    <div v-for="store in city.storeList" :key="store.storeName" class="store-item" @click="storeClick(city.id, store.id)">
                         <img class="cover" :src="store.cover" alt="">
                         <div class="store-name">{{store.storeName}}</div>
                         <div class="store-address">{{store.address}}</div>
@@ -42,8 +42,8 @@
         mounted() {
         },
         methods: {
-            storeClick(id=1){
-                this.$router.push(`/store-detail/${id}`);
+            storeClick(cityId , storeId){
+                this.$router.push(`/store-detail/${cityId}/${storeId}`);
             }
         },
     }

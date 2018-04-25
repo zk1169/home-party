@@ -6,7 +6,7 @@
             <div layout="row" layout-align="center space-around" class="text-left" style="margin-top: 30px;">
                 <div flex="10"></div>
                 <div class="place" flex="30">
-                    <span class="fs-20">场地</span><br><br>
+                    <span class="fs-20">配备</span><br><br>
                     <span class="fs-16">{{store.playItems}}</span>
                 </div>
                 <div class="price" flex="25">
@@ -64,8 +64,11 @@
             HpImage
         },
         data() {
+            const storeId = this.$route.params.storeId - 1;
+            const cityId = this.$route.params.cityId - 1;
+            
             return {
-                store: CityList[0].storeList[0],
+                store: CityList[cityId].storeList[storeId],
                 scrollIndex: 0,
                 storeMenuFixed: false
             };

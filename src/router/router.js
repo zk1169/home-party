@@ -39,7 +39,7 @@ let router = new Router({
       component: StoreList
     },
     {
-      path: '/store-detail/:id',
+      path: '/store-detail/:cityId/:storeId',
       name: 'store-detail',
       component: StoreDetail
     },

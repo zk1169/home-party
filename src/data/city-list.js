@@ -1,5 +1,6 @@
 const CityList = [
     {
+        id: 1,
         cityName: '苏州',
         storeList: [
             {
@@ -78,10 +79,11 @@ const CityList = [
         ]
     },
     {
+        id: 2,
         cityName: '杭州',
         storeList: [
             {
-                id: 4,
+                id: 1,
                 storeName: '慢姑娘别墅轰趴（杭州店1）',
                 address: '富阳区银湖街道九龙大道富春红郡苏兰园4-1',
                 price: '￥2888 —5188',
@@ -95,7 +97,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 5,
+                id: 2,
                 storeName: '慢姑娘别墅轰趴（杭州店2）',
                 address: '富阳区银湖街道九龙大道阳光城上林湖竹溪雅舍7-1',
                 price: '￥2888—5188',
@@ -111,10 +113,11 @@ const CityList = [
         ]
     },
     {
+        id: 3,
         cityName: '武汉',
         storeList: [
             {
-                id: 6,
+                id: 1,
                 storeName: '玲珑阁（光谷店）',
                 address: '洪山区民族大道语林山庄15栋',
                 price: '￥2088—3588',
@@ -128,7 +131,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 7,
+                id: 2,
                 storeName: '八一路（八一路地质大学店）',
                 address: '洪山区八一路沙湾村58号沙湾大桥头地质大学新北门对面',
                 price: '￥2188—3688',
@@ -142,7 +145,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 8,
+                id: 3,
                 storeName: '龙门客栈主题',
                 address: '江夏区谭湖路特1号（滨湖壹号小区内）',
                 price: '￥2588—4388',
@@ -156,7 +159,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 9,
+                id: 4,
                 storeName: '财大异域风情',
                 address: '洪山区民族大道玉龙岛花园休闲别墅18号楼',
                 price: '￥2288 —3988',
@@ -170,7 +173,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 10,
+                id: 5,
                 storeName: '海德堡主题',
                 address: '江夏区金融港中路光谷金融港B1栋',
                 price: '￥2088 — 3588',
@@ -184,7 +187,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 11,
+                id: 6,
                 storeName: '蓝湾别墅轰趴（金银湖店）',
                 address: '东西湖区环湖路黄金海岸浅水湾A-19',
                 price: '￥2388—3988',
@@ -198,7 +201,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 12,
+                id: 7,
                 storeName: '黄家湖（黄家湖武科大店）',
                 address: '洪山区白沙洲大道青菱乡红霞新村3号门11-1',
                 price: '￥1288—1888',
@@ -212,7 +215,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 13,
+                id: 8,
                 storeName: '南湖店（南湖店）',
                 address: '洪山区瑞安街松涛苑E16-1（理工大学）',
                 price: '￥1988—3388',
@@ -226,7 +229,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 14,
+                id: 9,
                 storeName: '星空主题（江宏店）',
                 address: '洪山区雄楚大道江宏别墅12栋',
                 price: '￥1888 —3188',
@@ -240,7 +243,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 15,
+                id: 10,
                 storeName: '云天别墅轰趴（碧海2店）',
                 address: '东西湖区碧海花园观海湾V2-121',
                 price: '￥2488—4288',
@@ -254,7 +257,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 16,
+                id: 11,
                 storeName: '卢森堡（华科森林公园店）',
                 address: '洪山区珞喻东路619号（森林公园5号停车场旁）',
                 price: '￥2488—4288',
@@ -268,7 +271,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 17,
+                id: 12,
                 storeName: '加勒碧海主题',
                 address: '东西湖区金银湖北街碧海花园V6-107（金银湖绿道）',
                 price: '￥2688—4588',
@@ -282,7 +285,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 18,
+                id: 13,
                 storeName: '罗曼主题',
                 address: '洪山区南湖松涛苑E15-2',
                 price: '￥2188—3788',
@@ -296,7 +299,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 19,
+                id: 14,
                 storeName: '爱丁堡主题（马家庄体院店）',
                 address: '洪山区珞喻路446号洪山科技创业中心B座13-01',
                 price: '￥1288—1888',
@@ -310,7 +313,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 20,
+                id: 15,
                 storeName: '萨尔俱乐部（理工大店）',
                 address: '洪山区珞喻路446号洪山科技创业中心B座13-02',
                 price: '￥1788—2988',
@@ -324,7 +327,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 21,
+                id: 16,
                 storeName: '黄金海岸主题（金银湖店）',
                 address: '东西湖区金银湖环湖路黄金海岸B-17',
                 price: '￥2088 —3588',
@@ -338,7 +341,7 @@ const CityList = [
                 images: []
             },
             {
-                id: 22,
+                id: 17,
                 storeName: '海之韵主题店',
                 address: '东西湖区金山大道万科高尔夫7112栋',
                 price: '￥2688 — 4588',
