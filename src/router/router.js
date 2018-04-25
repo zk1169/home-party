@@ -13,6 +13,7 @@ import StoreDetail from '../pages/store-detail';
 Vue.use(Router);
 
 let router = new Router({
+  mode: 'history',
   routes: [{
       path: '',
       redirect: '/home'

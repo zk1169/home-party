@@ -59,10 +59,10 @@
                     <img src="../../static/images/s4-1.jpg" alt="" class="width100">
                 </div>
                 <div flex class="text-right">
-                    <div class="fs-36 text-l3">服务单一，转场难</div><br>
-                    <div class="fs-24 text-l2">“每次跟朋友聚会都太单调了，但想玩的丰富点，那就要集体打车换场子，奔波过后，都没心思玩了，而且人多的话更众口难调！”</div><br>
-                    <div class="fs-36 text-l3">费用高，体验差</div><br>
-                    <div class="fs-24 text-l2">越想玩的好越贵，比如唱K加吃饭，再去玩玩桌游，这么多人还真不便宜，而且不能保证服务和环境的质量。</div>
+                    <div class="fs-24 text-l2">服务单一，转场难</div><br>
+                    <div class="fs-16 text-l1">“每次跟朋友聚会都太单调了，但想玩的丰富点，那就要集体打车换场子，奔波过后，都没心思玩了，而且人多的话更众口难调！”</div><br><br><br><br>
+                    <div class="fs-24 text-l2">费用高，体验差</div><br>
+                    <div class="fs-16 text-l1">越想玩的好越贵，比如唱K加吃饭，再去玩玩桌游，这么多人还真不便宜，而且不能保证服务和环境的质量。</div>
                 </div>
             </div>
         </div>

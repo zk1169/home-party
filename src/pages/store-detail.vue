@@ -97,7 +97,6 @@
                 this.menuTop = document.getElementById('fixed_menu').offsetTop;
                 for(let i=0;i<this.storeSectionLength;i++){
                     this[`section_${i}`] = document.getElementById(`section_id_${i}`).offsetTop;
-                    console.log(this[`section_${i}`]);
                 }
             },2000);
         },
@@ -166,6 +165,9 @@
         .menu-item{
             font-size: 2.4rem;
             padding: 10px 30px;
+        }
+        .menu-item.active{
+            color: $primary-color;
         }
         .menu-line{
             display: inline-block;

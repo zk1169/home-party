@@ -82,13 +82,13 @@
                         <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/b-s4-2.jpg" alt=""></div>
                         <div flex="25" flex-xs="50" style="padding-left:6px;">
                             <div class="s5-text" layout="row" layout-align="center center">
-                                <span>场地出租<br>餐饮服务</span>
+                                <span>场地出租<br><br>餐饮服务</span>
                             </div>
                         </div>
                     </div>
                     <div layout="row" layout-wrap>
                         <div flex="25" flex-xs="50" class="s5-text" layout="row" layout-align="center center">
-                            <span>产品销售<br>主题活动</span>
+                            <span>产品销售<br><br>主题活动</span>
                         </div>
                         <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/b-s4-3.jpg" alt=""></div>
                         <div flex="50" flex-xs="100" style="padding-left:6px;"><img src="../../static/images/b-s4-4.jpg" alt=""></div>
@@ -97,7 +97,7 @@
                         <div flex="50" flex-xs="100"><img src="../../static/images/b-s4-5.jpg" alt=""></div>
                         <div flex="25" flex-xs="100" style="padding-left:6px;">
                             <div class="s5-text" layout="row" layout-align="center center">
-                                <span>内容电商<br>广告收入</span>
+                                <span>内容电商<br><br>广告收入</span>
                             </div>
                         </div>
                         <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/b-s4-6.jpg" alt=""></div>
