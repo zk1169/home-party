@@ -1,25 +1,24 @@
 <template>
-    <div class="store-detail">
+    <div class="store-detail-component">
         <div class="store-wrap text-center">
-            <div class="store-name fs-36">{{store.storeName}}</div><br>
-            <div class="fs-16">
-                {{store.address}}&nbsp;&nbsp;&nbsp;&nbsp;
-                预定电话：{{store.telphone}}
-            </div><br>
-            <div layout="row" layout-align="center center" class="text-left">
-                <div class="place">
+            <div class="store-name fs-36">{{store.storeName}}</div>
+            <div class="fs-16" style="margin-top: 10px;">{{store.address}}</div>
+            <div layout="row" layout-align="center space-around" class="text-left" style="margin-top: 30px;">
+                <div flex="10"></div>
+                <div class="place" flex="30">
                     <span class="fs-20">场地</span><br><br>
-                    <span class="fs-16">面积：{{store.square}}</span><br>
-                    <span class="fs-16">可容纳：{{store.totalPeople}}</span>
+                    <span class="fs-16">{{store.playItems}}</span>
                 </div>
-                <div class="price">
+                <div class="price" flex="25">
                     <span class="fs-20">价格</span><br><br>
-                    <span class="fs-16">工作日：{{store.priceWorkday}}</span><br>
-                    <span class="fs-16">周末，假期：{{store.priceWeekend}}</span>
+                    <span class="fs-16">周一至周四：{{store.priceWorkday}}元/场</span><br>
+                    <span class="fs-16">周五至周日：{{store.priceWeekend}}元/场</span><br>
+                    <span class="fs-16">周五至周日：{{store.allPrice}}元/场</span>
                 </div>
-                <div class="open-time">
-                    <span class="fs-20">开业时间</span><br><br>
-                    <span class="fs-16">开业日：{{store.priceOpen}}</span><br>
+                <div class="open-time" flex="25">
+                    <span class="fs-20">预定</span><br><br>
+                    <span class="fs-16">预定电话：{{store.orderNumber}}</span><br>
+                    <span class="fs-16">营业时间：{{store.openTime}}</span><br>
                     <span class="fs-16">&nbsp;</span>
                 </div>
             </div>
@@ -32,13 +31,7 @@
             </div>
         </div>
         <div class="store-menu" :class="{'fixed':storeMenuFixed}" layout="row" layout-align="center center" id="fixed_menu">
-            <!-- <div class="menu-item">大厅</div>
-            <div class="menu-item">房间</div>
-            <div class="menu-item">娱乐</div>
-            <div class="menu-item">厨房</div>
-            <div class="menu-item">周边</div>
-            <div class="menu-item">活动</div> -->
-            <div v-for="(item, index) in store.images" 
+            <div v-for="(item, index) in store.images"
                 :key="item.section" 
                 class="menu-item" 
                 :class="{'active':scrollIndex===index}">
@@ -56,20 +49,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="store-wrap">
-            <div v-for="city in cityList" :key="city.cityName">
-                <div class="city-name">{{city.cityName}}</div>
-                <div class="store-list" layout="row" layout-wrap>
-                    <div v-for="store in city.storeList" :key="store.storeName" class="store-item">
-                        <img class="cover" :src="store.cover" alt="">
-                        <div class="store-name">{{store.storeName}}</div>
-                        <div class="store-address">{{store.address}}</div>
-                        <div class="store-price">{{store.price}}</div>
-                    </div>
-                </div>
-            </div>
-            <div class="clearboth"></div>
-        </div> -->
         <div class="line"></div>
     </div>
 </template>
@@ -147,13 +126,14 @@
     }
     .store-wrap{
         .store-name{
-            margin-top: 40px;
+            padding-top: 60px;
         }
         .place,.price,.open-time{
             padding: 20px 50px;
+            background-color: #F5F5F5;
         }
         .price,.open-time{
-            border-left: solid 2px #d2d2d2;
+            border-left: solid 2px #fff;
         }
     }
     .store-menu{
@@ -162,6 +142,7 @@
         background-color: #fff;
         z-index: 999;
         position: relative;
+        box-shadow: 0px 2px 2px #d2d2d2;
         .menu-item{
             font-size: 2.4rem;
             padding: 10px 30px;
@@ -187,7 +168,6 @@
     .store-menu.fixed{
         position: fixed;
         width: calc(100% - 25px);
-        box-shadow: 0px 2px 2px #d2d2d2;
         top: $header-height;
     }
     .store-detail{

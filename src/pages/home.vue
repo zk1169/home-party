@@ -10,7 +10,7 @@
                 <img class="logo" src="../assets/images/logo.png" alt="">
                 <span class="s1-text-1 block fs-34">让聚会变得更简单</span>
                 <span class="s1-text-2 block fs-16">打造中国最懂年轻人的派对连锁品牌</span>
-                <a class="s1-btn btn btn-primary bg block">了解品质策略 >></a>
+                <a class="s1-btn btn btn-primary bg block" href="#/introduce">了解品质策略 >></a>
             </div>
             <svg class="icon double-caret-down" aria-hidden="true" @click="downClick">
                 <use xlink:href="#icon-double-caret-down"></use>
