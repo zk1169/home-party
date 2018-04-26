@@ -4,7 +4,7 @@
             <hp-image src="./static/images/sd-s1.jpg" alt=""></hp-image>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title fs-47">初夏5月，苏州太湖高大上新店开业</div><br>
-                <a class="btn btn-white block">查看店铺</a>
+                <a class="btn btn-white block" href="#/store-detail/1/1">查看店铺</a>
             </div>
         </div>
         <div class="store-wrap">

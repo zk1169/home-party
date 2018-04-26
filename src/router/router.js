@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import $ from 'jquery';
 
 // const Home = resolve => require(['../pages/home'], resolve);
 // const Introduce = resolve => require(['../pages/introduce'], resolve);
@@ -49,6 +50,16 @@ let router = new Router({
     // 对于所有路由导航，简单地让页面滚动到顶部。
     return { x: 0, y: 0 };
   },
+});
+
+router.beforeEach((to, from, next) => {
+  next();
+  // 重要的是设置跳转的时机。过早的话页面还没加载完成，高度不够导致不能滚动。过晚的话会造成页面的闪烁。
+  router.app.$nextTick(() => { 
+    // document.body.scrollTop = 0;
+    // console.log('cloud');
+    $('body,html').animate({ scrollTop: 0 }, 0);
+  });
 });
 
 export default router;

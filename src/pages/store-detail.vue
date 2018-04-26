@@ -11,7 +11,7 @@
                 </div>
                 <div class="price" flex="25">
                     <span class="fs-20">价格</span><br><br>
-                    <span class="fs-16">周一至周四：{{store.priceWorkday}}元/场</span><br>
+                    <span class="fs-16">周一至周四：{{store.priceWorkday==='未知'?'? ':store.priceWorkday}}元/场</span><br>
                     <span class="fs-16">周五至周日：{{store.priceWeekend}}元/场</span><br>
                     <span class="fs-16">周五至周日：{{store.allPrice}}元/场</span>
                 </div>
@@ -24,11 +24,11 @@
             </div>
         </div><br>
         <div class="section1 relative">
-            <hp-image src="./static/images/index-carousel-2.jpg" alt=""></hp-image>
-            <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
+            <hp-image :src="store.cover" alt=""></hp-image>
+            <!-- <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title fs-47">初夏5月，苏州太湖高大上新店开业</div><br>
                 <a class="btn btn-white block">查看店铺</a>
-            </div>
+            </div> -->
         </div>
         <div class="store-menu" :class="{'fixed':storeMenuFixed}" layout="row" layout-align="center center" id="fixed_menu">
             <div v-for="(item, index) in store.images"
