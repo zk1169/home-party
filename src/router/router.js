@@ -10,6 +10,8 @@ import Introduce from '../pages/introduce';
 import Brand from '../pages/brand';
 import StoreList from '../pages/store-list';
 import StoreDetail from '../pages/store-detail';
+import JiaMeng from '../pages/jiameng';
+import Story from '../pages/story';
 
 Vue.use(Router);
 
@@ -43,6 +45,16 @@ let router = new Router({
       path: '/store-detail/:cityId/:storeId',
       name: 'store-detail',
       component: StoreDetail
+    },
+    {
+      path: '/cooperation',
+      name: 'cooperation',
+      component: JiaMeng
+    },
+    {
+      path: '/story',
+      name: 'story',
+      component: Story
     },
   ],
   // eslint-disable-next-line

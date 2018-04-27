@@ -24,20 +24,26 @@
             </div>
         </div><br>
         <div class="section1 relative">
-            <hp-image :src="store.cover" alt=""></hp-image>
+            <img :src="store.coverBig" alt="" class="width100">
+            <!-- <hp-image :src="store.cover" alt=""></hp-image> -->
             <!-- <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title fs-47">初夏5月，苏州太湖高大上新店开业</div><br>
                 <a class="btn btn-white block">查看店铺</a>
             </div> -->
         </div>
         <div class="store-menu" :class="{'fixed':storeMenuFixed}" layout="row" layout-align="center center" id="fixed_menu">
-            <div v-for="(item, index) in store.images"
+            <!-- <div v-for="(item, index) in store.images"
                 :key="item.section" 
                 class="menu-item" 
                 :class="{'active':scrollIndex===index}">
                 {{item.section}}
             </div>
-            <div class="menu-line" :style="{transform:`translateX(${-300+scrollIndex*100}%)`}"></div>
+            <div class="menu-line" :style="{transform:`translateX(${-300+scrollIndex*100}%)`}"></div> -->
+            <div v-for="item in store.images"
+                :key="item.section" 
+                class="menu-item">
+                {{item.section}}
+            </div>
         </div>
         <div class="store-detail">
             <div v-for="(image, index) in store.images" :key="index" :id="`section_id_${index}`">
@@ -69,18 +75,18 @@
             
             return {
                 store: CityList[cityId].storeList[storeId],
-                scrollIndex: 0,
+                // scrollIndex: -1,
                 storeMenuFixed: false
             };
         },
         mounted() {
-            $(document).scroll(this.onScroll);
-            setTimeout(()=>{
-                this.menuTop = document.getElementById('fixed_menu').offsetTop;
-                for(let i=0;i<this.storeSectionLength;i++){
-                    this[`section_${i}`] = document.getElementById(`section_id_${i}`).offsetTop;
-                }
-            },2000);
+            // $(document).scroll(this.onScroll);
+            // setTimeout(()=>{
+            //     this.menuTop = document.getElementById('fixed_menu').offsetTop;
+            //     for(let i=0;i<this.storeSectionLength;i++){
+            //         this[`section_${i}`] = document.getElementById(`section_id_${i}`).offsetTop;
+            //     }
+            // },2000);
         },
         computed: {
             storeSectionLength() {
@@ -90,26 +96,26 @@
                 return 0;
             }
         },
-        methods: {
-            onScroll(ev) {
-                let scrollTop = $('body,html').scrollTop(); 
-                if (scrollTop >= this.menuTop - 73) {
-                    this.storeMenuFixed = true;
-                    for(let i=this.storeSectionLength;i>-1;i--){
-                        if (scrollTop > this[`section_${i}`]-100-73){
-                            this.scrollIndex = i;
-                            break;
-                        }
-                    }
-                } else {
-                    this.storeMenuFixed = false;
-                }
+        // methods: {
+        //     onScroll(ev) {
+        //         let scrollTop = $('body,html').scrollTop(); 
+        //         if (scrollTop >= this.menuTop - 73) {
+        //             this.storeMenuFixed = true;
+        //             for(let i=this.storeSectionLength;i>-1;i--){
+        //                 if (scrollTop > this[`section_${i}`]-100-73){
+        //                     this.scrollIndex = i;
+        //                     break;
+        //                 }
+        //             }
+        //         } else {
+        //             this.storeMenuFixed = false;
+        //         }
                 
-                // document.getElementById('section_id_0');
-            }
-        },
+        //         // document.getElementById('section_id_0');
+        //     }
+        // },
         destroyed() {
-            $(document).off('scroll', this.onScroll);
+            // $(document).off('scroll', this.onScroll);
         }
     }
 </script>
@@ -143,7 +149,7 @@
         padding: 10px 0px;
         top: 0;
         background-color: #fff;
-        z-index: 999;
+        // z-index: 999;
         position: relative;
         box-shadow: 0px 2px 2px #d2d2d2;
         .menu-item{
