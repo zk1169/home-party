@@ -247,8 +247,15 @@
             // if(document.addEventListener){
             //     document.addEventListener('DOMMouseScroll',scrollFunc,false);
             // }
-            if (this.browser === 'pc') {
-                document.onmousewheel = this.onScroll;
+            if (this.browser === 'pc' && this.isChrome) {
+                /*IE注册事件*/ 
+                if(document.attachEvent){ 
+                    document.attachEvent('onmousewheel',this.onScroll); 
+                } else if (document.addEventListener) {
+                    document.addEventListener('DOMMouseScroll',this.onScroll,false); 
+                } else {
+                    document.onmousewheel = this.onScroll;
+                }
                 // document.body.addEventListener('onscroll', this.onScroll);
                 $(document).scroll(this.onScroll);
                 // window.onscroll = this.onScroll;
@@ -257,10 +264,11 @@
         },
         methods: {
             onScroll(ev) {
+                console.log('onScroll');
                 if (ev.deltaY === undefined) {
                     ev.preventDefault();
                     ev.stopPropagation();
-                  let scrollTop = $('body,html').scrollTop();
+                  let scrollTop = $('body').scrollTop() || $('body,html').scrollTop();
                   let deltaTop = scrollTop - this.lastScrollTop;
                   this.lastScrollTop = scrollTop;
                   this.firstScreenTop -= deltaTop * 0.3;
@@ -276,11 +284,12 @@
                         return;
                     }
                     // console.log(`this.firstScreenTop=${this.firstScreenTop},deltaY=${ev.deltaY}`);
-                    var _deltaY = ev.deltaY * 0.3;
+                    // var _deltaY = ev.deltaY * 0.3;
+                    // var _deltaY = 0;
                     // if (ev.deltaY > 0) {
                     //     _deltaY = ev.deltaY * 0.3;
                     // } else if (ev.deltaY < 0) {
-                    //     _deltaY = ev.deltaY * 1.1;
+                    //     _deltaY = ev.deltaY * 3;
                     // }
                     this.firstScreenTop -= _deltaY;
                 }
@@ -295,10 +304,12 @@
                 this.$refs.firstScreen.style.transition = 'all 1s ease';
                 $('body,html').animate({ scrollTop: this.$refs.firstScreen.clientHeight+60 }, 800);
                 setTimeout(()=>{
-                    this.firstScreenTop = 60 - this.$refs.firstScreen.clientHeight / 4;
+                    this.firstScreenTop = 60 - this.$refs.firstScreen.clientHeight / 2;
+                    // this.firstScreenTop = 60;
                 },100);
                 setTimeout(()=>{
                     this.$refs.firstScreen.style.transition = 'none';
+                    this.firstScreenTop = 60;
                     // window.scrollTo(0,this.$refs.firstScreen.clientHeight+60);
                 },1000);
             }

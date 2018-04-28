@@ -32,6 +32,7 @@ if (!!u.match(/AppleWebKit.*Mobile.*/)) {
 } else {
     Vue.prototype.browser = 'pc';
     Vue.prototype.isMobile = false;
+    Vue.prototype.isChrome = u.indexOf('Chrome') > -1 || u.indexOf('chrome') > -1;
     // document.body.className = 'pc-app';
     document.getElementsByTagName('html')[0].className = 'pc-app';
 }
