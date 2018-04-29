@@ -12,7 +12,7 @@
                     <div flex="60" flex-xs="100" class="text-wrap" layout="column">
                         <div class="label"><span>{{item.label}}</span></div>
                         <div class="title">{{item.title}}</div><br>
-                        <div class="content">{{item.content}}</div>
+                        <div class="content color-grey">{{item.content}}</div>
                         <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/${item.id}`">查看详情 >></a>
                     </div>
                     <div flex style="margin-left: 10px;">
@@ -26,7 +26,7 @@
                     <div flex class="text-wrap" style="margin-left: 10px;">
                         <div class="label label2"><span>{{item.label}}</span></div>
                         <div class="title">{{item.title}}</div><br>
-                        <div class="content">{{item.content}}</div>
+                        <div class="content color-grey">{{item.content}}</div>
                         <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/${item.id}`">查看详情 >></a>
                     </div>
                 </div>

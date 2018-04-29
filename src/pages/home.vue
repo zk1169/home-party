@@ -23,29 +23,32 @@
                     <div class="title">轰趴，消费升级时代中的必然产物</div>
                     <div class="p1" layout="row" style="width:80%;">
                         <div class="p1-item text-center" flex="1">
-                            <div class="circle-primary inline-block">
+                            <!-- <div class="circle-primary inline-block">
                                 <svg class="icon house fs-40" aria-hidden="true">
                                     <use xlink:href="#icon-house"></use>
                                 </svg>
-                            </div> 
+                            </div>  -->
+                            <img src="../../static/images/h-s2-1.png" alt="">
                             <div class="title2 text-l2">轰趴</div>
                             <span class="p2 text-l1">将单一娱乐场地或活动进行集中，让人在一个空间能体验多个空间的娱乐</span>
                         </div>
                         <div class="p1-item text-center" flex="1">
-                            <div class="circle-primary inline-block">
+                            <!-- <div class="circle-primary inline-block">
                                 <svg class="icon chance fs-40" aria-hidden="true">
                                     <use xlink:href="#icon-chance"></use>
                                 </svg>
-                            </div>
+                            </div> -->
+                            <img src="../../static/images/h-s2-2.png" alt="">
                             <div class="title2 text-l2">行业机遇</div>
                             <span class="p2 text-l1">聚会需求大，市场聚会方式单一，已有的轰趴服务质量不一，极待升级</span>
                         </div>
                         <div class="p1-item text-center" flex="1">
-                            <div class="circle-primary inline-block">
+                            <!-- <div class="circle-primary inline-block">
                                 <svg class="icon conect fs-40" aria-hidden="true">
                                     <use xlink:href="#icon-conect"></use>
                                 </svg>
-                            </div>
+                            </div> -->
+                            <img src="../../static/images/h-s2-3.png" alt="">
                             <div class="title2 text-l2">市场环境</div>
                             <span class="p2 text-l1">消费主力年轻化，消费需求的多样化，消费能力水平日渐提高</span>
                         </div>
@@ -137,7 +140,7 @@
             <div class="section2-4 text-center">
                 <div class="fs-36">加盟店案例</div>
                 <a class="inline-block view-all fs-20" href="#/store-list">查看所有 >></a><br>
-                <div class="inline-block">
+                <div class="inline-block" style="width: 100%;max-width: 1440px;">
                     <div class="body" layout="row" layout-wrap>
                         <div flex="40" flex-xs="100" style="padding-right: 10px;" class="overflow-hidden">
                             <img src="../../static/images/anli1.jpg" alt="">
@@ -165,14 +168,15 @@
             <div class="section2-5 text-center">
                 <div class="fs-36">听听加盟人怎么说</div>
                 <div class="body" layout="row" layout-wrap>
-                    <div flex="40" flex-xs="100">
-                        <img src="../../static/images/story-1-cover.jpg" alt="">
-                    </div>
-                    <div flex class="text-left ceo-says">
-                        <div class="fs-24">武汉第一个加盟商的经历</div><br>
-                        <div class="fs-24 color-grey">&nbsp;“因为不甘平庸，所以一直在路上”</div><br>
+                    <div flex="60" flex-xs="100" class="text-left ceo-says">
+                        <div class="label"><span>加盟人故事</span></div>
+                        <!-- <div class="fs-24">武汉第一个加盟商的经历</div><br> -->
+                        <div class="fs-24">因为不甘平庸，所以一直在路上</div><br>
                         <div class="fs-16 color-grey text-l2">毕业于浙江科技大学的阿豪，从小学开始就一个人在老家，成长环境相对自由，所以性格相对大胆喜欢尝试新鲜事物，大三时机缘巧合接触到了轰趴这个行业，凭着年轻人对新鲜事物敏锐的洞察力，阿豪认为轰趴行业拥有势不可挡的商业前景，当下便决定与朋友合作开一家自己的轰趴店。经过考察，阿豪发现，别墅轰趴是消费升级的一种体现，多样化的娱乐方式更好的迎合了当下年轻的主力消费群体，在多方调查后，属于他的第一栋别墅轰趴馆在一个月之后立马开业了…</div>
-                        <a class="btn btn-primary block" style="margin-top: 60px;">查看详情 >></a>
+                        <a class="btn btn-primary block" style="margin-top: 60px;" target="_blank" href="#/story-detail/1">查看详情 >></a>
+                    </div>
+                    <div flex class="overflow-hidden" style="margin-left: 10px;">
+                        <img src="../../static/images/story-1-cover.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -418,8 +422,20 @@
                 background-color:#F5F5F5;
                 vertical-align: top;
             }
+            .label{
+                margin-bottom: 20px;
+            }
+            .label span{
+                display: inline-block;
+                padding: 0px 20px; 
+                height: 36px;
+                line-height: 36px;
+                background-color: $primary-color;
+                color: #fff;
+            }
         }
         .section-2-6{
+            margin-top: 10px;
             padding-top:60px;
             background-color: $primary-color;
             color: #fff;

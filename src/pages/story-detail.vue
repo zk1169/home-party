@@ -12,7 +12,7 @@
             <div flex class="right-content">
                 <div class="title fs-24">{{storyModel.title}}</div>
                 <!-- <div class="content fs-16">{{storyModel.content}}</div> -->
-                <div class="content fs-16" v-for="(item, index) in storyModel.paragraph" :key="index" v-html="item">
+                <div class="content fs-16 color-grey" v-for="(item, index) in storyModel.paragraph" :key="index" v-html="item">
                 </div>
             </div>
         </div>

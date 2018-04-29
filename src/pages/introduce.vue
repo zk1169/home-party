@@ -15,7 +15,7 @@
         <div class="section2 text-center">
             <div class="paragrah">
                 <div class="title fs-36">一栋别墅，花样百出</div>
-                <div class="p1 text-l3 fs-18">轰趴，是将单一娱乐场地或活动进行集中，在一个空间能体验到不同空间的娱乐项目。消费升级时代的来临，别墅轰趴行业是刚兴起的一个朝阳行业，市场潜力巨大，可成为取代KTV一类的新型娱乐消费场所。现在行业还处于萌芽阶段，红利期将保持很长一段时间，正式进入的最佳时期</div>
+                <div class="p1 text-l3 fs-18 color-grey">轰趴，是将单一娱乐场地或活动进行集中，在一个空间能体验到不同空间的娱乐项目。消费升级时代的来临，别墅轰趴行业是刚兴起的一个朝阳行业，市场潜力巨大，可成为取代KTV一类的新型娱乐消费场所。现在行业还处于萌芽阶段，红利期将保持很长一段时间，正式进入的最佳时期</div>
             </div>
             <div class="inline-block">
                 <div class="image-wrap" layout="column">
@@ -60,9 +60,9 @@
                 </div>
                 <div flex class="text-right">
                     <div class="fs-24 text-l2">服务单一，转场难</div><br>
-                    <div class="fs-16 text-l1">“每次跟朋友聚会都太单调了，但想玩的丰富点，那就要集体打车换场子，奔波过后，都没心思玩了，而且人多的话更众口难调！”</div><br><br><br><br>
+                    <div class="fs-16 text-l1 color-grey">“每次跟朋友聚会都太单调了，但想玩的丰富点，那就要集体打车换场子，奔波过后，都没心思玩了，而且人多的话更众口难调！”</div><br><br><br><br>
                     <div class="fs-24 text-l2">费用高，体验差</div><br>
-                    <div class="fs-16 text-l1">越想玩的好越贵，比如唱K加吃饭，再去玩玩桌游，这么多人还真不便宜，而且不能保证服务和环境的质量。</div>
+                    <div class="fs-16 text-l1 color-grey">越想玩的好越贵，比如唱K加吃饭，再去玩玩桌游，这么多人还真不便宜，而且不能保证服务和环境的质量。</div>
                 </div>
             </div>
         </div>

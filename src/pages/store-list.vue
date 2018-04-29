@@ -67,10 +67,10 @@
                 position: relative;
                 overflow: hidden;
                 float: left;
-                width: 21%;
+                // width: 21%;
                 margin-top: 50px;
-                margin-left: 2%;
-                margin-right: 2%;
+                // margin-left: 2%;
+                margin-right: 20px;
                 box-shadow: 0px 2px 2px #d2d2d2;
                 cursor: pointer;
                 .cover{

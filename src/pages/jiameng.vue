@@ -17,10 +17,10 @@
                     <div class="fs-24 text-l3">品牌城市授权</div>
                 </div>
                 <div class="p1-item text-center" flex="25" flex-xs="50">
-                    <svg class="icon education fs-46" aria-hidden="true">
+                    <svg class="icon education fs-55" aria-hidden="true">
                         <use xlink:href="#icon-education"></use>
-                    </svg><br><br>
-                    <div class="fs-24 text-l3">总部专业化培训</div>
+                    </svg>
+                    <div class="fs-24 text-l3" style="margin-top: 7px;">总部专业化培训</div>
                 </div>
                 <div class="p1-item text-center" flex="25" flex-xs="50">
                     <svg class="icon zhuangxiu fs-46" aria-hidden="true">
