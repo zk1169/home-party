@@ -10,7 +10,7 @@
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title">因为更懂年轻人，所以我们受欢迎</div><br>
                 <div class="sub-tilte fs-18">目前华中最大互联网+连锁轰趴品牌</div>
-                <a class="btn btn-white block">了解加盟合作</a>
+                <a class="btn btn-white block" href="#/cooperation">了解加盟合作</a>
             </div>
         </div>
         <div class="section2 section text-center">
@@ -45,8 +45,8 @@
 
         <div class="section4 section text-center relative">
             <hp-image src="./static/images/b-s3.jpg" alt=""></hp-image>
-            <div class="s4-text-wrap image-text-wrap" layout="column" layout-align="center center">
-                <div class="title fs-36">我们的品牌宗旨</div><br><br>
+            <div class="s4-text-wrap image-text-wrap" layout="column" layout-align="start center">
+                <div class="title fs-36">我们的品牌宗旨</div>
                 <div class="p1" layout="row">
                     <div class="p1-item text-center" flex="1">
                         <svg class="icon yizhanshi fs-60" aria-hidden="true">
@@ -77,30 +77,30 @@
             <div class="title fs-36">多元化盈利模式</div>
             <div class="inline-block">
                 <div class="image-wrap" layout="column">
-                    <div layout="row" layout-wrap>
-                        <div flex="50" flex-xs="100"><img src="../../static/images/b-s4-1.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/b-s4-2.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:6px;">
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="50" flex-xs="100" class="overflow-hidden"><img src="../../static/images/b-s4-1.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;"><img src="../../static/images/b-s4-2.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;">
                             <div class="s5-text" layout="row" layout-align="center center">
                                 <span>场地出租<br><br>餐饮服务</span>
                             </div>
                         </div>
                     </div>
-                    <div layout="row" layout-wrap>
-                        <div flex="25" flex-xs="50" class="s5-text" layout="row" layout-align="center center">
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="25" flex-xs="50" class="s5-text overflow-hidden" layout="row" layout-align="center center">
                             <span>产品销售<br><br>主题活动</span>
                         </div>
-                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/b-s4-3.jpg" alt=""></div>
-                        <div flex="50" flex-xs="100" style="padding-left:6px;"><img src="../../static/images/b-s4-4.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;"><img src="../../static/images/b-s4-3.jpg" alt=""></div>
+                        <div flex="50" flex-xs="100" class="overflow-hidden" style="padding-left:10px;"><img src="../../static/images/b-s4-4.jpg" alt=""></div>
                     </div>
-                    <div layout="row" layout-wrap>
-                        <div flex="50" flex-xs="100"><img src="../../static/images/b-s4-5.jpg" alt=""></div>
-                        <div flex="25" flex-xs="100" style="padding-left:6px;">
-                            <div class="s5-text" layout="row" layout-align="center center">
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="50" flex-xs="100" class="overflow-hidden"><img src="../../static/images/b-s4-5.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" style="padding-left:10px;" class="overflow-hidden">
+                            <div class="s5-text overflow-hidden" layout="row" layout-align="center center">
                                 <span>内容电商<br><br>广告收入</span>
                             </div>
                         </div>
-                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/b-s4-6.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/b-s4-6.jpg" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -148,9 +148,9 @@
                     <img :src="item" alt="">
                 </div>
             </div>
-            <div class="team-indicator">
+            <!-- <div class="team-indicator">
                 <span v-for="item in teamList" :key="item" class="team-indicator-item"></span>
-            </div>
+            </div> -->
             <svg class="icon caret-left fs-28" aria-hidden="true" @click="teamMemberClick(activeIndex+1)">
                 <use xlink:href="#icon-caret-left"></use>
             </svg>
@@ -301,6 +301,12 @@
         svg.caret-right{right: 20px;}
     }
     .section4{
+        .s4-text-wrap{
+            margin-top: 60px;
+            .title{
+                margin-bottom:100px;
+            }
+        }
         .p1-item{
             padding: 0 6%;
         }
@@ -315,6 +321,9 @@
                 color: #fff;
                 font-size: 2.4rem;
             }
+            .image-item{
+                margin-top: 5px;
+            }
         }
     }
     .section6{
@@ -324,7 +333,7 @@
     }
     .section7{
         .body{
-            margin-top: 30px;
+            margin-top: 20px;
         }
         .text-wrap{
             background-color: #f5f5f5;
@@ -344,7 +353,7 @@
         .section2{
             .paragrah{padding: 60px 10%};
             .p1{
-                margin-top: 30px;
+                margin-top: 60px;
             }
         }
     }

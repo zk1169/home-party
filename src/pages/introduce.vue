@@ -9,7 +9,7 @@
             </el-carousel>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title">一个空间，N种娱乐体验</div>
-                <a class="btn btn-white block">了解加盟详情</a>
+                <a class="btn btn-white block" href="#/cooperation">了解加盟合作</a>
             </div>
         </div>
         <div class="section2 text-center">
@@ -19,21 +19,21 @@
             </div>
             <div class="inline-block">
                 <div class="image-wrap" layout="column">
-                    <div layout="row" layout-wrap>
+                    <div layout="row" layout-wrap class="image-item">
                         <div flex="50" flex-xs="100"><img src="../../static/images/s2-1.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-2.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-3.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-2.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-3.jpg" alt=""></div>
                     </div>
-                    <div layout="row" layout-wrap>
+                    <div layout="row" layout-wrap class="image-item">
                         <div flex="25" flex-xs="50"><img src="../../static/images/s2-4.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-5.jpg" alt=""></div>
-                        <div flex="50" flex-xs="100" style="padding-left:6px;"><img src="../../static/images/s2-6.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-5.jpg" alt=""></div>
+                        <div flex="50" flex-xs="100" style="padding-left:10px;"><img src="../../static/images/s2-6.jpg" alt=""></div>
                     </div>
-                    <div layout="row" layout-wrap>
+                    <div layout="row" layout-wrap class="image-item">
                         <div flex="25" flex-xs="50"><img src="../../static/images/s2-7.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-8.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-9.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:6px;"><img src="../../static/images/s2-10.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-8.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-9.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-10.jpg" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -109,6 +109,9 @@
     .section2{
         .image-wrap div{
             overflow: hidden;
+        }
+        .image-wrap .image-item{
+            margin-top: 3px;
         }
     }
     .section3{

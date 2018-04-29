@@ -13,7 +13,7 @@
                         <div class="label"><span>{{item.label}}</span></div>
                         <div class="title">{{item.title}}</div><br>
                         <div class="content">{{item.content}}</div>
-                        <a class="btn btn-primary inline-block" :href="`#/story-detail/${item.id}`">查看详情 >></a>
+                        <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/${item.id}`">查看详情 >></a>
                     </div>
                     <div flex style="margin-left: 10px;">
                         <img class="width100" :src="item.cover" alt="">
@@ -27,7 +27,7 @@
                         <div class="label label2"><span>{{item.label}}</span></div>
                         <div class="title">{{item.title}}</div><br>
                         <div class="content">{{item.content}}</div>
-                        <a class="btn btn-primary inline-block" :href="`#/story-detail/${item.id}`">查看详情 >></a>
+                        <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/${item.id}`">查看详情 >></a>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
             <hp-image src="./static/images/sd-s1.jpg" alt=""></hp-image>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title fs-47">初夏5月，苏州太湖高大上新店开业</div><br>
-                <a class="btn btn-white block" href="#/store-detail/1/1">查看店铺</a>
+                <a class="btn btn-white block" target="_blank" href="#/store-detail/1/1">查看店铺</a>
             </div>
         </div>
     </div>

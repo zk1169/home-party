@@ -43,7 +43,8 @@
         },
         methods: {
             storeClick(cityId , storeId){
-                this.$router.push(`/store-detail/${cityId}/${storeId}`);
+                // this.$router.push(`/store-detail/${cityId}/${storeId}`);
+                window.open(`#/store-detail/${cityId}/${storeId}`, '_blank');
             }
         },
     }
@@ -55,7 +56,7 @@
         margin-bottom: 60px;
     }
     .store-wrap{
-        padding: 0 2%;
+        padding: 0 30px;
         padding-bottom: 50px;
         .city-name{
             margin-top: 50px;

@@ -90,7 +90,7 @@
                         </ul>
                     </div><br><br>
                     <div class="text-center">
-                        <a class="btn btn-primary bg">5万加盟费 +5万保证金+3%服务费</a>
+                        <a class="btn btn-primary bg" style="border-radius:0;">5万加盟费 +5万保证金+3%服务费</a>
                     </div>
                 </div>
                 <div flex="5"></div>
@@ -113,12 +113,12 @@
                             <li>价值2万的别墅设计费用</li>
                             <li>总部客户共享订单管理系统、会员管理系统，专业人员培训</li>
                             <li>总部全年客户回访，持续专业改进方案</li>
-                            <li>总部代理经营，共享总部线上线下全部渠道，整个运营部门配合经营</li>
+                            <li>总部代理经营，共享总部线上线下全部渠道，运营部门配合经营</li>
                             <li>全面负责店面人员管理，客服服务，营销推广</li>
                         </ul>
                     </div>
                     <div class="text-center">
-                        <a class="btn btn-primary bg">5万保证金+20%服务费</a>
+                        <a class="btn btn-primary bg" style="border-radius:0;">5万保证金+20%服务费</a>
                     </div>
                 </div>
             </div>
@@ -176,6 +176,7 @@
                 color: #666D70;
                 padding-left: 18px;
                 line-height: 36px;
+                font-size: 16px;
             }
             .btn{
                 width: auto;
@@ -194,8 +195,12 @@
         }
         .section2{
             .paragrah{padding: 60px 10%};
+            .pi{
+                width: 90%;
+                margin-left: 5%;
+            }
             .p1 .p1-item{
-                margin-top: 30px;
+                margin-top: 100px;
             }
         }
         .section4{

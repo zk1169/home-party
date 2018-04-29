@@ -1,7 +1,7 @@
 <template>
     <div class="hp-header">
         <img class="logo" src="../assets/images/logo.png" alt="">
-        <span class="menu" style="vertical-align: top;">让聚会变得更简单</span>
+        <span class="menu fs-14" style="vertical-align: top;padding:0;">让聚会变得更简单</span>
         <div class="menu-container inline-block pull-right" :class="{'hide':isMobile}">
             <span :class="['menu', {'active':$route.name==='home'}]" @click="menuClick('home')">首页</span>
             <span :class="['menu', {'active':$route.name==='introduce'}]" @click="menuClick('introduce')">行业介绍</span>
@@ -39,8 +39,8 @@
         font-size: 16px;
     }
     .logo{
-        height: 50px;
-        margin: 5px 10px 5px 30px;
+        height: 40px;
+        margin: 10px 10px 10px 30px;
     }
     .menu {
         height: $header-height;

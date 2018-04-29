@@ -6,17 +6,17 @@
             <div layout="row" layout-align="center space-around" class="text-left" style="margin-top: 30px;">
                 <div flex="10"></div>
                 <div class="place" flex="30">
-                    <span class="fs-20">配备</span><br><br>
+                    <span class="fs-20">配备</span><br>
                     <span class="fs-16">{{store.playItems}}</span>
                 </div>
                 <div class="price" flex="25">
-                    <span class="fs-20">价格</span><br><br>
+                    <span class="fs-20">价格</span><br>
                     <span class="fs-16">周一至周四：{{store.priceWorkday==='未知'?'? ':store.priceWorkday}}元/场</span><br>
                     <span class="fs-16">周五至周日：{{store.priceWeekend}}元/场</span><br>
                     <span class="fs-16">周五至周日：{{store.allPrice}}元/场</span>
                 </div>
                 <div class="open-time" flex="25">
-                    <span class="fs-20">预定</span><br><br>
+                    <span class="fs-20">预定</span><br>
                     <span class="fs-16">预定电话：{{store.orderNumber}}</span><br>
                     <span class="fs-16">营业时间：{{store.openTime}}</span><br>
                     <span class="fs-16">&nbsp;</span>
@@ -31,24 +31,17 @@
                 <a class="btn btn-white block">查看店铺</a>
             </div> -->
         </div>
-        <div class="store-menu" :class="{'fixed':storeMenuFixed}" layout="row" layout-align="center center" id="fixed_menu">
-            <!-- <div v-for="(item, index) in store.images"
-                :key="item.section" 
-                class="menu-item" 
-                :class="{'active':scrollIndex===index}">
-                {{item.section}}
-            </div>
-            <div class="menu-line" :style="{transform:`translateX(${-300+scrollIndex*100}%)`}"></div> -->
+        <!-- <div class="store-menu" :class="{'fixed':storeMenuFixed}" layout="row" layout-align="center center" id="fixed_menu">
             <div v-for="item in store.images"
                 :key="item.section" 
                 class="menu-item">
                 {{item.section}}
             </div>
-        </div>
+        </div> -->
         <div class="store-detail">
             <div v-for="(image, index) in store.images" :key="index" :id="`section_id_${index}`">
                 <div class="section-title">{{image.section}}</div>
-                <div layout="row" layout-wrap>
+                <div layout="row" layout-wrap style="margin-top: -30px;">
                     <div flex="50" flex-xs="100" v-for="item in image.items" :key="item" class="image-item">
                         <img :src="item" alt="">
                     </div>
@@ -140,6 +133,7 @@
         .place,.price,.open-time{
             padding: 20px 50px;
             background-color: #F5F5F5;
+            line-height: 32px;
         }
         .price,.open-time{
             border-left: solid 2px #fff;
@@ -181,19 +175,20 @@
     }
     .store-detail{
         padding-left: 10px;
-        padding-right: 20px;
-        border-top: solid 2px #d2d2d2;
+        padding-right: 60px;
+        // border-top: solid 2px #d2d2d2;
         .section-title{
-            margin-top: 30px;
-            margin-bottom: 10px;
-            font-size: 3.6rem;
+            margin-top: 60px;
+            // margin-bottom: 10px;
+            font-size: 2.4rem;
             text-align: center;
-            margin-left: 20px;
+            margin-left: 60px;
+            text-align: left;
         }
         .image-item{
             position: relative;
-            padding-left: 20px;
-            margin-top: 20px;
+            padding-left: 60px;
+            margin-top: 60px;
             img{
                 width: 100%;
             }

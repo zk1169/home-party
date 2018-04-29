@@ -7,10 +7,10 @@
                 </el-carousel-item>
             </el-carousel>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
-                <img class="logo" src="../assets/images/logo.png" alt="">
+                <img class="logo" src="../../static/images/logo-big.png" alt="" style="width:220px;">
                 <span class="s1-text-1 block fs-34">让聚会变得更简单</span>
-                <span class="s1-text-2 block fs-16">打造中国最懂年轻人的派对连锁品牌</span>
-                <a class="s1-btn btn btn-primary bg block" href="#/introduce">了解品质策略 >></a>
+                <!-- <span class="s1-text-2 block fs-16">打造中国最懂年轻人的派对连锁品牌</span> -->
+                <a class="s1-btn btn btn-primary bg block" href="#/cooperation">了解加盟合作 >></a>
             </div>
             <svg class="icon double-caret-down" aria-hidden="true" @click="downClick">
                 <use xlink:href="#icon-double-caret-down"></use>
@@ -21,7 +21,7 @@
                 <hp-image src="./static/images/index-carousel-2.jpg" alt=""></hp-image>
                 <div class="s21-text-wrap image-text-wrap" layout="column" layout-align="center center">
                     <div class="title">轰趴，消费升级时代中的必然产物</div>
-                    <div class="p1" layout="row">
+                    <div class="p1" layout="row" style="width:80%;">
                         <div class="p1-item text-center" flex="1">
                             <div class="circle-primary inline-block">
                                 <svg class="icon house fs-40" aria-hidden="true">
@@ -50,15 +50,15 @@
                             <span class="p2 text-l1">消费主力年轻化，消费需求的多样化，消费能力水平日渐提高</span>
                         </div>
                     </div>
-                    <a class="btn btn-white block">了解更多 >></a>
+                    <a class="btn btn-white block" href="#/introduce">了解更多 >></a>
                 </div>
             </div>
 
             <div class="section2-2 text-center">
-                <div class="fs-36 section-border-title">用我们的专业，保障每一个加盟者的收益</div>
+                <div class="fs-36">用我们的专业，保障每一个加盟者的收益</div>
                 <div class="section2-2-p" layout="row" layout-wrap>
                     <div flex="1" flex-xs="50" class="section2-2-p-item">
-                        <svg class="icon lingdai fs-40" aria-hidden="true">
+                        <svg class="icon lingdai" aria-hidden="true">
                             <use xlink:href="#icon-lingdai"></use>
                         </svg>
                         <div class="fs-24 title text-l2">品牌宗旨</div>
@@ -67,7 +67,7 @@
                         <span class="fs-16 text-l2">管家式服务</span>
                     </div>
                     <div flex="1" flex-xs="50" class="section2-2-p-item">
-                        <svg class="icon tianping fs-40" aria-hidden="true">
+                        <svg class="icon tianping" aria-hidden="true">
                             <use xlink:href="#icon-tianping"></use>
                         </svg>
                         <div class="fs-24 title text-l2">竞争优势</div>
@@ -76,7 +76,7 @@
                         <span class="fs-16 text-l2">前沿的服务理念</span>
                     </div>
                     <div flex="1" flex-xs="50" class="section2-2-p-item">
-                        <svg class="icon duoyuanhua fs-40" aria-hidden="true">
+                        <svg class="icon duoyuanhua" aria-hidden="true">
                             <use xlink:href="#icon-duoyuanhua"></use>
                         </svg>
                         <div class="fs-24 title text-l2">多元化盈利</div>
@@ -85,7 +85,7 @@
                         <span class="fs-16 text-l2">最大化盈利</span>
                     </div>
                     <div flex="1" flex-xs="50" class="section2-2-p-item">
-                        <svg class="icon zhanlue fs-40" aria-hidden="true">
+                        <svg class="icon zhanlue" aria-hidden="true">
                             <use xlink:href="#icon-zhanlue"></use>
                         </svg>
                         <div class="fs-24 title text-l2">战略优势</div>
@@ -93,7 +93,7 @@
                         <span class="fs-16 text-l2">3大核心：服务+SEO+地推</span>
                     </div>
                 </div>
-                <a class="btn btn-primary block" style="margin-top: 60px;">了解品质策略 >></a>
+                <a class="btn btn-primary block" href="#/brand" style="margin-top: 60px;">了解品牌 >></a>
             </div>
 
             <div class="section2-3">
@@ -135,19 +135,19 @@
             </div>
 
             <div class="section2-4 text-center">
-                <div class="fs-36 section-border-title">加盟店案例</div>
-                <a class="inline-block view-all fs-20">查看所有 >></a><br>
+                <div class="fs-36">加盟店案例</div>
+                <a class="inline-block view-all fs-20" href="#/store-list">查看所有 >></a><br>
                 <div class="inline-block">
                     <div class="body" layout="row" layout-wrap>
-                        <div flex="40" flex-xs="100" style="padding-right: 3px;" class="overflow-hidden">
+                        <div flex="40" flex-xs="100" style="padding-right: 10px;" class="overflow-hidden">
                             <img src="../../static/images/anli1.jpg" alt="">
                         </div>
-                        <div flex="40" flex-xs="100" style="padding: 0 3px;" class="overflow-hidden" layout="column">
+                        <div flex="40" flex-xs="100" style="padding: 0 10px;" class="overflow-hidden" layout="column">
                             <div flex="50" layout="row">
-                                <div flex="50" style="padding-right: 3px;padding-bottom: 3px;" class="overflow-hidden">
+                                <div flex="50" style="padding-right: 10px;padding-bottom: 10px;" class="overflow-hidden">
                                     <img src="../../static/images/anli2.jpg" alt="">
                                 </div>
-                                <div flex="50" style="padding-left: 3px;padding-bottom: 3px;" class="overflow-hidden">
+                                <div flex="50" style="padding-left: 10px;padding-bottom: 10px;" class="overflow-hidden">
                                     <img src="../../static/images/anli3.jpg" alt="">
                                 </div>
                             </div>
@@ -155,23 +155,23 @@
                                 <img src="../../static/images/anli4.jpg" alt="">
                             </div>
                         </div>
-                        <div flex="20" flex-xs="100" style="padding-left: 3px;" class="overflow-hidden">
-                            <img src="../../static/images/anli5.jpg" alt="">
+                        <div flex="20" flex-xs="100" class="overflow-hidden last-image">
+                            <!-- <img src="../../static/images/anli5.jpg" alt="" class="width100"> -->
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="section2-5 text-center">
-                <div class="fs-36 section-border-title">听听加盟人怎么说</div>
+                <div class="fs-36">听听加盟人怎么说</div>
                 <div class="body" layout="row" layout-wrap>
                     <div flex="40" flex-xs="100">
-                        <img src="../../static/images/ceo.jpg" alt="">
+                        <img src="../../static/images/story-1-cover.jpg" alt="">
                     </div>
                     <div flex class="text-left ceo-says">
                         <div class="fs-24">武汉第一个加盟商的经历</div><br>
-                        <div class="fs-24 color-grey">&nbsp;“不去尝试，跟咸鱼有什么分别”</div><br>
-                        <div class="fs-16 color-grey text-l2">武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的经历武汉第一个加盟商的武汉第一个加盟商的经历武汉第一个加盟商…</div>
+                        <div class="fs-24 color-grey">&nbsp;“因为不甘平庸，所以一直在路上”</div><br>
+                        <div class="fs-16 color-grey text-l2">毕业于浙江科技大学的阿豪，从小学开始就一个人在老家，成长环境相对自由，所以性格相对大胆喜欢尝试新鲜事物，大三时机缘巧合接触到了轰趴这个行业，凭着年轻人对新鲜事物敏锐的洞察力，阿豪认为轰趴行业拥有势不可挡的商业前景，当下便决定与朋友合作开一家自己的轰趴店。经过考察，阿豪发现，别墅轰趴是消费升级的一种体现，多样化的娱乐方式更好的迎合了当下年轻的主力消费群体，在多方调查后，属于他的第一栋别墅轰趴馆在一个月之后立马开业了…</div>
                         <a class="btn btn-primary block" style="margin-top: 60px;">查看详情 >></a>
                     </div>
                 </div>
@@ -324,6 +324,13 @@
 
 <style lang="scss" scoped>
     @import '../styles/var';
+    .last-image{
+        background: url(../../static/images/anli5.jpg);
+        background-repeat:no-repeat; 
+        background-size:100% 100%;
+        -moz-background-size:100% 100%;
+        height: 460px;
+    }
     .section-border-title{
         padding: 0 3rem;
         border-left: solid 4px $primary-color;
@@ -366,6 +373,12 @@
                 }
                 .section2-2-p-item{
                     margin-top: 60px;
+                    svg{
+                        font-size: 8rem;
+                    }
+                    span{
+                        color: #777;
+                    }
                 }
             }
         }
@@ -392,6 +405,7 @@
                 position: absolute;
                 right: 60px;
                 top: 20px;
+                text-decoration: none;
             }
         }
         .section2-5{
@@ -429,13 +443,13 @@
             width: 100%;
             .s1-text-wrap{
                 .s1-text-1{
-                    margin-top: 20px;
+                    margin-top: 30px;
                 }
                 .s1-text-2{
                     margin-top: 10px;
                 }
                 .s1-btn{
-                    margin-top: 60px;
+                    margin-top: 30px;
                 }
             }
         }
