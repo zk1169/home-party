@@ -90,7 +90,7 @@
                         </ul>
                     </div><br><br>
                     <div class="text-center">
-                        <a class="btn btn-primary bg" style="border-radius:0;">5万加盟费 +5万保证金+3%服务费</a>
+                        <a class="btn btn-primary bg" style="border-radius:0;cursor: default;">5万加盟费 +5万保证金+3%服务费</a>
                     </div>
                 </div>
                 <div flex="5"></div>
@@ -118,7 +118,7 @@
                         </ul>
                     </div>
                     <div class="text-center">
-                        <a class="btn btn-primary bg" style="border-radius:0;">5万保证金+20%服务费</a>
+                        <a class="btn btn-primary bg" style="border-radius:0;cursor: default;">5万保证金+20%服务费</a>
                     </div>
                 </div>
             </div>
