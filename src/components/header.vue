@@ -7,7 +7,7 @@
             <span :class="['menu', {'active':$route.name==='introduce'}]" @click="menuClick('introduce')">行业介绍</span>
             <span :class="['menu', {'active':$route.name==='brand'}]" @click="menuClick('brand')">品牌介绍</span>
             <span :class="['menu', {'active':$route.name==='store-list'||$route.name==='store-detail'}]" @click="menuClick('store-list')">门店展示</span>
-            <span :class="['menu', {'active':$route.name==='story'}]" @click="menuClick('story')">故事</span>
+            <span :class="['menu', {'active':$route.name==='story'||$route.name==='story-detail'}]" @click="menuClick('story')">故事</span>
             <span :class="['menu', {'active':$route.name==='cooperation'}]" @click="menuClick('cooperation')">加盟合作</span>
         </div>
     </div>

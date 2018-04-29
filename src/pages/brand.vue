@@ -116,7 +116,7 @@
             <div class="body" layout="row" layout-wrap>
                 <div flex="60" flex-xs="100" class="text-wrap" layout="column" layout-align="center center">
                     <div class="text-left">
-                        <div class="fs-24">2个基本点：装修+定制</div>
+                        <div class="fs-24">2个基本点：装修+定制</div><br>
                         <div class="fs-18">装修：专业的装修团队，优质的材料与设备供应渠道，打造主题鲜明性价比一流的轰趴馆<br>定制：每月主题活动派对，专业布场，打造特色活动IP，创造粉丝效益，建立行业壁垒</div>
                     </div>
                 </div>
@@ -130,11 +130,15 @@
                 </div>
                 <div flex class="text-wrap" layout="column" layout-align="center center">
                     <div class="text-left">
-                        <div class="fs-24">3大核心：服务+SEO+地推</div>
+                        <div class="fs-24">3大核心：服务+SEO+地推</div><br>
                         <div class="fs-18">服务：一流的管理团队及培训体系，标准化的服务流程，完善的售后回访机制，以服务打动客户<br>SEO：强大的SEO推广团队，全渠道推广，海量曝光和优质口碑集群，强大的业务壁垒<br>地推：狼性的地推团队，强大的地推网络，完善的校园以及地域合伙人制度</div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="section8">
+            <img src="../../static/images/b-s8.jpg" alt="" class="width100">
         </div>
 
         <div class="section3 text-center">
@@ -261,6 +265,7 @@
         }
     }
     .section3{
+        margin-top: -5px;
         position: relative;
         // background-color: #D2D2D2;
         background-color: $primary-color;
