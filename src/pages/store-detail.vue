@@ -116,6 +116,7 @@
 <style lang="scss" scoped>
     @import '../styles/var';
     .line{
+        margin-top: 100px;
         display:inline-block;
         width: 96%;
         border-top: solid 1px #d2d2d2;

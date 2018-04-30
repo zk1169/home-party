@@ -1,12 +1,12 @@
 <template>
     <div class="brand">
         <div class="section1 relative">
-            <!-- <hp-image src="./static/images/index-carousel-2.jpg" alt=""></hp-image> -->
-            <el-carousel arrow="never" :interval="5000">
+            <hp-image src="./static/images/b-s1.jpg" alt=""></hp-image>
+            <!-- <el-carousel arrow="never" :interval="5000">
                 <el-carousel-item v-for="item in carouselList" :key="item">
                     <hp-image :src="item" alt=""></hp-image>
                 </el-carousel-item>
-            </el-carousel>
+            </el-carousel> -->
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title">因为更懂年轻人，所以我们受欢迎</div><br>
                 <div class="sub-tilte fs-18">目前华中最大互联网+连锁轰趴品牌</div>
@@ -163,27 +163,27 @@
 </template>
 
 <script>
-    import 'element-ui/lib/theme-default/carousel.css';
-    import 'element-ui/lib/theme-default/carousel-item.css';
-    import Carousel from 'element-ui/lib/carousel';
-    import CarouselItem from 'element-ui/lib/carousel-item';
+    // import 'element-ui/lib/theme-default/carousel.css';
+    // import 'element-ui/lib/theme-default/carousel-item.css';
+    // import Carousel from 'element-ui/lib/carousel';
+    // import CarouselItem from 'element-ui/lib/carousel-item';
     import HpImage from '../components/hp-image';
     
     export default {
         name: 'brand',
         components: {
-            'el-carousel': Carousel, 
-            'el-carousel-item': CarouselItem,
+            // 'el-carousel': Carousel, 
+            // 'el-carousel-item': CarouselItem,
             HpImage
         },
         data() {
             return {
                 cIndex: 0,
                 activeIndex: 2,
-                carouselList: [
-                    './static/images/b-s1.jpg',
-                    './static/images/b-s1.jpg'
-                ],
+                // carouselList: [
+                //     './static/images/b-s1.jpg',
+                //     './static/images/b-s1.jpg'
+                // ],
                 teamList: [
                     './static/images/team-m1.png',
                     './static/images/team-m2.png',

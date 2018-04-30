@@ -13,7 +13,7 @@
                         <div class="label"><span>{{item.label}}</span></div>
                         <div class="title">{{item.title}}</div><br>
                         <div class="content color-grey" v-html="item.content"></div>
-                        <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/1/${item.id}`">查看详情 >></a>
+                        <a class="btn btn-primary inline-block btn-story" target="_blank" :href="`#/story-detail/1/${item.id}`">查看详情 >></a>
                     </div>
                     <div flex style="margin-left: 10px;">
                         <img class="width100" :src="item.cover" alt="">
@@ -27,7 +27,7 @@
                         <div class="label label2"><span>{{item.label}}</span></div>
                         <div class="title">{{item.title}}</div><br>
                         <div class="content color-grey" v-html="item.content"></div>
-                        <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/1/${item.id}`">查看详情 >></a>
+                        <a class="btn btn-primary inline-block btn-story" target="_blank" :href="`#/story-detail/1/${item.id}`">查看详情 >></a>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                         <div class="label label2"><span>{{item.label}}</span></div>
                         <div class="title">{{item.title}}</div><br>
                         <div class="content color-grey" v-html="item.content"></div>
-                        <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/2/${item.id}`">查看详情 >></a>
+                        <a class="btn btn-primary inline-block btn-story" target="_blank" :href="`#/story-detail/2/${item.id}`">查看详情 >></a>
                     </div>
                     <div flex style="margin-left: 10px;">
                         <img class="width100" :src="item.cover" alt="">
@@ -62,7 +62,7 @@
                         <div class="label label2"><span>{{item.label}}</span></div>
                         <div class="title">{{item.title}}</div><br>
                         <div class="content color-grey" v-html="item.content"></div>
-                        <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/2/${item.id}`">查看详情 >></a>
+                        <a class="btn btn-primary inline-block btn-story" target="_blank" :href="`#/story-detail/2/${item.id}`">查看详情 >></a>
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
     //     border-color: #999999!important;
     //     color: #777777!important;
     // }
-    .btn{
+    .btn-story{
         border-color: #999999;
         color: #777777;
     }

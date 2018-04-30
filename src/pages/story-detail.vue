@@ -61,7 +61,7 @@
         }
     }
     .line{
-        margin-top: 60px;
+        margin-top: 100px;
         display:inline-block;
         width: 96%;
         border-top: solid 1px #d2d2d2;

@@ -71,12 +71,13 @@
             </div>
         </div>
         <div class="section4 section text-center">
-            <div class="fs-36">国内聚会存在的问题是什么？</div>
+            <!-- <div class="fs-36">国内聚会存在的问题是什么？</div> -->
             <div class="body" layout="row" layout-wrap>
                 <div flex="40" flex-xs="100" class="overflow-hidden">
                     <img src="../../static/images/s4-1.jpg" alt="" class="width100">
                 </div>
                 <div flex class="text-right">
+                    <div class="fs-36" style="margin-bottom: 60px;">国内聚会存在的问题是什么？</div>
                     <div class="fs-24 text-l2">服务单一，转场难</div><br>
                     <div class="fs-16 text-l1 color-grey">“每次跟朋友聚会都太单调了，但想玩的丰富点，那就要集体打车换场子，奔波过后，都没心思玩了，而且人多的话更众口难调！”</div><br><br><br><br>
                     <div class="fs-24 text-l2">费用高，体验差</div><br>

@@ -362,6 +362,10 @@
                     width: 100%;
                     .p1-item{
                         padding: 0 6%;
+                        img{
+                            width: 100px;
+                            height: 100px;
+                        }
                     }
                 }
             }
@@ -410,6 +414,10 @@
                 right: 60px;
                 top: 20px;
                 text-decoration: none;
+                color: #555;
+            }
+            .view-all:hover,.view-all:focus,.view-all:active{
+                color: #4a90e2;
             }
         }
         .section2-5{
@@ -459,7 +467,7 @@
             width: 100%;
             .s1-text-wrap{
                 .s1-text-1{
-                    margin-top: 30px;
+                    margin-top: 60px;
                 }
                 .s1-text-2{
                     margin-top: 10px;
