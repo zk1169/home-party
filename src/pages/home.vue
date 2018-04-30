@@ -3,7 +3,7 @@
         <div class="section1 section1-fixed text-center" :style="{top:`${firstScreenTop}px`}" ref="firstScreen">
             <el-carousel arrow="never" :interval="5000">
                 <el-carousel-item v-for="(item, index) in carouselList" :key="index">
-                    <hp-image class="s1-image" :src="item" alt=""></hp-image>
+                    <hp-image class="s1-image" :src="item" :has-cover="false" alt=""></hp-image>
                 </el-carousel-item>
             </el-carousel>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
@@ -18,7 +18,7 @@
         </div>
         <div class="section2 section2-fixed relative">
             <div class="section2-1 relative text-center">
-                <hp-image src="./static/images/h-s2.jpg" alt=""></hp-image>
+                <hp-image src="./static/images/h-s2.jpg" :has-cover="false" alt=""></hp-image>
                 <div class="s21-text-wrap image-text-wrap" layout="column" layout-align="center center">
                     <div class="title">轰趴，消费升级时代中的必然产物</div>
                     <div class="p1" layout="row" style="width:80%;">

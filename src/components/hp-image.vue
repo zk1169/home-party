@@ -1,14 +1,23 @@
 <template>
     <div class="hp-image relative">
         <img :src="src" alt="">
-        <div class="image-cover"></div>
+        <div class="image-cover" v-if="hasCover"></div>
     </div>
 </template>
 
 <script>
     export default {
         name: 'hp-image',
-        props: ['src']
+        // props: ['src'],
+        props: {
+            src: {
+                type: String
+            },
+            hasCover: {
+                type: Boolean,
+                default: true
+            }
+        }
     }
 </script>
 
