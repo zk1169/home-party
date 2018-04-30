@@ -27,7 +27,7 @@
                     <div layout="row" layout-wrap class="image-item">
                         <div flex="25" flex-xs="50" class="overflow-hidden">
                             <div class="s5-text" layout="row" layout-align="center center">
-                                <span>场地出租<br><br>餐饮服务</span>
+                                <span>住宿<br><br>健身房<br><br>高尔夫<br><br>桌游房<br><br>桌球室<br><br>KTV</span>
                             </div>
                         </div>
                         <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-4.jpg" alt=""></div>
@@ -40,7 +40,7 @@
                         <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-9.jpg" alt=""></div>
                         <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;">
                             <div class="s5-text" layout="row" layout-align="center center">
-                                <span>场地出租<br><br>餐饮服务</span>
+                                <span>户外BBQ<br><br>厨房<br><br>XBOX游戏<br><br>麻将房<br><br>私人影院<br><br>VR体验馆</span>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                         <div flex="25" flex-xs="50" class="overflow-hidden"><img src="../../static/images/s2-10.jpg" alt=""></div>
                         <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;">
                             <div class="s5-text" layout="row" layout-align="center center">
-                                <span>场地出租<br><br>餐饮服务</span>
+                                <span>酒吧<br><br>泳池派对<br><br>私人花园，运动场<br><br>会议服务，餐饮服务<br><br>私人主题活动<br><br>团建定制<br>...</span>
                             </div>
                         </div>
                         <div flex="50" flex-xs="100" style="padding-left:10px;"><img src="../../static/images/s2-11.jpg" alt=""></div>
@@ -129,7 +129,7 @@
         // width:353px;
         background-color: $primary-color;
         color: #fff;
-        font-size: 2.4rem;
+        font-size: 1.6rem;
     }
     .section2{
         .image-wrap div{
