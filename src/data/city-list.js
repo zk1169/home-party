@@ -110,18 +110,20 @@ const CityList = [
                         section: '活动区',
                         items: [
                             './static/images/store/hz01/S1-1.png',
+                            './static/images/store/hz01/S1-2.png',
                         ]
                     },
                     {
                         section: '住宿区',
                         items: [
-                            './static/images/store/hz01/S1-2.png',
+                            './static/images/store/hz01/S2-1.png',
+                            './static/images/store/hz01/S2-2.png',
                         ]
                     },
                     {
                         section: '周边',
                         items: [
-                            './static/images/store/hz01/S1-3.png',
+                            './static/images/store/hz01/S3-1.png',
                         ]
                     }
                 ]
@@ -334,8 +336,8 @@ const CityList = [
                             './static/images/store/wh06/S1-2.png',
                             './static/images/store/wh06/S1-3.png',
                             './static/images/store/wh06/S1-4.png',
+                            './static/images/store/wh06/S1-5.png',
                             './static/images/store/wh06/S1-6.png',
-                            './static/images/store/wh06/S2-7.png',
                         ]
                     },
                     {
@@ -417,7 +419,7 @@ const CityList = [
                             './static/images/store/wh09/S1-3.png',
                             './static/images/store/wh09/S1-4.png',
                             './static/images/store/wh09/S1-5.png',
-                            './static/images/store/wh09/S2-6.png',
+                            './static/images/store/wh09/S1-6.png',
                         ]
                     },
                     {
@@ -692,7 +694,7 @@ const CityList = [
                         section: '住宿区',
                         items: [
                             './static/images/store/wh17/S2-1.png',
-                            './static/images/store/wh17/S1-3.png',
+                            './static/images/store/wh17/S2-2.png',
                         ]
                     }
                 ]
