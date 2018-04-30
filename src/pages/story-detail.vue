@@ -21,14 +21,15 @@
 </template>
 
 <script>
-    import StoryList from '../data/story-list';
+    import StoryAndNews from '../data/story-list';
 
     export default {
         name: 'story-detail',
         data() {
             const storyId = this.$route.params.id - 1;
+            const storeOrNews = this.$route.params.type === '1' ? 'storyList' : 'newsList';
             return {
-                storyModel: StoryList[storyId]
+                storyModel: StoryAndNews[storeOrNews][storyId]
             };
         },
         mounted() {

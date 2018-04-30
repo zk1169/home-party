@@ -12,8 +12,8 @@
                     <div flex="60" flex-xs="100" class="text-wrap" layout="column">
                         <div class="label"><span>{{item.label}}</span></div>
                         <div class="title">{{item.title}}</div><br>
-                        <div class="content color-grey">{{item.content}}</div>
-                        <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/${item.id}`">查看详情 >></a>
+                        <div class="content color-grey" v-html="item.content"></div>
+                        <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/1/${item.id}`">查看详情 >></a>
                     </div>
                     <div flex style="margin-left: 10px;">
                         <img class="width100" :src="item.cover" alt="">
@@ -26,8 +26,8 @@
                     <div flex class="text-wrap" style="margin-left: 10px;">
                         <div class="label label2"><span>{{item.label}}</span></div>
                         <div class="title">{{item.title}}</div><br>
-                        <div class="content color-grey">{{item.content}}</div>
-                        <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/${item.id}`">查看详情 >></a>
+                        <div class="content color-grey" v-html="item.content"></div>
+                        <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/1/${item.id}`">查看详情 >></a>
                     </div>
                 </div>
             </div>
@@ -40,12 +40,39 @@
                 <a class="btn btn-white block" target="_blank" href="#/store-detail/1/1">查看店铺</a>
             </div>
         </div>
+
+        <div class="section2 text-center">
+            <div v-for="(item, index) in newsList" :key="index">
+                <div class="story-item" layout="row" layout-wrap v-if="index%2===0">
+                    <div flex="60" flex-xs="100" class="text-wrap" layout="column">
+                        <div class="label label2"><span>{{item.label}}</span></div>
+                        <div class="title">{{item.title}}</div><br>
+                        <div class="content color-grey" v-html="item.content"></div>
+                        <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/2/${item.id}`">查看详情 >></a>
+                    </div>
+                    <div flex style="margin-left: 10px;">
+                        <img class="width100" :src="item.cover" alt="">
+                    </div>
+                </div>
+                <div class="story-item" layout="row" layout-wrap v-else>
+                    <div flex="40" flex-xs="100">
+                        <img class="width100" :src="item.cover" alt="">
+                    </div>
+                    <div flex class="text-wrap" style="margin-left: 10px;">
+                        <div class="label label2"><span>{{item.label}}</span></div>
+                        <div class="title">{{item.title}}</div><br>
+                        <div class="content color-grey" v-html="item.content"></div>
+                        <a class="btn btn-primary inline-block" target="_blank" :href="`#/story-detail/2/${item.id}`">查看详情 >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     import HpImage from '../components/hp-image';
-    import StoryList from '../data/story-list';
+    import StoryAndNews from '../data/story-list';
     
     export default {
         name: 'story',
@@ -54,7 +81,8 @@
         },
         data() {
             return {
-                storyList: StoryList
+                storyList: StoryAndNews.storyList,
+                newsList: StoryAndNews.newsList
             };
         },
         mounted() {
@@ -99,6 +127,19 @@
             }
         }
     }
+    // .btn{
+    //     border-color: #999999!important;
+    //     color: #777777!important;
+    // }
+    .btn{
+        border-color: #999999;
+        color: #777777;
+    }
+    // .btn:hover{
+    //   background-color: $primary-color;
+    //   border-color: $primary-color;
+    //   color: #fff;
+    // }
     .pc-app{
         .section{margin-top:60px;}
     }

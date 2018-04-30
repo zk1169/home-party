@@ -58,7 +58,7 @@ let router = new Router({
       component: Story
     },
     {
-      path: '/story-detail/:id',
+      path: '/story-detail/:type/:id',
       name: 'story-detail',
       component: StoryDetail
     },
