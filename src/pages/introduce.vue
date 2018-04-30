@@ -17,23 +17,41 @@
                 <div class="title fs-36">一栋别墅，花样百出</div>
                 <div class="p1 text-l3 fs-18 color-grey">轰趴，是将单一娱乐场地或活动进行集中，在一个空间能体验到不同空间的娱乐项目。消费升级时代的来临，别墅轰趴行业是刚兴起的一个朝阳行业，市场潜力巨大，可成为取代KTV一类的新型娱乐消费场所。现在行业还处于萌芽阶段，红利期将保持很长一段时间，正式进入的最佳时期</div>
             </div>
-            <div class="inline-block">
+            <div class="inline-block" style="max-width: 1440px;width:100%;">
                 <div class="image-wrap" layout="column">
                     <div layout="row" layout-wrap class="image-item">
-                        <div flex="50" flex-xs="100"><img src="../../static/images/s2-1.jpg" alt=""></div>
+                        <div flex="50" flex-xs="100" class="image-c"><img src="../../static/images/s2-1.jpg" alt=""></div>
                         <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-2.jpg" alt=""></div>
                         <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-3.jpg" alt=""></div>
                     </div>
                     <div layout="row" layout-wrap class="image-item">
-                        <div flex="25" flex-xs="50"><img src="../../static/images/s2-4.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="overflow-hidden">
+                            <div class="s5-text" layout="row" layout-align="center center">
+                                <span>场地出租<br><br>餐饮服务</span>
+                            </div>
+                        </div>
+                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-4.jpg" alt=""></div>
                         <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-5.jpg" alt=""></div>
-                        <div flex="50" flex-xs="100" style="padding-left:10px;"><img src="../../static/images/s2-6.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-6.jpg" alt=""></div>
                     </div>
                     <div layout="row" layout-wrap class="image-item">
                         <div flex="25" flex-xs="50"><img src="../../static/images/s2-7.jpg" alt=""></div>
                         <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-8.jpg" alt=""></div>
                         <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-9.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-10.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;">
+                            <div class="s5-text" layout="row" layout-align="center center">
+                                <span>场地出租<br><br>餐饮服务</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="25" flex-xs="50" class="overflow-hidden"><img src="../../static/images/s2-10.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;">
+                            <div class="s5-text" layout="row" layout-align="center center">
+                                <span>场地出租<br><br>餐饮服务</span>
+                            </div>
+                        </div>
+                        <div flex="50" flex-xs="100" style="padding-left:10px;"><img src="../../static/images/s2-11.jpg" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -91,7 +109,7 @@
             return {
                 carouselList: [
                     './static/images/i-s1.jpg',
-                    './static/images/i-s1.jpg'
+                    './static/images/i-s2.jpg'
                 ],
             };
         },
@@ -106,12 +124,25 @@
 
 <style lang="scss" scoped>
     @import '../styles/var';
+    .s5-text{
+        height:270px;
+        // width:353px;
+        background-color: $primary-color;
+        color: #fff;
+        font-size: 2.4rem;
+    }
     .section2{
         .image-wrap div{
             overflow: hidden;
         }
+        .image-c{
+            background-color: #D8D8D8;
+        }
         .image-wrap .image-item{
-            margin-top: 3px;
+            margin-top: 10px;
+            img{
+                display: block;
+            }
         }
     }
     .section3{

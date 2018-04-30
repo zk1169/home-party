@@ -75,10 +75,10 @@
 
         <div class="section5 section text-center">
             <div class="title fs-36">多元化盈利模式</div>
-            <div class="inline-block">
+            <div class="inline-block" style="max-width: 1440px;width:100%;">
                 <div class="image-wrap" layout="column">
                     <div layout="row" layout-wrap class="image-item">
-                        <div flex="50" flex-xs="100" class="overflow-hidden"><img src="../../static/images/b-s4-1.jpg" alt=""></div>
+                        <div flex="50" flex-xs="100" class="overflow-hidden image-c"><img src="../../static/images/b-s4-1.jpg" alt=""></div>
                         <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;"><img src="../../static/images/b-s4-2.jpg" alt=""></div>
                         <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;">
                             <div class="s5-text" layout="row" layout-align="center center">
@@ -94,7 +94,7 @@
                         <div flex="50" flex-xs="100" class="overflow-hidden" style="padding-left:10px;"><img src="../../static/images/b-s4-4.jpg" alt=""></div>
                     </div>
                     <div layout="row" layout-wrap class="image-item">
-                        <div flex="50" flex-xs="100" class="overflow-hidden"><img src="../../static/images/b-s4-5.jpg" alt=""></div>
+                        <div flex="50" flex-xs="100" class="overflow-hidden image-c"><img src="../../static/images/b-s4-5.jpg" alt=""></div>
                         <div flex="25" flex-xs="100" style="padding-left:10px;" class="overflow-hidden">
                             <div class="s5-text overflow-hidden" layout="row" layout-align="center center">
                                 <span>内容电商<br><br>广告收入</span>
@@ -314,15 +314,21 @@
     .section5{
         .image-wrap{
             margin-top: 30px;
+            .image-c{
+                background-color: #D8D8D8;
+            }
             .s5-text{
                 height:270px;
-                width:353px;
+                // width:353px;
                 background-color: $primary-color;
                 color: #fff;
                 font-size: 2.4rem;
             }
             .image-item{
-                margin-top: 5px;
+                margin-top: 10px;
+                img{
+                    display: block;
+                }
             }
         }
     }

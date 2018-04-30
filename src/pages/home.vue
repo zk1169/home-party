@@ -18,7 +18,7 @@
         </div>
         <div class="section2 section2-fixed relative">
             <div class="section2-1 relative text-center">
-                <hp-image src="./static/images/index-carousel-2.jpg" alt=""></hp-image>
+                <hp-image src="./static/images/h-s2.jpg" alt=""></hp-image>
                 <div class="s21-text-wrap image-text-wrap" layout="column" layout-align="center center">
                     <div class="title">轰趴，消费升级时代中的必然产物</div>
                     <div class="p1" layout="row" style="width:80%;">
@@ -237,7 +237,7 @@
                 lastScrollTop: 0,
                 carouselList: [
                     './static/images/index-carousel-1.jpg',
-                    './static/images/index-carousel-1.jpg'
+                    './static/images/index-carousel-2.jpg'
                 ]
             };
         },
