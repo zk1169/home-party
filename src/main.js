@@ -37,6 +37,8 @@ if (!!u.match(/AppleWebKit.*Mobile.*/)) {
     document.getElementsByTagName('html')[0].className = 'pc-app';
 }
 
+// Vue.prototype.isMobile = true;
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

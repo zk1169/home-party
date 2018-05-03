@@ -7,12 +7,12 @@
                 </el-carousel-item>
             </el-carousel>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
-                <img class="logo" src="../../static/images/logo-big.png" alt="" style="width:220px;">
+                <img class="logo" src="../../static/images/logo-big.png" alt="">
                 <span class="s1-text-1 block fs-34">让聚会变得更简单</span>
                 <!-- <span class="s1-text-2 block fs-16">打造中国最懂年轻人的派对连锁品牌</span> -->
                 <a class="s1-btn btn btn-primary bg block" href="#/cooperation">了解加盟合作 >></a>
             </div>
-            <svg class="icon double-caret-down" aria-hidden="true" @click="downClick">
+            <svg class="icon double-caret-down" aria-hidden="true" @click="downClick" v-if="!isMobile">
                 <use xlink:href="#icon-double-caret-down"></use>
             </svg>
         </div>
@@ -23,31 +23,16 @@
                     <div class="title">轰趴，消费升级时代中的必然产物</div>
                     <div class="p1" layout="row" style="width:80%;">
                         <div class="p1-item text-center" flex="1">
-                            <!-- <div class="circle-primary inline-block">
-                                <svg class="icon house fs-40" aria-hidden="true">
-                                    <use xlink:href="#icon-house"></use>
-                                </svg>
-                            </div>  -->
                             <img src="../../static/images/h-s2-1.png" alt="">
                             <div class="title2 text-l2">轰趴</div>
                             <span class="p2 text-l1">将单一娱乐场地或活动进行集中，让人在一个空间能体验多个空间的娱乐</span>
                         </div>
                         <div class="p1-item text-center" flex="1">
-                            <!-- <div class="circle-primary inline-block">
-                                <svg class="icon chance fs-40" aria-hidden="true">
-                                    <use xlink:href="#icon-chance"></use>
-                                </svg>
-                            </div> -->
                             <img src="../../static/images/h-s2-2.png" alt="">
                             <div class="title2 text-l2">行业机遇</div>
                             <span class="p2 text-l1">聚会需求大，市场聚会方式单一，已有的轰趴服务质量不一，极待升级</span>
                         </div>
                         <div class="p1-item text-center" flex="1">
-                            <!-- <div class="circle-primary inline-block">
-                                <svg class="icon conect fs-40" aria-hidden="true">
-                                    <use xlink:href="#icon-conect"></use>
-                                </svg>
-                            </div> -->
                             <img src="../../static/images/h-s2-3.png" alt="">
                             <div class="title2 text-l2">市场环境</div>
                             <span class="p2 text-l1">消费主力年轻化，消费需求的多样化，消费能力水平日渐提高</span>
@@ -158,8 +143,8 @@
                                 <img src="../../static/images/anli4.jpg" alt="">
                             </div>
                         </div>
-                        <div flex="20" flex-xs="100" class="overflow-hidden last-image">
-                            <!-- <img src="../../static/images/anli5.jpg" alt="" class="width100"> -->
+                        <div flex="20" flex-xs="100" class="overflow-hidden" style="height: 460px;">
+                            <img src="../../static/images/anli5.jpg" alt="" class="width100">
                         </div>
                     </div>
                 </div>
@@ -175,7 +160,7 @@
                         <div class="fs-16 color-grey text-l2">毕业于浙江科技大学的阿豪，从小学开始就一个人在老家，成长环境相对自由，所以性格相对大胆喜欢尝试新鲜事物，大三时机缘巧合接触到了轰趴这个行业，凭着年轻人对新鲜事物敏锐的洞察力，阿豪认为轰趴行业拥有势不可挡的商业前景，当下便决定与朋友合作开一家自己的轰趴店。经过考察，阿豪发现，别墅轰趴是消费升级的一种体现，多样化的娱乐方式更好的迎合了当下年轻的主力消费群体，在多方调查后，属于他的第一栋别墅轰趴馆在一个月之后立马开业了…</div>
                         <a class="btn btn-primary block" style="margin-top: 60px;" target="_blank" href="#/story-detail/1">查看详情 >></a>
                     </div>
-                    <div flex class="overflow-hidden" style="margin-left: 10px;">
+                    <div flex flex-xs="100" class="overflow-hidden" style="margin-left: 10px;">
                         <img src="../../static/images/story-1-cover.jpg" alt="">
                     </div>
                 </div>
@@ -476,6 +461,9 @@
                     margin-top: 30px;
                 }
             }
+            .logo{
+                width:220px;
+            }
         }
         .section2-fixed{
             margin-top: 100vh;
@@ -520,6 +508,9 @@
                     margin-top: 20px;
                 }
             }
+            .logo{
+                width:100px;
+            }
         }
         .section2{
             .section2-1{
@@ -528,20 +519,25 @@
                         font-size: 2.4rem;
                     }
                     .p1{
-                        margin-top: 20px;
+                        margin-top: 10px;
                         .p1-item{
+                            padding: 0 3%;
                             .title2{
-                                margin-top: 1rem;
+                                margin-top: 5px;
                                 font-size: 2rem;
                             }
                             .p2{
                                 font-size: 1.4rem;
                                 display: none;
                             }
+                            img{
+                                width: 50px;
+                                height: 50px;
+                            }
                         }
                     }
                     .btn{
-                        margin-top: 20px;
+                        margin-top: 10px;
                     }
                 }
             }
@@ -552,10 +548,22 @@
         .section2-4{
             .body{
                 margin-top: 50px;
+                img{
+                    width: 100%;
+                }
+                .overflow-hidden{
+                    padding: 0!important;
+                }
             }
             .view-all{
                 top: 50px;
                 right: 20px;
+            }
+        }
+        .section2-5 {
+            img{width:100%;}
+            .overflow-hidden{
+                margin-left:0!important;
             }
         }
         .section2-6{

@@ -10,11 +10,11 @@
             <div class="form" flex="60" flex-xs="100">
                 <div class="form-inner">
                     <span class="color-grey">留下您的联系方式，我们将联系你</span>
-                    <input type="text" placeholder="名字"/>
-                    <input type="text" placeholder="电话"/>
-                    <input type="text" placeholder="所在城市"/>
-                    <textarea type="text" rows="3" placeholder="留言"/>
-                    <a class="btn btn-grey">提交</a>
+                    <input type="text" placeholder="名字" v-model="uname"/>
+                    <input type="text" placeholder="电话" v-model="phone"/>
+                    <input type="text" placeholder="所在城市" v-model="area"/>
+                    <textarea type="text" rows="3" placeholder="留言" v-model="suggestion"/>
+                    <a class="btn btn-grey" @click="submitClick">提交</a>
                 </div>
             </div>
             <div class="form-right" flex>
@@ -47,10 +47,16 @@
 </template>
 
 <script>
+    import $ from 'jquery';
     export default {
         name: 'hp-footer',
         data() {
-            return {};
+            return {
+                suggestion: '',
+                phone: '',
+                area: '',
+                uname: ''
+            };
         },
         mounted() {
             // 百度地图API功能
@@ -80,7 +86,29 @@
             map.addOverlay(marker); 
         },
         methods: {
-
+            submitClick() {
+                const url = 'http://mgnpd.com/index.php?s=/Home/Index/add2.html';
+                const data = {
+                    uname: this.uname,
+                    phone: this.phone,
+                    area: this.area,
+                    suggestion: this.suggestion
+                };
+                $.ajax({
+                    dataType: 'x-www-form-urlencoded',
+                    type: "POST",
+                    url,
+                    data,
+                    success: (res) => {
+                        console.log('success');
+                        // debugger;
+                    },
+                    error: (res) => {
+                        console.log('error');
+                        // debugger;
+                    }
+                });
+            }
         },
         computed: {}
     }
