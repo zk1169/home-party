@@ -17,6 +17,9 @@ Vue.config.productionTip = false;
 //   console.log(err);
 // }
 
+const eventBus = new Vue();
+Vue.prototype.$eventHub = eventBus;
+
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);

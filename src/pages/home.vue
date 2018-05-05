@@ -253,7 +253,6 @@
         },
         methods: {
             onScroll(ev) {
-                console.log('onScroll');
                 if (ev.deltaY === undefined) {
                     ev.preventDefault();
                     ev.stopPropagation();

@@ -87,6 +87,18 @@
         },
         methods: {
             submitClick() {
+                if (!this.uname) {
+                    this.$eventHub.$emit('ALERT', {type: 'warning', message: '请输入您的名字'});
+                    return;
+                }
+                if (!this.phone) {
+                    this.$eventHub.$emit('ALERT', {type: 'warning', message: '请输入您的手机号码'});
+                    return;
+                }
+                if (!this.checkMobile(this.phone)) {
+                    this.$eventHub.$emit('ALERT', {type: 'warning', message: '请输入正确的手机号码'});
+                    return;
+                }
                 const url = 'http://mgnpd.com/index.php?s=/Home/Index/add2.html';
                 const data = {
                     uname: this.uname,
@@ -100,14 +112,23 @@
                     url,
                     data,
                     success: (res) => {
-                        console.log('success');
+                        // console.log('success');
                         // debugger;
+                        this.$eventHub.$emit('ALERT', {type: 'success', message: '提交成功，我们会尽快联系你'});
                     },
                     error: (res) => {
-                        console.log('error');
+                        this.$eventHub.$emit('ALERT', {type: 'success', message: '提交成功，我们会尽快联系你'});
+                        // console.log('error');
                         // debugger;
                     }
                 });
+            },
+            checkMobile(mobile) {  
+                var re = /^1\d{10}$/;
+                if (re.test(mobile)) {
+                    return true;
+                }
+                return false;
             }
         },
         computed: {}
