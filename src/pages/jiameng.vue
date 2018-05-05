@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="section2 section text-center">
-            <div class="title fs-36">品牌加盟群权益</div>
+            <div class="title fs-36">品牌加盟权益</div>
             <div class="p1" layout="row" layout-wrap>
                 <div class="p1-item text-center" flex="25" flex-xs="50">
                     <svg class="icon shouquan fs-46" aria-hidden="true">
@@ -83,7 +83,7 @@
                             <li>5年品牌使用权</li>
                             <li>品牌加盟的8大权益</li>
                             <li>总部开业前、开业中、开业后持续的品牌支持</li>
-                            <li>价值2万的别墅设计费用</li>
+                            <li>价值3万的别墅设计费用</li>
                             <li>价值5000元的人员培训费用</li>
                             <li>总部客户共享订单管理系统、会员管理系统，专业人员培训</li>
                             <li>总部全年客户回访，持续专业改进方案</li>
@@ -110,7 +110,7 @@
                             <li>5年品牌使用权</li>
                             <li>品牌加盟的8大权益</li>
                             <li>总部开业前、开业中、开业后持续的品牌支持</li>
-                            <li>价值2万的别墅设计费用</li>
+                            <li>价值3万的别墅设计费用</li>
                             <li>总部客户共享订单管理系统、会员管理系统，专业人员培训</li>
                             <li>总部全年客户回访，持续专业改进方案</li>
                             <li>总部代理经营，共享总部线上线下全部渠道，运营部门配合经营</li>

@@ -93,7 +93,7 @@
         margin-right: 60px;
     }
     .mobile-menu-container {
-        margin-right: 30px;
+        padding-right: 30px;
         height: 60px;
         line-height: 60px;
         .bars{

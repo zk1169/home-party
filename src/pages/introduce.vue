@@ -57,9 +57,9 @@
             </div>
         </div>
         <div class="section3 section text-center">
-            <div class="title fs-36">为什么人们需要新的聚会形式？</div>
+            <!-- <div class="title fs-36">为什么人们需要新的聚会形式？</div> -->
             <img class="s3-image" src="../../static/images/s3-1.jpg" alt="">
-            <div layout="row" class="text-left paragrap">
+            <!-- <div layout="row" class="text-left paragrap">
                 <div flex="50" style="padding-right: 10%;">
                     <div class="fs-24 text-l2">消费主力年轻化</div>
                     <div class="fs-16 text-l2">这批主力更热爱交际活动，愿意在玩和聚会上投入消费，每个人都希望被满足、玩的嗨</div>
@@ -68,7 +68,7 @@
                     <div class="fs-24 text-l2">消费主力年轻化</div>
                     <div class="fs-16 text-l2">这批主力更热爱交际活动，愿意在玩和聚会上投入消费，每个人都希望被满足、玩的嗨</div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="section4 section text-center">
             <!-- <div class="fs-36">国内聚会存在的问题是什么？</div> -->

@@ -25,7 +25,7 @@
                     <svg class="icon location fs-24" aria-hidden="true">
                         <use xlink:href="#icon-location"></use>
                     </svg>
-                    <span class="inline-block">&nbsp;&nbsp;武汉市江夏区光谷大道CBC大厦10层</span>
+                    <span class="inline-block">&nbsp;&nbsp;武汉市光谷CBC大厦10层</span>
                 </div><br>
                 <div>
                     <svg class="icon telphone fs-24" aria-hidden="true">

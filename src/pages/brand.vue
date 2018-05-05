@@ -9,7 +9,7 @@
             </el-carousel> -->
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title">因为更懂年轻人，所以我们受欢迎</div><br>
-                <div class="sub-tilte fs-18">目前华中最大互联网+连锁轰趴品牌</div>
+                <!-- <div class="sub-tilte fs-18">目前华中最大互联网+连锁轰趴品牌</div> -->
                 <a class="btn btn-white block" href="#/cooperation">了解加盟合作</a>
             </div>
         </div>
@@ -22,7 +22,7 @@
                             <use xlink:href="#icon-zuanshi"></use>
                         </svg>
                     </div><br><br>
-                    <div class="fs-24 text-l3">打造中国最专业的派对文化<br>连锁品牌</div>
+                    <div class="fs-24 text-l3">打造中国领先的专业派对文化<br>连锁品牌</div>
                 </div>
                 <div class="p1-item text-center" flex="1">
                     <div class="circle-primary big inline-block">
@@ -30,7 +30,7 @@
                             <use xlink:href="#icon-location-web"></use>
                         </svg>
                     </div><br><br>
-                    <div class="fs-24 text-l3">打造中国最大本地化互联网<br>+轰趴创业联盟</div>
+                    <div class="fs-24 text-l3">打造中国优秀的本地化互联网<br>+轰趴创业联盟</div>
                 </div>
                 <div class="p1-item text-center" flex="1">
                     <div class="circle-primary big inline-block">
@@ -38,7 +38,7 @@
                             <use xlink:href="#icon-lianjie"></use>
                         </svg>
                     </div><br><br>
-                    <div class="fs-24 text-l3">打造中国最大的综合性聚会<br>娱乐平台</div>
+                    <div class="fs-24 text-l3">打造中国领先的综合性聚会<br>娱乐平台</div>
                 </div>
             </div>
         </div>
@@ -53,21 +53,21 @@
                             <use xlink:href="#icon-yizhanshi"></use>
                         </svg><br><br>
                         <div class="fs-24 text-l2">一站式服务</div><br>
-                        <div class="fs-16 text-l1">为客户提供吃、喝、玩、住一站式服务，打造多种娱乐场景的集合，最适合年轻人聚会的轰趴品牌</div>
+                        <div class="fs-16 text-l1">为客户提供吃、喝、玩、住一站式服务，打造多种娱乐场景的集合，更适合年轻人聚会的轰趴品牌</div>
                     </div>
                     <div class="p1-item text-center" flex="1">
                         <svg class="icon dunpai fs-60" aria-hidden="true">
                             <use xlink:href="#icon-dunpai"></use>
                         </svg><br><br>
                         <div class="fs-24 text-l2">标准化管理</div><br>
-                        <div class="fs-16 text-l1">打造轰趴行业标准化管理的行业准则，让客户享受到轰趴行业的五星级服务。</div>
+                        <div class="fs-16 text-l1">打造轰趴行业标准化管理的行业准则，让客户享受到轰趴行业的五星级服务</div>
                     </div>
                     <div class="p1-item text-center" flex="1">
                         <svg class="icon guanjia fs-60" aria-hidden="true">
                             <use xlink:href="#icon-guanjia"></use>
                         </svg><br><br>
                         <div class="fs-24 text-l2">管家式服务</div><br>
-                        <div class="fs-16 text-l1">通过专业化培训，让每位管家=初级厨师+活动策划师+布场达人+轰趴运营专员。</div>
+                        <div class="fs-16 text-l1">通过专业化培训，让每位管家=初级厨师+活动策划师+布场达人+轰趴运营专员</div>
                     </div>
                 </div>
             </div>

@@ -70,7 +70,7 @@
                         <div class="fs-24 title text-l2">多元化盈利</div>
                         <span class="fs-16 text-l2">拓展轰趴周边的盈利模式</span><br>
                         <span class="fs-16 text-l2">挖掘更新鲜的玩法</span><br>
-                        <span class="fs-16 text-l2">最大化盈利</span>
+                        <span class="fs-16 text-l2">多元化盈利</span>
                     </div>
                     <div flex="1" flex-xs="50" class="section2-2-p-item">
                         <svg class="icon zhanlue" aria-hidden="true">
