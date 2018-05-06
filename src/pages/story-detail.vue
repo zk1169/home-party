@@ -3,13 +3,13 @@
         <div class="section1">
             <img :src="storyModel.coverBig" alt="" class="width100"/>
         </div>
-        <div class="section2" layout="row">
-            <div flex="20" layout="column" layout-align="start center">
+        <div class="section2" layout="row" layout-wrap>
+            <div flex="20" flex-xs="100" layout="column" layout-align="start center">
                 <img :src="storyModel.headerImg" alt=""><br>
                 <span class="label fs-16">{{storyModel.label}}</span><br>
                 <span class="fs-16">人物：{{storyModel.storyName}}</span>
             </div>
-            <div flex class="right-content">
+            <div flex="80" flex-xs="100" class="right-content">
                 <div class="title fs-24">{{storyModel.title}}</div>
                 <!-- <div class="content fs-16">{{storyModel.content}}</div> -->
                 <div class="content fs-16 color-grey" v-for="(item, index) in storyModel.paragraph" :key="index" v-html="item">
@@ -72,5 +72,8 @@
     }
     .mobile-app{
         .section{margin-top:30px;}
+        .section2 .right-content{
+            padding: 20px!important;
+        }
     }
 </style>

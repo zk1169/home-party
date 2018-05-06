@@ -30,8 +30,8 @@
         data() {
             return {
                 alertShow: false,
-                alertType: null,
-                alertMsg: null
+                alertType: 'info',
+                alertMsg: ''
             };
         },
         created() {

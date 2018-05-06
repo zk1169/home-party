@@ -52,9 +52,6 @@
 
 <style lang="scss" scoped>
     @import '../styles/var';
-    .section1 .title{
-        margin-bottom: 60px;
-    }
     .store-wrap{
         padding: 0 30px;
         padding-bottom: 50px;
@@ -104,8 +101,15 @@
         border-top: solid 1px #d2d2d2;
         margin-left: 2%;
     }
-    // .pc-app{
-    // }
-    // .mobile-app{
-    // }
+    .pc-app{
+        .section1 .title{
+            margin-bottom: 60px;
+        }
+    }
+    .mobile-app{
+        .section1 .title{
+            font-size: 22px!important;
+            margin-bottom: 10px;
+        }
+    }
 </style>

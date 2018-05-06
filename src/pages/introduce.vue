@@ -21,37 +21,37 @@
                 <div class="image-wrap" layout="column">
                     <div layout="row" layout-wrap class="image-item">
                         <div flex="50" flex-xs="100" class="image-c"><img src="../../static/images/s2-1.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-2.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-3.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-2.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-3.jpg" alt=""></div>
                     </div>
                     <div layout="row" layout-wrap class="image-item">
-                        <div flex="25" flex-xs="50" class="overflow-hidden">
+                        <div flex="25" flex-xs="100" class="overflow-hidden">
                             <div class="s5-text" layout="row" layout-align="center center">
                                 <span>住宿<br><br>健身房<br><br>高尔夫<br><br>桌游房<br><br>桌球室<br><br>KTV</span>
                             </div>
                         </div>
-                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-4.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-5.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-6.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-4.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-5.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-6.jpg" alt=""></div>
                     </div>
                     <div layout="row" layout-wrap class="image-item">
-                        <div flex="25" flex-xs="50"><img src="../../static/images/s2-7.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-8.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/s2-9.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;">
+                        <div flex="25" flex-xs="100"><img src="../../static/images/s2-7.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-8.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-9.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" class="overflow-hidden image-item-padding">
                             <div class="s5-text" layout="row" layout-align="center center">
                                 <span>户外BBQ<br><br>厨房<br><br>XBOX游戏<br><br>麻将房<br><br>私人影院<br><br>VR体验馆</span>
                             </div>
                         </div>
                     </div>
                     <div layout="row" layout-wrap class="image-item">
-                        <div flex="25" flex-xs="50" class="overflow-hidden"><img src="../../static/images/s2-10.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;">
+                        <div flex="25" flex-xs="100" class="overflow-hidden"><img src="../../static/images/s2-10.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" class="overflow-hidden image-item-padding">
                             <div class="s5-text" layout="row" layout-align="center center">
                                 <span>酒吧<br><br>泳池派对<br><br>私人花园，运动场<br><br>会议服务，餐饮服务<br><br>私人主题活动<br><br>团建定制<br>...</span>
                             </div>
                         </div>
-                        <div flex="50" flex-xs="100" style="padding-left:10px;"><img src="../../static/images/s2-11.jpg" alt=""></div>
+                        <div flex="50" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-11.jpg" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                 <div flex="40" flex-xs="100" class="overflow-hidden">
                     <img src="../../static/images/s4-1.jpg" alt="" class="width100">
                 </div>
-                <div flex class="text-right" style="margin-left: 10px;">
+                <div flex class="text-right margin-left-10">
                     <div class="fs-36" style="margin-bottom: 60px;">国内聚会存在的问题是什么？</div>
                     <div class="fs-24 text-l2">服务单一，转场难</div><br>
                     <div class="fs-16 text-l1 color-grey">“每次跟朋友聚会都太单调了，但想玩的丰富点，那就要集体打车换场子，奔波过后，都没心思玩了，而且人多的话更众口难调！”</div><br><br><br><br>
@@ -183,6 +183,9 @@
             .p1{
                 margin-top: 30px;
             }
+            .image-item-padding{
+                padding-left:10px;
+            }
         }
     }
     .mobile-app{
@@ -198,6 +201,12 @@
             .paragrah{padding: 30px 10%};
             .p1{
                 margin-top: 15px;
+            }
+            .image-item-padding{
+                padding-left:0;
+            }
+            .image-wrap .image-item img{
+                width: 100%;
             }
         }
         .section4{

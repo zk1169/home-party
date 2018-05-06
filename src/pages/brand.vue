@@ -15,8 +15,8 @@
         </div>
         <div class="section2 section text-center">
             <div class="title fs-36">我们的愿景</div>
-            <div class="p1" layout="row">
-                <div class="p1-item text-center" flex="1">
+            <div class="p1" layout="row" layout-wrap>
+                <div class="p1-item text-center" flex="1" flex-xs="100">
                     <div class="circle-primary big inline-block">
                         <svg class="icon zuanshi fs-60" aria-hidden="true">
                             <use xlink:href="#icon-zuanshi"></use>
@@ -24,7 +24,7 @@
                     </div><br><br>
                     <div class="fs-24 text-l3">打造中国领先的专业派对文化<br>连锁品牌</div>
                 </div>
-                <div class="p1-item text-center" flex="1">
+                <div class="p1-item text-center" flex="1" flex-xs="100">
                     <div class="circle-primary big inline-block">
                         <svg class="icon location-web fs-60" aria-hidden="true">
                             <use xlink:href="#icon-location-web"></use>
@@ -32,7 +32,7 @@
                     </div><br><br>
                     <div class="fs-24 text-l3">打造中国优秀的本地化互联网<br>+轰趴创业联盟</div>
                 </div>
-                <div class="p1-item text-center" flex="1">
+                <div class="p1-item text-center" flex="1" flex-xs="100">
                     <div class="circle-primary big inline-block">
                         <svg class="icon lianjie fs-60" aria-hidden="true">
                             <use xlink:href="#icon-lianjie"></use>
@@ -47,27 +47,27 @@
             <hp-image src="./static/images/b-s3.jpg" alt=""></hp-image>
             <div class="s4-text-wrap image-text-wrap" layout="column" layout-align="start center">
                 <div class="title fs-36">我们的品牌宗旨</div>
-                <div class="p1" layout="row">
+                <div class="p1" layout="row" layout-wrap>
                     <div class="p1-item text-center" flex="1">
                         <svg class="icon yizhanshi fs-60" aria-hidden="true">
                             <use xlink:href="#icon-yizhanshi"></use>
                         </svg><br><br>
                         <div class="fs-24 text-l2">一站式服务</div><br>
-                        <div class="fs-16 text-l1">为客户提供吃、喝、玩、住一站式服务，打造多种娱乐场景的集合，更适合年轻人聚会的轰趴品牌</div>
+                        <div class="fs-16 text-l1" v-if="!isMobile">为客户提供吃、喝、玩、住一站式服务，打造多种娱乐场景的集合，更适合年轻人聚会的轰趴品牌</div>
                     </div>
                     <div class="p1-item text-center" flex="1">
                         <svg class="icon dunpai fs-60" aria-hidden="true">
                             <use xlink:href="#icon-dunpai"></use>
                         </svg><br><br>
                         <div class="fs-24 text-l2">标准化管理</div><br>
-                        <div class="fs-16 text-l1">打造轰趴行业标准化管理的行业准则，让客户享受到轰趴行业的五星级服务</div>
+                        <div class="fs-16 text-l1" v-if="!isMobile">打造轰趴行业标准化管理的行业准则，让客户享受到轰趴行业的五星级服务</div>
                     </div>
                     <div class="p1-item text-center" flex="1">
                         <svg class="icon guanjia fs-60" aria-hidden="true">
                             <use xlink:href="#icon-guanjia"></use>
                         </svg><br><br>
                         <div class="fs-24 text-l2">管家式服务</div><br>
-                        <div class="fs-16 text-l1">通过专业化培训，让每位管家=初级厨师+活动策划师+布场达人+轰趴运营专员</div>
+                        <div class="fs-16 text-l1" v-if="!isMobile">通过专业化培训，让每位管家=初级厨师+活动策划师+布场达人+轰趴运营专员</div>
                     </div>
                 </div>
             </div>
@@ -79,28 +79,28 @@
                 <div class="image-wrap" layout="column">
                     <div layout="row" layout-wrap class="image-item">
                         <div flex="50" flex-xs="100" class="overflow-hidden image-c"><img src="../../static/images/b-s4-1.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;"><img src="../../static/images/b-s4-2.jpg" alt=""></div>
-                        <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;">
+                        <div flex="25" flex-xs="100" class="overflow-hidden image-item-padding"><img src="../../static/images/b-s4-2.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" class="overflow-hidden image-item-padding">
                             <div class="s5-text" layout="row" layout-align="center center">
                                 <span>场地出租<br><br>餐饮服务</span>
                             </div>
                         </div>
                     </div>
                     <div layout="row" layout-wrap class="image-item">
-                        <div flex="25" flex-xs="50" class="s5-text overflow-hidden" layout="row" layout-align="center center">
+                        <div flex="25" flex-xs="100" class="s5-text overflow-hidden" layout="row" layout-align="center center">
                             <span>产品销售<br><br>主题活动</span>
                         </div>
-                        <div flex="25" flex-xs="50" class="overflow-hidden" style="padding-left:10px;"><img src="../../static/images/b-s4-3.jpg" alt=""></div>
-                        <div flex="50" flex-xs="100" class="overflow-hidden" style="padding-left:10px;"><img src="../../static/images/b-s4-4.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" class="overflow-hidden image-item-padding"><img src="../../static/images/b-s4-3.jpg" alt=""></div>
+                        <div flex="50" flex-xs="100" class="overflow-hidden image-item-padding"><img src="../../static/images/b-s4-4.jpg" alt=""></div>
                     </div>
                     <div layout="row" layout-wrap class="image-item">
                         <div flex="50" flex-xs="100" class="overflow-hidden image-c"><img src="../../static/images/b-s4-5.jpg" alt=""></div>
-                        <div flex="25" flex-xs="100" style="padding-left:10px;" class="overflow-hidden">
+                        <div flex="25" flex-xs="100" class="overflow-hidden image-item-padding">
                             <div class="s5-text overflow-hidden" layout="row" layout-align="center center">
                                 <span>内容电商<br><br>广告收入</span>
                             </div>
                         </div>
-                        <div flex="25" flex-xs="50" style="padding-left:10px;"><img src="../../static/images/b-s4-6.jpg" alt=""></div>
+                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/b-s4-6.jpg" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
                         <div class="fs-18 color-grey">装修：专业的装修团队，优质的材料与设备供应渠道，打造主题鲜明性价比一流的轰趴馆<br>定制：每月主题活动派对，专业布场，打造特色活动IP，创造粉丝效益，建立行业壁垒</div>
                     </div>
                 </div>
-                <div flex style="margin-left: 10px;">
+                <div flex class="margin-left-10">
                     <img class="width100" src="../../static/images/b-s7-1.jpg" alt="">
                 </div>
             </div>
@@ -128,7 +128,7 @@
                 <div flex="40" flex-xs="100">
                     <img class="width100" src="../../static/images/b-s7-2.jpg" alt="">
                 </div>
-                <div flex class="text-wrap" layout="column" layout-align="center center" style="margin-left: 10px;">
+                <div flex class="text-wrap margin-left-10" layout="column" layout-align="center center">
                     <div class="text-left">
                         <div class="fs-24">3大核心：服务+SEO+地推</div><br>
                         <div class="fs-18 color-grey">服务：一流的管理团队及培训体系，标准化的服务流程，完善的售后回访机制，以服务打动客户<br>SEO：强大的SEO推广团队，全渠道推广，海量曝光和优质口碑集群，强大的业务壁垒<br>地推：狼性的地推团队，强大的地推网络，完善的校园以及地域合伙人制度</div>
@@ -331,6 +331,9 @@
                 }
             }
         }
+        .image-item-padding{
+            padding-left:10px;
+        }
     }
     .section6{
         .title{
@@ -379,6 +382,35 @@
                 margin-top: 15px;
             }
         }
+        .section4{
+            .s4-text-wrap{
+                margin-top: 10px;
+                .title{
+                    margin-bottom:10px;
+                }
+            }
+            .p1{
+                width: 100%;
+            }
+            .p1-item{
+                padding: 0;
+                svg{
+                    font-size: 40px!important;
+                }
+                div{
+                    font-size: 18px!important;
+                }
+            }
+        }
+        .section5{
+            .image-item img{
+                width: 100%;
+            }
+            .image-item-padding{
+                padding-left:0;
+            }
+        }
+
     }
     .team-container{
         height: 500px;

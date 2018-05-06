@@ -9,25 +9,30 @@
         <div class="section2 text-center">
             <div v-for="(item, index) in storyList" :key="index">
                 <div class="story-item" layout="row" layout-wrap v-if="index%2===0">
-                    <div flex="60" flex-xs="100" class="text-wrap" layout="column">
-                        <div class="label"><span>{{item.label}}</span></div>
-                        <div class="title">{{item.title}}</div><br>
-                        <div class="content color-grey" v-html="item.content"></div>
-                        <a class="btn btn-primary inline-block btn-story" target="_blank" :href="`#/story-detail/1/${item.id}`">查看详情 >></a>
+                    <div flex="60" flex-xs="100">
+                        <div class="text-wrap" layout="column">
+                            <div class="label"><span>{{item.label}}</span></div>
+                            <div class="title">{{item.title}}</div><br>
+                            <div class="content color-grey" v-html="item.content"></div>
+                            <a class="btn btn-primary inline-block btn-story" target="_blank" :href="`#/story-detail/1/${item.id}`">查看详情 >></a>
+                        </div>
                     </div>
-                    <div flex style="margin-left: 10px;">
-                        <img class="width100" :src="item.cover" alt="">
+                    <div flex="40" flex-xs="100">
+                        <img class="width100 margin-left-10" :src="item.cover" alt="">
                     </div>
                 </div>
                 <div class="story-item" layout="row" layout-wrap v-else>
                     <div flex="40" flex-xs="100">
                         <img class="width100" :src="item.cover" alt="">
                     </div>
-                    <div flex class="text-wrap" style="margin-left: 10px;">
-                        <div class="label label2"><span>{{item.label}}</span></div>
-                        <div class="title">{{item.title}}</div><br>
-                        <div class="content color-grey" v-html="item.content"></div>
-                        <a class="btn btn-primary inline-block btn-story" target="_blank" :href="`#/story-detail/1/${item.id}`">查看详情 >></a>
+                    <div flex="60" flex-xs="100">
+                        <div class="margin-left-10 text-wrap">
+                            <div class="label label2"><span>{{item.label}}</span></div>
+                            <div class="title">{{item.title}}</div><br>
+                            <div class="content color-grey" v-html="item.content"></div>
+                            <a class="btn btn-primary inline-block btn-story" target="_blank" :href="`#/story-detail/1/${item.id}`">查看详情 >></a>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -36,7 +41,7 @@
         <div class="section3 relative">
             <hp-image src="./static/images/sd-s1.jpg" :has-cover="false" alt=""></hp-image>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
-                <div class="title fs-47">初夏5月，苏州太湖高大上新店开业</div><br>
+                <div class="title">初夏5月，苏州太湖高大上新店开业</div><br>
                 <a class="btn btn-white block" target="_blank" href="#/store-detail/1/1">查看店铺</a>
             </div>
         </div>
@@ -44,25 +49,29 @@
         <div class="section2 text-center">
             <div v-for="(item, index) in newsList" :key="index">
                 <div class="story-item" layout="row" layout-wrap v-if="index%2===0">
-                    <div flex="60" flex-xs="100" class="text-wrap" layout="column">
-                        <div class="label label2"><span>{{item.label}}</span></div>
-                        <div class="title">{{item.title}}</div><br>
-                        <div class="content color-grey" v-html="item.content"></div>
-                        <a class="btn btn-primary inline-block btn-story" target="_blank" :href="`#/story-detail/2/${item.id}`">查看详情 >></a>
+                    <div flex="60" flex-xs="100">
+                        <div class="text-wrap" layout="column">
+                            <div class="label label2"><span>{{item.label}}</span></div>
+                            <div class="title">{{item.title}}</div><br>
+                            <div class="content color-grey" v-html="item.content"></div>
+                            <a class="btn btn-primary inline-block btn-story" target="_blank" :href="`#/story-detail/2/${item.id}`">查看详情 >></a>
+                        </div>
                     </div>
-                    <div flex style="margin-left: 10px;">
-                        <img class="width100" :src="item.cover" alt="">
+                    <div flex="40" flex-xs="100">
+                        <img class="width100 margin-left-10" :src="item.cover" alt="">
                     </div>
                 </div>
                 <div class="story-item" layout="row" layout-wrap v-else>
                     <div flex="40" flex-xs="100">
                         <img class="width100" :src="item.cover" alt="">
                     </div>
-                    <div flex class="text-wrap" style="margin-left: 10px;">
-                        <div class="label label2"><span>{{item.label}}</span></div>
-                        <div class="title">{{item.title}}</div><br>
-                        <div class="content color-grey" v-html="item.content"></div>
-                        <a class="btn btn-primary inline-block btn-story" target="_blank" :href="`#/story-detail/2/${item.id}`">查看详情 >></a>
+                    <div flex="60" flex-xs="100">
+                        <div class="margin-left-10 text-wrap">
+                            <div class="label label2"><span>{{item.label}}</span></div>
+                            <div class="title">{{item.title}}</div><br>
+                            <div class="content color-grey" v-html="item.content"></div>
+                            <a class="btn btn-primary inline-block btn-story" target="_blank" :href="`#/story-detail/2/${item.id}`">查看详情 >></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -103,6 +112,7 @@
             line-height: 36px;
             text-align: left;
             padding: 60px 100px 30px 100px;
+            height: 100%;
             .label span{
                 display: inline-block;
                 padding: 0px 20px; 
@@ -142,8 +152,17 @@
     // }
     .pc-app{
         .section{margin-top:60px;}
+        .section3 .title{
+            font-size: 4.6rem;
+        }
     }
     .mobile-app{
         .section{margin-top:30px;}
+        .section2 .text-wrap{
+            padding: 20px 30px 10px 30px;
+        }
+        .section3 .title{
+            font-size: 2.4rem;
+        }
     }
 </style>

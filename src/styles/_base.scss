@@ -247,6 +247,12 @@ html,body {
         height: calc(100vh - 60px)!important;
     }
     .section{margin-top:60px;}
+    .padding-left-10{
+      padding-left: 10px;
+    }
+    .margin-left-10{
+      margin-left: 10px;
+    }
 }
 .mobile-app{
     .section{margin-top:30px;}
@@ -262,5 +268,11 @@ html,body {
     .el-carousel__container, .s1-image img, .el-carousel__container img{
         height: 300px!important;
         width: auto;
+    }
+    .padding-left-10{
+      padding-left: 0;
+    }
+    .margin-left-10{
+      margin-left: 0;
     }
 }

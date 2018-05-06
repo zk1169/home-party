@@ -66,8 +66,8 @@
 
         <div class="section4 text-center">
             <div class="title fs-36">加盟方式</div>
-            <div class="body" layout="row" layout-align="center center">
-                <div flex="40" class="s5-item">
+            <div class="body" layout="row" layout-align="center center" layout-wrap>
+                <div flex="40" flex-xs="100" class="s5-item">
                     <div class="title">
                         <svg class="icon jiameng fs-28" aria-hidden="true">
                             <use xlink:href="#icon-jiameng"></use>
@@ -93,8 +93,8 @@
                         <a class="btn btn-primary bg" style="border-radius:0;cursor: default;">5万加盟费 +5万保证金+3%服务费</a>
                     </div>
                 </div>
-                <div flex="5"></div>
-                <div flex="40" class="s5-item">
+                <div flex="5" flex-xs="0"></div>
+                <div flex="40" flex-xs="100" class="s5-item">
                     <div class="title">
                         <svg class="icon tuoguan fs-28" aria-hidden="true">
                             <use xlink:href="#icon-tuoguan"></use>
@@ -211,7 +211,7 @@
         .section{margin-top:30px;}
         .s1-text-wrap{
             .title{
-                font-size: 3rem;
+                font-size: 2rem;
             }
             .btn{
                 margin-top: 30px;
@@ -221,6 +221,9 @@
             .paragrah{padding: 30px 10%};
             .p1 .p1-item{
                 margin-top: 15px;
+                .text-l3{
+                    font-size: 1.8rem!important;
+                }
             }
         }
         .section4{
