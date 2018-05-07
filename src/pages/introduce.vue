@@ -86,7 +86,7 @@
             </div>
         </div>
         <div class="section4 section text-center">
-            <div class="fs-36">市场潜力分析</div><br>
+            <!-- <div class="fs-36">市场潜力分析</div><br> -->
             <img class="width100" src="../../static/images/s5-1.jpg" alt="">
         </div>
     </div>
@@ -148,7 +148,7 @@
     }
     .section3{
         .s3-image{
-            width: 70%;
+            width: 100%;
             margin: 30px 0;
         }
         .paragrap{
