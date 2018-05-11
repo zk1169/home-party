@@ -104,7 +104,7 @@
                     uname: this.uname,
                     phone: this.phone,
                     area: this.area,
-                    suggestion: this.suggestion
+                    liuyan: this.suggestion
                 };
                 $.ajax({
                     dataType: 'x-www-form-urlencoded',
