@@ -91,7 +91,7 @@
                         <div layout="column" layout-align="start center">
                             <div class="text-left">
                                 <span class="fs-18" style="line-height: 25px;">已有加盟店</span><br>
-                                <span class="fs-36" style="line-height: 50px;">18个</span>
+                                <span class="fs-36" style="line-height: 50px;">27个</span>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                         <div layout="column" layout-align="start center">
                             <div class="text-left">
                                 <span class="fs-18" style="line-height: 25px;">已入驻</span><br>
-                                <span class="fs-36" style="line-height: 50px;">3个城市</span>
+                                <span class="fs-36" style="line-height: 50px;">5个城市</span>
                             </div>
                         </div>
                     </div>
@@ -158,10 +158,10 @@
                         <!-- <div class="fs-24">武汉第一个加盟商的经历</div><br> -->
                         <div class="fs-24">因为不甘平庸，所以一直在路上</div><br>
                         <div class="fs-16 color-grey text-l2">毕业于浙江科技大学的阿豪，从小学开始就一个人在老家，成长环境相对自由，所以性格相对大胆喜欢尝试新鲜事物，大三时机缘巧合接触到了轰趴这个行业，凭着年轻人对新鲜事物敏锐的洞察力，阿豪认为轰趴行业拥有势不可挡的商业前景，当下便决定与朋友合作开一家自己的轰趴店。经过考察，阿豪发现，别墅轰趴是消费升级的一种体现，多样化的娱乐方式更好的迎合了当下年轻的主力消费群体，在多方调查后，属于他的第一栋别墅轰趴馆在一个月之后立马开业了…</div>
-                        <a class="btn btn-primary block" style="margin-top: 60px;" target="_blank" href="#/story-detail/1">查看详情 >></a>
+                        <a class="btn btn-primary block" style="margin-top: 60px;" target="_blank" href="#/story-detail/1/1">查看详情 >></a>
                     </div>
                     <div flex flex-xs="100" class="overflow-hidden" style="margin-left: 10px;">
-                        <img src="../../static/images/story-1-cover.jpg" alt="">
+                        <img src="../../static/images/story-1-cover.jpg" alt="" class="width100">
                     </div>
                 </div>
             </div>
@@ -172,7 +172,7 @@
                     <div flex="1" flex-xs="100" class="comment-item">
                         <img src="../../static/images/customer1.png" alt=""><br><br>
                         <span class="fs-24 text-l2">周子周</span><br>
-                        <span class="fs-16 text-l2">我是用来接亲的，朋友晚上过去的都说这套别墅太棒了，好多朋友都吹捧，感觉背有面😄😄婚礼配上欧式风格高大上，我的眼光真不错，感谢慢姑娘别墅提供给我这么优秀的地方，我会向朋友大力推进哦</span>
+                        <span class="fs-16 text-l2">我是用来接亲的，朋友晚上过去的都说这套别墅太棒了，好多朋友都吹捧，倍儿有感觉😄😄婚礼配上欧式风格高大上，我的眼光真不错，感谢慢姑娘别墅提供给我这么优秀的地方，我会向朋友大力推荐哦</span>
                     </div>
                     <div flex="1" flex-xs="100" class="comment-item">
                         <img src="../../static/images/customer2.png" alt=""><br><br>

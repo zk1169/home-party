@@ -5,7 +5,7 @@
         </div>
         <div class="section2" layout="row" layout-wrap>
             <div flex="20" flex-xs="100" layout="column" layout-align="start center">
-                <img :src="storyModel.headerImg" alt=""><br>
+                <img :src="storyModel.headerImg" alt="" style="width: 130px;"><br>
                 <span class="label fs-16">{{storyModel.label}}</span><br>
                 <span class="fs-16">人物：{{storyModel.storyName}}</span>
             </div>
