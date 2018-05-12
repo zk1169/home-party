@@ -4,21 +4,9 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 var Log = require('log');
 var log = new Log();
-// var util = require('util');
-var query = require('./mysql-pool');
+// var query = require('./models/mysql-pool');
 
 var app = express();
-
-// var mysql      = require('mysql');
-// var connection = mysql.createConnection({
-//   host     : 'localhost',
-//   port     : '3306',
-//   user     : 'root',
-//   password : 'root',
-//   database : 'steel'
-// });
- 
-// connection.connect();
 
 app.use(bodyParser.json({
     limit: '5mb'
@@ -39,6 +27,18 @@ router.use(function(req, res, next) {
     console.log('Something is happening.');
     next(); // make sure we go to the next routes and don't stop here
 });
+
+const response = (res, data, err) => {
+    responseObj = {};
+    if (err) {
+        responseObj.status = false;
+        responseObj.data = err;
+    } else {
+        responseObj.status = true;
+        responseObj.data = data;
+    }
+    res.json(responseObj);
+}
 
 router.route('/bears')
     // create a bear (accessed at POST http://localhost:8080/api/bears)
@@ -63,11 +63,10 @@ router.route('/bears/:bear_id')
 
     // get the bear with that id (accessed at GET http://localhost:8080/api/bears/:bear_id)
     .get(function(req, res) {
-        query("select * from t_user where id=?", [4], function(err,results,fields){  
-            //do something  
-            res.json(results);
-        });
-        // res.json({ message: 'get a bear' });
+        var ConfigModel = require('./models/config.model');
+        var configModel = new ConfigModel();
+        configModel.field = 'store_num';
+        configModel.getConfig(results => response(res, results), err => response(res, null, err));
     })
 
     // update the bear with this id (accessed at PUT http://localhost:8080/api/bears/:bear_id)
@@ -92,23 +91,6 @@ router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });   
 });
 
-// app.get('/gtest', function(req, res) {
-//     console.log('cloud');
-//     //log.debug(req.query);
-//     log.error('cloud');
-//     log.debug(req.body);
-//     log.debug(req.params);
-//     // res.status(200).send('get cloud');
- 
-//     connection.query('SELECT * from t_user', function (error, results, fields) {
-//     if (error) throw error;
-//         // console.log('The solution is: ', results);
-//         res.status(200).send(results);
-//     });
-    
-//     // connection.end();
-// });
-
 app.use('/api', router);
 
 process.on('uncaughtException', function(error) {
@@ -116,5 +98,5 @@ process.on('uncaughtException', function(error) {
 });
 
 app.listen(4200, function() {
-    log.debug("listen 3000...");
+    log.debug("listen 4200...");
 });

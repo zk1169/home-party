@@ -2,25 +2,28 @@ var mysql=require("mysql");
 var pool = mysql.createPool({  
     host     : 'localhost',
     port     : '3306',
-    user     : 'root',
-    password : 'root',
-    database : 'steel'
+    user     : 'mgn',
+    password : 'bn6HpSxbru9oaUzN',
+    database : 'mgn'
 });  
   
-var query=function(sql,options,callback){  
+var query=function(sql,options,success, error){
     pool.getConnection(function(err,conn){  
         if(err){  
-            callback(err,null,null);  
+            error(err);  
         }else{  
             conn.query(sql,options,function(err,results,fields){  
                 //释放连接  
                 conn.release();  
-                //事件驱动回调  
-                callback(err,results,fields);  
+                if (err) {
+                    error(err);
+                } else {
+                    //事件驱动回调  
+                    success(results);
+                }
             });  
         }  
     });  
 };
 
-// export default query;
 module.exports = query;
