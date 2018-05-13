@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./index.scss']
 })
 export class DashboardComponent {
+  private menuShow: Boolean;
+
+  private logOut() {
+    debugger;
+  }
 }

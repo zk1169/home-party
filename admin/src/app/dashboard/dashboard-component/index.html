@@ -1,3 +1,47 @@
 <section>
-    <router-outlet></router-outlet>
+    <div class="dashboard-component" layout="row">
+            <div class="dashboard-left" [class.dashboard-left-nav-show]="menuShow">
+                <div class="left-side-top">
+        
+                </div>
+                <div>
+                    <div class="text-right">
+                        <span class="collapse-nav text-center" (click)="menuShow=!menuShow">
+                            <svg class="icon caret-right" aria-hidden="true">
+                                <use xlink:href="#icon-caret-right"></use>
+                            </svg>
+                        </span>
+                    </div>
+                    <ul>
+                        <li class="menu-item" routerLink="/dashboard/home" routerLinkActive="checked">
+                            <a>
+                                <svg class="icon bars" aria-hidden="true">
+                                    <use xlink:href="#icon-bars"></use>
+                                </svg>
+                                <span *ngIf="menuShow" class="menu-text">反馈列表</span>
+                            </a>
+                        </li>
+                        <li class="menu-item" routerLink="/dashboard/home2" routerLinkActive="checked">
+                            <a routerLink="/dashboard/hot-list">
+                                <svg class="icon bars" aria-hidden="true">
+                                    <use xlink:href="#icon-bars"></use>
+                                </svg>
+                                <span *ngIf="menuShow" class="menu-text">热门话题</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dashboard-right" flex [class.dashboard-right-nav-show]="menuShow">
+                <div class="dashboard-header" layout="row" layout-align="end center">
+                    <span>Admin</span>
+                    <a (click)="logOut()">
+                        <svg class="icon bars" aria-hidden="true">
+                            <use xlink:href="#icon-bars"></use>
+                        </svg>
+                    </a>
+                </div>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
 </section>

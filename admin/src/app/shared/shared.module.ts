@@ -1,7 +1,8 @@
-// import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
+import { MatButtonModule, MatCheckboxModule,MatInputModule } from '@angular/material';
 
 import { ZkButtonComponent } from './components/button-component';
 import { ZkCheckboxComponent } from './components/checkbox-component';
@@ -11,7 +12,11 @@ import { ZkBusyDirective } from './directives/busy.directive';
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule
+    CommonModule,
+    FormsModule,
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatInputModule
   ],
   declarations: [
     ZkButtonComponent,
@@ -21,6 +26,9 @@ import { ZkBusyDirective } from './directives/busy.directive';
     ZkBusyDirective,
   ],
   exports: [
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatInputModule,
     CommonModule,
     FormsModule,
     ZkButtonComponent,

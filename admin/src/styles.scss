@@ -5,9 +5,24 @@
 // @import './styles/index';
 
 @import './styles/flex';
+@import './styles/utilities';
 
 body {
     // font-size: 62.5%;
     margin: 0px;
     padding: 0px;
 }
+
+ul,
+ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }

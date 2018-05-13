@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HttpModule, JsonpModule, Http } from '@angular/http';
 
-import { MatButtonModule, MatCheckboxModule,MatInputModule } from '@angular/material';
-
 // import { ComponentModule } from '../components/component.module';
 
 import { SharedModule } from '../shared/shared.module';
@@ -16,10 +14,7 @@ import { SignRoutes } from './sign.routes';
         SignRoutes,
         HttpModule,
         JsonpModule,
-        SharedModule,
-        MatButtonModule, 
-        MatCheckboxModule,
-        MatInputModule
+        SharedModule
     ],
     declarations: [
         SignComponent,
