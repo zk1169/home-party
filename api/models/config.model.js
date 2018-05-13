@@ -1,6 +1,6 @@
 const BaseModel = require('./base.model');
 class ConfigModel extends BaseModel{
-    getConfig(success, error) {
+    getByField(success, error) {
         const sql = `select * from t_config where field='${this.field}'`;
         super.query(sql, null,
             (results) => {

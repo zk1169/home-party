@@ -1,15 +1,25 @@
-var mysql_query = require('./mysql-pool');
+var moment = require('moment');
+const DATE_FORMAT = 'YYYY-MM-DD HH:mm:ss';
+
 class BaseModel{
-    query(sql, options, success, error) {
-        return mysql_query(sql, options, results => success(results), err => error(err));
-    }
 
     toModel(jsonObj) {
         this.id = jsonObj.id;
-        this.c_time = jsonObj.c_time;
-        this.u_time = jsonObj.u_time;
-        // this.c_time = new Date(jsonObj.c_time).toString('yyyy-MM-dd HH:mm:ss');
-        // this.u_time = new Date(jsonObj.u_time).toString('yyyy-MM-dd HH:mm:ss');
+        this.c_time = moment(jsonObj.c_time).format(DATE_FORMAT);
+        this.u_time = moment(jsonObj.u_time).format(DATE_FORMAT);
+    }
+
+    initTime() {
+        this.setUTime();
+        this.setCTime();
+    }
+
+    setUTime() {
+        this.u_time = moment().format(DATE_FORMAT);
+    }
+
+    setCTime() {
+        this.c_time = moment().format(DATE_FORMAT);
     }
 }
 
