@@ -1,0 +1,75 @@
+//
+// Utility classes
+// --------------------------------------------------
+@import './mixins/text-overflow';
+@import './mixins/clearfix';
+@import './mixins/center-block';
+@import './mixins/mixin';
+
+
+// Floats
+// -------------------------
+.clearfix {
+  @include clearfix;
+}
+.center-block {
+  @include center-block;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+// Text
+// -------------------------
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-overflow {
+  @include text-overflow;
+}
+
+// Display
+// -------------------------
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.inline {
+  display: inline;
+}
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+
+// Position
+// -------------------------
+//定位全屏
+.allcover{
+  @include allcover;
+}
+//定位上下左右居中
+.center{
+  @include center;
+}
+//定位上下居中
+.ct{
+  @include ct;
+}
+//定位水平居中
+.cl{
+  @include cl;
+}

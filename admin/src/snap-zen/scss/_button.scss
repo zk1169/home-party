@@ -1,0 +1,168 @@
+@import './variables';
+
+.snap-zen-btn{
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 15px;
+  line-height: $button-height - 2;
+  height: $button-height;
+  font-size: 14px;
+  vertical-align: middle;
+  border-radius: $border-radius;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid $color-border;
+  background-color: #F5F5F5;
+  color: #555;
+
+  &:hover{
+    background-color: #fff;
+    text-decoration: none;
+  }
+  &:active{
+    background-color: #EEE;
+  }
+  &.disabled {
+    background: #f5f5f5;
+    color: #d2d2d2;
+    border: 0;
+    cursor: not-allowed;
+  }
+}
+
+.snap-zen-btn.primary{
+  background-color: $color-primary;
+  border-color:$color-primary; 
+  color: #fff;
+  &:hover{
+    border-color: #85BF2E;
+    background-color: #85BF2E;
+  }
+  &:active{
+    border-color: #62981A;
+    background-color: #62981A;
+  }
+  &.disabled {
+    border-color: #62981A;
+    background-color: #62981A;
+    color: #d2d2d2;
+    cursor: not-allowed;
+  }
+}
+
+.snap-zen-btn.warn{
+  background-color: #d14747;
+  border-color: #d14747;
+  color: #fff;
+  &:hover{
+    background-color: #a81a1a;
+    border-color: #a81a1a;
+  }
+  &:active{
+    background-color: #a81a1a;
+    border-color: #a81a1a;
+  }
+  &.disabled {
+    background-color: #a81a1a;
+    border-color: #a81a1a;
+    color: #d2d2d2;
+    cursor: not-allowed;
+  }
+}
+
+.snap-zen-btn.icon{
+  .snap-zen-icon{
+    height: $button-height;
+    line-height: $button-height - 2;
+  }
+  span{
+    vertical-align: top;
+  }
+}
+
+.snap-zen-btn.small{
+  font-size: 12px;
+  & * {
+    font-size: 12px;
+  }
+  height: $button-height-small;
+  line-height: $button-height-small - 2;
+  padding: 0 10px;
+  & .snap-zen-icon{
+    height: $button-height-small;
+    line-height: $button-height-small - 2;
+  }
+}
+.snap-zen-btn.large{
+  font-size: 16px;
+  & * {
+    font-size: 16px;
+  }
+  height: $button-height-large;
+  line-height: $button-height-large - 2;
+  padding: 0 20px;
+  & .snap-zen-icon {
+    height: $button-height-large;
+    line-height: $button-height-large - 2;
+  }
+}
+
+.snap-zen-btn-group{
+  display: inline-block;
+  font-size: 0;
+  & label{
+      display: inline-block;
+  }
+  & label * {
+    font-size: 14px;
+  }
+  /* 使用radio保存选中状态，但是不需要显示*/
+  & label > input[type=radio]{
+      display: none;
+  }
+  & label > .snap-zen-btn{
+      position: relative;
+      margin-left: -1px;
+      padding: 0 15px;
+      border-radius: 0;
+      background: #FFF;
+  }
+  /* 第一个和最后一个需要圆角 */
+  & label:first-child > .snap-zen-btn{
+      border-radius: $border-radius 0 0 $border-radius;
+  }
+  & label:last-child > .snap-zen-btn{
+      border-radius: 0 $border-radius $border-radius 0;
+  }
+  /* 高亮选中的按钮 */
+  & label > input[checked] + .snap-zen-btn,& label > input:checked + .snap-zen-btn{
+      border-color: $gray_555;
+      color: #FFF;
+      background: $gray_555;
+      cursor: default;
+  }
+  & label:hover > .snap-zen-btn{
+      background: #DEF;
+  }
+  & label:hover > input[checked] + .snap-zen-btn,& label:hover > input:checked + .snap-zen-btn{
+      background: $gray_555;
+  }
+}
+
+.snap-zen-btn-group.no-border{
+  .snap-zen-btn{
+    border: none;
+    border-radius: 0!important;
+  }
+}
+
+.snap-zen-btn-group.primary{
+  /* 高亮选中的按钮 */
+  & label > input[checked] + .snap-zen-btn,& label > input:checked + .snap-zen-btn{
+    border-color: $color-primary;
+    background: $color-primary;
+  }
+  & label:hover > input[checked] + .snap-zen-btn,& label:hover > input:checked + .snap-zen-btn{
+    background: $color-primary;
+  }
+}

@@ -1,0 +1,39 @@
+{
+    "app": {
+        "zh":"中文",
+        "en":"英文",
+        "articles": "动态",
+        "welcome": "欢迎你",
+        "logout": "退出",
+        "login": "登录",
+        "register": "注册",
+        "doc": "官方文档{{p1}} {{p2}}",
+        "console": "管理后台"
+    },
+    "login":{
+        "login":"登录",
+        "loginUser":"用户名",
+        "password":"密码",
+        "keepLogin":"保持登陆",
+        "createNewUser":"创建新账号",
+        "forgetPassword":"忘记密码"
+    },
+    "menu":{
+        "index":"总览",
+        "bookingTable":"预约",
+        "order":"订单",
+        "orderList":"订单列表",
+        "sales":"营销",
+        "memberList":"会员",
+        "product":"项目",
+        "settingsMore":"更多设置",
+        "updatePwd":"修改密码",
+        "loginOut":"退出"
+    },
+    "search": "搜索",
+    "submit": "提交",
+    "firstPage": "首页",
+    "lastPage": "末页",
+    "previousPage": "上一页",
+    "nextPage": "下一页"
+}

@@ -1,0 +1,24 @@
+.sign-component {
+  height: 100vh;
+  width: 100%;
+  background-image: url('../../../assets/images/sign-bg.jpg');
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  .banner {
+    height: 90px;
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .bg-video {
+    width: 100%;
+  }
+  .bg-image {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+}

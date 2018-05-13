@@ -1,0 +1,15 @@
+@import '../../../../snap-zen/scss/mixins/triangle';
+.zk-select{
+    position: relative;
+    .select-content{
+        height: 30px;
+        border: solid 1px #ccc;
+    }
+    .select-content::after{
+        @include triangle(bottom, 5px , #333);
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translate(0%, -50%);
+    }
+}

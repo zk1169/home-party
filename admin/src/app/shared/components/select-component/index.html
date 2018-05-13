@@ -1,0 +1,8 @@
+<div class="zk-select">
+    <div class="select-content">{{selected}}</div>
+    <div class="select-source" *ngIf="showSource">
+        <div *ngFor="let item of source" class="source-item">
+            {{item[displayField]}}
+        </div>
+    </div>
+</div>

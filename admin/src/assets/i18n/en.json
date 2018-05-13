@@ -1,0 +1,39 @@
+{
+    "app":{
+        "zh":"chinese",
+        "en":"english",
+        "welcome":"Welcome",
+        "logout":"Logout",
+        "login":"Login",
+        "register":"Register",
+        "articles":"Articles",
+        "doc":"Document",
+        "console":"Console"
+    },
+    "login":{
+        "login":"Login",
+        "loginUser":"User name",
+        "password":"Password",
+        "keepLogin":"Keep login",
+        "createNewUser":"Create new user",
+        "forgetPassword":"Forget password"
+    },
+    "menu":{
+        "index":"Index",
+        "bookingTable":"Booking Table",
+        "order":"Order",
+        "orderList":"Order List",
+        "sales":"Sales",
+        "memberList":"Member",
+        "product":"Product",
+        "settingsMore":"Settings",
+        "updatePwd":"Update Password",
+        "loginOut":"Login Out"
+    },
+    "search":"search",
+    "submit":"Submit",
+    "firstPage":"First",
+    "lastPage":"Last",
+    "previousPage":"Previous",
+    "nextPage":"Next"
+}

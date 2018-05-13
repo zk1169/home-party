@@ -49,8 +49,8 @@ router.route('/liuyan')
         LiuyanModel.getList(results => response(res, results), err => response(res, null, err));
     });
 
-router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });   
+router.get('/**', function(req, res) {
+    res.json({ message: 'hello kugou!' });   
 });
 
 module.exports = router;

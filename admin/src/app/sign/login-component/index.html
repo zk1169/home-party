@@ -1,0 +1,53 @@
+<section class="login-component">
+    <!-- <form class="clearfix login-content">
+        <legend class="form-title legend">{{'login.login'}}</legend>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-user" style="width:14px;"></i>
+                </span>
+                <input id="userName" type="text" class="form-control mw-fs-16" [placeholder]="'login.loginUser'" [(ngModel)]="model.userName" name="userName"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-key"></i>
+                </span>
+                <input id="password" type="password" class="form-control mw-fs-16" [placeholder]="'login.password'" [(ngModel)]="model.password" name="password"/>
+            </div>
+        </div>
+        <div>
+            <zk-checkbox [(checked)]="model.autoLogin" label="{{'login.keepLogin'}}"></zk-checkbox>
+            <div [zkBusy]="loginAysn" class="mw-busy-wrap pull-right">
+                <button type="button" class="btn btn-primary" (click)="login()">
+                    test
+                </button>
+                <button type="button" class="btn btn-primary" routerLink="/dashboard/home">
+                    <i class="fa fa-sign-in"></i>
+                    <span>{{'login.login'}}</span>
+                </button>
+            </div>
+        </div>
+        <zk-radio [list]="radioList"></zk-radio>
+    </form> -->
+    <div class="login-content">
+        <legend class="form-title legend">{{'登录'}}</legend>
+        <div layout="column">
+            <mat-form-field>
+                <input matInput placeholder="用户名" value="">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="密码" value="">
+            </mat-form-field>
+        </div>
+        <div layout="row" layout-align="space-between center">
+            <mat-checkbox>保持登陆</mat-checkbox>
+            <button mat-raised-button>登录</button>
+        </div>
+    </div>
+    <!-- <div class="session-links">
+        <a href="" class="pull-left">{{'login.createNewUser'}}</a>
+        <a href="" class="pull-right">{{'login.forgetPassword'}}</a>
+    </div> -->
+</section>
