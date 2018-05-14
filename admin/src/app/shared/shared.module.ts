@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule }    from '@angular/common/http';
 
 import { MatButtonModule, MatCheckboxModule,MatInputModule } from '@angular/material';
 
@@ -14,6 +15,7 @@ import { ZkBusyDirective } from './directives/busy.directive';
   imports: [
     CommonModule,
     FormsModule,
+    HttpClientModule,
     MatButtonModule, 
     MatCheckboxModule,
     MatInputModule
@@ -31,6 +33,7 @@ import { ZkBusyDirective } from './directives/busy.directive';
     MatInputModule,
     CommonModule,
     FormsModule,
+    HttpClientModule,
     ZkButtonComponent,
     ZkCheckboxComponent,
     ZkRadioComponent,

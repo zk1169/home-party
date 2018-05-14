@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
-import _ from 'lodash';
+import * as _ from 'lodash';
 
 @Component({
     selector: 'zk-radio',

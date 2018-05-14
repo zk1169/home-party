@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoute } from './app.routes';
 
 import { SignModule } from '../sign/sign.module';
-import { DashboardModule } from '../dashboard/dashboard.module';
+// import { DashboardModule } from '../dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { DashboardModule } from '../dashboard/dashboard.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoute,
-    DashboardModule
+    SignModule
   ],
   bootstrap: [AppComponent]
 })

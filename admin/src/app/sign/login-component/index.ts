@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AuthService } from '../../shared';
 
 import AuthModel from '../../models/auth.model';
 
@@ -13,7 +14,7 @@ export class LoginComponent {
   private loginAysn: Observable<Object>;
   private radioList: Array<{checked:Boolean,label:String}>;
 
-  constructor() {
+  constructor(private authService: AuthService) {
     this.radioList = [
       {
         checked: false,
@@ -31,7 +32,11 @@ export class LoginComponent {
   }
 
   login(){
-    console.log(`login.model.autoLogin=${this.model.autoLogin}`);
-    console.log(`login.radioList=${JSON.stringify(this.radioList)}`);
+    this.authService.login()
+      .subscribe(res => {
+        debugger;
+      });
+    // console.log(`login.model.autoLogin=${this.model.autoLogin}`);
+    // console.log(`login.radioList=${JSON.stringify(this.radioList)}`);
   }
 }
