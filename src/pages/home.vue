@@ -1,18 +1,19 @@
 <template>
     <div class="home">
         <div class="section1 section1-fixed text-center" :style="{top:`${firstScreenTop}px`}" ref="firstScreen">
-            <el-carousel arrow="never" :interval="5000">
+            <el-carousel v-if="!isMobile" arrow="never" :interval="5000">
                 <el-carousel-item v-for="(item, index) in carouselList" :key="index">
                     <hp-image class="s1-image" :src="item" :has-cover="false" alt=""></hp-image>
                 </el-carousel-item>
             </el-carousel>
+            <hp-image v-else class="mobile-s1" src="./static/images/index-carousel-1.jpg" :has-cover="false" alt=""></hp-image>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <img class="logo" src="../../static/images/logo-big.png" alt="">
                 <span class="s1-text-1 block fs-34">让聚会变得更简单</span>
                 <!-- <span class="s1-text-2 block fs-16">打造中国最懂年轻人的派对连锁品牌</span> -->
                 <a class="s1-btn btn btn-primary bg block" href="#/cooperation">了解加盟合作 >></a>
             </div>
-            <svg class="icon double-caret-down" aria-hidden="true" @click="downClick" v-if="!isMobile">
+            <svg class="icon double-caret-down" aria-hidden="true" @click="downClick">
                 <use xlink:href="#icon-double-caret-down"></use>
             </svg>
         </div>
@@ -21,7 +22,7 @@
                 <hp-image src="./static/images/h-s2.jpg" :has-cover="false" alt=""></hp-image>
                 <div class="s21-text-wrap image-text-wrap" layout="column" layout-align="center center">
                     <div class="title">轰趴，消费升级时代中的必然产物</div>
-                    <div class="p1" layout="row" style="width:80%;">
+                    <div class="p1" :layout="isMobile?'column':'row'" style="width:80%;">
                         <div class="p1-item text-center" flex="1">
                             <img src="../../static/images/h-s2-1.png" alt="">
                             <div class="title2 text-l2">轰趴</div>
@@ -43,7 +44,7 @@
             </div>
 
             <div class="section2-2 text-center">
-                <div class="fs-36">用我们的专业，保障每一个加盟者的收益</div>
+                <div class="title">用我们的专业，保障每一个加盟者的收益</div>
                 <div class="section2-2-p" layout="row" layout-wrap>
                     <div flex="1" flex-xs="50" class="section2-2-p-item">
                         <svg class="icon lingdai" aria-hidden="true">
@@ -150,7 +151,7 @@
                 </div>
             </div>
 
-            <div class="section2-5 text-center">
+            <div v-if="!isMobile" class="section2-5 text-center">
                 <div class="fs-36">听听加盟人怎么说</div>
                 <div class="body" layout="row" layout-wrap>
                     <div flex="60" flex-xs="100" class="text-left ceo-says">
@@ -162,6 +163,19 @@
                     </div>
                     <div flex flex-xs="100" class="overflow-hidden" style="margin-left: 10px;">
                         <img src="../../static/images/story-1-cover.jpg" alt="" class="width100">
+                    </div>
+                </div>
+            </div>
+
+            <div v-else class="section2-5 mobile-section2-5 text-center">
+                <div class="fs-24">听听加盟人怎么说</div>
+                <div class="body">
+                    <img src="../../static/images/story-1-cover.jpg" alt="" class="width100">
+                    <div class="label"><span>加盟人故事</span></div>
+                    <div class="text">
+                        <span class="fs-20">因为不甘平庸，所以一直在路上</span><br>
+                        <span>毕业于浙江科技大学的阿豪，从小学开始就一个人在老</span><br>
+                        <span>家，成长环境相对自由，所以性格相对大胆喜欢尝试新…</span>
                     </div>
                 </div>
             </div>
@@ -290,16 +304,30 @@
             },
             downClick() {
                 this.$refs.firstScreen.style.transition = 'all 1s ease';
-                $('body,html').animate({ scrollTop: this.$refs.firstScreen.clientHeight+60 }, 800);
-                setTimeout(()=>{
-                    this.firstScreenTop = 60 - this.$refs.firstScreen.clientHeight / 2;
-                    // this.firstScreenTop = 60;
-                },100);
-                setTimeout(()=>{
-                    this.$refs.firstScreen.style.transition = 'none';
-                    this.firstScreenTop = 60;
-                    // window.scrollTo(0,this.$refs.firstScreen.clientHeight+60);
-                },1000);
+                if (this.isMobile) {
+                    $('body,html').animate({ scrollTop: this.$refs.firstScreen.clientHeight }, 1000);
+                    setTimeout(()=>{
+                        // this.firstScreenTop = 60 - this.$refs.firstScreen.clientHeight / 2;
+                        // this.firstScreenTop = 60;
+                        this.firstScreenTop = 0;
+                    },0);
+                    setTimeout(()=>{
+                        this.$refs.firstScreen.style.transition = 'none';
+                        // this.firstScreenTop = 0;
+                        // window.scrollTo(0,this.$refs.firstScreen.clientHeight+60);
+                    },1000);
+                } else {
+                    $('body,html').animate({ scrollTop: this.$refs.firstScreen.clientHeight+60 }, 800);
+                    setTimeout(()=>{
+                        this.firstScreenTop = 60 - this.$refs.firstScreen.clientHeight / 2;
+                        // this.firstScreenTop = 60;
+                    },100);
+                    setTimeout(()=>{
+                        this.$refs.firstScreen.style.transition = 'none';
+                        this.firstScreenTop = 60;
+                        // window.scrollTo(0,this.$refs.firstScreen.clientHeight+60);
+                    },1000);
+                }
             }
         },
         computed: {},
@@ -336,6 +364,12 @@
             color: #fff;
             cursor: pointer;
         }
+        .mobile-s1 {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: calc(100vh - 60px);
+        }
     }
     .section2{
         background-color:#fff;
@@ -358,6 +392,9 @@
             margin-top: 60px;
             svg{
                 color: $primary-color;
+            }
+            .title{
+                font-size: 3.6rem;
             }
             .section2-2-p{
                 .title{
@@ -498,13 +535,13 @@
             position: relative;
             .s1-text-wrap{
                 .s1-text-1{
-                    margin-top: 10px;
+                    margin-top: 30px;
                 }
                 .s1-text-2{
-                    margin-top: 5px;
+                    margin-top: 10px;
                 }
                 .s1-btn{
-                    margin-top: 20px;
+                    margin-top: 30px;
                 }
             }
             .logo{
@@ -518,16 +555,18 @@
                         font-size: 2.4rem;
                     }
                     .p1{
-                        margin-top: 10px;
+                        margin-top: 30px;
                         .p1-item{
+                            display: block;
                             padding: 0 3%;
+                            margin-top: 10px;
                             .title2{
                                 margin-top: 5px;
                                 font-size: 2rem;
                             }
                             .p2{
                                 font-size: 1.4rem;
-                                display: none;
+                                // display: none;
                             }
                             img{
                                 width: 50px;
@@ -539,6 +578,11 @@
                         margin-top: 10px;
                     }
                 }
+            }
+        }
+        .section2-2{
+            .title{
+                font-size: 2.4rem;
             }
         }
         .section2-3{
@@ -559,10 +603,29 @@
                 right: 20px;
             }
         }
-        .section2-5 {
-            img{width:100%;}
-            .overflow-hidden{
-                margin-left:0!important;
+        .mobile-section2-5{
+            .body{
+                height: 300px;
+                overflow: hidden;
+                position: relative;
+                img{
+                    margin-top: -85px;
+                }
+                .label{
+                    position: absolute;
+                    top:0;
+                    left:0;
+                }
+                .text{
+                    position: absolute;
+                    bottom:0;
+                    left:0;
+                    padding: 10px;
+                    color: #fff;
+                    text-align: left;
+                    font-size: 1.6rem;
+                    line-height: 26px;
+                }
             }
         }
         .section2-6{

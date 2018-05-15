@@ -265,6 +265,22 @@ html,body {
     .text-l3{
         line-height: 3rem;
     }
+    .home .mobile-s1 img{
+      height: 100%;
+      width: auto;
+      position: absolute;
+      animation: myfirst 15s linear 2s infinite alternate;
+    }
+    @keyframes myfirst
+    {
+    0%   {left:0px}
+    50%  {left:-100%}
+    100%  {left:0px}
+    }
+    .home .section2-1 .hp-image img{
+      height: 600px;
+      width: auto;
+    }
     .el-carousel__container, .s1-image img, .el-carousel__container img{
         height: 300px!important;
         width: auto;

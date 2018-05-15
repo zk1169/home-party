@@ -15,38 +15,38 @@
         <div class="section2 text-center">
             <div class="paragrah">
                 <div class="title fs-36">一栋别墅，花样百出</div>
-                <div class="p1 text-l3 fs-18 color-grey">轰趴，是将单一娱乐场地或活动进行集中，在一个空间能体验到不同空间的娱乐项目。消费升级时代的来临，别墅轰趴行业是刚兴起的一个朝阳行业，市场潜力巨大，可成为取代KTV一类的新型娱乐消费场所。现在行业还处于萌芽阶段，红利期将保持很长一段时间，正式进入的最佳时期</div>
+                <div class="p1 text-l3 fs-18 color-grey">随着消费水平的提高，人们对娱乐的需求越大，对娱乐方式的要求也越高。别墅轰趴顺应时代的潮流悄然探头！从各种分析中我们能预见，它将以越来越流行和被普及的姿态，取代传统单一的娱乐方式。前期的市场已验证它的潜力，而此时，正是进入这个领域的最佳时期！</div>
             </div>
-            <div class="inline-block" style="max-width: 1440px;width:100%;">
+            <div v-if="!isMobile" class="inline-block" style="max-width: 1440px;width:100%;">
                 <div class="image-wrap" layout="column">
                     <div layout="row" layout-wrap class="image-item">
                         <div flex="50" flex-xs="100" class="image-c"><img src="../../static/images/s2-1.jpg" alt=""></div>
-                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-2.jpg" alt=""></div>
-                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-3.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="image-item-padding"><img src="../../static/images/s2-2.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="image-item-padding"><img src="../../static/images/s2-3.jpg" alt=""></div>
                     </div>
                     <div layout="row" layout-wrap class="image-item">
-                        <div flex="25" flex-xs="100" class="overflow-hidden">
+                        <div flex="25" flex-xs="50" class="overflow-hidden">
                             <div class="s5-text" layout="row" layout-align="center center">
                                 <span>住宿<br><br>健身房<br><br>高尔夫<br><br>桌游房<br><br>桌球室<br><br>KTV</span>
                             </div>
                         </div>
-                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-4.jpg" alt=""></div>
-                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-5.jpg" alt=""></div>
-                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-6.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="image-item-padding"><img src="../../static/images/s2-4.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="image-item-padding"><img src="../../static/images/s2-5.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="image-item-padding"><img src="../../static/images/s2-6.jpg" alt=""></div>
                     </div>
                     <div layout="row" layout-wrap class="image-item">
-                        <div flex="25" flex-xs="100"><img src="../../static/images/s2-7.jpg" alt=""></div>
-                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-8.jpg" alt=""></div>
-                        <div flex="25" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-9.jpg" alt=""></div>
-                        <div flex="25" flex-xs="100" class="overflow-hidden image-item-padding">
+                        <div flex="25" flex-xs="50"><img src="../../static/images/s2-7.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="image-item-padding"><img src="../../static/images/s2-8.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="image-item-padding"><img src="../../static/images/s2-9.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="overflow-hidden image-item-padding">
                             <div class="s5-text" layout="row" layout-align="center center">
                                 <span>户外BBQ<br><br>厨房<br><br>XBOX游戏<br><br>麻将房<br><br>私人影院<br><br>VR体验馆</span>
                             </div>
                         </div>
                     </div>
                     <div layout="row" layout-wrap class="image-item">
-                        <div flex="25" flex-xs="100" class="overflow-hidden"><img src="../../static/images/s2-10.jpg" alt=""></div>
-                        <div flex="25" flex-xs="100" class="overflow-hidden image-item-padding">
+                        <div flex="25" flex-xs="50" class="overflow-hidden"><img src="../../static/images/s2-10.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="overflow-hidden image-item-padding">
                             <div class="s5-text" layout="row" layout-align="center center">
                                 <span>酒吧<br><br>泳池派对<br><br>私人花园，运动场<br><br>会议服务，餐饮服务<br><br>私人主题活动<br><br>团建定制<br>...</span>
                             </div>
@@ -55,10 +55,57 @@
                     </div>
                 </div>
             </div>
+            <div v-else class="inline-block" style="max-width: 1440px;width:100%;">
+                <div class="image-wrap" layout="column">
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="50" flex-xs="100" class="image-c image-item-padding"><img src="../../static/images/s2-1.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="25" flex-xs="50" class="image-item-padding image-item-padding-right"><img src="../../static/images/s2-2.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="image-item-padding image-item-padding-left"><img src="../../static/images/s2-3.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="25" flex-xs="50" class="overflow-hidden image-item-padding-right">
+                            <div class="s5-text" layout="row" layout-align="center center">
+                                <span>住宿<br>健身房<br>高尔夫<br>桌游房<br>桌球室<br>KTV</span>
+                            </div>
+                        </div>
+                        <div flex="25" flex-xs="50" class="image-item-padding image-item-padding-left"><img src="../../static/images/s2-4.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="25" flex-xs="50" class="image-item-padding image-item-padding-right"><img src="../../static/images/s2-5.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="image-item-padding image-item-padding-left"><img src="../../static/images/s2-6.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="25" flex-xs="50" class="image-item-padding-right"><img src="../../static/images/s2-7.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="overflow-hidden image-item-padding image-item-padding-left">
+                            <div class="s5-text" layout="row" layout-align="center center">
+                                <span>户外BBQ<br>厨房<br>XBOX游戏<br>麻将房<br>私人影院<br>VR体验馆</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="25" flex-xs="50" class="image-item-padding image-item-padding-right"><img src="../../static/images/s2-9.jpg" alt=""></div>
+                        <div flex="25" flex-xs="50" class="image-item-padding image-item-padding-left"><img src="../../static/images/s2-8.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="25" flex-xs="50" class="overflow-hidden image-item-padding image-item-padding-right">
+                            <div class="s5-text" layout="row" layout-align="center center">
+                                <span>酒吧<br>泳池派对<br>私人花园，运动场<br>会议服务，餐饮服务<br>私人主题活动<br>团建定制<br>...</span>
+                            </div>
+                        </div>
+                        <div flex="25" flex-xs="50" class="overflow-hidden image-item-padding-left"><img src="../../static/images/s2-10.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="50" flex-xs="100" class="image-item-padding"><img src="../../static/images/s2-11.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="section3 section text-center">
             <!-- <div class="title fs-36">为什么人们需要新的聚会形式？</div> -->
-            <img class="s3-image" src="../../static/images/s3-1.jpg" alt="">
+            <img v-if="!isMobile" class="s3-image" src="../../static/images/s3-1.jpg" alt="">
+            <img v-else class="s3-image" src="../../static/images/s3-1-mobile.jpg" alt="">
             <!-- <div layout="row" class="text-left paragrap">
                 <div flex="50" style="padding-right: 10%;">
                     <div class="fs-24 text-l2">消费主力年轻化</div>
@@ -70,7 +117,7 @@
                 </div>
             </div> -->
         </div>
-        <div class="section4 section text-center">
+        <div v-if="!isMobile" class="section4 section text-center">
             <!-- <div class="fs-36">国内聚会存在的问题是什么？</div> -->
             <div class="body" layout="row" layout-wrap>
                 <div flex="40" flex-xs="100" class="overflow-hidden">
@@ -85,9 +132,41 @@
                 </div>
             </div>
         </div>
-        <div class="section4 section text-center">
+        <div v-else class="section4 section text-center">
+            <img class="width100" src="../../static/images/s4-mobile.jpg" alt="">
+        </div>
+        <div v-if="!isMobile" class="section4 section text-center">
             <!-- <div class="fs-36">市场潜力分析</div><br> -->
             <img class="width100" src="../../static/images/s5-1.jpg" alt="">
+        </div>
+        <div v-else class="section5 relative">
+            <hp-image src="./static/images/s5-bg.jpg" :has-cover="false" alt=""></hp-image>
+            <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
+                <div class="title fs-20">市场潜力分析</div>
+                <div class="icon-wrap" layout="row" layout-align="space-around center">
+                    <div class="icon-circle" :class="{'checked':s5CheckedIndex===1}" @click="s5CheckedIndex=1">
+                        <!-- <img src="../../static/images/s5-icon1.png" alt=""> -->
+                        <svg class="icon school" aria-hidden="true" @click="downClick">
+                            <use xlink:href="#icon-school"></use>
+                        </svg>
+                    </div>
+                    <div class="icon-circle" :class="{'checked':s5CheckedIndex===2}" @click="s5CheckedIndex=2">
+                        <svg class="icon loupan" aria-hidden="true" @click="downClick">
+                            <use xlink:href="#icon-loupan"></use>
+                        </svg>
+                    </div>
+                    <div class="icon-circle" :class="{'checked':s5CheckedIndex===3}" @click="s5CheckedIndex=3">
+                        <svg class="icon house1" aria-hidden="true" @click="downClick">
+                            <use xlink:href="#icon-house1"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="section-image">
+                    <img v-show="s5CheckedIndex===1" src="../../static/images/s5-section1.png" alt="">
+                    <img v-show="s5CheckedIndex===2" src="../../static/images/s5-section2.png" alt="">
+                    <img v-show="s5CheckedIndex===3" src="../../static/images/s5-section3.png" alt="">
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -108,6 +187,7 @@
         },
         data() {
             return {
+                s5CheckedIndex: 1,
                 carouselList: [
                     './static/images/i-s1.jpg',
                     './static/images/i-s2.jpg'
@@ -205,13 +285,61 @@
             .image-item-padding{
                 padding-left:0;
             }
+            .image-item-padding-right{
+                padding-right: 5px;
+            }
+            .image-item-padding-left{
+                padding-left: 5px;
+            }
             .image-wrap .image-item img{
                 width: 100%;
+            }
+            .s5-text{
+                height: 100%;
+            }
+        }
+        .section3{
+            .s3-image{
+                width: 80%;
             }
         }
         .section4{
             .body{
                 margin-top: 15px;
+            }
+        }
+        .section5{
+            .title{
+                margin-bottom: 10px;
+            }
+            .icon-wrap{
+                width: 70%;
+                margin-bottom: 10px;
+                .icon-circle{
+                    border-radius: 50%;
+                    background-color: #fff;
+                    height: 50px;
+                    width: 50px;
+                    line-height: 50px;
+                    text-align: center;
+                    .icon{
+                        font-size: 30px;
+                        margin-top: 9px;
+                        color: $primary-color;
+                    }
+                }
+                .icon-circle.checked{
+                    background-color: $primary-color;
+                    .icon{
+                        color: #fff;
+                    }
+                }
+            }
+            .section-image{
+                img{
+                    width: 90%;
+                    margin-left: 5%;
+                }
             }
         }
     }
