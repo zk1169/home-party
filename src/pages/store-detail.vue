@@ -1,5 +1,5 @@
 <template>
-    <div class="store-detail-component">
+    <div class="store-detail-component" style="overflow-x:hidden;">
         <div class="store-wrap text-center">
             <div class="store-name fs-36">{{store.storeName}}</div>
             <div class="fs-16" style="margin-top: 10px;">{{store.address}}</div>

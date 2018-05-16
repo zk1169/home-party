@@ -1,5 +1,5 @@
 <template>
-    <div class="brand">
+    <div class="brand" style="overflow-x:hidden;">
         <div class="section1 relative">
             <hp-image src="./static/images/b-s1.jpg" alt=""></hp-image>
             <!-- <el-carousel arrow="never" :interval="5000">

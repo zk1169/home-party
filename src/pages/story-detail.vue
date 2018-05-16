@@ -1,5 +1,5 @@
 <template>
-    <div class="story-detail">
+    <div class="story-detail" style="overflow-x:hidden;">
         <div class="section1">
             <img :src="storyModel.coverBig" alt="" class="width100"/>
         </div>

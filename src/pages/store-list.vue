@@ -1,5 +1,5 @@
 <template>
-    <div class="store-list">
+    <div class="store-list" style="overflow-x:hidden;">
         <div class="section1 relative">
             <hp-image src="./static/images/sd-s1.jpg" :has-cover="false" alt=""></hp-image>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">

@@ -1,5 +1,5 @@
 <template>
-    <div class="story">
+    <div class="story" style="overflow-x:hidden;">
         <div class="section1 relative">
             <hp-image src="./static/images/store-s1.jpg" alt=""></hp-image>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
