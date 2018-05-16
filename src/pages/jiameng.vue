@@ -1,58 +1,59 @@
 <template>
     <div class="jiameng">
         <div class="section1 relative">
-            <hp-image src="./static/images/j-s1.jpg" alt=""></hp-image>
+            <hp-image v-if="!isMobile" src="./static/images/j-s1.jpg" alt=""></hp-image>
+            <hp-image v-else src="./static/images/j-s1-mobile.jpg" alt=""></hp-image>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
-                <div class="title">谁抓住了年轻人的心，谁就能掌握全新的机会！</div><br>
-                <div class="title">加入我们吧！</div>
+                <div class="title">谁抓住了年轻人的心，<br v-if="isMobile">谁就能掌握全新的机会！</div><br>
+                <div class="title" v-if="!isMobile">加入我们吧！</div>
             </div>
         </div>
         <div class="section2 section text-center">
-            <div class="title fs-36">品牌加盟权益</div>
+            <div class="title">品牌加盟权益</div>
             <div class="p1" layout="row" layout-wrap>
-                <div class="p1-item text-center" flex="25" flex-xs="50">
+                <div class="p1-item text-center" flex="25">
                     <svg class="icon shouquan fs-46" aria-hidden="true">
                         <use xlink:href="#icon-shouquan"></use>
                     </svg><br><br>
                     <div class="fs-24 text-l3">品牌城市授权</div>
                 </div>
-                <div class="p1-item text-center" flex="25" flex-xs="50">
+                <div class="p1-item text-center" flex="25">
                     <svg class="icon education fs-55" aria-hidden="true">
                         <use xlink:href="#icon-education"></use>
                     </svg>
                     <div class="fs-24 text-l3" style="margin-top: 7px;">总部专业化培训</div>
                 </div>
-                <div class="p1-item text-center" flex="25" flex-xs="50">
+                <div class="p1-item text-center" flex="25">
                     <svg class="icon zhuangxiu fs-46" aria-hidden="true">
                         <use xlink:href="#icon-zhuangxiu"></use>
                     </svg><br><br>
                     <div class="fs-24 text-l3">共享专业化设计、装修</div>
                 </div>
-                <div class="p1-item text-center" flex="25" flex-xs="50">
+                <div class="p1-item text-center" flex="25">
                     <svg class="icon huoche fs-46" aria-hidden="true">
                         <use xlink:href="#icon-huoche"></use>
                     </svg><br><br>
                     <div class="fs-24 text-l3">共享总部产品供货渠道</div>
                 </div>
-                <div class="p1-item text-center" flex="25" flex-xs="50">
+                <div class="p1-item text-center" flex="25">
                     <svg class="icon gengzong fs-46" aria-hidden="true">
                         <use xlink:href="#icon-gengzong"></use>
                     </svg><br><br>
                     <div class="fs-24 text-l3">全程运营跟踪服务</div>
                 </div>
-                <div class="p1-item text-center" flex="25" flex-xs="50">
+                <div class="p1-item text-center" flex="25">
                     <svg class="icon huiyuan fs-46" aria-hidden="true">
                         <use xlink:href="#icon-huiyuan"></use>
                     </svg><br><br>
                     <div class="fs-24 text-l3">共享总部会员资源</div>
                 </div>
-                <div class="p1-item text-center" flex="25" flex-xs="50">
+                <div class="p1-item text-center" flex="25">
                     <svg class="icon fangyuan fs-46" aria-hidden="true">
                         <use xlink:href="#icon-fangyuan"></use>
                     </svg><br><br>
                     <div class="fs-24 text-l3">总部统一的品牌营销</div>
                 </div>
-                <div class="p1-item text-center" flex="25" flex-xs="50">
+                <div class="p1-item text-center" flex="25">
                     <svg class="icon tool fs-46" aria-hidden="true">
                         <use xlink:href="#icon-tool"></use>
                     </svg><br><br>
@@ -61,13 +62,14 @@
             </div>
         </div>
         <div class="section3">
-            <img src="../../static/images/j-s2.jpg" alt="" class="width100"/>
+            <img v-if="!isMobile" src="../../static/images/j-s2.jpg" alt="" class="width100"/>
+            <img v-else src="../../static/images/j-s2-mobile.jpg" alt="" class="width100"/>
         </div>
 
         <div class="section4 text-center">
             <div class="title fs-36">加盟方式</div>
             <div class="body" layout="row" layout-align="center center" layout-wrap>
-                <div flex="40" flex-xs="100" class="s5-item">
+                <div flex="40" flex-xs="90" class="s5-item">
                     <div class="title">
                         <svg class="icon jiameng fs-28" aria-hidden="true">
                             <use xlink:href="#icon-jiameng"></use>
@@ -94,7 +96,7 @@
                     </div>
                 </div>
                 <div flex="5" flex-xs="0"></div>
-                <div flex="40" flex-xs="100" class="s5-item">
+                <div flex="40" flex-xs="90" class="s5-item s5-item-2">
                     <div class="title">
                         <svg class="icon tuoguan fs-28" aria-hidden="true">
                             <use xlink:href="#icon-tuoguan"></use>
@@ -194,6 +196,9 @@
             }
         }
         .section2{
+            .title{
+                font-size: 3.6rem;
+            }
             .paragrah{padding: 60px 10%};
             .pi{
                 width: 90%;
@@ -211,23 +216,33 @@
         .section{margin-top:30px;}
         .s1-text-wrap{
             .title{
-                font-size: 2rem;
+                font-size: 2.6rem;
             }
             .btn{
                 margin-top: 30px;
             }
         }
         .section2{
+            .title{
+                font-size: 2rem;
+            }
             .paragrah{padding: 30px 10%};
             .p1 .p1-item{
                 margin-top: 15px;
                 .text-l3{
-                    font-size: 1.8rem!important;
+                    font-size: 1.2rem!important;
+                    line-height: 20px;
                 }
             }
         }
+        .section3{
+            margin-top: 30px;
+        }
         .section4{
             padding: 30px 0;
+            .s5-item-2{
+                margin-top: 20px;
+            }
         }
     }
 </style>

@@ -285,12 +285,6 @@
             .image-item-padding{
                 padding-left:0;
             }
-            .image-item-padding-right{
-                padding-right: 5px;
-            }
-            .image-item-padding-left{
-                padding-left: 5px;
-            }
             .image-wrap .image-item img{
                 width: 100%;
             }

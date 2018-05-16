@@ -17,7 +17,7 @@
                 </div>
                 <div class="open-time" flex="25" flex-xs="100">
                     <span class="fs-20">预定</span><br>
-                    <span class="fs-16">预定电话：{{store.orderNumber}}</span><br>
+                    <span class="fs-16">预定电话：{{store.orderNumber}}&nbsp;<a class="call-phone" :href="`tel:${store.orderNumber}`">拨打</a></span><br>
                     <span class="fs-16">营业时间：{{store.openTime}}</span><br>
                     <span class="fs-16">&nbsp;</span>
                 </div>
@@ -41,7 +41,7 @@
         <div class="store-detail">
             <div v-for="(image, index) in store.images" :key="index" :id="`section_id_${index}`">
                 <div class="section-title">{{image.section}}</div>
-                <div layout="row" layout-wrap style="margin-top: -30px;">
+                <div layout="row" layout-wrap class="section-images">
                     <div flex="50" flex-xs="100" v-for="item in image.items" :key="item" class="image-item">
                         <img :src="item" alt="">
                     </div>
@@ -194,9 +194,22 @@
                 width: 100%;
             }
         }
+        .section-images{
+            margin-top: -30px;
+        }
     }
     // .pc-app{
     // }
-    // .mobile-app{
-    // }
+    .mobile-app{
+        .store-detail{
+            padding: 0;
+            .image-item{
+                padding-left: 0;
+                margin-top: 20px;
+            }
+            .section-images{
+                margin-top: 0;
+            }
+        }
+    }
 </style>

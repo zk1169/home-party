@@ -14,31 +14,31 @@
             </div>
         </div>
         <div class="section2 section text-center">
-            <div class="title fs-36">我们的愿景</div>
+            <div class="title">我们的愿景</div>
             <div class="p1" layout="row" layout-wrap>
-                <div class="p1-item text-center" flex="1" flex-xs="100">
-                    <div class="circle-primary big inline-block">
-                        <svg class="icon zuanshi fs-60" aria-hidden="true">
+                <div class="p1-item text-center" flex="1">
+                    <div class="circle-primary inline-block" :class="{'big':!isMobile}">
+                        <svg class="icon zuanshi" aria-hidden="true">
                             <use xlink:href="#icon-zuanshi"></use>
                         </svg>
                     </div><br><br>
-                    <div class="fs-24 text-l3">打造中国领先的专业派对文化<br>连锁品牌</div>
+                    <div class="text text-l3">打造中国领先的<br v-if="isMobile">专业派对文化<br>连锁品牌</div>
                 </div>
-                <div class="p1-item text-center" flex="1" flex-xs="100">
-                    <div class="circle-primary big inline-block">
-                        <svg class="icon location-web fs-60" aria-hidden="true">
+                <div class="p1-item text-center" flex="1">
+                    <div class="circle-primary inline-block" :class="{'big':!isMobile}">
+                        <svg class="icon location-web" aria-hidden="true">
                             <use xlink:href="#icon-location-web"></use>
                         </svg>
                     </div><br><br>
-                    <div class="fs-24 text-l3">打造中国优秀的本地化互联网<br>+轰趴创业联盟</div>
+                    <div class="text text-l3">打造中国优秀的<br v-if="isMobile">本地化互联网<br>+轰趴创业联盟</div>
                 </div>
-                <div class="p1-item text-center" flex="1" flex-xs="100">
-                    <div class="circle-primary big inline-block">
-                        <svg class="icon lianjie fs-60" aria-hidden="true">
+                <div class="p1-item text-center" flex="1">
+                    <div class="circle-primary inline-block" :class="{'big':!isMobile}">
+                        <svg class="icon lianjie" aria-hidden="true">
                             <use xlink:href="#icon-lianjie"></use>
                         </svg>
                     </div><br><br>
-                    <div class="fs-24 text-l3">打造中国领先的综合性聚会<br>娱乐平台</div>
+                    <div class="text text-l3">打造中国领先的<br v-if="isMobile">综合性聚会<br>娱乐平台</div>
                 </div>
             </div>
         </div>
@@ -46,35 +46,35 @@
         <div class="section4 section text-center relative">
             <hp-image src="./static/images/b-s3.jpg" alt=""></hp-image>
             <div class="s4-text-wrap image-text-wrap" layout="column" layout-align="start center">
-                <div class="title fs-36">我们的品牌宗旨</div>
+                <div class="title">我们的品牌宗旨</div>
                 <div class="p1" layout="row" layout-wrap>
                     <div class="p1-item text-center" flex="1">
                         <svg class="icon yizhanshi fs-60" aria-hidden="true">
                             <use xlink:href="#icon-yizhanshi"></use>
                         </svg><br><br>
-                        <div class="fs-24 text-l2">一站式服务</div><br>
-                        <div class="fs-16 text-l1" v-if="!isMobile">为客户提供吃、喝、玩、住一站式服务，打造多种娱乐场景的集合，更适合年轻人聚会的轰趴品牌</div>
+                        <div class="text-l2">一站式服务</div><br>
+                        <div class="text-l1">为客户提供吃、喝、玩、住一站式服务，打造多种娱乐场景的集合，更适合年轻人聚会的轰趴品牌</div>
                     </div>
                     <div class="p1-item text-center" flex="1">
                         <svg class="icon dunpai fs-60" aria-hidden="true">
                             <use xlink:href="#icon-dunpai"></use>
                         </svg><br><br>
-                        <div class="fs-24 text-l2">标准化管理</div><br>
-                        <div class="fs-16 text-l1" v-if="!isMobile">打造轰趴行业标准化管理的行业准则，让客户享受到轰趴行业的五星级服务</div>
+                        <div class="text-l2">标准化管理</div><br>
+                        <div class="text-l1">打造轰趴行业标准化管理的行业准则，让客户享受到轰趴行业的五星级服务</div>
                     </div>
                     <div class="p1-item text-center" flex="1">
                         <svg class="icon guanjia fs-60" aria-hidden="true">
                             <use xlink:href="#icon-guanjia"></use>
                         </svg><br><br>
-                        <div class="fs-24 text-l2">管家式服务</div><br>
-                        <div class="fs-16 text-l1" v-if="!isMobile">通过专业化培训，让每位管家=初级厨师+活动策划师+布场达人+轰趴运营专员</div>
+                        <div class="text-l2">管家式服务</div><br>
+                        <div class="text-l1">通过专业化培训，让每位管家=初级厨师+活动策划师+布场达人+轰趴运营专员</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="section5 section text-center">
-            <div class="title fs-36">多元化盈利模式</div>
+        <div v-if="!isMobile" class="section5 section text-center">
+            <div class="title">多元化盈利模式</div>
             <div class="inline-block" style="max-width: 1440px;width:100%;">
                 <div class="image-wrap" layout="column">
                     <div layout="row" layout-wrap class="image-item">
@@ -105,14 +105,55 @@
                 </div>
             </div>
         </div>
-
-        <div class="section6 section text-center">
-            <div class="title fs-36">竞争优势</div>
-            <img class="width100" src="../../static/images/b-s6.jpg" alt="">
+        <div v-else class="section5 section text-center">
+            <div class="title">多元化盈利模式</div>
+            <div class="inline-block" style="max-width: 1440px;width:100%;">
+                <div class="image-wrap" layout="column">
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="100" class="overflow-hidden image-c"><img src="../../static/images/b-s4-1.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="50" class="overflow-hidden image-item-padding image-item-padding-right">
+                            <div class="s5-text" layout="row" layout-align="center center">
+                                <span>场地出租<br><br>餐饮服务</span>
+                            </div>
+                        </div>
+                        <div flex="50" class="overflow-hidden image-item-padding image-item-padding-left"><img src="../../static/images/b-s4-2.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="100" class="overflow-hidden image-item-padding"><img src="../../static/images/b-s4-4.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="50" class="overflow-hidden image-item-padding image-item-padding-right">
+                            <div class="s5-text" layout="row" layout-align="center center">
+                                <span>产品销售<br><br>主题活动</span>
+                            </div>
+                        </div>
+                        <div flex="50" class="overflow-hidden image-item-padding image-item-padding-left"><img src="../../static/images/b-s4-3.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="100" class="overflow-hidden image-c"><img src="../../static/images/b-s4-5.jpg" alt=""></div>
+                    </div>
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="50" class="overflow-hidden image-item-padding image-item-padding-right">
+                            <div class="s5-text overflow-hidden" layout="row" layout-align="center center">
+                                <span>内容电商<br><br>广告收入</span>
+                            </div>
+                        </div>
+                        <div flex="50" class="image-item-padding image-item-padding-left"><img src="../../static/images/b-s4-6.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="section7 section text-center">
-            <div class="title fs-36">战略优势</div>
+        <div class="section6 section text-center">
+            <div class="title">竞争优势</div>
+            <img v-if="!isMobile" class="width100" src="../../static/images/b-s6.jpg" alt="">
+            <img v-else style="width:90%;" src="../../static/images/b-s6-mobile.jpg" alt="">
+        </div>
+
+        <div v-if="!isMobile" class="section7 section text-center">
+            <div class="title">战略优势</div>
             <div class="body" layout="row" layout-wrap>
                 <div flex="60" flex-xs="100" class="text-wrap" layout="column" layout-align="center center">
                     <div class="text-left">
@@ -136,13 +177,19 @@
                 </div>
             </div>
         </div>
+        <div v-else class="section7 section text-center">
+            <div class="title">战略优势</div><br>
+            <img style="width:90%;" src="../../static/images/b-s7-1-mobile.jpg" alt="">
+            <img style="width:90%;margin-top:10px;" src="../../static/images/b-s7-2-mobile.jpg" alt="">
+        </div>
 
-        <div class="section8" style="margin-top: 6px;">
-            <img src="../../static/images/b-s8.jpg" alt="" class="width100">
+        <div class="section8 text-center" style="margin-top: 10px;">
+            <img v-if="!isMobile" src="../../static/images/b-s8.jpg" alt="" class="width100">
+            <img v-else src="../../static/images/b-s8-mobile.jpg" alt="" class="width100">
         </div>
 
         <div class="section3 text-center">
-            <div class="title fs-36">我们有牛掰的团队</div>
+            <div class="title">我们有牛掰的团队</div>
             <div class="team-container relative">
                 <div v-for="(item, index) in teamList" :key="item" class="team-item" ref="teams" @click="teamMemberClick(index)">
                     <img :src="item" alt="">
@@ -177,6 +224,24 @@
             HpImage
         },
         data() {
+            let positionList = null;
+            if (this.isMobile) {
+                positionList = [
+                    'translateX(-70%) scale(0.83)',
+                    'translateX(-60%) scale(0.9)',
+                    'translateX(-50%) scale(1)',
+                    'translateX(-40%) scale(0.9)',
+                    'translateX(-30%) scale(0.83)'
+                ];
+            } else {
+                positionList = [
+                    'translateX(-190%) scale(0.83)',
+                    'translateX(-130%) scale(0.9)',
+                    'translateX(-50%) scale(1)',
+                    'translateX(30%) scale(0.9)',
+                    'translateX(90%) scale(0.83)'
+                ];
+            }
             return {
                 cIndex: 0,
                 activeIndex: 2,
@@ -191,18 +256,7 @@
                     './static/images/team-m4.png',
                     './static/images/team-m5.png',
                 ],
-                positionList: [
-                    'translateX(-190%) scale(0.83)',
-                    'translateX(-130%) scale(0.9)',
-                    'translateX(-50%) scale(1)',
-                    'translateX(30%) scale(0.9)',
-                    'translateX(90%) scale(0.83)'
-                    // 'translateX(200px) scale(0.83)',
-                    // 'translateX(300px) scale(0.9)',
-                    // 'translateX(500px) scale(1)',
-                    // 'translateX(700px) scale(0.9)',
-                    // 'translateX(800px) scale(0.83)'
-                ]
+                positionList,
             };
         },
         mounted() {
@@ -274,6 +328,7 @@
         padding-bottom: 110px;
         .title{
             padding-bottom: 50px;
+            font-size: 3.6rem;
         }
         .team-indicator{
             position: absolute;
@@ -305,13 +360,23 @@
             margin-top: 60px;
             .title{
                 margin-bottom:100px;
+                font-size:3.6rem;
             }
         }
         .p1-item{
             padding: 0 6%;
+            .text-l2{
+                font-size: 2.4rem;
+            }
+            .text-l1{
+                font-size: 1.6rem;
+            }
         }
     }
     .section5{
+        .title{
+            font-size: 3.6rem;
+        }
         .image-wrap{
             margin-top: 30px;
             .image-c{
@@ -338,9 +403,13 @@
     .section6{
         .title{
             margin-bottom: 30px;
+            font-size: 3.6rem;
         }
     }
     .section7{
+        .title{
+            font-size: 3.6rem;
+        }
         .body{
             margin-top: 20px;
         }
@@ -348,69 +417,6 @@
             background-color: #f5f5f5;
             line-height: 36px;
         }
-    }
-    .pc-app{
-        .section{margin-top:60px;}
-        .s1-text-wrap{
-            .title{
-                font-size: 4.7rem;
-            }
-            .btn{
-                margin-top: 60px;
-            }
-        }
-        .section2{
-            .paragrah{padding: 60px 10%};
-            .p1{
-                margin-top: 60px;
-            }
-        }
-    }
-    .mobile-app{
-        .section{margin-top:30px;}
-        .s1-text-wrap{
-            .title{
-                font-size: 3rem;
-            }
-            .btn{
-                margin-top: 30px;
-            }
-        }
-        .section2{
-            .paragrah{padding: 30px 10%};
-            .p1{
-                margin-top: 15px;
-            }
-        }
-        .section4{
-            .s4-text-wrap{
-                margin-top: 10px;
-                .title{
-                    margin-bottom:10px;
-                }
-            }
-            .p1{
-                width: 100%;
-            }
-            .p1-item{
-                padding: 0;
-                svg{
-                    font-size: 40px!important;
-                }
-                div{
-                    font-size: 18px!important;
-                }
-            }
-        }
-        .section5{
-            .image-item img{
-                width: 100%;
-            }
-            .image-item-padding{
-                padding-left:0;
-            }
-        }
-
     }
     .team-container{
         height: 500px;
@@ -434,4 +440,110 @@
             }
         }
     }
+    .pc-app{
+        .section{margin-top:60px;}
+        .s1-text-wrap{
+            .title{
+                font-size: 4.7rem;
+            }
+            .btn{
+                margin-top: 60px;
+            }
+        }
+        .section2{
+            .title{
+                font-size: 3.6rem;
+            }
+            .paragrah{padding: 60px 10%};
+            .p1{
+                margin-top: 60px;
+                .p1-item{
+                    .icon{
+                        font-size: 6rem;
+                    }
+                    .text{
+                        font-size: 2.4rem;
+                    }
+                }
+            }
+        }
+    }
+    .mobile-app{
+        .section{margin-top:30px;}
+        .s1-text-wrap{
+            .title{
+                font-size: 3rem;
+            }
+            .btn{
+                margin-top: 30px;
+            }
+        }
+        .section2{
+            .title{
+                font-size: 2rem;
+            }
+            .paragrah{padding: 30px 10%};
+            .p1{
+                margin-top: 15px;
+                .p1-item{
+                    .icon{
+                        font-size: 4rem;
+                    }
+                    .text{
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+        .section3{
+            padding: 20px;
+            padding-bottom: 110px;
+            .title{
+                padding-bottom: 20px;
+                font-size: 2rem;
+            }
+        }
+        .section4{
+            .s4-text-wrap{
+                margin-top: 20px;
+                .title{
+                    margin-bottom:20px;
+                    font-size:2rem;
+                }
+            }
+            .p1{
+                width: 100%;
+            }
+            .p1-item{
+                padding: 0 3%;
+                svg{
+                    font-size: 40px!important;
+                }
+                .text-l2{
+                    font-size: 1.6rem;
+                }
+                .text-l1{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        .section5{
+            .title{
+                font-size: 2rem;
+            }
+            .image-item img{
+                width: 100%;
+            }
+            .image-item-padding{
+                padding-left:0;
+            }
+            .s5-text{
+                height: 100%;
+            }
+        }
+        .section6 .title{font-size: 2rem;}
+        .section7 .title{font-size: 2rem;}
+
+    }
+    
 </style>
