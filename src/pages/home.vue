@@ -169,7 +169,7 @@
 
             <div v-else class="section2-5 mobile-section2-5 text-center">
                 <div class="fs-24">听听加盟人怎么说</div>
-                <div class="body">
+                <a class="body block" href="#/story-detail/1/1">
                     <img src="../../static/images/story-1-cover.jpg" alt="" class="width100">
                     <div class="label"><span>加盟人故事</span></div>
                     <div class="text">
@@ -177,7 +177,7 @@
                         <span>毕业于浙江科技大学的阿豪，从小学开始就一个人在老</span><br>
                         <span>家，成长环境相对自由，所以性格相对大胆喜欢尝试新…</span>
                     </div>
-                </div>
+                </a>
             </div>
 
             <div class="section-2-6 text-center">
@@ -340,6 +340,9 @@
 
 <style lang="scss" scoped>
     @import '../styles/var';
+    .home{
+        overflow-x: hidden; 
+    }
     .last-image{
         background: url(../../static/images/anli5.jpg);
         background-repeat:no-repeat; 
