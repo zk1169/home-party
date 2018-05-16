@@ -255,6 +255,7 @@ html,body {
     }
 }
 .mobile-app{
+    overflow-x: hidden;
     .section{margin-top:30px;}
     .text-l1{
         line-height: 2rem;
@@ -296,7 +297,7 @@ html,body {
     .story .section3 .hp-image img{
       height: 300px;
     }
-    .story-detail .section1 img,.store-detail-component .section1 img{
+    .store-list .section1 img,.story-detail .section1 img,.store-detail-component .section1 img{
       height: 300px;
       width: auto;
       margin-left: -50%;
