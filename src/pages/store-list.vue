@@ -111,5 +111,12 @@
             font-size: 22px!important;
             margin-bottom: 10px;
         }
+        .city-name{
+            font-size: 2rem;
+            margin-top: 30px;
+        }
+        .store-item{
+            margin-top: 20px!important;
+        }
     }
 </style>

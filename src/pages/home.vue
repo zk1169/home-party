@@ -39,7 +39,7 @@
                             <span class="p2 text-l1">消费主力年轻化，消费需求的多样化，消费能力水平日渐提高</span>
                         </div>
                     </div>
-                    <a class="btn btn-white block" href="#/introduce">了解更多 >></a>
+                    <a v-if="!isMobile" class="btn btn-white block" href="#/introduce">了解更多 >></a>
                 </div>
             </div>
 
@@ -124,8 +124,8 @@
             </div>
 
             <div class="section2-4 text-center">
-                <div class="fs-36">加盟店案例</div>
-                <a class="inline-block view-all fs-20" href="#/store-list">查看所有 >></a><br>
+                <div class="fs-36">加盟店案例<a v-if="isMobile" class="inline-block view-all fs-14" style="top: 5px;" href="#/store-list">查看所有 >></a><br></div>
+                <a v-if="!isMobile" class="inline-block view-all fs-20" href="#/store-list">查看所有 >></a><br>
                 <div class="inline-block" style="width: 100%;max-width: 1440px;">
                     <div class="body" layout="row" layout-wrap>
                         <div flex="40" flex-xs="100" style="padding-right: 10px;" class="overflow-hidden">
@@ -601,7 +601,7 @@
                         }
                     }
                     .btn{
-                        margin-top: 10px;
+                        margin-top: 20px;
                     }
                 }
             }
@@ -649,8 +649,9 @@
             }
         }
         .section2-4{
+            margin-top: 30px;
             .body{
-                margin-top: 50px;
+                margin-top: 0px;
                 img{
                     width: 100%;
                 }

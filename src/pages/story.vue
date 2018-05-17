@@ -239,7 +239,8 @@
                     text-align: left;
                     font-size: 1.6rem;
                     line-height: 26px;
-                    background-color: rgba(0,0,0,0.2);
+                    // background-color: rgba(0,0,0,0.2);
+                    background:-webkit-gradient(linear, 0 0, 0 bottom, from(rgba(0,0,0,0)), to(rgba(27,27,27, 0.69)));
                 }
             }
         }

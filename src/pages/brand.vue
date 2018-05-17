@@ -178,9 +178,9 @@
             </div>
         </div>
         <div v-else class="section7 section text-center">
-            <div class="title">战略优势</div><br>
-            <img style="width:90%;" src="../../static/images/b-s7-1-mobile.jpg" alt="">
-            <img style="width:90%;margin-top:10px;" src="../../static/images/b-s7-2-mobile.jpg" alt="">
+            <!-- <div class="title">战略优势</div><br> -->
+            <img style="width:100%;" src="../../static/images/b-s7-1-mobile.jpg" alt="">
+            <img style="width:100%;margin-top:10px;" src="../../static/images/b-s7-2-mobile.jpg" alt="">
         </div>
 
         <div class="section8 text-center" style="margin-top: 10px;">
