@@ -74,12 +74,12 @@
                         <svg class="icon jiameng fs-28" aria-hidden="true">
                             <use xlink:href="#icon-jiameng"></use>
                         </svg>
-                        <span class="fs-24">常规加盟</span>
-                    </div><br>
+                        <span class="title">常规加盟</span>
+                    </div><br v-if="!isMobile">
                     <div>
-                        <span class="fs-24">想自己做？</span>
+                        <span class="sub-title">想自己做？</span>
                         <span class="fs-16">教会你如何开始你高回报率的轰趴事业！</span>
-                    </div><br><br>
+                    </div><br v-if="!isMobile"><br v-if="!isMobile">
                     <div>
                         <ul>
                             <li>5年品牌使用权</li>
@@ -90,8 +90,8 @@
                             <li>总部客户共享订单管理系统、会员管理系统，专业人员培训</li>
                             <li>总部全年客户回访，持续专业改进方案</li>
                         </ul>
-                    </div><br><br>
-                    <div class="text-center">
+                    </div><br v-if="!isMobile"><br v-if="!isMobile">
+                    <div class="text-center" style="height: 50px;">
                         <a class="btn btn-primary bg" style="border-radius:0;cursor: default;">5万加盟费 +5万保证金+3%服务费</a>
                     </div>
                 </div>
@@ -101,12 +101,12 @@
                         <svg class="icon tuoguan fs-28" aria-hidden="true">
                             <use xlink:href="#icon-tuoguan"></use>
                         </svg>
-                        <span class="fs-24">托管加盟</span>
-                    </div><br>
+                        <span class="title">托管加盟</span>
+                    </div><br v-if="!isMobile">
                     <div>
-                        <span class="fs-24">想投资正业两不误？</span>
+                        <span class="sub-title">想投资正业两不误？</span>
                         <span class="fs-16">我们来帮你开，躺着也赚钱！</span>
-                    </div><br><br>
+                    </div><br v-if="!isMobile"><br v-if="!isMobile">
                     <div>
                         <ul>
                             <li>5年品牌使用权</li>
@@ -173,6 +173,10 @@
             padding: 50px 30px 30px 30px;
             .title{
                 color: $primary-color;
+                font-size: 2.4rem;
+            }
+            .sub-title{
+                font-size: 2rem;
             }
             ul{
                 color: #666D70;
@@ -240,8 +244,22 @@
         }
         .section4{
             padding: 30px 0;
+            .s5-item{
+                padding: 30px 20px 50px 20px;
+            }
             .s5-item-2{
                 margin-top: 20px;
+            }
+        }
+        .s5-item{
+            .title{
+                font-size: 1.8rem;
+            }
+            .sub-title{
+                font-size: 1.6rem;
+            }
+            ul{
+                font-size: 1.4rem;
             }
         }
     }

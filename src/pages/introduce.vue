@@ -146,17 +146,17 @@
                 <div class="icon-wrap" layout="row" layout-align="space-around center">
                     <div class="icon-circle" :class="{'checked':s5CheckedIndex===1}" @click="s5CheckedIndex=1">
                         <!-- <img src="../../static/images/s5-icon1.png" alt=""> -->
-                        <svg class="icon school" aria-hidden="true" @click="downClick">
+                        <svg class="icon school" aria-hidden="true">
                             <use xlink:href="#icon-school"></use>
                         </svg>
                     </div>
                     <div class="icon-circle" :class="{'checked':s5CheckedIndex===2}" @click="s5CheckedIndex=2">
-                        <svg class="icon loupan" aria-hidden="true" @click="downClick">
+                        <svg class="icon loupan" aria-hidden="true">
                             <use xlink:href="#icon-loupan"></use>
                         </svg>
                     </div>
                     <div class="icon-circle" :class="{'checked':s5CheckedIndex===3}" @click="s5CheckedIndex=3">
-                        <svg class="icon house1" aria-hidden="true" @click="downClick">
+                        <svg class="icon house1" aria-hidden="true">
                             <use xlink:href="#icon-house1"></use>
                         </svg>
                     </div>
@@ -165,6 +165,11 @@
                     <img v-show="s5CheckedIndex===1" src="../../static/images/s5-section1.png" alt="">
                     <img v-show="s5CheckedIndex===2" src="../../static/images/s5-section2.png" alt="">
                     <img v-show="s5CheckedIndex===3" src="../../static/images/s5-section3.png" alt="">
+                </div>
+                <div style="position:absolute;bottom:15px;left: 45%;">
+                    <span class="team-indicator-item" :class="{'checked': s5CheckedIndex===1}"></span>
+                    <span class="team-indicator-item" :class="{'checked': s5CheckedIndex===2}"></span>
+                    <span class="team-indicator-item" :class="{'checked': s5CheckedIndex===3}"></span>
                 </div>
             </div>
         </div>
@@ -194,12 +199,42 @@
                 ],
             };
         },
-        created() {
+        mounted() {
+            this.timer = setInterval(() => {
+                this.s5CheckedIndex ++;
+                if (this.s5CheckedIndex > 3) {
+                    this.s5CheckedIndex = 1;
+                }
+            }, 3000);
         },
         methods: {
-
+            touchStart(ev) {
+                ev.preventDefault();
+                const touch = ev.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
+　　            this.startX = touch.pageX;
+            },
+            touchMove(ev) {
+                ev.preventDefault();
+                const touch = ev.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
+　　            if (this.startX > touch.pageX) {
+                    this.s5CheckedIndex --;
+                    if (this.s5CheckedIndex < 1) {
+                        this.s5CheckedIndex = 1;
+                    }
+                } else {
+                    this.s5CheckedIndex ++;
+                    if (this.s5CheckedIndex > 3) {
+                        this.s5CheckedIndex = 1;
+                    }
+                }
+            }
         },
-        computed: {}
+        destroyed() {
+            if (this.timer) {
+                clearInterval(this.timer);
+                this.timer = null;
+            }
+        }
     }
 </script>
 
@@ -334,6 +369,19 @@
                     width: 90%;
                     margin-left: 5%;
                 }
+            }
+            .team-indicator-item{
+                border-radius: 50%;
+                height: 10px;
+                width: 10px;
+                display: inline-block;
+                background-color: #666;
+            }
+            .team-indicator-item.checked{
+                background-color: #fff;
+            }
+            .team-indicator-item+.team-indicator-item{
+                margin-left: 10px;
             }
         }
     }

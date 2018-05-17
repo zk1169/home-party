@@ -239,6 +239,7 @@
                     text-align: left;
                     font-size: 1.6rem;
                     line-height: 26px;
+                    background-color: rgba(0,0,0,0.2);
                 }
             }
         }

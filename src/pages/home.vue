@@ -9,7 +9,7 @@
             <hp-image v-else class="mobile-s1" src="./static/images/index-carousel-1.jpg" :has-cover="false" alt=""></hp-image>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <img class="logo" src="../../static/images/logo-big.png" alt="">
-                <span class="s1-text-1 block fs-34">让聚会变得更简单</span>
+                <span class="s1-text-1 block">让聚会变得更简单</span>
                 <!-- <span class="s1-text-2 block fs-16">打造中国最懂年轻人的派对连锁品牌</span> -->
                 <a class="s1-btn btn btn-primary bg block" href="#/cooperation">了解加盟合作 >></a>
             </div>
@@ -50,39 +50,39 @@
                         <svg class="icon lingdai" aria-hidden="true">
                             <use xlink:href="#icon-lingdai"></use>
                         </svg>
-                        <div class="fs-24 title text-l2">品牌宗旨</div>
-                        <span class="fs-16 text-l2">一站式服务</span><br>
-                        <span class="fs-16 text-l2">标准化管理</span><br>
-                        <span class="fs-16 text-l2">管家式服务</span>
+                        <div class="title text-l2">品牌宗旨</div>
+                        <span class="text-l2">一站式服务</span><br>
+                        <span class="text-l2">标准化管理</span><br>
+                        <span class="text-l2">管家式服务</span>
                     </div>
                     <div flex="1" flex-xs="50" class="section2-2-p-item">
                         <svg class="icon tianping" aria-hidden="true">
                             <use xlink:href="#icon-tianping"></use>
                         </svg>
-                        <div class="fs-24 title text-l2">竞争优势</div>
-                        <span class="fs-16 text-l2">强大而健全的团队</span><br>
-                        <span class="fs-16 text-l2">强大的品牌影响力</span><br>
-                        <span class="fs-16 text-l2">前沿的服务理念</span>
+                        <div class="title text-l2">竞争优势</div>
+                        <span class="text-l2">强大而健全的团队</span><br>
+                        <span class="text-l2">强大的品牌影响力</span><br>
+                        <span class="text-l2">前沿的服务理念</span>
                     </div>
                     <div flex="1" flex-xs="50" class="section2-2-p-item">
                         <svg class="icon duoyuanhua" aria-hidden="true">
                             <use xlink:href="#icon-duoyuanhua"></use>
                         </svg>
-                        <div class="fs-24 title text-l2">多元化盈利</div>
-                        <span class="fs-16 text-l2">拓展轰趴周边的盈利模式</span><br>
-                        <span class="fs-16 text-l2">挖掘更新鲜的玩法</span><br>
-                        <span class="fs-16 text-l2">多元化盈利</span>
+                        <div class="title text-l2">多元化盈利</div>
+                        <span class="text-l2">拓展轰趴周边的盈利模式</span><br>
+                        <span class="text-l2">挖掘更新鲜的玩法</span><br>
+                        <span class="text-l2">多元化盈利</span>
                     </div>
                     <div flex="1" flex-xs="50" class="section2-2-p-item">
                         <svg class="icon zhanlue" aria-hidden="true">
                             <use xlink:href="#icon-zhanlue"></use>
                         </svg>
-                        <div class="fs-24 title text-l2">战略优势</div>
-                        <span class="fs-16 text-l2">2个基本点：装修+定制</span><br>
-                        <span class="fs-16 text-l2">3大核心：服务+SEO+地推</span>
+                        <div class="title text-l2">战略优势</div>
+                        <span class="text-l2">2个基本点：装修+定制</span><br>
+                        <span class="text-l2">3大核心：服务+SEO+地推</span>
                     </div>
                 </div>
-                <a class="btn btn-primary block" href="#/brand" style="margin-top: 60px;">了解品牌 >></a>
+                <a class="btn btn-primary block" href="#/brand">了解品牌 >></a>
             </div>
 
             <div class="section2-3">
@@ -181,7 +181,7 @@
             </div>
 
             <div class="section-2-6 text-center">
-                <div class="title fs-36">顾客评价</div>
+                <div class="title fs-36">我们广受顾客好评</div>
                 <div layout="row" layout-wrap class="body">
                     <div flex="1" flex-xs="100" class="comment-item">
                         <img src="../../static/images/customer1.png" alt=""><br><br>
@@ -393,6 +393,9 @@
         }
         .section2-2{
             margin-top: 60px;
+            .btn{
+                margin-top: 60px;
+            }
             svg{
                 color: $primary-color;
             }
@@ -405,6 +408,12 @@
                 }
                 .section2-2-p-item{
                     margin-top: 60px;
+                    .title{
+                        font-size: 2.4rem;
+                    }
+                    span{
+                        font-size: 1.6rem;
+                    }
                     svg{
                         font-size: 8rem;
                     }
@@ -476,7 +485,7 @@
                 .comment-item{
                     vertical-align: top;
                     padding:0 3%;
-                    margin-top: 60px;
+                    margin-top: 30px;
                 }
             }
         }
@@ -492,6 +501,7 @@
             .s1-text-wrap{
                 .s1-text-1{
                     margin-top: 60px;
+                    font-size: 3.4rem;
                 }
                 .s1-text-2{
                     margin-top: 10px;
@@ -531,6 +541,18 @@
                     }
                 }
             }
+            .section-2-6{
+                margin-top: 10px;
+                padding-top:60px;
+                background-color: $primary-color;
+                color: #fff;
+                padding-bottom: 60px;
+                .body{
+                    .comment-item{
+                        margin-top: 60px;
+                    }
+                }
+            }
         }
     }
     .mobile-app{
@@ -539,6 +561,7 @@
             .s1-text-wrap{
                 .s1-text-1{
                     margin-top: 30px;
+                    font-size: 3rem;
                 }
                 .s1-text-2{
                     margin-top: 10px;
@@ -558,14 +581,14 @@
                         font-size: 2.4rem;
                     }
                     .p1{
-                        margin-top: 30px;
+                        margin-top: 0px;
                         .p1-item{
                             display: block;
                             padding: 0 3%;
-                            margin-top: 10px;
+                            margin-top: 20px;
                             .title2{
-                                margin-top: 5px;
-                                font-size: 2rem;
+                                margin-top: 10px;
+                                font-size: 1.6rem;
                             }
                             .p2{
                                 font-size: 1.4rem;
@@ -582,14 +605,48 @@
                     }
                 }
             }
+            .section2-6{
+                margin-top: 10px;
+                padding-top:30px;
+                .body{
+                    .comment-item{
+                        margin-top: 30px!important;
+                    }
+                }
+            }
         }
         .section2-2{
+            margin-top: 30px;
+            .btn{
+                margin-top: 30px;
+            }
             .title{
-                font-size: 2.4rem;
+                font-size: 2rem;
+            }
+            .section2-2-p{
+                .title{
+                    margin-top: 20px;
+                }
+                .section2-2-p-item{
+                    margin-top: 30px;
+                    .title{
+                        font-size: 1.6rem;
+                    }
+                    span{
+                        font-size: 1.4rem;
+                    }
+                }
             }
         }
         .section2-3{
-            padding-bottom: 60px;
+            margin-top: 30px;
+            padding-bottom: 40px;
+            .title{
+                padding-top:30px;
+            }
+            .body{
+                margin-top: 30px;
+            }
         }
         .section2-4{
             .body{
@@ -628,13 +685,8 @@
                     text-align: left;
                     font-size: 1.6rem;
                     line-height: 26px;
-                }
-            }
-        }
-        .section2-6{
-            .body{
-                .comment-item{
-                    margin-top: 20px;
+                    background-color: rgba(0,0,0,0.2);
+                    width:100%;
                 }
             }
         }
