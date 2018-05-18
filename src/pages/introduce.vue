@@ -2,7 +2,7 @@
     <div class="introduce">
         <div class="section1 relative">
             <!-- <hp-image src="./static/images/index-carousel-2.jpg" alt=""></hp-image> -->
-            <el-carousel arrow="never" :interval="5000">
+            <el-carousel class="vertical-indicator" arrow="never" :interval="5000">
                 <el-carousel-item v-for="item in carouselList" :key="item">
                     <hp-image :src="item" alt=""></hp-image>
                 </el-carousel-item>
@@ -162,11 +162,11 @@
                     </div>
                 </div>
                 <div class="section-image">
-                    <img v-show="s5CheckedIndex===1" src="../../static/images/s5-section1.png" alt="">
-                    <img v-show="s5CheckedIndex===2" src="../../static/images/s5-section2.png" alt="">
-                    <img v-show="s5CheckedIndex===3" src="../../static/images/s5-section3.png" alt="">
+                    <img v-show="s5CheckedIndex===1" src="../../static/images/s5-section1.png" alt="" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
+                    <img v-show="s5CheckedIndex===2" src="../../static/images/s5-section2.png" alt="" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
+                    <img v-show="s5CheckedIndex===3" src="../../static/images/s5-section3.png" alt="" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
                 </div>
-                <div style="position:absolute;bottom:15px;left: 45%;">
+                <div style="position:absolute;bottom:15px;left: 50%;transform: translateX(-50%);-ms-transform: translateX(-50%);">
                     <span class="team-indicator-item" :class="{'checked': s5CheckedIndex===1}"></span>
                     <span class="team-indicator-item" :class="{'checked': s5CheckedIndex===2}"></span>
                     <span class="team-indicator-item" :class="{'checked': s5CheckedIndex===3}"></span>
@@ -197,43 +197,61 @@
                     './static/images/i-s1.jpg',
                     './static/images/i-s2.jpg'
                 ],
+                touchFlag: false
             };
         },
         mounted() {
-            this.timer = setInterval(() => {
-                this.s5CheckedIndex ++;
-                if (this.s5CheckedIndex > 3) {
-                    this.s5CheckedIndex = 1;
-                }
-            }, 3000);
+            this.startTimer();
         },
         methods: {
-            touchStart(ev) {
-                ev.preventDefault();
-                const touch = ev.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
-　　            this.startX = touch.pageX;
-            },
-            touchMove(ev) {
-                ev.preventDefault();
-                const touch = ev.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
-　　            if (this.startX > touch.pageX) {
-                    this.s5CheckedIndex --;
-                    if (this.s5CheckedIndex < 1) {
-                        this.s5CheckedIndex = 1;
-                    }
-                } else {
+            startTimer() {
+                this.timer = setInterval(() => {
                     this.s5CheckedIndex ++;
                     if (this.s5CheckedIndex > 3) {
                         this.s5CheckedIndex = 1;
                     }
+                }, 5000);
+            },
+            clearTimer() {
+                if (this.timer) {
+                    clearInterval(this.timer);
+                    this.timer = null;
                 }
+            },
+            touchStart(ev) {
+                // ev.preventDefault();
+                const touch = ev.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
+　　            this.startX = touch.pageX;
+                this.touchFlag = true;
+                this.clearTimer();
+            },
+            touchMove(ev) {
+                if (!this.touchFlag) {
+                    return;
+                }
+                // ev.preventDefault();
+                const touch = ev.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
+　　            if (this.startX > touch.pageX + 80) {
+                    this.s5CheckedIndex --;
+                    if (this.s5CheckedIndex < 1) {
+                        this.s5CheckedIndex = 1;
+                    }
+                    this.touchFlag = false;
+                } else if (touch.pageX > this.startX + 80) {
+                    this.s5CheckedIndex ++;
+                    if (this.s5CheckedIndex > 3) {
+                        this.s5CheckedIndex = 1;
+                    }
+                    this.touchFlag = false;
+                }
+            },
+            touchEnd(ev) {
+                this.touchFlag = false;
+                this.startTimer();
             }
         },
         destroyed() {
-            if (this.timer) {
-                clearInterval(this.timer);
-                this.timer = null;
-            }
+            this.clearTimer();
         }
     }
 </script>

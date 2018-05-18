@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <div class="section1 section1-fixed text-center" :style="{top:`${firstScreenTop}px`}" ref="firstScreen">
-            <el-carousel v-if="!isMobile" arrow="never" :interval="5000">
+            <el-carousel class="vertical-indicator" v-if="!isMobile" arrow="never" :interval="5000">
                 <el-carousel-item v-for="(item, index) in carouselList" :key="index">
                     <hp-image class="s1-image" :src="item" :has-cover="false" alt=""></hp-image>
                 </el-carousel-item>
@@ -180,7 +180,7 @@
                 </a>
             </div>
 
-            <div class="section-2-6 text-center">
+            <div v-if="!isMobile" class="section-2-6 text-center">
                 <div class="title fs-36">我们广受顾客好评</div>
                 <div layout="row" layout-wrap class="body">
                     <div flex="1" flex-xs="100" class="comment-item">
@@ -204,6 +204,48 @@
                         <span class="fs-16 text-l2">第二次预订了，刚进来的时候感觉进错店，因为这个店已经重新装修，特别棒，很有情调，是欧式风格，很大气高端，卫生也很干净整洁，设施配套很齐全，很幽静。最喜欢4楼的阳台，静静的看着东湖，静静的享受自然，很清新，舒适。。</span>
                     </div>
                 </div>
+            </div>
+
+            <div v-else class="section-2-6-mobile text-center">
+                <div class="title fs-36">我们广受顾客好评</div>
+                <div class="body">
+                    <el-carousel ref="commentCarousel" arrow="never" :interval="5000">
+                        <el-carousel-item>
+                            <div class="comment-item">
+                                <img src="../../static/images/customer1.png" style="width: 100px!important;height:100px!important;" alt=""><br><br>
+                                <span class="fs-24 text-l2">周子周</span><br>
+                                <span class="fs-16 text-l2">我是用来接亲的，朋友晚上过去的都说这套别墅太棒了，好多朋友都吹捧，倍儿有感觉😄😄婚礼配上欧式风格高大上，我的眼光真不错，感谢慢姑娘别墅提供给我这么优秀的地方，我会向朋友大力推荐哦</span>
+                            </div>
+                        </el-carousel-item>
+                        <el-carousel-item>
+                            <div class="comment-item">
+                                <img src="../../static/images/customer2.png" style="width: 100px!important;height:100px!important;" alt=""><br><br>
+                                <span class="fs-24 text-l2">鲜森张</span><br>
+                                <span class="fs-16 text-l2">很开心的一次轰趴，整套别墅很大，在东湖边上，店长小哥很热情，我们下午到的，院子里有游泳池，小哥为我们泳池换新水！！户外院子BBQ也很嗨皮，慢姑娘别墅轰趴都有直接对接配送的，不需要我们大热天跑去超市各种买还要自提过去！！最后提一下小哥服务真的贴心，据说还是今年才大学毕业的哦！！力荐！！</span>
+                            </div>
+                        </el-carousel-item>
+                        <el-carousel-item>
+                            <div class="comment-item">
+                                <img src="../../static/images/customer3.png" style="width: 100px!important;height:100px!important;" alt=""><br><br>
+                                <span class="fs-24 text-l2">萧萧萧</span><br>
+                                <span class="fs-16 text-l2">真的是从未有过的体验，可以用享受来形容，以后不再愁没有地方聚会了，早点知道还有这样的地方就好了，大家玩的都很开心，店面很干净，服务态度也是特亲切，以后我还要来😉</span>
+                            </div>
+                        </el-carousel-item>
+                        <el-carousel-item>
+                            <div class="comment-item">
+                                <img src="../../static/images/customer4.png" style="width: 100px!important;height:100px!important;" alt=""><br><br>
+                                <span class="fs-24 text-l2">兔萌</span><br>
+                                <span class="fs-16 text-l2">第二次预订了，刚进来的时候感觉进错店，因为这个店已经重新装修，特别棒，很有情调，是欧式风格，很大气高端，卫生也很干净整洁，设施配套很齐全，很幽静。最喜欢4楼的阳台，静静的看着东湖，静静的享受自然，很清新，舒适。。</span>
+                            </div>
+                        </el-carousel-item>
+                    </el-carousel>
+                </div>
+                <svg class="icon caret-left fs-28" aria-hidden="true" @click="commentPrevClick()">
+                    <use xlink:href="#icon-caret-left"></use>
+                </svg>
+                <svg class="icon caret-right fs-28" aria-hidden="true" @click="commentNextClick()">
+                    <use xlink:href="#icon-caret-right"></use>
+                </svg>
             </div>
 
             <!-- <div class="carouse-container relative">
@@ -328,6 +370,12 @@
                         // window.scrollTo(0,this.$refs.firstScreen.clientHeight+60);
                     },1000);
                 }
+            },
+            commentPrevClick() {
+                this.$refs.commentCarousel.prev();
+            },
+            commentNextClick() {
+                this.$refs.commentCarousel.next();
             }
         },
         computed: {},
@@ -605,15 +653,6 @@
                     }
                 }
             }
-            .section2-6{
-                margin-top: 10px;
-                padding-top:30px;
-                .body{
-                    .comment-item{
-                        margin-top: 30px!important;
-                    }
-                }
-            }
         }
         .section2-2{
             margin-top: 30px;
@@ -691,5 +730,54 @@
                 }
             }
         }
+    }
+</style>
+
+<style lang="scss">
+    @import '../styles/var';
+    .section-2-6-mobile{
+        position: relative;
+        .el-carousel__button{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        // .el-carousel__indicators{
+        //     left: 50%;
+        //     bottom: 10px;
+        //     -ms-transform: translateX(-50%) translateX(0)!important;
+        //     transform: translateX(-50%) translateX(0)!important;
+        //     left: auto!important;
+        //     bottom: auto!important;
+        //     .el-carousel__indicator{
+        //         display: inline-block;
+        //         .el-carousel__button{
+        //             width: 10px;
+        //             height: 10px;
+        //             border-radius: 50%;
+        //         }
+        //     }
+        // }
+        margin-top: 20px;
+        padding-top:30px;
+        background-color: $primary-color;
+        color: #fff;
+        padding-bottom: 20px;
+        .body{
+            margin-top:20px;
+        }
+        .comment-item{
+            vertical-align: top;
+            margin-top: 10px!important;
+            padding: 0 15%!important;
+        }
+        svg.icon{
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
+            z-index: 999;
+        }
+        svg.caret-left{left: 15px;}
+        svg.caret-right{right: 15px;}
     }
 </style>

@@ -211,7 +211,7 @@ html,body {
     width: 100px;
     line-height: 100px;
 }
-.el-carousel__indicators{
+.vertical-indicator .el-carousel__indicators{
     top: 50%;
     right: 10px;
     -ms-transform: translateY(-50%) translateX(0)!important;
@@ -305,6 +305,9 @@ html,body {
     .el-carousel__container, .s1-image img, .el-carousel__container img{
         height: 300px!important;
         width: auto;
+    }
+    .section-2-6-mobile .el-carousel__container {
+      height: 400px !important;
     }
     .padding-left-10{
       padding-left: 0;

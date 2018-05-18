@@ -2,11 +2,6 @@
     <div class="brand" style="overflow-x:hidden;">
         <div class="section1 relative">
             <hp-image src="./static/images/b-s1.jpg" alt=""></hp-image>
-            <!-- <el-carousel arrow="never" :interval="5000">
-                <el-carousel-item v-for="item in carouselList" :key="item">
-                    <hp-image :src="item" alt=""></hp-image>
-                </el-carousel-item>
-            </el-carousel> -->
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title">因为更懂年轻人，所以我们受欢迎</div><br>
                 <!-- <div class="sub-tilte fs-18">目前华中最大互联网+连锁轰趴品牌</div> -->
