@@ -6,17 +6,17 @@
             <div layout="row" layout-align="center space-around" class="text-left" style="margin-top: 30px;" layout-wrap>
                 <div flex="10" flex-xs="0"></div>
                 <div class="place" flex="30" flex-xs="100">
-                    <span class="fs-20">配备</span><br>
+                    <span class="fs-20 font-bold">配备</span><br>
                     <span class="fs-16">{{store.playItems}}</span>
                 </div>
                 <div class="price" flex="25" flex-xs="100">
-                    <span class="fs-20">价格</span><br>
+                    <span class="fs-20 font-bold">价格</span><br>
                     <span class="fs-16">周一至周四：{{store.priceWorkday==='未知'?'? ':store.priceWorkday}}元/场</span><br>
                     <span class="fs-16">周五至周日：{{store.priceWeekend}}元/场</span><br>
                     <span class="fs-16">周五至周日：{{store.allPrice}}元/场</span>
                 </div>
                 <div class="open-time" flex="25" flex-xs="100">
-                    <span class="fs-20">预定</span><br>
+                    <span class="fs-20 font-bold">预定</span><br>
                     <span class="fs-16">预定电话：{{store.orderNumber}}&nbsp;<a class="call-phone" :href="`tel:${store.orderNumber}`">拨打</a></span><br>
                     <span class="fs-16">营业时间：{{store.openTime}}</span><br>
                     <span class="fs-16">&nbsp;</span>

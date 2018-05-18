@@ -43,7 +43,7 @@
                         <img :src="item.cover" alt="" class="width100">
                         <div class="label"><span>{{item.label}}</span></div>
                         <div class="text">
-                            <span class="fs-20">{{item.title}}</span><br>
+                            <span class="sub-title">{{item.title}}</span><br>
                             <!-- <span>毕业于浙江科技大学的阿豪，从小学开始就一个人在老</span><br>
                             <span>家，成长环境相对自由，所以性格相对大胆喜欢尝试新…</span> -->
                             <div class="content" v-html="item.content.substr(0, 50)+'...'"></div>
@@ -96,7 +96,7 @@
                         <img :src="item.cover" alt="" class="width100">
                         <div class="label"><span>{{item.label}}</span></div>
                         <div class="text">
-                            <span class="fs-20">{{item.title}}</span><br>
+                            <span class="sub-title">{{item.title}}</span><br>
                             <!-- <span>毕业于浙江科技大学的阿豪，从小学开始就一个人在老</span><br>
                             <span>家，成长环境相对自由，所以性格相对大胆喜欢尝试新…</span> -->
                             <div class="content" v-html="item.content.substr(0, 50)+'...'"></div>
@@ -156,6 +156,7 @@
                 margin-top: 20px;
                 font-size: 2.4rem;
                 line-height: 36px;
+                font-weight: bold;
             }
             .content{
                 font-size: 1.8rem;
@@ -224,9 +225,9 @@
                 }
                 .label span{
                     display: inline-block;
-                    padding: 0px 20px; 
-                    height: 36px;
-                    line-height: 36px;
+                    padding: 0px 10px; 
+                    height: 20px;
+                    line-height: 20px;
                     background-color: $primary-color;
                     color: #fff;
                 }
@@ -241,6 +242,10 @@
                     line-height: 26px;
                     // background-color: rgba(0,0,0,0.2);
                     background:-webkit-gradient(linear, 0 0, 0 bottom, from(rgba(0,0,0,0)), to(rgba(27,27,27, 0.69)));
+                    .sub-title{
+                        font-weight: bold;
+                        font-size: 1.6rem;
+                    }
                 }
             }
         }

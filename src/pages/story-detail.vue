@@ -10,7 +10,7 @@
                 <span class="fs-16">人物：{{storyModel.storyName}}</span>
             </div>
             <div flex="80" flex-xs="100" class="right-content">
-                <div class="title fs-24">{{storyModel.title}}</div>
+                <div class="title fs-24 font-bold">{{storyModel.title}}</div>
                 <!-- <div class="content fs-16">{{storyModel.content}}</div> -->
                 <div class="content fs-16 color-grey" v-for="(item, index) in storyModel.paragraph" :key="index" v-html="item">
                 </div>

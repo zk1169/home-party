@@ -141,7 +141,7 @@
         </div>
         <div v-else class="section5 relative">
             <hp-image src="./static/images/s5-bg.jpg" :has-cover="false" alt=""></hp-image>
-            <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
+            <div class="s1-text-wrap image-text-wrap">
                 <div class="title fs-20">市场潜力分析</div>
                 <div class="icon-wrap" layout="row" layout-align="space-around center">
                     <div class="icon-circle" :class="{'checked':s5CheckedIndex===1}" @click="s5CheckedIndex=1">
@@ -162,9 +162,15 @@
                     </div>
                 </div>
                 <div class="section-image">
-                    <img v-show="s5CheckedIndex===1" src="../../static/images/s5-section1.png" alt="" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
-                    <img v-show="s5CheckedIndex===2" src="../../static/images/s5-section2.png" alt="" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
-                    <img v-show="s5CheckedIndex===3" src="../../static/images/s5-section3.png" alt="" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
+                    <transition name="fade">
+                        <img v-show="s5CheckedIndex===1" src="../../static/images/s5-section1.png" alt="" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
+                    </transition>
+                    <transition name="fade">
+                        <img v-show="s5CheckedIndex===2" src="../../static/images/s5-section2.png" alt="" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
+                    </transition>
+                    <transition name="fade">
+                        <img v-show="s5CheckedIndex===3" src="../../static/images/s5-section3.png" alt="" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
+                    </transition>
                 </div>
                 <div style="position:absolute;bottom:15px;left: 50%;transform: translateX(-50%);-ms-transform: translateX(-50%);">
                     <span class="team-indicator-item" :class="{'checked': s5CheckedIndex===1}"></span>
@@ -356,11 +362,14 @@
             }
         }
         .section5{
+            text-align: center;
             .title{
                 margin-bottom: 10px;
+                margin-top: 30px;
             }
             .icon-wrap{
                 width: 70%;
+                margin-left: 15%;
                 margin-bottom: 10px;
                 .icon-circle{
                     border-radius: 50%;
@@ -385,7 +394,9 @@
             .section-image{
                 img{
                     width: 90%;
-                    margin-left: 5%;
+                    position: absolute;
+                    top:120px; 
+                    left: 5%;
                 }
             }
             .team-indicator-item{
@@ -403,4 +414,13 @@
             }
         }
     }
+        .fade-enter-active, .fade-leave-active {
+            transition: all .5s;
+            // transform: translate(100%, 0);
+        }
+        .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+            // left: 100%;
+            // transform: translate(-100% 0);
+            opacity: 0;
+        }
 </style>

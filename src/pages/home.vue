@@ -25,17 +25,17 @@
                     <div class="p1" :layout="isMobile?'column':'row'" style="width:80%;">
                         <div class="p1-item text-center" flex="1">
                             <img src="../../static/images/h-s2-1.png" alt="">
-                            <div class="title2 text-l2">轰趴</div>
+                            <div class="title2 text-l2 font-bold">什么是轰趴</div>
                             <span class="p2 text-l1">将单一娱乐场地或活动进行集中，让人在一个空间能体验多个空间的娱乐</span>
                         </div>
                         <div class="p1-item text-center" flex="1">
                             <img src="../../static/images/h-s2-2.png" alt="">
-                            <div class="title2 text-l2">行业机遇</div>
+                            <div class="title2 text-l2 font-bold">行业机遇</div>
                             <span class="p2 text-l1">聚会需求大，市场聚会方式单一，已有的轰趴服务质量不一，极待升级</span>
                         </div>
                         <div class="p1-item text-center" flex="1">
                             <img src="../../static/images/h-s2-3.png" alt="">
-                            <div class="title2 text-l2">市场环境</div>
+                            <div class="title2 text-l2 font-bold">市场环境</div>
                             <span class="p2 text-l1">消费主力年轻化，消费需求的多样化，消费能力水平日渐提高</span>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                         <svg class="icon lingdai" aria-hidden="true">
                             <use xlink:href="#icon-lingdai"></use>
                         </svg>
-                        <div class="title text-l2">品牌宗旨</div>
+                        <div class="title text-l2 font-bold">品牌宗旨</div>
                         <span class="text-l2">一站式服务</span><br>
                         <span class="text-l2">标准化管理</span><br>
                         <span class="text-l2">管家式服务</span>
@@ -59,7 +59,7 @@
                         <svg class="icon tianping" aria-hidden="true">
                             <use xlink:href="#icon-tianping"></use>
                         </svg>
-                        <div class="title text-l2">竞争优势</div>
+                        <div class="title text-l2 font-bold">竞争优势</div>
                         <span class="text-l2">强大而健全的团队</span><br>
                         <span class="text-l2">强大的品牌影响力</span><br>
                         <span class="text-l2">前沿的服务理念</span>
@@ -68,7 +68,7 @@
                         <svg class="icon duoyuanhua" aria-hidden="true">
                             <use xlink:href="#icon-duoyuanhua"></use>
                         </svg>
-                        <div class="title text-l2">多元化盈利</div>
+                        <div class="title text-l2 font-bold">多元化盈利</div>
                         <span class="text-l2">拓展轰趴周边的盈利模式</span><br>
                         <span class="text-l2">挖掘更新鲜的玩法</span><br>
                         <span class="text-l2">多元化盈利</span>
@@ -77,7 +77,7 @@
                         <svg class="icon zhanlue" aria-hidden="true">
                             <use xlink:href="#icon-zhanlue"></use>
                         </svg>
-                        <div class="title text-l2">战略优势</div>
+                        <div class="title text-l2 font-bold">战略优势</div>
                         <span class="text-l2">2个基本点：装修+定制</span><br>
                         <span class="text-l2">3大核心：服务+SEO+地推</span>
                     </div>
@@ -92,7 +92,7 @@
                         <div layout="column" layout-align="start center">
                             <div class="text-left">
                                 <span class="fs-18" style="line-height: 25px;">已有加盟店</span><br>
-                                <span class="fs-36" style="line-height: 50px;">27个</span>
+                                <span class="fs-36 font-bold" style="line-height: 50px;">27个</span>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                         <div layout="column" layout-align="start center">
                             <div class="text-left">
                                 <span class="fs-18" style="line-height: 25px;">已入驻</span><br>
-                                <span class="fs-36" style="line-height: 50px;">5个城市</span>
+                                <span class="fs-36 font-bold" style="line-height: 50px;">5个城市</span>
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                         <div layout="column" layout-align="start center">
                             <div class="text-left">
                                 <span class="fs-18" style="line-height: 25px;">已有加盟商</span><br>
-                                <span class="fs-36" style="line-height: 50px;">99人</span>
+                                <span class="fs-36 font-bold" style="line-height: 50px;">99人</span>
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                         <div layout="column" layout-align="start center">
                             <div class="text-left">
                                 <span class="fs-18" style="line-height: 25px;">品牌团队</span><br>
-                                <span class="fs-36" style="line-height: 50px;">30人</span>
+                                <span class="fs-36 font-bold" style="line-height: 50px;">30人</span>
                             </div>
                         </div>
                     </div>
@@ -173,7 +173,7 @@
                     <img src="../../static/images/story-1-cover.jpg" alt="" class="width100">
                     <div class="label"><span>加盟人故事</span></div>
                     <div class="text">
-                        <span class="fs-20">因为不甘平庸，所以一直在路上</span><br>
+                        <span class="sub-title font-bold">因为不甘平庸，所以一直在路上</span><br>
                         <span>毕业于浙江科技大学的阿豪，从小学开始就一个人在老</span><br>
                         <span>家，成长环境相对自由，所以性格相对大胆喜欢尝试新…</span>
                     </div>
@@ -185,22 +185,22 @@
                 <div layout="row" layout-wrap class="body">
                     <div flex="1" flex-xs="100" class="comment-item">
                         <img src="../../static/images/customer1.png" alt=""><br><br>
-                        <span class="fs-24 text-l2">周子周</span><br>
+                        <span class="fs-24 text-l2 font-bold">周子周</span><br>
                         <span class="fs-16 text-l2">我是用来接亲的，朋友晚上过去的都说这套别墅太棒了，好多朋友都吹捧，倍儿有感觉😄😄婚礼配上欧式风格高大上，我的眼光真不错，感谢慢姑娘别墅提供给我这么优秀的地方，我会向朋友大力推荐哦</span>
                     </div>
                     <div flex="1" flex-xs="100" class="comment-item">
                         <img src="../../static/images/customer2.png" alt=""><br><br>
-                        <span class="fs-24 text-l2">鲜森张</span><br>
+                        <span class="fs-24 text-l2 font-bold">鲜森张</span><br>
                         <span class="fs-16 text-l2">很开心的一次轰趴，整套别墅很大，在东湖边上，店长小哥很热情，我们下午到的，院子里有游泳池，小哥为我们泳池换新水！！户外院子BBQ也很嗨皮，慢姑娘别墅轰趴都有直接对接配送的，不需要我们大热天跑去超市各种买还要自提过去！！最后提一下小哥服务真的贴心，据说还是今年才大学毕业的哦！！力荐！！</span>
                     </div>
                     <div flex="1" flex-xs="100" class="comment-item">
                         <img src="../../static/images/customer3.png" alt=""><br><br>
-                        <span class="fs-24 text-l2">萧萧萧</span><br>
+                        <span class="fs-24 text-l2 font-bold">萧萧萧</span><br>
                         <span class="fs-16 text-l2">真的是从未有过的体验，可以用享受来形容，以后不再愁没有地方聚会了，早点知道还有这样的地方就好了，大家玩的都很开心，店面很干净，服务态度也是特亲切，以后我还要来😉</span>
                     </div>
                     <div flex="1" flex-xs="100" class="comment-item">
                         <img src="../../static/images/customer4.png" alt=""><br><br>
-                        <span class="fs-24 text-l2">兔萌</span><br>
+                        <span class="fs-24 text-l2 font-bold">兔萌</span><br>
                         <span class="fs-16 text-l2">第二次预订了，刚进来的时候感觉进错店，因为这个店已经重新装修，特别棒，很有情调，是欧式风格，很大气高端，卫生也很干净整洁，设施配套很齐全，很幽静。最喜欢4楼的阳台，静静的看着东湖，静静的享受自然，很清新，舒适。。</span>
                     </div>
                 </div>
@@ -213,28 +213,28 @@
                         <el-carousel-item>
                             <div class="comment-item">
                                 <img src="../../static/images/customer1.png" style="width: 100px!important;height:100px!important;" alt=""><br><br>
-                                <span class="fs-24 text-l2">周子周</span><br>
+                                <span class="fs-24 text-l2 font-bold">周子周</span><br>
                                 <span class="fs-16 text-l2">我是用来接亲的，朋友晚上过去的都说这套别墅太棒了，好多朋友都吹捧，倍儿有感觉😄😄婚礼配上欧式风格高大上，我的眼光真不错，感谢慢姑娘别墅提供给我这么优秀的地方，我会向朋友大力推荐哦</span>
                             </div>
                         </el-carousel-item>
                         <el-carousel-item>
                             <div class="comment-item">
                                 <img src="../../static/images/customer2.png" style="width: 100px!important;height:100px!important;" alt=""><br><br>
-                                <span class="fs-24 text-l2">鲜森张</span><br>
+                                <span class="fs-24 text-l2 font-bold">鲜森张</span><br>
                                 <span class="fs-16 text-l2">很开心的一次轰趴，整套别墅很大，在东湖边上，店长小哥很热情，我们下午到的，院子里有游泳池，小哥为我们泳池换新水！！户外院子BBQ也很嗨皮，慢姑娘别墅轰趴都有直接对接配送的，不需要我们大热天跑去超市各种买还要自提过去！！最后提一下小哥服务真的贴心，据说还是今年才大学毕业的哦！！力荐！！</span>
                             </div>
                         </el-carousel-item>
                         <el-carousel-item>
                             <div class="comment-item">
                                 <img src="../../static/images/customer3.png" style="width: 100px!important;height:100px!important;" alt=""><br><br>
-                                <span class="fs-24 text-l2">萧萧萧</span><br>
+                                <span class="fs-24 text-l2 font-bold">萧萧萧</span><br>
                                 <span class="fs-16 text-l2">真的是从未有过的体验，可以用享受来形容，以后不再愁没有地方聚会了，早点知道还有这样的地方就好了，大家玩的都很开心，店面很干净，服务态度也是特亲切，以后我还要来😉</span>
                             </div>
                         </el-carousel-item>
                         <el-carousel-item>
                             <div class="comment-item">
                                 <img src="../../static/images/customer4.png" style="width: 100px!important;height:100px!important;" alt=""><br><br>
-                                <span class="fs-24 text-l2">兔萌</span><br>
+                                <span class="fs-24 text-l2 font-bold">兔萌</span><br>
                                 <span class="fs-16 text-l2">第二次预订了，刚进来的时候感觉进错店，因为这个店已经重新装修，特别棒，很有情调，是欧式风格，很大气高端，卫生也很干净整洁，设施配套很齐全，很幽静。最喜欢4楼的阳台，静静的看着东湖，静静的享受自然，很清新，舒适。。</span>
                             </div>
                         </el-carousel-item>
@@ -716,6 +716,11 @@
                     top:0;
                     left:0;
                 }
+                .label span{
+                    padding: 0px 10px; 
+                    height: 20px;
+                    line-height: 20px;
+                }
                 .text{
                     position: absolute;
                     bottom:0;
@@ -727,6 +732,10 @@
                     line-height: 26px;
                     background-color: rgba(0,0,0,0.2);
                     width:100%;
+                    .sub-title{
+                        font-weight: bold;
+                        font-size: 1.6rem;
+                    }
                 }
             }
         }
@@ -741,6 +750,9 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
+        }
+        .el-carousel__item{
+            background-color: #F17E01;
         }
         // .el-carousel__indicators{
         //     left: 50%;
