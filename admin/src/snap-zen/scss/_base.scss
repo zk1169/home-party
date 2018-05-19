@@ -2,14 +2,13 @@
 
 html,body {
   font-family: "Noto Sans SC", "Source Han Sans CN", "Source Han Sans SC", -apple-system, "PingFang SC", "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "ST Heiti", SimHei, Arial, sans-serif;
-  font-size: 10px;
+  font-size: 62.5%;
   margin: 0;
 }
 
-// body *{
-//   font-size: 14px;
-//   // line-height: 1.5;
-// }
+.main-root{
+  font-size: 1.4rem;
+}
 
 ul,
 ol {

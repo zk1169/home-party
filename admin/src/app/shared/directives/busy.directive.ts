@@ -9,7 +9,7 @@ export class ZkBusyDirective implements OnChanges{
     private divElement:HTMLElement = document.createElement("div");
     constructor(el: ElementRef) { 
         this.el = el.nativeElement;
-        //this.el.style.position = 'relative';
+        this.el.style.position = 'relative';
         this.createDivElement();
     }
 
@@ -21,6 +21,7 @@ export class ZkBusyDirective implements OnChanges{
                 this.el.appendChild(this.divElement);
                 changes['busy'].currentValue.subscribe(
                     (res:any)=>{
+                        // debugger;
                         // let self = this;
                         // setTimeout(function(){
                         //     self.el.removeChild(self.divElement);
@@ -52,7 +53,7 @@ export class ZkBusyDirective implements OnChanges{
         //this.divElement.innerText = "loading...";
         //this.divElement.innerHTML = '<div class="icon-rotate"><i class="fa fa-spinner mw-fs-20"></i></div>';
         //this.divElement.innerHTML = '<i class="iconfont icon-dengdai mw-fs-24 mw-rotate"></i>';
-        this.divElement.innerHTML = '<img src="./assets/svgs/loading.svg" class="mw-rotate mw-primary" style="width:30px;">';
+        this.divElement.innerHTML = '<img src="./assets/svgs/loading.svg" class="rotate-spin color-primary" style="width:30px;">';
         //this.divElement.innerHTML = '<object data="./assets/svgs/loading.svg" class="mw-rotate mw-primary" type="image/svg+xml" height="30"/>';
     }
 }

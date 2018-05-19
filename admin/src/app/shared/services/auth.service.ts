@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import HttpService from './http.service';
 
 @Injectable({ providedIn: 'root' })
@@ -13,9 +13,12 @@ export default class HeroService {
     return this.httpService.request('GET' ,this.url)
       .pipe(
         map((res) => {
-          debugger;
           return res;
         })
       );
+
+    // .subscribe(res => {
+    //   debugger;
+    // });
   }
 }

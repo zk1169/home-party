@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { AuthService } from '../../shared';
 
 import AuthModel from '../../models/auth.model';
@@ -10,32 +11,18 @@ import AuthModel from '../../models/auth.model';
   styleUrls: ['./index.scss']
 })
 export class LoginComponent {
-  private model: AuthModel = new AuthModel();
-  private loginAysn: Observable<Object>;
-  private radioList: Array<{checked:Boolean,label:String}>;
+  model: AuthModel = new AuthModel();
+  loginAysn: Observable<any>;
 
   constructor(private authService: AuthService) {
-    this.radioList = [
-      {
-        checked: false,
-        label: 'radio1'
-      },
-      {
-        checked: false,
-        label: 'radio2'
-      },
-      {
-        checked: false,
-        label: 'radio3'
-      }
-    ];
   }
 
   login(){
-    this.authService.login()
-      .subscribe(res => {
-        debugger;
-      });
+    this.loginAysn = this.authService.login()
+      .pipe(
+        map(res => {
+        })
+      );
     // console.log(`login.model.autoLogin=${this.model.autoLogin}`);
     // console.log(`login.radioList=${JSON.stringify(this.radioList)}`);
   }

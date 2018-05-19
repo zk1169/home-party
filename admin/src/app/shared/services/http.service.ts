@@ -50,9 +50,8 @@ export default class HttpService {
         return this.http.request(method, url, options)
             .pipe(
                 retry(3), // retry a failed request up to 3 times
-                tap(res => console.log(`fetched heroes`)),
+                // tap(res => console.log(`fetched heroes`)),
                 map((res) => {
-                    debugger;
                     return res;
                 }),
                 catchError(this.handleError) // then handle the error
@@ -60,7 +59,6 @@ export default class HttpService {
     }
 
     private handleError(error: HttpErrorResponse) {
-        debugger;
         if (error.error instanceof ErrorEvent) {
             // A client-side or network error occurred. Handle it accordingly.
             console.error('An error occurred:', error.error.message);

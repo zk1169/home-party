@@ -2,27 +2,10 @@
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 // @import './snap-zen/scss/snap-zen';
-// @import './styles/index';
 
-@import './styles/flex';
-@import './styles/utilities';
-
-body {
-    // font-size: 62.5%;
-    margin: 0px;
-    padding: 0px;
-}
-
-ul,
-ul li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.icon {
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
-  }
+@import './snap-zen/scss/base';
+@import './snap-zen/icon-symbol/symbol';
+@import './snap-zen/scss/variables';
+@import './snap-zen/scss/animation';
+@import './snap-zen/scss/layout/flex-layout';
+@import './snap-zen/scss/utilities';
