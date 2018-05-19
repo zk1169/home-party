@@ -11,8 +11,8 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 // import 'rxjs/add/operator/timeout'
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, map, tap, timeout, retry } from 'rxjs/operators';
-import { AppStateService } from './app-state.service';
-import { MessageService } from './message.service';
+import AppStateService from './app-state.service';
+// import { MessageService } from './message.service';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -21,7 +21,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export default class HttpService {
     constructor(private http: HttpClient,
-        private messageService: MessageService,
+        // private messageService: MessageService,
         private appStateService: AppStateService) { }
 
     /**
@@ -37,22 +37,13 @@ export default class HttpService {
         // //     data.merchantId = this.appStateService.empInfo.merchant.id;
         // // }
 
-        // let headers = new Headers({'content-type':'application/json'});
-        // //let options = new RequestOptions({ headers: headers, method: method, body: data,withCredentials: true});
-        // let options = new RequestOptions({ headers: headers, method: method, body: data});
-        // return this.http.request(url, options)
-        //     .timeout(30000)//超时时间(单位:毫秒)
-        //     .map(this.extractData)
-        //     .catch((error: any) => {
-        //         return Observable.throw(error);
-        //     });
         const options = _.assign(httpOptions, { body: data });
         return this.http.request(method, url, options)
             .pipe(
-                retry(3), // retry a failed request up to 3 times
+                retry(2), // retry a failed request up to 3 times
                 // tap(res => console.log(`fetched heroes`)),
-                map((res) => {
-                    return res;
+                map((res:any) => {
+                    return res.data;
                 }),
                 catchError(this.handleError) // then handle the error
             );

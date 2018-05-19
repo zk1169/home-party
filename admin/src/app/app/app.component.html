@@ -1,4 +1,5 @@
-<main class="main-root">
+<main class="app-component">
+  <mat-progress-bar class="mat-progress-bar" mode="indeterminate" *ngIf="showProgressBar"></mat-progress-bar>
   <!-- <toaster-container [toasterconfig]="toasterConfig"></toaster-container> -->
   <router-outlet></router-outlet>
   <!-- <mw-loading-bar></mw-loading-bar>
