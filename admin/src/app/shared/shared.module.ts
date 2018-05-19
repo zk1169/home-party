@@ -3,7 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 
-import { MatButtonModule, MatCheckboxModule,MatInputModule } from '@angular/material';
+import { 
+  MatButtonModule,
+  MatCheckboxModule,
+  MatInputModule,
+  MatMenuModule,
+  MatDialogModule
+} from '@angular/material';
 
 import { ZkButtonComponent } from './components/button-component';
 import { ZkCheckboxComponent } from './components/checkbox-component';
@@ -18,7 +24,9 @@ import { ZkBusyDirective } from './directives/busy.directive';
     HttpClientModule,
     MatButtonModule, 
     MatCheckboxModule,
-    MatInputModule
+    MatInputModule,
+    MatMenuModule,
+    MatDialogModule
   ],
   declarations: [
     ZkButtonComponent,
@@ -31,6 +39,8 @@ import { ZkBusyDirective } from './directives/busy.directive';
     MatButtonModule, 
     MatCheckboxModule,
     MatInputModule,
+    MatMenuModule,
+    MatDialogModule,
     CommonModule,
     FormsModule,
     HttpClientModule,
@@ -38,7 +48,7 @@ import { ZkBusyDirective } from './directives/busy.directive';
     ZkCheckboxComponent,
     ZkRadioComponent,
     ZkSelectComponent,
-    ZkBusyDirective,
+    ZkBusyDirective
   ],
 })
 export class SharedModule { }

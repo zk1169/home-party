@@ -8,6 +8,10 @@
   "plugins": [
     {"name": "@angular/language-service"}
   ],
+  "include":[
+    "**/*.ts",
+    "**/*.json"
+  ],
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"

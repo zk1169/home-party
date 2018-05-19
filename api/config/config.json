@@ -2,5 +2,6 @@
   "adminName": "admin",
   "adminPwd": "admin",
   "cookieLoginName": "_1a27__",
-  "cookieLoginValue": "admin"
+  "cookieLoginValue": "admin",
+  "cookieAdminNameField": "user_name"
 }

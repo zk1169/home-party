@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoute } from './app.routes';
 
 import { SignModule } from '../sign/sign.module';
-import { AppStateService, EventBus } from '@src/app/shared';
+import { AppStateService, EventBus, AuthGuard } from '@src/app/shared';
 // import { DashboardModule } from '../dashboard/dashboard.module';
 
 @NgModule({
@@ -26,6 +26,7 @@ import { AppStateService, EventBus } from '@src/app/shared';
   providers: [
     EventBus,
     AppStateService,
+    AuthGuard,
     //MatSnackBar
     // {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 10000}}
   ],

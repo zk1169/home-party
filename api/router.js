@@ -40,11 +40,17 @@ router.route('/login')
         const userName = req.body.userName;
         const userPwd = req.body.userPwd;
         if (userName === config.adminName && userPwd === config.adminPwd) {
-            res.cookie(config.cookieLoginName, config.cookieLoginValue, { maxAge: 900000, httpOnly: true })
+            res.cookie(config.cookieLoginName, base64encode(config.cookieLoginValue), { maxAge: 900000, httpOnly: false });
+            res.cookie(config.cookieAdminNameField, config.adminName, { maxAge: 900000, httpOnly: false });
             response(res, true);
         } else {
             response(res, false);
         }
+    })
+    .delete((req, res) => {
+        res.cookie(config.cookieLoginName, '', { maxAge: 0, httpOnly: false });
+        res.cookie(config.cookieAdminNameField, '', { maxAge: 0, httpOnly: false });
+        response(res, true);
     });
 
 router.route('/liuyan/:id')

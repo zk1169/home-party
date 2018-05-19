@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthService, AppStateService, EventBus } from '@src/app/shared';
@@ -16,7 +17,11 @@ export class LoginComponent extends BaseComponent {
   model: AuthModel = new AuthModel();
   loginAysn: Observable<any>;
 
-  constructor(private authService: AuthService, private appState: AppStateService, eventBus: EventBus) {
+  constructor(
+    private authService: AuthService, 
+    private appState: AppStateService, 
+    private router: Router, 
+    eventBus: EventBus) {
     super(eventBus);
   }
 
@@ -25,12 +30,19 @@ export class LoginComponent extends BaseComponent {
     this.loginAysn = this.authService.login(this.model)
       .pipe(
         map(res => {
+          this.eventNotice(EventType.PROGRESS_BAR ,false);
           if (res) {
             this.appState.authModel = this.model;
+            // this.eventNotice(EventType.ALERT ,EventModel.getInfoEvent('登录成功'));
+            if (this.appState.redirectUrl) {
+              this.router.navigate([this.appState.redirectUrl]);
+            } else {
+                this.router.navigate(['/dashboard/home']);
+            }
           } else {
             this.appState.authModel = null;
+            this.eventNotice(EventType.ALERT ,EventModel.getInfoEvent('用户名或密码错误'));
           }
-          this.eventNotice(EventType.ALERT ,EventModel.getInfoEvent('登录成功'));
         })
       );
     // console.log(`login.model.autoLogin=${this.model.autoLogin}`);

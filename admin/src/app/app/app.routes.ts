@@ -1,10 +1,11 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from '@src/app/shared';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'sign', pathMatch: 'full'},
   { path: 'sign', loadChildren: '../sign/sign.module#SignModule' },
-  { path: 'dashboard', loadChildren: '../dashboard/dashboard.module#DashboardModule' },
+  { path: 'dashboard', loadChildren: '../dashboard/dashboard.module#DashboardModule', canLoad: [AuthGuard] },
   { path: '**', redirectTo: 'sign', pathMatch: 'full'}
 ];
 

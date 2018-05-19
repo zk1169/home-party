@@ -34,12 +34,19 @@
             </div>
             <div class="dashboard-right" flex [class.dashboard-right-nav-show]="menuShow">
                 <div class="dashboard-header" layout="row" layout-align="end center">
-                    <span>Admin</span>
-                    <a (click)="logOut()">
-                        <svg class="icon bars" aria-hidden="true">
-                            <use xlink:href="#icon-bars"></use>
-                        </svg>
-                    </a>
+                    <div class="">
+                        <!-- <span>Admin</span>
+                        <a (click)="logOut()">
+                            <svg class="icon bars" aria-hidden="true">
+                                <use xlink:href="#icon-bars"></use>
+                            </svg>
+                        </a> -->
+                        <button mat-button [matMenuTriggerFor]="menu">{{UserName}}</button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="logOut()">退出系统</button>
+                            <button mat-menu-item>Item 2</button>
+                        </mat-menu>
+                    </div>
                 </div>
                 <router-outlet></router-outlet>
             </div>

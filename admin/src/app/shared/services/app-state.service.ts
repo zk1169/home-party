@@ -1,6 +1,8 @@
 // Observable Version
 import { Injectable } from '@angular/core';
 import AuthModel from '../../models/auth.model';
+// var config = require('../../../../../api/config/config.json');
+import config from '../../../../config/config';
 
 
 @Injectable({ providedIn: 'root' })
@@ -15,7 +17,11 @@ export default class AppStateService {
      */
     redirectUrl: string;
 
+    private cookieName1:string = config.cookieLoginName;
+    private cookieName2:string = config.cookieAdminNameField;
+
     constructor() {
+        this.authModel = null;
         // this.cache = {};
     }
 
@@ -26,8 +32,38 @@ export default class AppStateService {
      * false 跳转到登陆页
      */
     get isLoggedIn() {
-        return true;
+        const cookie1 = this.getCookie(this.cookieName1);
+        if (cookie1) {
+            this.authModel = new AuthModel();
+            this.authModel.userName = this.getCookie(this.cookieName2);
+            return true;
+        }
+        return !(this.authModel === null);
     }
+
+    getCookie(name){ 
+        var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+        if(arr=document.cookie.match(reg))
+            return unescape(arr[2]); 
+        else 
+            return null; 
+    }
+
+    logout() {
+        this.authModel = null;
+        // this.delCookie(this.cookieName1);
+        // this.delCookie(this.cookieName2);
+    }
+
+    // private delCookie(name)  
+    // {  
+    //     let exp = new Date();
+    //     exp.setTime(exp.getTime() - 1);
+    //     var cval=this.getCookie(name);
+    //     if(cval!=null) {
+    //         document.cookie= name + "="+cval+";expires="+exp.toUTCString(); 
+    //     }
+    // }
 
 
     // /**

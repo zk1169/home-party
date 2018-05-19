@@ -28,6 +28,19 @@ export default class HeroService {
     // });
   }
 
+  loginout () {
+    return this.httpService.request('DELETE' ,this.url)
+      .pipe(
+        map((res) => {
+          return res;
+        })
+      );
+
+    // .subscribe(res => {
+    //   debugger;
+    // });
+  }
+
   private base64encode(str: string) {
       let base64EncodeChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
       let out: any, i: any, len: any;　　

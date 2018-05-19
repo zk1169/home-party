@@ -4,6 +4,6 @@ export default class AuthModel {
 	autoLogin: boolean;
 
 	constructor(){
-		this.autoLogin = true;
+		this.autoLogin = false;
 	}
 }
