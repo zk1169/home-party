@@ -1,12 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { map } from 'rxjs/operators';
-import HttpService from './http.service';
+import { HttpService } from './http.service';
 import AuthModel from '../../models/auth.model';
 
 @Injectable({ providedIn: 'root' })
-export default class HeroService {
+export class AuthService {
   private url = '/api/login';  // URL to web api
-  constructor(private httpService: HttpService){
+  // constructor(private httpService: HttpService){
+
+  // }
+
+  constructor(@Inject(HttpService) public httpService: HttpService){
 
   }
 

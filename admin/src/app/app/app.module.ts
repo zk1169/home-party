@@ -28,13 +28,11 @@ import { HttpService, AppStateService, EventBus, AuthGuard, AuthService } from '
     SignModule
   ],
   providers: [
-    HttpService,
-    EventBus,
-    AppStateService,
-    AuthGuard,
-    AuthService,
-    //MatSnackBar
-    // {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 10000}}
+    // AppStateService,
+    // HttpService,
+    // AuthGuard,
+    // AuthService,
+    // EventBus,
   ],
   bootstrap: [AppComponent]
 })

@@ -11,18 +11,15 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 // import 'rxjs/add/operator/timeout'
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, map, tap, timeout, retry } from 'rxjs/operators';
-import AppStateService from './app-state.service';
-// import { MessageService } from './message.service';
+// import AppStateService from './app-state.service';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
 @Injectable({ providedIn: 'root' })
-export default class HttpService {
-    constructor(private http: HttpClient,
-        // private messageService: MessageService,
-        private appStateService: AppStateService) { }
+export class HttpService {
+    constructor(private http: HttpClient) { }
 
     /**
      * 直接请求api，不检查缓存
@@ -40,7 +37,7 @@ export default class HttpService {
         const options = _.assign(httpOptions, { body: data });
         return this.http.request(method, url, options)
             .pipe(
-                retry(2), // retry a failed request up to 3 times
+                retry(1), // retry a failed request up to 3 times
                 // tap(res => console.log(`fetched heroes`)),
                 map((res:any) => {
                     return res.data;

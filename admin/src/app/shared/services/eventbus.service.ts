@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core'
 import {Subject}    from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export default class EventBus {
+export class EventBus {
 
   private _data = new Subject<Object>();
   private _dataStream$ = this._data.asObservable();

@@ -240,7 +240,7 @@
 　　            if (this.startX > touch.pageX + 80) {
                     this.s5CheckedIndex --;
                     if (this.s5CheckedIndex < 1) {
-                        this.s5CheckedIndex = 1;
+                        this.s5CheckedIndex = 3;
                     }
                     this.touchFlag = false;
                 } else if (touch.pageX > this.startX + 80) {

@@ -6,7 +6,7 @@ import config from '../../../../config/config';
 
 
 @Injectable({ providedIn: 'root' })
-export default class AppStateService {
+export class AppStateService {
     /**
      * 登录的用户
      */

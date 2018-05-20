@@ -5,10 +5,10 @@ import {
   RouterStateSnapshot,
   CanActivateChild
 } from '@angular/router';
-import AppStateService from './app-state.service';
+import { AppStateService } from './app-state.service';
 
-@Injectable()
-export default class AuthGuard implements CanActivate, CanActivateChild {
+@Injectable({ providedIn: 'root' })
+export class AuthGuard implements CanActivate, CanActivateChild {
   constructor(private appState: AppStateService, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
@@ -23,8 +23,7 @@ export default class AuthGuard implements CanActivate, CanActivateChild {
 
   canLoad(route: Route): boolean {
     // let url = `/${route.path}`;
-    // return this.checkLogin(window.location.pathname);
-    return this.checkLogin('/dashboard/home');
+    return this.checkLogin(window.location.pathname);
   }
 
   checkLogin(url: string): boolean {

@@ -185,18 +185,23 @@
 
         <div class="section3 text-center">
             <div class="title">我们有牛掰的团队</div>
-            <div class="team-container relative">
+            <div v-if="!isMobile" class="team-container relative">
                 <div v-for="(item, index) in teamList" :key="item" class="team-item" ref="teams" @click="teamMemberClick(index)">
+                    <img :src="item" alt="">
+                </div>
+            </div>
+            <div v-else class="team-container relative">
+                <div v-for="item in teamList" :key="item" class="team-item" ref="teams" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
                     <img :src="item" alt="">
                 </div>
             </div>
             <!-- <div class="team-indicator">
                 <span v-for="item in teamList" :key="item" class="team-indicator-item"></span>
             </div> -->
-            <svg class="icon caret-left fs-28" aria-hidden="true" @click="teamMemberClick(activeIndex+1)">
+            <svg v-if="!isMobile" class="icon caret-left fs-28" aria-hidden="true" @click="teamMemberClick(activeIndex+1)">
                 <use xlink:href="#icon-caret-left"></use>
             </svg>
-            <svg class="icon caret-right fs-28" aria-hidden="true" @click="teamMemberClick(activeIndex-1)">
+            <svg v-if="!isMobile" class="icon caret-right fs-28" aria-hidden="true" @click="teamMemberClick(activeIndex-1)">
                 <use xlink:href="#icon-caret-right"></use>
             </svg>
         </div>
@@ -238,6 +243,7 @@
                 ];
             }
             return {
+                touchFlag: false,
                 cIndex: 0,
                 activeIndex: 2,
                 // carouselList: [
@@ -288,14 +294,61 @@
                 }
             },
             teamMemberClick(index) {
+                if (index<0){
+                    index += 5;
+                } else if (index > 5) {
+                    index -= 5;
+                }
                 this.activeIndex = index;
                 if (this.timer) {
                     clearInterval(this.timer);
                 }
                 this.cIndex = 2-index+5;
+                console.log(this.cIndex+','+index);
                 this.setPos(true);
                 this.timer = setInterval(this.setPos, 3000);
-            }
+            },
+            touchStart(ev) {
+                // ev.preventDefault();
+                const touch = ev.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
+　　            this.startX = touch.pageX;
+                this.touchFlag = true;
+                // this.clearTimer();
+            },
+            touchMove(ev) {
+                if (!this.touchFlag) {
+                    return;
+                }
+                // ev.preventDefault();
+                const touch = ev.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
+　　            if (this.startX > touch.pageX + 80) {
+                    this.touchFlag = false;
+                    // this.activeIndex--;
+                    // this.cIndex = 2-index+5;
+                    // this.setPos(true);
+                    this.teamMemberClick(this.activeIndex+1);
+                    console.log('--');
+                } else if (touch.pageX > this.startX + 80) {
+                    this.touchFlag = false;
+                    // this.activeIndex++;
+                    // this.setPos(true);
+                    this.teamMemberClick(this.activeIndex-1);
+                    console.log('++');
+                }
+            },
+            touchEnd(ev) {
+                this.touchFlag = false;
+                // this.startTimer();
+            },
+            startTimer() {
+                this.timer = setInterval(this.setPos, 3000);
+            },
+            clearTimer() {
+                if (this.timer) {
+                    clearInterval(this.timer);
+                    this.timer = null;
+                }
+            },
         },
         destroyed() {
             if (this.timer){
@@ -534,6 +587,7 @@
             }
             .s5-text{
                 height: 100%;
+                font-size: 1.8rem;
             }
         }
         .section6 .title{font-size: 2rem;}

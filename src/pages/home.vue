@@ -127,26 +127,37 @@
                 <div class="fs-36">加盟店案例<a v-if="isMobile" class="inline-block view-all fs-14" style="top: 5px;" href="#/store-list">查看所有 >></a><br></div>
                 <a v-if="!isMobile" class="inline-block view-all fs-20" href="#/store-list">查看所有 >></a><br>
                 <div class="inline-block" style="width: 100%;max-width: 1440px;">
-                    <div class="body" layout="row" layout-wrap>
+                    <!-- <div class="body" layout="row" layout-wrap>
                         <div flex="40" flex-xs="100" style="padding-right: 10px;" class="overflow-hidden">
-                            <img src="../../static/images/anli1.jpg" alt="">
+                            <img src="../../static/images/anli1.jpg" alt="" class="width100">
                         </div>
                         <div flex="40" flex-xs="100" style="padding: 0 10px;" class="overflow-hidden" layout="column">
                             <div flex="50" layout="row">
                                 <div flex="50" style="padding-right: 10px;padding-bottom: 10px;" class="overflow-hidden">
-                                    <img src="../../static/images/anli2.jpg" alt="">
+                                    <img src="../../static/images/anli2.jpg" alt="" class="width100">
                                 </div>
                                 <div flex="50" style="padding-left: 10px;padding-bottom: 10px;" class="overflow-hidden">
-                                    <img src="../../static/images/anli3.jpg" alt="">
+                                    <img src="../../static/images/anli3.jpg" alt="" class="width100">
                                 </div>
                             </div>
                             <div flex="50" class="overflow-hidden">
-                                <img src="../../static/images/anli4.jpg" alt="">
+                                <img src="../../static/images/anli4.jpg" alt="" class="width100">
                             </div>
                         </div>
-                        <div flex="20" flex-xs="100" class="overflow-hidden" style="height: 460px;">
+                        <div flex="20" flex-xs="100" class="overflow-hidden" style="height: 449px;">
                             <img src="../../static/images/anli5.jpg" alt="" class="width100">
                         </div>
+                    </div> -->
+                    <div layout="row" layout-wrap class="image-item">
+                        <div flex="40" flex-xs="100" class="image-item-padding-right"><img src="../../static/images/anli1.jpg" alt="" class="width100"></div>
+                        <div flex="40" flex-xs="100">
+                            <div layout="row">
+                                <div flex="50" class="image-item-padding-right"><img src="../../static/images/anli2.jpg" alt="" class="width100"></div>
+                                <div flex="50" class="image-item-padding-right"><img src="../../static/images/anli3.jpg" alt="" class="width100"></div>
+                            </div>
+                            <div class="image-item-padding-right image-top"><img src="../../static/images/anli4.jpg" alt="" class="width100"></div>
+                        </div>
+                        <div flex="20" flex-xs="100" style="height: 449px;overflow: hidden;"><img src="../../static/images/anli5.jpg" alt="" class="width100"></div>
                     </div>
                 </div>
             </div>
@@ -391,6 +402,9 @@
     .home{
         overflow-x: hidden; 
     }
+    .image-c{
+        background-color: #D8D8D8;
+    }
     .last-image{
         background: url(../../static/images/anli5.jpg);
         background-repeat:no-repeat; 
@@ -589,6 +603,11 @@
                     }
                 }
             }
+            .section2-4{
+                .image-top{
+                    margin-top: 6px;
+                }
+            }
             .section-2-6{
                 margin-top: 10px;
                 padding-top:60px;
@@ -701,6 +720,9 @@
             .view-all{
                 top: 50px;
                 right: 20px;
+            }
+            .image-top{
+                margin-top: 0px;
             }
         }
         .mobile-section2-5{

@@ -8,7 +8,7 @@
                 <div class="title" v-if="!isMobile">加入我们吧！</div>
             </div>
         </div>
-        <div class="section2 section text-center">
+        <div v-if="!isMobile" class="section2 section text-center">
             <div class="title">品牌加盟权益</div>
             <div class="p1" layout="row" layout-wrap>
                 <div class="p1-item text-center" flex="25">
@@ -60,6 +60,9 @@
                     <div class="fs-24 text-l3">总部物品配送，维修管理</div>
                 </div>
             </div>
+        </div>
+        <div v-else class="section2 section text-center">
+            <img src="../../static/images/j-s3-mobile.jpg" alt="" style="width:90%;"/>
         </div>
         <div class="section3">
             <img v-if="!isMobile" src="../../static/images/j-s2.jpg" alt="" class="width100"/>

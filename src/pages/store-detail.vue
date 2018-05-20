@@ -210,6 +210,10 @@
             .section-images{
                 margin-top: 0;
             }
+            .section-title{
+                margin-top: 30px;
+                margin-left: 20px;
+            }
         }
     }
 </style>
