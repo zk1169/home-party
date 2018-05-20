@@ -23,7 +23,8 @@ export default class AuthGuard implements CanActivate, CanActivateChild {
 
   canLoad(route: Route): boolean {
     // let url = `/${route.path}`;
-    return this.checkLogin(window.location.pathname);
+    // return this.checkLogin(window.location.pathname);
+    return this.checkLogin('/dashboard/home');
   }
 
   checkLogin(url: string): boolean {

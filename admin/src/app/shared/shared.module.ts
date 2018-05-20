@@ -7,48 +7,48 @@ import {
   MatButtonModule,
   MatCheckboxModule,
   MatInputModule,
-  MatMenuModule,
-  MatDialogModule
+  MatMenuModule
 } from '@angular/material';
 
-import { ZkButtonComponent } from './components/button-component';
-import { ZkCheckboxComponent } from './components/checkbox-component';
-import { ZkRadioComponent } from './components/radio-component';
-import { ZkSelectComponent } from './components/select-component';
+// import { ZkButtonComponent } from './components/button-component';
+// import { ZkCheckboxComponent } from './components/checkbox-component';
+// import { ZkRadioComponent } from './components/radio-component';
+// import { ZkSelectComponent } from './components/select-component';
 import { ZkBusyDirective } from './directives/busy.directive';
+// import DialogAlert from './dialogs/alert';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule,
+    // HttpClientModule,
     MatButtonModule, 
     MatCheckboxModule,
     MatInputModule,
-    MatMenuModule,
-    MatDialogModule
+    MatMenuModule
   ],
   declarations: [
-    ZkButtonComponent,
-    ZkCheckboxComponent,
-    ZkRadioComponent,
-    ZkSelectComponent,
+    // ZkButtonComponent,
+    // ZkCheckboxComponent,
+    // ZkRadioComponent,
+    // ZkSelectComponent,
     ZkBusyDirective,
+    // DialogAlert,
   ],
   exports: [
     MatButtonModule, 
     MatCheckboxModule,
     MatInputModule,
     MatMenuModule,
-    MatDialogModule,
     CommonModule,
     FormsModule,
-    HttpClientModule,
-    ZkButtonComponent,
-    ZkCheckboxComponent,
-    ZkRadioComponent,
-    ZkSelectComponent,
-    ZkBusyDirective
+    // HttpClientModule,
+    // ZkButtonComponent,
+    // ZkCheckboxComponent,
+    // ZkRadioComponent,
+    // ZkSelectComponent,
+    ZkBusyDirective,
+    // DialogAlert
   ],
 })
 export class SharedModule { }

@@ -1,26 +1,28 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+// import { CommonModule } from '@angular/common';
+// import { HttpModule, JsonpModule } from '@angular/http';
 
 import { SharedModule } from '@src/app/shared/shared.module';
 import { AuthGuard, CanDeactivateGuard } from '@src/app/shared';
-import { DialogAlert } from '@src/app/shared';
-import { AuthService } from '@src/app/shared';
+import { AlertDialog } from './dialogs/alert';
+// import { AuthService } from '@src/app/shared';
 
 import { DashboardComponent } from './dashboard-component';
 import { HomeComponent } from './home-component';
 import { SettingComponent } from './setting-component';
 
 import { DashboardRoutes } from './dashboard.routes';
+import { MatDialogModule } from '@angular/material';
 
 @NgModule({
-    imports: [ CommonModule,SharedModule,DashboardRoutes],
-    providers: [CanDeactivateGuard, AuthService],
+    imports: [ SharedModule,DashboardRoutes, MatDialogModule],
+    providers: [CanDeactivateGuard],
     declarations: [
         DashboardComponent, 
         HomeComponent,
         SettingComponent,
-        DialogAlert
+        AlertDialog
     ],
-    entryComponents: [ DialogAlert ],
+    entryComponents: [ DashboardComponent, AlertDialog ],
 })
 export class DashboardModule {}

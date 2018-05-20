@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import {MatDialog} from '@angular/material';
 import * as _ from 'lodash';
 import { AppStateService, AuthService } from '@src/app/shared';
-import { DialogAlert } from '@src/app/shared';
+import { AlertDialog } from '../dialogs/alert';
 
 @Component({
   selector: 'dashboard-component',
@@ -26,7 +26,7 @@ export class DashboardComponent {
   }
 
   logOut() {
-    let dialogRef = this.dialog.open(DialogAlert, {
+    let dialogRef = this.dialog.open(AlertDialog, {
       width: '250px',
       // data: { name: this.name, animal: this.animal }
     });

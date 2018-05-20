@@ -2,14 +2,15 @@ import {Component, Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
-  selector: 'dialog-alert',
+  selector: 'alert-dialog',
   templateUrl: './index.html',
 })
-export default class DialogAlert {
+export class AlertDialog {
 
   constructor(
-    public dialogRef: MatDialogRef<DialogAlert>,
+    public dialogRef: MatDialogRef<AlertDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
+
 
   onNoClick(): void {
     this.dialogRef.close();

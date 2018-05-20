@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpModule, JsonpModule, Http } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 // import { ComponentModule } from '../components/component.module';
 
@@ -12,14 +12,15 @@ import { SignRoutes } from './sign.routes';
     imports: [
         // ComponentModule,
         SignRoutes,
-        HttpModule,
-        JsonpModule,
+        // HttpModule,
+        // JsonpModule,
         SharedModule
     ],
     declarations: [
         SignComponent,
         LoginComponent,
-    ]
+    ],
+    entryComponents: [ SignComponent ],
 })
 export class SignModule {
     

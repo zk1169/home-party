@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material';
 import { map } from 'rxjs/operators';
 import { CanComponentDeactivate } from '@src/app/shared';
 import { Observable } from 'rxjs';
-import { DialogAlert } from '@src/app/shared';
 
 @Component({
   selector: 'home-component',
@@ -11,8 +9,6 @@ import { DialogAlert } from '@src/app/shared';
   styleUrls: ['./index.scss']
 })
 export class HomeComponent implements OnInit ,CanComponentDeactivate{
-
-  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
     
