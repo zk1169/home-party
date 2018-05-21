@@ -157,7 +157,7 @@
                             </div>
                             <div class="image-item-padding-right image-top"><img src="../../static/images/anli4.jpg" alt="" class="width100"></div>
                         </div>
-                        <div flex="20" flex-xs="100" style="height: 449px;overflow: hidden;"><img src="../../static/images/anli5.jpg" alt="" class="width100"></div>
+                        <div flex="20" flex-xs="100" class="image-last"><img src="../../static/images/anli5.jpg" alt="" class="width100"></div>
                     </div>
                 </div>
             </div>
@@ -606,6 +606,10 @@
             .section2-4{
                 .image-top{
                     margin-top: 6px;
+                }
+                .image-last{
+                    height: 449px;
+                    overflow: hidden;
                 }
             }
             .section-2-6{
