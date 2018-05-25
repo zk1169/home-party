@@ -39,7 +39,7 @@
                             <span class="p2 text-l1">消费主力年轻化，消费需求的多样化，消费能力水平日渐提高</span>
                         </div>
                     </div>
-                    <a v-if="!isMobile" class="btn btn-white block" href="#/introduce">了解更多 >></a>
+                    <a class="btn btn-white block" href="#/introduce">了解更多 >></a>
                 </div>
             </div>
 
@@ -162,8 +162,9 @@
                 </div>
             </div>
 
-            <div v-if="!isMobile" class="section2-5 text-center">
+            <div v-if="!isMobile" class="section2-5 text-center relative">
                 <div class="fs-36">听听加盟人怎么说</div>
+                <a v-if="!isMobile" class="inline-block view-all fs-20" style="top: 15px;" href="#/story">查看更多 >></a><br>
                 <div class="body" layout="row" layout-wrap>
                     <div flex="60" flex-xs="100" class="text-left ceo-says">
                         <div class="label"><span>加盟人故事</span></div>
@@ -179,7 +180,7 @@
             </div>
 
             <div v-else class="section2-5 mobile-section2-5 text-center">
-                <div class="fs-24">听听加盟人怎么说</div>
+                <div class="fs-24 relative">听听加盟人怎么说<a v-if="isMobile" class="inline-block view-all fs-14" style="top: 3px;right: 10px;" href="#/story">查看更多 >></a></div>
                 <a class="body block" href="#/story-detail/1/1">
                     <img src="../../static/images/story-1-cover.jpg" alt="" class="width100">
                     <div class="label"><span>加盟人故事</span></div>
@@ -503,17 +504,17 @@
             .body{
                 margin-top: 30px;
             }
-            .view-all{
-                cursor: pointer;
-                position: absolute;
-                right: 60px;
-                top: 20px;
-                text-decoration: none;
-                color: #555;
-            }
-            .view-all:hover,.view-all:focus,.view-all:active{
-                color: #4a90e2;
-            }
+        }
+        .view-all{
+            cursor: pointer;
+            position: absolute;
+            right: 60px;
+            top: 20px;
+            text-decoration: none;
+            color: #555;
+        }
+        .view-all:hover,.view-all:focus,.view-all:active{
+            color: #4a90e2;
         }
         .section2-5{
             margin-top: 60px;
