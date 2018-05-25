@@ -20,6 +20,8 @@
     "log": "^1.4.0",
     "moment": "^2.22.1",
     "mysql": "^2.15.0",
+    "nodemailer": "^4.6.5",
+    "nodemailer-smtp-transport": "^2.7.4",
     "q": "^1.4.1",
     "request": "^2.67.0",
     "sha1": "^1.1.1",

@@ -6,31 +6,11 @@ var config = require('./config/config.json');
 var wechatModel = require('./models/wechat.model');
 var wechatZk = require('./models/zk-wechat.model');
 
+var nodemailer = require("nodemailer");
+var smtpTransport = require('nodemailer-smtp-transport');
+
 wechatModel.token = 'patsnap';
-// 监听文本消息
-wechatModel.textMsg(function(msg) {
-    wechatZk.handleMsg(wechatModel, msg);
-});
-
-// 监听图片消息
-wechatModel.imageMsg(function(msg) {
-    wechatZk.handleMsg(wechatModel, msg);
-});
-
-// 监听位置消息
-wechatModel.locationMsg(function(msg) {
-    wechatZk.handleMsg(wechatModel, msg);
-});
-
-// 监听链接消息
-wechatModel.urlMsg(function(msg) {
-    wechatZk.handleMsg(wechatModel, msg);
-});
-
-// 监听事件消息
-wechatModel.eventMsg(function(msg) {
-    wechatZk.handleMsg(wechatModel, msg);
-});
+wechatZk.subscribeEvent(wechatModel);
 
 var router = express.Router();
 
@@ -46,14 +26,86 @@ const response = (res, data, err) => {
     res.json(responseObj);
 }
 
+const noAuthRouter = [
+    '/api/login',
+    '/api/wechat/patsnap',
+    '/api/wechat/createMenu'
+];
+
+router.route('/mail')
+    .get((req, res) => {
+        var transport = nodemailer.createTransport(smtpTransport({
+            host: "smtp.qq.com", // 主机
+            secure: true, // 使用 SSL
+            port: 465, // SMTP 端口
+            auth: {
+                user: "287760234@qq.com", // 账号
+                pass: "cwl7758521" // 密码
+            }
+        }));
+        var mailOptions = {
+            from: "287760234@qq.com", // 发件地址
+            to: "liouxingben@163.com", // 收件列表
+            subject: "喜欢NodeJs", // 标题
+            html: `<div style="border: 4px solid #f5f5f5;width: 645px;margin: 0 auto;">
+            <div style="padding-left: 20px;height: 51px;line-height: 51px;background-color: #73bc00;font-size: 24px;color: #fff;">TITLE</div>
+            <div style="padding: 0px 20px 20px 20px;border-bottom: 1px solid #d2d2d2;">
+                <div style="color: #609900;font-size: 12px;margin-top: 10px;">CN107562753A</div>
+                <a style="text-decoration: none;font-size: 16px;color: #4a90e2;display: block;" target="_blank" href="https://share-analytics.zhihuiya.com/view/9B51C15AB16A080AB83BAF2D20C8E5D607E2B6B4DF42FAF416FB62DF6FE2EF53E00AC250BD1B3F7C5F7C1F8870C69020897CF10C1386B2F435888BBC006AF671E9A3BAC1981896E0">
+                    一种基于索引词的分析方法与装置
+                  </a>
+                <div style="font-size: 12px;color: #999;">公开(公告)日：2018-01-09</div>
+                <div style="font-size: 12px;color: #999;">法律状态：实质审查</div>
+                <div style="font-size: 12px;color: #999;">索意互动(北京)信息技术有限公司</div>
+            </div>
+            <div style="padding: 0px 20px 20px 20px;border-bottom: 1px solid #d2d2d2;">
+              <div style="color: #609900;font-size: 12px;margin-top: 10px;">US20180137194A1</div>
+              <a style="text-decoration: none;font-size: 16px;color: #4a90e2;display: block;" target="_blank" href="https://share-analytics.zhihuiya.com/view/DBB78CCA006654FE7925538F8879D04E2543F766101C061C3C97A4964940F539647FEC2F71412BAF751D1C9D2ADCF9E932F9C6F19F06E6186525ED2348F4E1ABB98DFA4A2E00B00E">
+                  APPARATUS AND METHOD FOR AUTOMATED AND ASSISTED PATENT CLAIM MAPPING AND EXPENSE PLANNING
+              </a>
+              <div style="font-size: 12px;color: #999;">公开(公告)日：2018-05-17</div>
+              <div style="font-size: 12px;color: #999;">法律状态：公开</div>
+              <div style="font-size: 12px;color: #999;">BLACK HILLS IP HOLDINGS, LLC</div>
+          </div>
+          <div style="padding: 0px 20px 20px 20px;border-bottom: 1px solid #d2d2d2;">
+              <div style="color: #609900;font-size: 12px;margin-top: 10px;">US20170365021A1</div>
+              <a style="text-decoration: none;font-size: 16px;color: #4a90e2;display: block;" target="_blank" href="https://share-analytics.zhihuiya.com/view/9B51C15AB16A080AB83BAF2D20C8E5D607E2B6B4DF42FAF416FB62DF6FE2EF53E00AC250BD1B3F7C5F7C1F8870C69020897CF10C1386B2F435888BBC006AF671E9A3BAC1981896E0">Idea And Trade Secret Management Systems And Methods</a>
+              <div style="font-size: 12px;color: #999;">公开(公告)日：2017-12-21</div>
+              <div style="font-size: 12px;color: #999;">法律状态：实质审查</div>
+              <div style="font-size: 12px;color: #999;">CPA GLOBAL LIMITED</div>
+          </div>
+          <div style="padding: 0px 20px 20px 20px;">
+              <div style="color: #609900;font-size: 12px;margin-top: 10px;">US20180137194A1</div>
+              <a style="text-decoration: none;font-size: 16px;color: #4a90e2;display: block;" target="_blank" href="https://share-analytics.zhihuiya.com/view/DBB78CCA006654FE7925538F8879D04E2543F766101C061C3C97A4964940F539647FEC2F71412BAF751D1C9D2ADCF9E932F9C6F19F06E6186525ED2348F4E1ABB98DFA4A2E00B00E">
+                  APPARATUS AND METHOD FOR AUTOMATED AND ASSISTED PATENT CLAIM MAPPING AND EXPENSE PLANNING
+              </a>
+              <div style="font-size: 12px;color: #999;">公开(公告)日：2017-05-17</div>
+              <div style="font-size: 12px;color: #999;">法律状态：公开</div>
+              <div style="font-size: 12px;color: #999;">CPA GLOBAL LIMITED</div>
+          </div>
+          <div style="border-top:2px dashed #d2d2d2;padding:18px 20px 18px 20px;color:#777;font-size:14px;">
+              <div style="padding-top:7px;padding-bottom:7px;">
+              <span style="font-size:14px;">本邮件为系统自动发送，请勿直接回复。如需要帮助请发送到support@patsnap.com</span>
+              <div style="font-size:14px;">
+                  -- PatSnap团队 敬上
+              </div>
+          </div>
+          </div>
+        </div>`
+        };
+        transport.sendMail(mailOptions, function(error, resp) {
+            if (error) {
+                console.error(error);
+            } else {
+                console.log(resp);
+            }
+            transport.close(); // 如果没用，关闭连接池
+            response(res, true);
+        });
+    });
 // middleware to use for all requests
 router.use(function(req, res, next) {
-    const noAuthRouter = [
-        '/api/login',
-        '/api/wechat/patsnap',
-        '/api/wechat/createMenu'
-    ];
-    let isNoAuth = false;
+    let isNoAuth = true;
     for(let i=0;i<noAuthRouter.length;i++){
         if (req.originalUrl.indexOf(noAuthRouter[i]) > -1) {
             isNoAuth = true;
@@ -81,7 +133,7 @@ router.route('/wechat/patsnap')
         wechatModel.loop(req, res);
     })
     .get((req, res) => {
-        console.log("[patsnap]" + req.params[0]);
+        console.log("[post patsnap]" + req.params[0]);
         // 签名成功
         if (wechatModel.checkSignature(req)) {
             res.status(200).send(req.query.echostr);
@@ -90,39 +142,47 @@ router.route('/wechat/patsnap')
         }
     });
 
-    router.route("/wechat/createMenu")
-        .post((req, res) => {
-            console.log("[createMenu]" + JSON.stringify(req.body));
-            var menu = {
-                "button": [{
-                    "name": "试试手气",
+router.route("/wechat/createMenu")
+    .post((req, res) => {
+        console.log("[createMenu]" + JSON.stringify(req.body));
+        var menu = {
+            "button": [{
+                "name": "进入智慧芽",
+                "type": "view",
+                "url": "https://analytics.zhihuiya.com/"
+            }, {
+                "name": "行业分类",
+                "sub_button": [{
                     "type": "click",
-                    "key": "event_lucky"
+                    "name": "汽车",
+                    "key": "event_jixie"
                 }, {
-                    "name": "行业分类",
-                    "sub_button": [{
-                        "type": "click",
-                        "name": "教育",
-                        "key": "event_education"
-                    }, {
-                        "type": "click",
-                        "name": "医疗",
-                        "key": "event_medical"
-                    }, {
-                        "type": "click",
-                        "name": "法律",
-                        "key": "event_lagal"
-                    }]
+                    "type": "click",
+                    "name": "手机",
+                    "key": "event_dianxue"
+                }, {
+                    "type": "click",
+                    "name": "AI",
+                    "key": "event_tongxun"
+                }, {
+                    "type": "click",
+                    "name": "化工",
+                    "key": "event_huaxue"
+                }, {
+                    "type": "click",
+                    "name": "医药",
+                    "key": "event_yiyao"
                 }]
-            };
-            //var wxapi = new WechatAPI("wx142ced39f208b776", "0f5b64509578f6eade2a5de1a9ddfba1");
-            var wxapi = new WechatAPI("wxe405194c4b25db9f", "84543a37b087b9bd00ce77e57bd44c26");
-            wxapi.createMenu(menu, function(error, result) {
-                console.log(error);
-                console.log(result);
-                res.status(200).send(result);
-            });
+            }]
+        };
+        //var wxapi = new WechatAPI("wx142ced39f208b776", "0f5b64509578f6eade2a5de1a9ddfba1");
+        var wxapi = new WechatAPI("wxe405194c4b25db9f", "84543a37b087b9bd00ce77e57bd44c26");
+        wxapi.createMenu(menu, function(error, result) {
+            console.log(error);
+            console.log(result);
+            res.status(200).send(result);
         });
+    });
 
 router.route('/login')
     .post((req, res) => {
