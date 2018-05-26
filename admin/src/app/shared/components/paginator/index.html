@@ -1,0 +1,8 @@
+<section class="paginator-component">
+  <span>共: {{pageModel.total}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <span class="page-item page-item-pre-next" [class.disabled]="" (click)="prevClick()">上一页</span>
+  <span *ngFor="let item of TotalPage" class="page-item" [class.checked]="item===pageModel.page" (click)="pageClick(item)">
+    {{item}}
+  </span>
+  <span class="page-item page-item-pre-next" (click)="nextClick()">下一页</span>
+</section>

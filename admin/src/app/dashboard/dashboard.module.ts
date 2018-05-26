@@ -9,6 +9,7 @@ import { AlertDialog } from './dialogs/alert';
 
 import { DashboardComponent } from './dashboard-component';
 import { HomeComponent } from './home-component';
+import { LiuyanComponent } from './liuyan-component';
 import { SettingComponent } from './setting-component';
 
 import { DashboardRoutes } from './dashboard.routes';
@@ -20,6 +21,7 @@ import { MatDialogModule } from '@angular/material';
     declarations: [
         DashboardComponent, 
         HomeComponent,
+        LiuyanComponent,
         SettingComponent,
         AlertDialog
     ],

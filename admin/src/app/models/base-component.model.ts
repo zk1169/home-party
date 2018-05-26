@@ -1,6 +1,6 @@
-import {EventBus} from '../shared';
+import { EventBus } from '@src/app/shared';
 
-export default class BaseComponent {
+export class BaseComponent {
     constructor(private eventBus : EventBus) {
         // this.eventBus = eventBus;
     }

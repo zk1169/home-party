@@ -34,7 +34,17 @@ export class HttpService {
         // //     data.merchantId = this.appStateService.empInfo.merchant.id;
         // // }
 
-        const options = _.assign(httpOptions, { body: data });
+        let options = null;
+        if (_.toUpper(method) === 'GET'){
+            url += `?ts=${new Date().getTime()}`;
+            _.forIn(data, (value, key) => {
+                url += `&${key}=${value}`;
+            });
+            // url = url.substr(0, url.length-1);
+            options = httpOptions;
+        } else {
+            options = _.assign(httpOptions, { body: data });
+        }
         return this.http.request(method, url, options)
             .pipe(
                 retry(1), // retry a failed request up to 3 times

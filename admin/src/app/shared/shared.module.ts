@@ -7,7 +7,10 @@ import {
   MatButtonModule,
   MatCheckboxModule,
   MatInputModule,
-  MatMenuModule
+  MatMenuModule,
+  MatListModule,
+  MatDividerModule,
+  // MatPaginatorModule
 } from '@angular/material';
 
 // import { ZkButtonComponent } from './components/button-component';
@@ -16,6 +19,7 @@ import {
 // import { ZkSelectComponent } from './components/select-component';
 import { ZkBusyDirective } from './directives/busy.directive';
 // import DialogAlert from './dialogs/alert';
+import { PaginatorComponent } from './components/paginator';
 
 @NgModule({
   imports: [
@@ -25,7 +29,10 @@ import { ZkBusyDirective } from './directives/busy.directive';
     MatButtonModule, 
     MatCheckboxModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatListModule,
+    MatDividerModule,
+    // MatPaginatorModule
   ],
   declarations: [
     // ZkButtonComponent,
@@ -33,6 +40,7 @@ import { ZkBusyDirective } from './directives/busy.directive';
     // ZkRadioComponent,
     // ZkSelectComponent,
     ZkBusyDirective,
+    PaginatorComponent,
     // DialogAlert,
   ],
   exports: [
@@ -40,6 +48,9 @@ import { ZkBusyDirective } from './directives/busy.directive';
     MatCheckboxModule,
     MatInputModule,
     MatMenuModule,
+    MatListModule,
+    MatDividerModule,
+    // MatPaginatorModule,
     CommonModule,
     FormsModule,
     // HttpClientModule,
@@ -48,6 +59,7 @@ import { ZkBusyDirective } from './directives/busy.directive';
     // ZkRadioComponent,
     // ZkSelectComponent,
     ZkBusyDirective,
+    PaginatorComponent,
     // DialogAlert
   ],
 })

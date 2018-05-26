@@ -1,0 +1,25 @@
+.paginator-component{
+  .page-item{
+    margin: 0 5px;
+    background-color: #f4f4f5;
+    color: #606266;
+    min-width: 30px;
+    border-radius: 2px;
+    padding: 0 4px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .page-item:hover{
+    color: #409eff;
+  }
+  .page-item-pre-next{
+    padding: 0 10px;
+  }
+  .page-item.checked{
+    color: #fff!important;
+    background-color: #409eff;
+  }
+}

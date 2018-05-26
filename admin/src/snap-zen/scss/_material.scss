@@ -11,3 +11,13 @@
   transform: translateY(0)!important;
 }
 
+.list-wrap{
+  .list-header, .list-item{
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  .list-header{
+    font-weight: bold;
+  }
+}

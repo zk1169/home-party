@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { EventBus } from '@src/app/shared/index';
 import EventModel from '@src/app/models/event.model';
-import BaseComponent from '@src/app/models/base-component.model';
+import { BaseComponent } from '@src/app/models/base-component.model';
 import { EventType } from '@src/app/models/enum';
 
 @Component({
@@ -13,8 +13,9 @@ import { EventType } from '@src/app/models/enum';
 export class AppComponent{
   title = 'app';
   showProgressBar: Boolean;
-  constructor(private snackBar: MatSnackBar, private eventBus: EventBus){
+  constructor(private snackBar: MatSnackBar, private eventBus: EventBus, private cdr: ChangeDetectorRef){
     this.initSubscribEvent();
+    this.showProgressBar = false;
   }
 
   initSubscribEvent() {
@@ -26,6 +27,7 @@ export class AppComponent{
     });
     this.eventBus.subscribe(EventType.PROGRESS_BAR, (show: Boolean) => {
       this.showProgressBar = show;
+      this.cdr.detectChanges();
     });
   }
 }
