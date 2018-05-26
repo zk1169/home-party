@@ -1,4 +1,5 @@
 var express = require('express');
+const _ = require('lodash');
 var WechatAPI = require('wechat-api');
 var LiuyanModel = require('./models/liuyan.model');
 var base64encode = require('./base64-code');
@@ -45,46 +46,41 @@ router.route('/mail')
         }));
         var mailOptions = {
             from: "287760234@qq.com", // 发件地址
-            to: "liouxingben@163.com", // 收件列表
-            subject: "喜欢NodeJs", // 标题
+            // to: "liouxingben@163.com", // 收件列表
+            to: "zlisa526@126.com", // 收件列表
+            subject: "行业最新动态", // 标题
             html: `<div style="border: 4px solid #f5f5f5;width: 645px;margin: 0 auto;">
-            <div style="padding-left: 20px;height: 51px;line-height: 51px;background-color: #73bc00;font-size: 24px;color: #fff;">TITLE</div>
-            <div style="padding: 0px 20px 20px 20px;border-bottom: 1px solid #d2d2d2;">
-                <div style="color: #609900;font-size: 12px;margin-top: 10px;">CN107562753A</div>
-                <a style="text-decoration: none;font-size: 16px;color: #4a90e2;display: block;" target="_blank" href="https://share-analytics.zhihuiya.com/view/9B51C15AB16A080AB83BAF2D20C8E5D607E2B6B4DF42FAF416FB62DF6FE2EF53E00AC250BD1B3F7C5F7C1F8870C69020897CF10C1386B2F435888BBC006AF671E9A3BAC1981896E0">
-                    一种基于索引词的分析方法与装置
-                  </a>
-                <div style="font-size: 12px;color: #999;">公开(公告)日：2018-01-09</div>
-                <div style="font-size: 12px;color: #999;">法律状态：实质审查</div>
-                <div style="font-size: 12px;color: #999;">索意互动(北京)信息技术有限公司</div>
+            <div style="padding-left: 20px;height: 51px;line-height: 51px;background-color: #73bc00;font-size: 24px;color: #fff;">
+                下面这些专利要搞事情啦！！！
             </div>
             <div style="padding: 0px 20px 20px 20px;border-bottom: 1px solid #d2d2d2;">
-              <div style="color: #609900;font-size: 12px;margin-top: 10px;">US20180137194A1</div>
-              <a style="text-decoration: none;font-size: 16px;color: #4a90e2;display: block;" target="_blank" href="https://share-analytics.zhihuiya.com/view/DBB78CCA006654FE7925538F8879D04E2543F766101C061C3C97A4964940F539647FEC2F71412BAF751D1C9D2ADCF9E932F9C6F19F06E6186525ED2348F4E1ABB98DFA4A2E00B00E">
-                  APPARATUS AND METHOD FOR AUTOMATED AND ASSISTED PATENT CLAIM MAPPING AND EXPENSE PLANNING
-              </a>
-              <div style="font-size: 12px;color: #999;">公开(公告)日：2018-05-17</div>
-              <div style="font-size: 12px;color: #999;">法律状态：公开</div>
-              <div style="font-size: 12px;color: #999;">BLACK HILLS IP HOLDINGS, LLC</div>
-          </div>
-          <div style="padding: 0px 20px 20px 20px;border-bottom: 1px solid #d2d2d2;">
-              <div style="color: #609900;font-size: 12px;margin-top: 10px;">US20170365021A1</div>
+                  <div style="font-size: 16px;color: #73bc00;margin-top: 10px;font-weight: bold;">索意互动(北京)信息技术有限公司</div>
+                  <a style="text-decoration: none;font-size: 16px;color: #4a90e2;display: block;" target="_blank" href="https://share-analytics.zhihuiya.com/view/9B51C15AB16A080AB83BAF2D20C8E5D607E2B6B4DF42FAF416FB62DF6FE2EF53E00AC250BD1B3F7C5F7C1F8870C69020897CF10C1386B2F435888BBC006AF671E9A3BAC1981896E0">
+                    一种基于索引词的分析方法与装置
+                  </a>
+                  <div style="font-size: 14px;color: #999;">法律状态：实质审查</div>
+                  <div style="color: #609900;font-size: 12px;">CN107562753A</div>
+                <div style="font-size: 12px;color: #999;">公开(公告)日：2018-01-09</div> 
+            </div>
+            <div style="padding: 0px 20px 20px 20px;border-bottom: 1px solid #d2d2d2;">
+              <div style="font-size: 16px;color: #73bc00;margin-top: 10px;font-weight: bold;">CPA GLOBAL LIMITED</div>
               <a style="text-decoration: none;font-size: 16px;color: #4a90e2;display: block;" target="_blank" href="https://share-analytics.zhihuiya.com/view/9B51C15AB16A080AB83BAF2D20C8E5D607E2B6B4DF42FAF416FB62DF6FE2EF53E00AC250BD1B3F7C5F7C1F8870C69020897CF10C1386B2F435888BBC006AF671E9A3BAC1981896E0">Idea And Trade Secret Management Systems And Methods</a>
+              <div style="font-size: 14px;color: #999;">法律状态：实质审查</div>
+              <div style="color: #609900;font-size: 12px;">US20170365021A1</div>
               <div style="font-size: 12px;color: #999;">公开(公告)日：2017-12-21</div>
-              <div style="font-size: 12px;color: #999;">法律状态：实质审查</div>
-              <div style="font-size: 12px;color: #999;">CPA GLOBAL LIMITED</div>
           </div>
-          <div style="padding: 0px 20px 20px 20px;">
-              <div style="color: #609900;font-size: 12px;margin-top: 10px;">US20180137194A1</div>
+            <div style="padding: 0px 20px 20px 20px;border-bottom: 1px solid #d2d2d2;">
+              <div style="font-size: 16px;color: #73bc00;margin-top: 10px;font-weight: bold;">BLACK HILLS IP HOLDINGS, LLC</div>
               <a style="text-decoration: none;font-size: 16px;color: #4a90e2;display: block;" target="_blank" href="https://share-analytics.zhihuiya.com/view/DBB78CCA006654FE7925538F8879D04E2543F766101C061C3C97A4964940F539647FEC2F71412BAF751D1C9D2ADCF9E932F9C6F19F06E6186525ED2348F4E1ABB98DFA4A2E00B00E">
                   APPARATUS AND METHOD FOR AUTOMATED AND ASSISTED PATENT CLAIM MAPPING AND EXPENSE PLANNING
               </a>
-              <div style="font-size: 12px;color: #999;">公开(公告)日：2017-05-17</div>
-              <div style="font-size: 12px;color: #999;">法律状态：公开</div>
-              <div style="font-size: 12px;color: #999;">CPA GLOBAL LIMITED</div>
+              <div style="font-size: 14px;color: #999;">法律状态：公开</div>
+              <div style="color: #609900;font-size: 12px;">US20180137194A1</div>
+              <div style="font-size: 12px;color: #999;">公开(公告)日：2018-05-17</div>
           </div>
           <div style="border-top:2px dashed #d2d2d2;padding:18px 20px 18px 20px;color:#777;font-size:14px;">
               <div style="padding-top:7px;padding-bottom:7px;">
+              <span style="font-size:16px;">想了解更多竞争对手和相关技术，请点击<a href="https://analytics.zhihuiya.com/" target="_blank">传送通道</a></span><br>
               <span style="font-size:14px;">本邮件为系统自动发送，请勿直接回复。如需要帮助请发送到support@patsnap.com</span>
               <div style="font-size:14px;">
                   -- PatSnap团队 敬上
@@ -226,7 +222,11 @@ router.route('/liuyan')
         liuyan.save(results => response(res, results), err => response(res, null, err));
     })
     .get((req, res) => {
-        LiuyanModel.getList(results => response(res, results), err => response(res, null, err));
+        const query = {
+            page: _.get(req.query, 'page', 1),
+            size: _.get(req.query, 'size', 10)
+        }
+        LiuyanModel.getListAndTotal(query, results => response(res, results), err => response(res, null, err));
     });
 
 router.get('/**', function(req, res) {

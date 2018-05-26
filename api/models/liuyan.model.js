@@ -4,10 +4,15 @@ const STATUS = require('./status.enum');
 const MYSQL_QUERY = require('./mysql-pool');
 
 class LiuyanModel extends BaseStatusModel{
-    static getList(success, error) {
-        const sql = `select * from t_liuyan WHERE status=${STATUS.ENABLE}`;
+    static getList(page, size, success, error) {
+        // console.log('getList');
+        const start = (page - 1) * size;
+        const sql = `SELECT * 
+            FROM t_liuyan WHERE status=${STATUS.ENABLE} 
+            ORDER BY c_time DESC LIMIT ${start} , ${size}`;
         MYSQL_QUERY(sql, null,
             (results) => {
+                // console.log(`getList.result=${JSON.stringify(results)}`);
                 const modelList = [];
                 _.forEach(results, (item) => {
                     const model = new LiuyanModel();
@@ -15,6 +20,37 @@ class LiuyanModel extends BaseStatusModel{
                 });
                 success(modelList);
             }, err => error(err));
+    }
+
+    static getTotalCount(success, error) {
+        // console.log('getTotalCount');
+        const sql = `SELECT COUNT(1) as total from t_liuyan WHERE status=${STATUS.ENABLE}`;
+        MYSQL_QUERY(sql, null,
+            (results) => {
+                // console.log(`getTotalCount.result=${JSON.stringify(results)}`);
+                success(_.get(results, '[0].total', 0));
+            }, err => error(err));
+    }
+
+    static getListAndTotal(options, success, error) {
+        const page = _.toNumber(options.page);
+        const size = _.toNumber(options.size);
+        LiuyanModel.getTotalCount(
+            (total) => {
+                LiuyanModel.getList(page, size, 
+                    (dataList) => {
+                        success({
+                            dataList: dataList,
+                            page: page,
+                            total: total,
+                            size: size
+                        });
+                    },
+                    err => error(err)
+                );
+            },
+            err => error(err)
+        );
     }
 
     static getById(id, success, error) {

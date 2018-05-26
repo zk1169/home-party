@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config ./config/proxy.conf.json --host 0.0.0.0 --port 4300",
-    "build": "ng build  --prod --base-href /admin/",
+    "build": "ng build  --prod --base-href /",
     "deploy": "rsync -avz dist/homeparty/ root@47.100.58.136:/home/www/admin/",
     "test": "ng test",
     "lint": "ng lint",

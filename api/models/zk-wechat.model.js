@@ -5,8 +5,8 @@ var wxapi = new WechatAPI("wxe405194c4b25db9f", "84543a37b087b9bd00ce77e57bd44c2
 
 const color = "#74bd00";
 const templateId = 'Rt2aWY38FabSfTuRIbhghrjpku-w-nht4gDKRFsoEdc';
-const needEmail = "\n您关注的领域已经获取到专利信息了，请输入您的Email获取信息";
-const menuStr = '1. 汽车\n2. 手机\n3. AI\n4. 化工\n5. 医药\n\n输入对应序号，获取对应领域的专利信息';
+const needEmail = "\n输入您的email,即刻免费获取智慧芽数据库的360°度体验,阅读更多的信息";
+const menuStr = '1. 汽车\n2. 手机\n3. AI\n4. 化工\n5. 医药\n\n获取对应领域的专利信息';
 var ZKWechat = function() {
   // console.log('new ZKWechat');
 };
@@ -181,7 +181,7 @@ ZKWechat.prototype.checkEmail = function(weixin, msg, type) {
               fromUserName: msg.toUserName,
               toUserName: msg.fromUserName,
               msgType: "text",
-              content: `我们已经为您创建了免费账号***，密码：***，请登录：http://dev-analytics.patsnap.com。\n如果您要获得更长时间的试用，您可以分享您的链接：http://dev-analytics.patsnap.com/${msg.fromUserName}`,
+              content: `我们已经为您创建了免费账号${msg.content}，密码：patsnap123456，请登录：http://dev-analytics.patsnap.com。\n邀请您的好友将可以获取更多的免费体验：http://dev-analytics.patsnap.com/share/${msg.fromUserName}`,
               funcFlag: 0
           };
           weixin.sendMsg(resMsg);
@@ -211,7 +211,11 @@ ZKWechat.prototype.checkEmail = function(weixin, msg, type) {
         //     funcFlag: 0
         // };
         // weixin.sendMsg(resMsg);
-        self.keyWordReply(msg, weixin, needEmail);
+        if (type === 'text') {
+          self.keyWordReply(msg, weixin, needEmail);
+        } else if (type === 'click') {
+          self.eventClickReply(msg, weixin, needEmail);
+        }
       } else {
         const model = new WechatModel();
         model.openid = msg.fromUserName;
@@ -226,7 +230,11 @@ ZKWechat.prototype.checkEmail = function(weixin, msg, type) {
         //     funcFlag: 0
         // };
         // weixin.sendMsg(resMsg);
-        self.keyWordReply(msg, weixin, needEmail);
+        if (type === 'text') {
+          self.keyWordReply(msg, weixin, needEmail);
+        } else if (type === 'click') {
+          self.eventClickReply(msg, weixin, needEmail);
+        }
       }
     }, 
     (err) => {
@@ -262,7 +270,7 @@ ZKWechat.prototype.handleMsg = function(weixin, msg) {
                       fromUserName: msg.toUserName,
                       toUserName: msg.fromUserName,
                       msgType: "text",
-                      content: "您好，欢迎您关注智慧芽。\n您对您所在的领域的专利信息有想要更深入的了解吗？可以输入下方对应领域的序号，就可以得到更多的信息。\n\n"+menuStr,
+                      content: "您好，欢迎您关注智慧芽。\n您对您所在的领域的专利信息有想要更深入的了解吗？可以回复下方对应领域的序号，您将可能获得免费体验智慧芽数据库的惊喜哦！\n\n"+menuStr,
                       funcFlag: 0
                     };
                     weixin.sendMsg(resMsg);
