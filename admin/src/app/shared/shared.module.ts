@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 
 import { 
@@ -10,6 +10,7 @@ import {
   MatMenuModule,
   MatListModule,
   MatDividerModule,
+  MatIconModule,
   // MatPaginatorModule
 } from '@angular/material';
 
@@ -25,6 +26,7 @@ import { PaginatorComponent } from './components/paginator';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     // HttpClientModule,
     MatButtonModule, 
     MatCheckboxModule,
@@ -32,6 +34,7 @@ import { PaginatorComponent } from './components/paginator';
     MatMenuModule,
     MatListModule,
     MatDividerModule,
+    MatIconModule,
     // MatPaginatorModule
   ],
   declarations: [
@@ -50,9 +53,11 @@ import { PaginatorComponent } from './components/paginator';
     MatMenuModule,
     MatListModule,
     MatDividerModule,
+    MatIconModule,
     // MatPaginatorModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     // HttpClientModule,
     // ZkButtonComponent,
     // ZkCheckboxComponent,

@@ -47,7 +47,8 @@ export class HttpService {
         }
         return this.http.request(method, url, options)
             .pipe(
-                retry(1), // retry a failed request up to 3 times
+                timeout(30000),
+                retry(1), // retry a failed request up to 1 times
                 // tap(res => console.log(`fetched heroes`)),
                 map((res:any) => {
                     return res.data;

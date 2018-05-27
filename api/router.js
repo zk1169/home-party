@@ -30,7 +30,7 @@ const response = (res, data, err) => {
 const noAuthRouter = [
     '/api/login',
     '/api/wechat/patsnap',
-    '/api/wechat/createMenu'
+    //'/api/wechat/createMenu'
 ];
 
 router.route('/mail')
@@ -185,7 +185,7 @@ router.route('/login')
         const userName = req.body.userName;
         const userPwd = req.body.userPwd;
         if (userName === config.adminName && userPwd === config.adminPwd) {
-            res.cookie(config.cookieLoginName, base64encode(config.cookieLoginValue), { maxAge: 900000, httpOnly: false });
+            res.cookie(config.cookieLoginName, base64encode(config.cookieLoginValue), { maxAge: 1*60*60*1000, httpOnly: false });
             res.cookie(config.cookieAdminNameField, config.adminName, { maxAge: 900000, httpOnly: false });
             response(res, true);
         } else {
