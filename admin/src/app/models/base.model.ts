@@ -3,11 +3,13 @@ const DATE_FORMAT = 'YYYY-MM-DD HH:mm:ss';
 
 export class BaseModel{
     id: number;
+    status: number;
     c_time: String;
     u_time: String;
 
     toModel(jsonObj) {
         this.id = jsonObj.id;
+        this.status = jsonObj.status;
         this.c_time = moment(jsonObj.c_time).format(DATE_FORMAT);
         this.u_time = moment(jsonObj.u_time).format(DATE_FORMAT);
     }

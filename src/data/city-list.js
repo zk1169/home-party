@@ -78,7 +78,7 @@ const CityList = [
                 price: '￥3988—4988',
                 cover: './static/images/store/sz03/cover-small.png',
                 coverBig: './static/images/store/sz03/cover-big.png',
-                playItems: '厨房，麻将房，KTV，台球，专业桌游房，厨房，烧烤台，体感游戏房，棋牌室套房，健身房，投影仪，卧室',
+                playItems: '厨房，麻将房，KTV，台球，专业桌游房，烧烤台，体感游戏房，棋牌室套房，健身房，投影仪，卧室',
                 priceWorkday: '1988－3288',
                 priceWeekend: '2988－3988',
                 allPrice: '3988－4988',

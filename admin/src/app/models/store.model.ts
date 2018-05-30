@@ -17,5 +17,19 @@ export class StoreModel extends BaseModel {
     this.city = jsonObj.city;
     this.message = jsonObj.message;
     return this;
+  }
 }
+
+export class CityModel extends BaseModel {
+	name: string;
+
+	constructor(){
+		super();
+  }
+  
+  toModel(jsonObj) {
+    super.toModel(jsonObj);
+    this.name = jsonObj.name;
+    return this;
+  }
 }

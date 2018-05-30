@@ -42,7 +42,7 @@ export class HttpService {
             });
             // url = url.substr(0, url.length-1);
             options = defaultHttpOptions;
-        } else if (data.constructor && data.constructor.name == "FormData") {
+        } else if (data && data.constructor && data.constructor.name == "FormData") {
             options = { body: data };
         }
         else {

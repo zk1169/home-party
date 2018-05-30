@@ -3,6 +3,7 @@ var express = require('express');
 const _ = require('lodash');
 var WechatAPI = require('wechat-api');
 var LiuyanModel = require('./models/liuyan.model');
+var CityModel = require('./models/city.model');
 var ConfigModel = require('./models/config.model');
 var base64encode = require('./base64-code');
 var config = require('./config/config.json');
@@ -114,6 +115,28 @@ router.route('/liuyan')
             size: _.get(req.query, 'size', 10)
         }
         LiuyanModel.getListAndTotal(query, results => response(res, results), err => response(res, null, err));
+    });
+router.route('/city')
+    .post((req, res) => {
+        const city = new CityModel();
+        city.toModel(req.body);
+        city.save(results => response(res, results), err => response(res, null, err));
+    })
+    .get((req, res) => {
+        const query = {
+            page: _.get(req.query, 'page', 1),
+            size: _.get(req.query, 'size', 10)
+        }
+        CityModel.getListAndTotal(query, results => response(res, results), err => response(res, null, err));
+    });
+router.route('/city/:id')
+    .put((req, res) => {
+        const cityId = req.params.id;
+        CityModel.saveStatus(cityId, 1, results => response(res, results), err => response(res, null, err));
+    })
+    .delete((req, res) => {
+        const cityId = req.params.id;
+        CityModel.deleteById(cityId, results => response(res, results), err => response(res, null, err));
     });
 router.route('/config/:type')
     .get((req, res) => {

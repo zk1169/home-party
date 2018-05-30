@@ -1,0 +1,40 @@
+<section>
+    <div layout="row">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field>
+            <input matInput placeholder="城市名"  [(ngModel)]="cityName"/>
+            <mat-error *ngIf="cityNameControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div [zkBusy]="saveCityAsync">
+            <button mat-raised-button (click)="addNewCity()">新增城市</button>
+        </div>
+    </div>
+    <mat-list role="list" class="list-wrap">
+        <mat-list-item>
+            <div layout="row" class="list-header">
+                <span flex="5">序号</span>
+                <span flex="50">城市名</span>
+                <span flex="10">状态</span>
+                <span flex="15">创建时间</span>
+                <span flex="20"></span>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <div *ngFor="let item of pageModel.dataList;let i=index;">
+            <mat-list-item role="listitem">
+                <div layout="row" class="list-item">
+                    <span flex="5">{{i+1}}</span>
+                    <span flex="50">{{item.name}}</span>
+                    <span flex="10">{{item.status}}</span>
+                    <span flex="15">{{item.c_time}}</span>
+                    <span flex="20"><a (click)="onOrOffLineCity(item.id, item.status)">{{item.status===1?'下线':'上线'}}</a></span>
+                </div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </div>
+    </mat-list>
+    <br>
+    <paginator [options]="pageModel" (pageChanged)="pageChanged($event)"></paginator>
+    <br><br>
+</section>

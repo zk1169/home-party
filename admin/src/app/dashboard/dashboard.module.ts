@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard-component';
 import { HomeComponent } from './home-component';
 import { LiuyanComponent } from './liuyan-component';
 import { SettingComponent } from './setting-component';
+import { CityComponent } from './city-component';
 import { StoreListComponent } from './store-list-component';
 import { StoreDetailComponent } from './store-detail-component';
 
@@ -26,6 +27,7 @@ import { MatDialogModule } from '@angular/material';
         LiuyanComponent,
         SettingComponent,
         StoreListComponent,
+        CityComponent,
         StoreDetailComponent,
         AlertDialog
     ],
