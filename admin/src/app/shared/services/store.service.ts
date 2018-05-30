@@ -2,15 +2,25 @@ import { Injectable, Inject } from '@angular/core';
 import { map } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { HttpService } from './http.service';
-import AuthModel from '@src/app/models/auth.model';
-import { LiuyanModel } from '@src/app/models/liuyan.model';
+import { UploadFileService } from './upload-file.service';
+import { StoreModel } from '@src/app/models/store.model';
 
 
 @Injectable()
-export class LiuyanService {
-  private url = '/api/liuyan';  // URL to web api
-  constructor(private httpService: HttpService){
+export class StoreService {
+  private url = '/api/store';  // URL to web api
+  constructor(private httpService: HttpService, private uploadFileService: UploadFileService){
 
+  }
+
+  save(fileData) {
+    return this.uploadFileService.upload(fileData)
+      .pipe(
+        map((res) => {
+          debugger;
+          return res;
+        })
+      );
   }
 
   getList (page, size=10) {
@@ -28,7 +38,7 @@ export class LiuyanService {
             dataList: []
           };
           _.forEach(res.dataList, (item) => {
-            result.dataList.push(new LiuyanModel().toModel(item));
+            result.dataList.push(new StoreModel().toModel(item));
           });
           return result;
         })

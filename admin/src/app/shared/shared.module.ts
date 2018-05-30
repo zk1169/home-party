@@ -21,6 +21,7 @@ import {
 import { ZkBusyDirective } from './directives/busy.directive';
 // import DialogAlert from './dialogs/alert';
 import { PaginatorComponent } from './components/paginator';
+import { UploadImageComponent } from './components/upload-image';
 
 @NgModule({
   imports: [
@@ -44,6 +45,7 @@ import { PaginatorComponent } from './components/paginator';
     // ZkSelectComponent,
     ZkBusyDirective,
     PaginatorComponent,
+    UploadImageComponent,
     // DialogAlert,
   ],
   exports: [
@@ -65,6 +67,7 @@ import { PaginatorComponent } from './components/paginator';
     // ZkSelectComponent,
     ZkBusyDirective,
     PaginatorComponent,
+    UploadImageComponent,
     // DialogAlert
   ],
 })

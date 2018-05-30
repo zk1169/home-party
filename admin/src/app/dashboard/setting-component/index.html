@@ -1,55 +1,37 @@
 <section>
-        <!-- <p>
-                <mat-form-field appearance="legacy">
-                  <mat-label>Legacy form field</mat-label>
-                  <input matInput placeholder="Placeholder">
-                  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                  <mat-hint>Hint</mat-hint>
-                </mat-form-field>
-              </p>
-              <p>
-                <mat-form-field appearance="standard">
-                  <mat-label>Standard form field</mat-label>
-                  <input matInput placeholder="Placeholder">
-                  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                  <mat-hint>Hint</mat-hint>
-                </mat-form-field>
-              </p>
-              <p>
-                <mat-form-field appearance="fill">
-                  <mat-label>Fill form field</mat-label>
-                  <input matInput placeholder="Placeholder">
-                  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                  <mat-hint>Hint</mat-hint>
-                </mat-form-field>
-              </p>
-              <p>
-                <mat-form-field appearance="outline">
-                  <mat-label>Outline form field</mat-label>
-                  <input matInput placeholder="Placeholder">
-                  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                  <mat-hint>Hint</mat-hint>
-                </mat-form-field>
-              </p> -->
-
     <!-- <mat-form-field hintLabel="加盟店个数" appearance="outline">
         <input matInput #input maxlength="10" placeholder="请输入加盟店个数">
         <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
     </mat-form-field> -->
     <mat-form-field>
-        <input matInput placeholder="请输入加盟店个数" [formControl]="jiamengdianNumber">
-        <mat-error *ngIf="jiamengdianNumber.invalid">{{getErrorMessage('jiamengdianNumber')}}</mat-error>
+        <input matInput placeholder="加盟店个数" [(ngModel)]="configModel.storeNumber"/>
+        <mat-error *ngIf="storeNumber.invalid">{{getErrorMessage('storeNumber')}}</mat-error>
     </mat-form-field><br>
     <mat-form-field>
-        <input matInput placeholder="已入住城市个数" [formControl]="cityNumber">
+        <input matInput placeholder="已入住城市个数"  [(ngModel)]="configModel.cityNumber"/>
         <mat-error *ngIf="cityNumber.invalid">{{getErrorMessage('cityNumber')}}</mat-error>
     </mat-form-field><br>
     <mat-form-field>
-        <input matInput placeholder="已有加盟商个数" [formControl]="jiamengshangNumber">
-        <mat-error *ngIf="jiamengshangNumber.invalid">{{getErrorMessage('jiamengshangNumber')}}</mat-error>
+        <input matInput placeholder="已有加盟商个数"  [(ngModel)]="configModel.partnerNumber"/>
+        <mat-error *ngIf="partnerNumber.invalid">{{getErrorMessage('partnerNumber')}}</mat-error>
     </mat-form-field><br>
     <mat-form-field>
-        <input matInput placeholder="品牌团队人数" [formControl]="teamNumber">
+        <input matInput placeholder="品牌团队人数"  [(ngModel)]="configModel.teamNumber"/>
         <mat-error *ngIf="teamNumber.invalid">{{getErrorMessage('teamNumber')}}</mat-error>
-    </mat-form-field>
+    </mat-form-field><br>
+    <div>
+        <div [zkBusy]="saveSettingAsync">
+            <button mat-raised-button (click)="saveSetting()">保存</button>
+        </div>
+    </div>
+    <!-- <mat-form-field>
+        <input matInput placeholder="品牌团队人数" [formControl]="teamNumber"  [(ngModel)]="configModel.teamNumber"/>
+        <mat-error *ngIf="teamNumber.invalid">{{getErrorMessage('teamNumber')}}</mat-error>
+    </mat-form-field> -->
+    <!-- <div [formGroup]="form">
+        <mat-form-field>
+            <input matInput placeholder="请输入加盟店个数" formControlName="storeNumber"/>
+            <mat-error *ngIf="form?.storeNumber?.invalid">{{getErrorMessage('storeNumber')}}</mat-error>
+        </mat-form-field><br>
+    </div> -->
 </section>

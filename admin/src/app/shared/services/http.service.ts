@@ -13,7 +13,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { catchError, map, tap, timeout, retry } from 'rxjs/operators';
 // import AppStateService from './app-state.service';
 
-const httpOptions = {
+const defaultHttpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
@@ -41,9 +41,12 @@ export class HttpService {
                 url += `&${key}=${value}`;
             });
             // url = url.substr(0, url.length-1);
-            options = httpOptions;
-        } else {
-            options = _.assign(httpOptions, { body: data });
+            options = defaultHttpOptions;
+        } else if (data.constructor && data.constructor.name == "FormData") {
+            options = { body: data };
+        }
+        else {
+            options = _.assign(defaultHttpOptions, { body: data });
         }
         return this.http.request(method, url, options)
             .pipe(

@@ -6,7 +6,7 @@ import { FormControl, Validators, FormGroup, ValidatorFn, AbstractControl, FormB
 import { BaseComponent } from '@src/app/models/base-component.model';
 import { EventBus } from '@src/app/shared';
 import { EventType, ConfigType } from '@src/app/models/enum';
-import { ConfigService } from '@src/app/shared';
+import { StoreService } from '@src/app/shared';
 
 const RegExpValidator = (nameRe: RegExp): ValidatorFn => {
   return (control: AbstractControl): {[key: string]: any} => {
@@ -19,21 +19,25 @@ const RegExpValidator = (nameRe: RegExp): ValidatorFn => {
 };
 
 @Component({
-  selector: 'setting-component',
+  selector: 'store-detail-component',
   templateUrl: './index.html',
-  styleUrls: ['./index.scss']
+  styleUrls: ['./index.scss'],
+  providers: [StoreService]
 })
-export class SettingComponent extends BaseComponent implements OnInit {
+export class StoreDetailComponent extends BaseComponent implements OnInit {
   // jiamengdianNumber = new FormControl('', [Validators.required, Validators.email]);
   storeNumber = new FormControl('', [RegExpValidator(/[0-9]*/i)]);
   cityNumber = new FormControl('', [RegExpValidator(/[0-9]*/i)]);
   partnerNumber = new FormControl('', [RegExpValidator(/[0-9]*/i)]);
   teamNumber = new FormControl('', [RegExpValidator(/[0-9]*/i)]);
-  configModel: any;
+  configModel: object;
   form: FormGroup;
-  saveSettingAsync: Observable<any>;
+
+  saveStoreAsync: Observable<any>;
+
+  imageList: Array<Object>;
   
-  constructor(eventBus: EventBus, private configService: ConfigService, private fb: FormBuilder) {
+  constructor(eventBus: EventBus, private storeService: StoreService, private fb: FormBuilder) {
     super(eventBus);
     this.configModel = {};
     this.form = this.fb.group({
@@ -42,6 +46,8 @@ export class SettingComponent extends BaseComponent implements OnInit {
       partnerNumber: ['', RegExpValidator(/[0-9]*/i)],
       teamNumber: ['', RegExpValidator(/[0-9]*/i)]
     });
+
+    this.imageList = [];
   }
 
   ngOnInit() {
@@ -49,17 +55,17 @@ export class SettingComponent extends BaseComponent implements OnInit {
   }
 
   getAllConfig() {
-    this.eventNotice(EventType.PROGRESS_BAR ,true);
-    this.configService.getAll(ConfigType.NumberType)
-      .subscribe(
-        (res) => {
-          this.configModel = res;
-          this.eventNotice(EventType.PROGRESS_BAR ,false);
-        },
-        (err) => {
-          this.eventNotice(EventType.PROGRESS_BAR ,false);
-        }
-      );
+    // this.eventNotice(EventType.PROGRESS_BAR ,true);
+    // this.storeService.getAll(ConfigType.NumberType)
+    //   .subscribe(
+    //     (res) => {
+    //       this.configModel = res;
+    //       this.eventNotice(EventType.PROGRESS_BAR ,false);
+    //     },
+    //     (err) => {
+    //       this.eventNotice(EventType.PROGRESS_BAR ,false);
+    //     }
+    //   );
   }
 
   getErrorMessage(formName) {
@@ -68,11 +74,13 @@ export class SettingComponent extends BaseComponent implements OnInit {
     return _.get(this.form, formName).hasError('forbiddenName') ? '请输入数字' : ''
   }
 
-  saveSetting() {
+  saveStore() {
     this.eventNotice(EventType.PROGRESS_BAR ,true);
-    this.saveSettingAsync = this.configService.save(ConfigType.NumberType, this.configModel)
+    debugger;
+    this.saveStoreAsync = this.storeService.save(this.imageList[0]['file'])
       .pipe(
         map(res => {
+          debugger;
           this.eventNotice(EventType.PROGRESS_BAR ,false);
         })
       );
