@@ -34,7 +34,7 @@ a:focus, li:focus{
 }
 
 
-input,textarea {
+input[type="text"],textarea {
     -webkit-appearance: none;
     -webkit-rtl-ordering: logical;
     cursor: text;
@@ -43,8 +43,11 @@ input,textarea {
     border: 1px solid $color-border;
     border-style: solid;
 }
-input:focus,textarea:focus{
+input[type="text"]:focus,textarea:focus{
   border-color: $color-primary;
+}
+input[type="file"]{
+  cursor: pointer;
 }
 
 /**

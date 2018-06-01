@@ -1,23 +1,32 @@
 <section>
+    <div layout="row">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button mat-raised-button routerLink="/dashboard/store-detail">新增门店</button>
+    </div>
     <mat-list role="list" class="list-wrap">
         <mat-list-item>
             <div layout="row" class="list-header">
-                <span flex="10">名字</span>
-                <span flex="10">手机</span>
+                <span flex="5">序号</span>
                 <span flex="10">城市</span>
-                <span flex="55">留言</span>
-                <span flex="15">留言时间</span>
+                <span flex="10">店名</span>
+                <span flex="10">价格</span>
+                <span flex="10">预定电话</span>
+                <span flex="20">封面图</span>
+                <span flex="10"></span>
             </div>
         </mat-list-item>
         <mat-divider></mat-divider>
-        <div *ngFor="let item of pageModel.dataList">
+        <div *ngFor="let item of pageModel.dataList;let i=index;">
             <mat-list-item role="listitem">
                 <div layout="row" class="list-item">
+                    <span flex="5">{{i+1}}</span>
+                    <span flex="10">{{item.cityName}}</span>
                     <span flex="10">{{item.name}}</span>
-                    <span flex="10">{{item.phone}}</span>
-                    <span flex="10">{{item.city}}</span>
-                    <span flex="55">{{item.message}}</span>
-                    <span flex="15">{{item.c_time}}</span>
+                    <span flex="10">{{item.price}}</span>
+                    <span flex="10">{{item.orderNumber}}</span>
+                    <span flex="20">
+                        <img [src]="item.cover" alt="">
+                    </span>
                 </div>
             </mat-list-item>
             <mat-divider></mat-divider>
@@ -26,4 +35,4 @@
     <br>
     <paginator [options]="pageModel" (pageChanged)="pageChanged($event)"></paginator>
     <br><br>
-</section>
+    </section>

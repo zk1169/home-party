@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { FormControl, Validators, FormGroup, ValidatorFn, AbstractControl, FormBuilder } from '@angular/forms';
-import { BaseComponent } from '@src/app/models/base-component.model';
+import { BaseComponent } from '@src/app/models/base-component';
 import { EventBus } from '@src/app/shared';
 import { EventType, ConfigType } from '@src/app/models/enum';
 import { ConfigService } from '@src/app/shared';

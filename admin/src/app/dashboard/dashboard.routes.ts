@@ -20,6 +20,7 @@ const routes: Routes = [{
         { path: 'setting', component: SettingComponent },
         { path: 'city', component: CityComponent },
         { path: 'store-list', component: StoreListComponent },
+        { path: 'store-detail', component: StoreDetailComponent },
         { path: 'store-detail/:id', component: StoreDetailComponent }
     ]
 }];

@@ -1,4 +1,4 @@
-import { BaseComponent } from './base-component.model';
+import { BaseComponent } from './base-component';
 import { EventBus } from '@src/app/shared';
 
 export class PageModel {

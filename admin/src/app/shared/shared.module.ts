@@ -11,6 +11,7 @@ import {
   MatListModule,
   MatDividerModule,
   MatIconModule,
+  MatSelectModule
   // MatPaginatorModule
 } from '@angular/material';
 
@@ -36,6 +37,7 @@ import { UploadImageComponent } from './components/upload-image';
     MatListModule,
     MatDividerModule,
     MatIconModule,
+    MatSelectModule,
     // MatPaginatorModule
   ],
   declarations: [
@@ -56,6 +58,7 @@ import { UploadImageComponent } from './components/upload-image';
     MatListModule,
     MatDividerModule,
     MatIconModule,
+    MatSelectModule,
     // MatPaginatorModule,
     CommonModule,
     FormsModule,

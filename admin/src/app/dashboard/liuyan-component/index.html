@@ -2,22 +2,24 @@
     <mat-list role="list" class="list-wrap">
         <mat-list-item>
             <div layout="row" class="list-header">
+                <span flex="5">序号</span>
                 <span flex="10">名字</span>
                 <span flex="10">手机</span>
                 <span flex="10">城市</span>
                 <span flex="55">留言</span>
-                <span flex="15">留言时间</span>
+                <span flex="10">留言时间</span>
             </div>
         </mat-list-item>
         <mat-divider></mat-divider>
-        <div *ngFor="let item of pageModel.dataList">
+        <div *ngFor="let item of pageModel.dataList;let i=index;">
             <mat-list-item role="listitem">
                 <div layout="row" class="list-item">
+                    <span flex="5">{{i+1}}</span>
                     <span flex="10">{{item.name}}</span>
                     <span flex="10">{{item.phone}}</span>
                     <span flex="10">{{item.city}}</span>
                     <span flex="55">{{item.message}}</span>
-                    <span flex="15">{{item.c_time}}</span>
+                    <span flex="10">{{item.c_time}}</span>
                 </div>
             </mat-list-item>
             <mat-divider></mat-divider>

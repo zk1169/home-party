@@ -8,6 +8,6 @@
     </div>
     <div class="upload-file-wrap" *ngIf="!imageList || imageList.length<9">
         <span class="center" style="font-size:40px;">+</span>
-        <input type="file" accept="image/*" (change)="imageFileChange($event)">
+        <input type="file" accept="image/*" multiple="multiple" (change)="imageFileChange($event)">
     </div>
 </section>

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthService, AppStateService, EventBus } from '@src/app/shared';
-import { BaseComponent } from '@src/app/models/base-component.model';
+import { BaseComponent } from '@src/app/models/base-component';
 import EventModel from '@src/app/models/event.model';
 import AuthModel from '@src/app/models/auth.model';
 import { EventType } from '@src/app/models/enum';

@@ -2,7 +2,7 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { EventBus } from '@src/app/shared/index';
 import EventModel from '@src/app/models/event.model';
-import { BaseComponent } from '@src/app/models/base-component.model';
+import { BaseComponent } from '@src/app/models/base-component';
 import { EventType } from '@src/app/models/enum';
 
 @Component({

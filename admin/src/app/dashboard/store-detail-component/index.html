@@ -1,6 +1,28 @@
 <section>
-    <upload-image [imageList]="imageList"></upload-image>
-    <div [zkBusy]="saveStoreAsync">
-        <button mat-raised-button (click)="saveStore()">保存</button>
+    <div [formGroup]="formGroup">
+        <mat-form-field>
+            <input matInput placeholder="门店名称" formControlName="storeName"/>
+            <mat-error *ngIf="formGroup.controls.storeName.hasError('required')">{{getErrorMessage('required','storeName')}}</mat-error>
+        </mat-form-field><br>
+        <mat-form-field>
+        <mat-select placeholder="选择城市" formControlName="city" [errorStateMatcher]="matcher">
+            <mat-option>Clear</mat-option>
+            <mat-option value="valid">Valid option</mat-option>
+            <mat-option value="invalid">Invalid option</mat-option>
+        </mat-select>
+            <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+            <mat-error *ngIf="formGroup.controls.city.hasError('required')">You must make a selection</mat-error>
+            <mat-error *ngIf="formGroup.controls.city.hasError('pattern') && !formGroup.controls.city.hasError('required')">
+                Your selection is invalid
+            </mat-error>
+        </mat-form-field>
+        <div>
+            <upload-image [imageList]="imageList"></upload-image>
+        </div>
+        <div [zkBusy]="saveStoreAsync">
+            <button mat-raised-button (click)="saveStore()">保存</button>
+        </div>
     </div>
+    
+    <!-- <upload-image [imageList]="imageList"></upload-image> -->
 </section>

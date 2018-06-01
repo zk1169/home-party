@@ -59,7 +59,7 @@ class CityModel extends BaseStatusModel{
             }, err => error(err));
     }
 
-    static saveStatus(id,status, success, error) {
+    static saveStatus(id, status, success, error) {
       const sql = `UPDATE t_city SET status='${status}' WHERE id=${id}`;
       MYSQL_QUERY(sql, null,
           (results) => {
