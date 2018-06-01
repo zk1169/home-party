@@ -10,6 +10,7 @@ export class UploadImageComponent implements OnInit {
   // @Input ('size') size: number = 10;
   // @Input ('total') total: number = 0;
   @Input('imageList') imageList: Array<Object>;
+  @Input('max') max: number = 1;
   @Output() pageChanged = new EventEmitter<number>();
 
   constructor() {
@@ -17,6 +18,11 @@ export class UploadImageComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  removeImage(index) {
+    console.log(index);
+    this.imageList.splice(index, 1);
   }
 
   imageFileChange(ev) {

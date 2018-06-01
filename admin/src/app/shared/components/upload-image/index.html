@@ -2,12 +2,16 @@
     <div class="upload-file-wrap" *ngFor="let item of imageList;let i=index;">
         <img *ngIf="item.base64" [src]="item.base64"/>
         <img *ngIf="!item.base64" [src]="'/api'+item"/>
-        <div class="upload-file-close" (click)="removeImage(index)">
-            <i class="fa fa-close"></i>
+        <div class="upload-file-close" (click)="removeImage(i)">
+            <!-- <i class="fa fa-close"></i> -->
+            <svg class="icon tool" aria-hidden="true">
+                <use xlink:href="#icon-tool"></use>
+            </svg>
         </div>
     </div>
-    <div class="upload-file-wrap" *ngIf="!imageList || imageList.length<9">
+    <div class="upload-file-wrap" *ngIf="!imageList || imageList.length<max">
         <span class="center" style="font-size:40px;">+</span>
-        <input type="file" accept="image/*" multiple="multiple" (change)="imageFileChange($event)">
+        <input *ngIf="max>1" type="file" accept="image/*" multiple="multiple" (change)="imageFileChange($event)">
+        <input *ngIf="max===1" type="file" accept="image/*" (change)="imageFileChange($event)">
     </div>
 </section>

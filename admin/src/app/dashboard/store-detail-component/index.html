@@ -1,23 +1,30 @@
-<section>
-    <div [formGroup]="formGroup">
-        <mat-form-field>
-            <input matInput placeholder="门店名称" formControlName="storeName"/>
-            <mat-error *ngIf="formGroup.controls.storeName.hasError('required')">{{getErrorMessage('required','storeName')}}</mat-error>
-        </mat-form-field><br>
-        <mat-form-field>
-        <mat-select placeholder="选择城市" formControlName="city" [errorStateMatcher]="matcher">
-            <mat-option>Clear</mat-option>
-            <mat-option value="valid">Valid option</mat-option>
-            <mat-option value="invalid">Invalid option</mat-option>
-        </mat-select>
-            <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
-            <mat-error *ngIf="formGroup.controls.city.hasError('required')">You must make a selection</mat-error>
-            <mat-error *ngIf="formGroup.controls.city.hasError('pattern') && !formGroup.controls.city.hasError('required')">
-                Your selection is invalid
-            </mat-error>
-        </mat-form-field>
-        <div>
-            <upload-image [imageList]="imageList"></upload-image>
+<section class="store-detail-component">
+    <div class="form" [formGroup]="formGroup">
+        <div class="form-item" layout="row" layout-align="start center">
+            <label>门店名称</label>
+            <mat-form-field flex>
+                <input matInput placeholder="门店名称" formControlName="storeName"/>
+                <mat-error *ngIf="formGroup.controls.storeName.hasError('required')">{{getErrorMessage('required','storeName')}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-item" layout="row" layout-align="start center">
+            <label>城市</label>
+            <mat-form-field flex>
+                <mat-select placeholder="选择城市" formControlName="city" [errorStateMatcher]="matcher">
+                    <mat-option>Clear</mat-option>
+                    <mat-option value="valid">Valid option</mat-option>
+                    <mat-option value="invalid">Invalid option</mat-option>
+                </mat-select>
+                <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                <mat-error *ngIf="formGroup.controls.city.hasError('required')">You must make a selection</mat-error>
+                <mat-error *ngIf="formGroup.controls.city.hasError('pattern') && !formGroup.controls.city.hasError('required')">
+                    Your selection is invalid
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-item" layout="row" layout-align="start center">
+            <label>封面图</label>
+            <upload-image [imageList]="imageList" [max]="1" flex></upload-image>
         </div>
         <div [zkBusy]="saveStoreAsync">
             <button mat-raised-button (click)="saveStore()">保存</button>
