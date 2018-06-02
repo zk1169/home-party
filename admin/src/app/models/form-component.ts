@@ -19,6 +19,9 @@ export class FormComponent extends BaseComponent{
         case 'required':
           errorMessage = `${formName} 是必选项`;
           break;
+        case 'regexp':
+          errorMessage = `请输入正确的${formName}`;
+          break;
       }
       return errorMessage;
     }
@@ -30,7 +33,7 @@ const RegExpValidator = (nameRe: RegExp): ValidatorFn => {
       return null;
     }
     const forbidden = nameRe.test(control.value);
-    return forbidden ? {'forbiddenName': {value: control.value}} : null;
+    return forbidden ? null : {'regexp': {value: control.value}};
   };
 };
 export { RegExpValidator };

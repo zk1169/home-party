@@ -4,5 +4,10 @@
     label{
       width: 150px;
     }
+    .form-field-group{
+      .mat-form-field-infix{
+        width: auto;
+      }
+    }
   }
 }

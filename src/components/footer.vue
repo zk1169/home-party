@@ -14,7 +14,7 @@
                     <input type="text" placeholder="电话" v-model="phone"/>
                     <input type="text" placeholder="所在城市" v-model="area"/>
                     <textarea type="text" rows="3" placeholder="留言" v-model="suggestion"/>
-                    <a class="btn btn-grey" @click="submitNewClick">提交</a>
+                    <a class="btn btn-grey" @click="submitClick">提交</a>
                 </div>
             </div>
             <div class="form-right" flex>

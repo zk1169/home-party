@@ -82,6 +82,10 @@ export class CityService {
       );
   }
 
+  getAll() {
+    return this.getList(1, 1000);
+  }
+
   getList (page, size=10) {
     const data = {
       page,

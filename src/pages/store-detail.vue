@@ -13,7 +13,7 @@
                     <span class="fs-20 font-bold">价格</span><br>
                     <span class="fs-16">周一至周四：{{store.priceWorkday==='未知'?'? ':store.priceWorkday}}元/场</span><br>
                     <span class="fs-16">周五至周日：{{store.priceWeekend}}元/场</span><br>
-                    <span class="fs-16">周五至周日：{{store.allPrice}}元/场</span>
+                    <span class="fs-16">整包价格：{{store.allPrice}}元/场</span>
                 </div>
                 <div class="open-time" flex="25" flex-xs="100">
                     <span class="fs-20 font-bold">预定</span><br>
