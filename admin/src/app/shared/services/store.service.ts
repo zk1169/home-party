@@ -1,11 +1,10 @@
 import { Injectable, Inject } from '@angular/core';
-import { merge, from } from 'rxjs';
+import { merge, of } from 'rxjs';
 import { map, switchMap, reduce, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { HttpService } from './http.service';
 import { UploadFileService } from './upload-file.service';
 import { StoreModel, CityModel } from '@src/app/models/store.model';
-import { Observable, of } from 'rxjs';
 
 
 @Injectable()
@@ -48,7 +47,15 @@ export class StoreService {
         switchMap((res) => {
           // console.log(`4.${res}`);
           const data = storeModel.toJson();
-          return this.httpService.request('POST', this.url, data);
+          let method = null;
+          let _url = this.url;
+          if (data.id) {
+            method = 'PUT';
+            _url += `/${data.id}`;
+          } else {
+            method = 'POST';
+          }
+          return this.httpService.request(method, _url, data);
         }),
         map((res) => {
           // console.log(`5.${res}`);
@@ -71,6 +78,18 @@ export class StoreService {
   //       })
   //     );
   // }
+
+  getById (id) {
+    if (!id) {
+      return of(null);
+    }
+    return this.httpService.request('GET', `${this.url}/${id}`)
+      .pipe(
+        map((res) => {
+          return new StoreModel().toModel(res);
+        })
+      );
+  }
 
   getList (page, size=10) {
     const data = {

@@ -8,6 +8,9 @@ export class BaseModel{
     u_time: String;
 
     toModel(jsonObj) {
+        if (!jsonObj){
+            return;
+        }
         this.id = jsonObj.id;
         this.status = jsonObj.status;
         this.c_time = moment(jsonObj.c_time).format(DATE_FORMAT);

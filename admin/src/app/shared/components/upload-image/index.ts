@@ -10,7 +10,6 @@ import { ImageUploadModel } from '@src/app/models/image-upload.model';
 export class UploadImageComponent implements OnInit {
 
   @Input('image') image: any;//Array<Object> | Object | FormControl;
-  // @Input('formControl') fromControl: FormControl;
   @Input('max') max: number = 1;
   @Output() pageChanged = new EventEmitter<number>();
 
@@ -20,6 +19,7 @@ export class UploadImageComponent implements OnInit {
   get ImageList() {
     let imageList = [];
     const imageType = this.image.constructor.name;
+    // console.log(imageType);
     switch(imageType) {
       case 'Object':
         if (this.image.value) {
@@ -44,6 +44,7 @@ export class UploadImageComponent implements OnInit {
 
   setImage(fileInfo) {
     const imageType = this.image.constructor.name;
+    // console.log(imageType);
     switch(imageType) {
       case 'Object':
         this.image = fileInfo;
@@ -65,8 +66,11 @@ export class UploadImageComponent implements OnInit {
   }
 
   removeImage(index) {
-    console.log(index);
-    this.ImageList.splice(index, 1);
+    if(this.image.value && this.image.value.constructor.name === 'Array') {
+      this.image.value.splice(index, 1);
+    } else {
+      this.image.setValue(null);
+    }
   }
 
   imageFileChange(ev) {

@@ -136,7 +136,7 @@ router.route('/city/:id')
         const cityId = req.params.id;
         CityModel.deleteById(cityId, results => response(res, results), err => response(res, null, err));
     });
-    router.route('/city')
+router.route('/city')
     .post((req, res) => {
         const city = new CityModel();
         city.toModel(req.body);
@@ -162,10 +162,15 @@ router.route('/store')
         };
         StoreModel.getListAndTotal(query, results => response(res, results), err => response(res, null, err));
     });
-router.route('/story/:id')
-    .put((req, res) => {
+router.route('/store/:id')
+    .get((req, res) => {
         const storeId = req.params.id;
-        StoreModel.saveStatus(storeId, 1, results => response(res, results), err => response(res, null, err));
+        StoreModel.getById(storeId, results => response(res, results), err => response(res, null, err));
+    })
+    .put((req, res) => {
+        const storeModel = new StoreModel();
+        storeModel.toModel(req.body);
+        storeModel.save(results => response(res, results), err => response(res, null, err));
     })
     .delete((req, res) => {
         const storeId = req.params.id;

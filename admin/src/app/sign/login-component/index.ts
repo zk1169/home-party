@@ -48,4 +48,10 @@ export class LoginComponent extends BaseComponent {
     // console.log(`login.model.autoLogin=${this.model.autoLogin}`);
     // console.log(`login.radioList=${JSON.stringify(this.radioList)}`);
   }
+
+  keydown(ev) {
+    if (ev.keyCode === 13) {
+      this.login();
+    }
+  }
 }

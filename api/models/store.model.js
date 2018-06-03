@@ -104,8 +104,10 @@ class StoreModel extends BaseStatusModel{
               section3='${this.section3}',
               section4='${this.section4}',
               section5='${this.section5}',
+              status='${this.status}',
               u_time='${this.u_time}' 
               WHERE id=${this.id}`;
+            console.log(sql);
         } else {
             this.status = STATUS.ENABLE;
             super.initTime();
@@ -165,10 +167,11 @@ class StoreModel extends BaseStatusModel{
     toModel(jsonObj) {
         super.toModel(jsonObj);
         this.cityId = jsonObj.cityId;
+        this.cityName = jsonObj.cityName;
         this.name = jsonObj.name;
         this.address = jsonObj.address;
         this.price = jsonObj.price;
-        this.cover = jsonObj.coverBig;
+        this.cover = jsonObj.cover;
         this.coverBig = jsonObj.coverBig;
         this.playItems = jsonObj.playItems;
         this.priceWorkday = jsonObj.priceWorkday;
