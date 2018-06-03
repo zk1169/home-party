@@ -1,5 +1,5 @@
 <section class="upload-image-component">
-    <div class="upload-file-wrap" *ngFor="let item of imageList;let i=index;">
+    <div class="upload-file-wrap" *ngFor="let item of ImageList;let i=index;">
         <img *ngIf="item.base64" [src]="item.base64"/>
         <img *ngIf="!item.base64" [src]="'/api'+item"/>
         <div class="upload-file-close" (click)="removeImage(i)">
@@ -9,7 +9,7 @@
             </svg>
         </div>
     </div>
-    <div class="upload-file-wrap" *ngIf="!imageList || imageList.length<max">
+    <div class="upload-file-wrap" *ngIf="!ImageList || ImageList.length<max">
         <span class="center" style="font-size:40px;">+</span>
         <input *ngIf="max>1" type="file" accept="image/*" multiple="multiple" (change)="imageFileChange($event)">
         <input *ngIf="max===1" type="file" accept="image/*" (change)="imageFileChange($event)">

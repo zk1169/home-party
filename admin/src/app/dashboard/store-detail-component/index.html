@@ -3,8 +3,8 @@
         <div class="form-item" layout="row" layout-align="start center">
             <label>门店名称</label>
             <mat-form-field flex>
-                <input matInput placeholder="门店名称" formControlName="storeName"/>
-                <mat-error *ngIf="formGroup.controls.storeName.hasError('required')">{{getErrorMessage('required','storeName')}}</mat-error>
+                <input matInput placeholder="门店名称" formControlName="name"/>
+                <mat-error *ngIf="formGroup.controls.name.hasError('required')">{{getErrorMessage('required','name')}}</mat-error>
             </mat-form-field>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
@@ -74,24 +74,24 @@
         </div>
         <div class="form-item" layout="row" layout-align="start center">
             <label>封面预览图</label>
-            <upload-image [imageList]="imageList" [max]="1" flex></upload-image>
+            <upload-image [image]="formGroup.controls.cover" [max]="1" flex></upload-image>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
             <label>封面大图</label>
-            <upload-image [imageList]="imageList" [max]="1" flex></upload-image>
+            <upload-image [image]="formGroup.controls.coverBig" [max]="1" flex></upload-image>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
             <label>活动区图片</label>
-            <upload-image [imageList]="imageList" [max]="1" flex></upload-image>
+            <upload-image [image]="formGroup.controls.section1" [max]="10" flex></upload-image>
         </div>
-        <div class="form-item" layout="row" layout-align="start center">
+        <!-- <div class="form-item" layout="row" layout-align="start center">
             <label>住宿区图片</label>
-            <upload-image [imageList]="imageList" [max]="1" flex></upload-image>
+            <upload-image [image]="imageList" [max]="1" flex></upload-image>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
             <label>周边图片</label>
-            <upload-image [imageList]="imageList" [max]="1" flex></upload-image>
-        </div>
+            <upload-image [image]="imageList" [max]="1" flex></upload-image>
+        </div> -->
         <div [zkBusy]="saveStoreAsync">
             <button mat-raised-button (click)="saveStore()">保存</button>
         </div>

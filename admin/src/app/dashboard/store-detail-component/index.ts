@@ -64,20 +64,42 @@ export class StoreDetailComponent extends FormComponent implements OnInit {
   }
 
   initFormGroup(store?: StoreModel) {
+    // this.formGroup = this.fb.group({
+    //   name: new FormControl('', [Validators.required]),
+    //   city: new FormControl(null, [
+    //     Validators.required,
+    //     // Validators.pattern('valid'),
+    //   ]),
+    //   address: new FormControl(''),
+    //   price: new FormControl('', [RegExpValidator(/^[0-9]*$/)]),
+    //   priceWorkday: new FormControl('', [RegExpValidator(/^[0-9]*$/)]),
+    //   priceWeekend: new FormControl('', [RegExpValidator(/^[0-9]*$/)]),
+    //   allPrice: new FormControl('', [RegExpValidator(/^[0-9]*$/)]),
+    //   playItems: new FormControl(''),
+    //   orderNumber: new FormControl('', [RegExpValidator(/^[0-9]*$/)]),
+    //   openTime: new FormControl(''),
+    //   cover: new FormControl(null),
+    //   coverBig: new FormControl(null),
+    //   section1: new FormControl([]),
+    // });
+
     this.formGroup = this.fb.group({
-      storeName: new FormControl('', [Validators.required]),
+      name: new FormControl('隐寓轻奢主题（太湖店）', [Validators.required]),
       city: new FormControl(1, [
         Validators.required,
         // Validators.pattern('valid'),
       ]),
-      address: new FormControl(''),
-      price: new FormControl('', [RegExpValidator(/^[0-9]*$/)]),
-      priceWorkday: new FormControl('', [RegExpValidator(/^[0-9]*$/)]),
-      priceWeekend: new FormControl('', [RegExpValidator(/^[0-9]*$/)]),
-      allPrice: new FormControl('', [RegExpValidator(/^[0-9]*$/)]),
-      playItems: new FormControl(''),
-      orderNumber: new FormControl('', [RegExpValidator(/^[0-9]*$/)]),
-      openTime: new FormControl(''),
+      address: new FormControl('吴中区苏州玺园669幢'),
+      price: new FormControl('￥4088—5088', [RegExpValidator(/^[0-9]*$/)]),
+      priceWorkday: new FormControl('2088-3380', [RegExpValidator(/^[0-9]*$/)]),
+      priceWeekend: new FormControl('3088-4088', [RegExpValidator(/^[0-9]*$/)]),
+      allPrice: new FormControl('4088－5088', [RegExpValidator(/^[0-9]*$/)]),
+      playItems: new FormControl('厨房，泳池，麻将房，射箭，KTV，台球，钓鱼，专业桌游房，厨房，烧烤台，体感游戏房，棋牌室套房，健身房，投影仪，卧室'),
+      orderNumber: new FormControl('15071317511', [RegExpValidator(/^[0-9]*$/)]),
+      openTime: new FormControl('周一至周日 全天'),
+      cover: new FormControl(null),
+      coverBig: new FormControl(null),
+      section1: new FormControl([]),
     });
   }
 
@@ -96,16 +118,16 @@ export class StoreDetailComponent extends FormComponent implements OnInit {
   }
 
   saveStore() {
-    this.ngOnInit();
-    if (this.formGroup.invalid) {
+    // this.ngOnInit();
+    if (this.formGroup.errors) {
       this.formGroup.updateValueAndValidity();
       return;
     }
+    const storeModel = new StoreModel().toModel(this.formGroup.value);
     this.eventNotice(EventType.PROGRESS_BAR ,true);
-    this.saveStoreAsync = this.storeService.save(this.imageList[0]['file'])
+    this.saveStoreAsync = this.storeService.save(storeModel)
       .pipe(
         map(res => {
-          debugger;
           this.eventNotice(EventType.PROGRESS_BAR ,false);
         })
       );

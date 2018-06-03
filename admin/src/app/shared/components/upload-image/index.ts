@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { ImageUploadModel } from '@src/app/models/image-upload.model';
 
 @Component({
   selector: 'upload-image',
@@ -6,23 +8,65 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./index.scss']
 })
 export class UploadImageComponent implements OnInit {
-  // @Input ('page') page: number = 1;
-  // @Input ('size') size: number = 10;
-  // @Input ('total') total: number = 0;
-  @Input('imageList') imageList: Array<Object>;
+
+  @Input('image') image: any;//Array<Object> | Object | FormControl;
+  // @Input('formControl') fromControl: FormControl;
   @Input('max') max: number = 1;
   @Output() pageChanged = new EventEmitter<number>();
 
   constructor() {
   }
 
-  ngOnInit() {
+  get ImageList() {
+    let imageList = [];
+    const imageType = this.image.constructor.name;
+    switch(imageType) {
+      case 'Object':
+        if (this.image.value) {
+          imageList.push(this.image.value);
+        }
+        break;
+      case 'FormControl':
+        if(this.image.value && this.image.value.constructor.name === 'Array') {
+          imageList = this.image.value;
+        } else {
+          if (this.image.value) {
+            imageList.push(this.image.value);
+          }
+        }
+        break;
+      case 'Array':
+        imageList = this.image;
+        break;
+    }
+    return imageList;
+  }
 
+  setImage(fileInfo) {
+    const imageType = this.image.constructor.name;
+    switch(imageType) {
+      case 'Object':
+        this.image = fileInfo;
+        break;
+      case 'FormControl':
+        if(this.image.value && this.image.value.constructor.name === 'Array') {
+          this.image.value.push(fileInfo);
+        } else {
+          this.image.setValue(fileInfo);
+        }
+        break;
+      case 'Array':
+        this.image.push(fileInfo);
+        break;
+    }
+  }
+
+  ngOnInit() {
   }
 
   removeImage(index) {
     console.log(index);
-    this.imageList.splice(index, 1);
+    this.ImageList.splice(index, 1);
   }
 
   imageFileChange(ev) {
@@ -38,15 +82,18 @@ export class UploadImageComponent implements OnInit {
           alert('上传的图片大小应在5MB以下');
           return;
         }
-        let fileInfo = {
+        let fileInfo = new ImageUploadModel({
           name: file.name,
           type: file.type,
           size: Math.round(file.size / 1000) + ' kB',
           base64: reader.result,
           file: file
-        };
-        this.imageList.push(fileInfo);
+        });
+        // debugger;
+        // this.ImageList.push(fileInfo);
+        this.setImage(fileInfo);
       } // reader.onload
     }
   }
+
 }

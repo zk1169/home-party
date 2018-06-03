@@ -128,6 +128,7 @@ class StoreModel extends BaseStatusModel{
                 section3,
                 section4,
                 section5,
+                status,
                 u_time, 
                 c_time) 
               VALUES (

@@ -1,5 +1,5 @@
 import { Directive, ElementRef, HostListener, Input ,SimpleChange,OnChanges,SimpleChanges} from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 @Directive({ selector: '[zkBusy]' })
 export class ZkBusyDirective implements OnChanges{
@@ -30,7 +30,7 @@ export class ZkBusyDirective implements OnChanges{
                     },
                     (error:any)=>{
                         this.el.removeChild(this.divElement);
-                        return Observable.throw(error);
+                        return throwError(error);
                     }
                 );
             }

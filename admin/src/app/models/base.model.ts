@@ -14,6 +14,14 @@ export class BaseModel{
         this.u_time = moment(jsonObj.u_time).format(DATE_FORMAT);
     }
 
+    toJson(): any {
+        const jsonObj = {
+            id: this.id,
+            status: this.status
+        };
+        return jsonObj;
+    }
+
     // initTime() {
     //     this.setUTime();
     //     this.setCTime();

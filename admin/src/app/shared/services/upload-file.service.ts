@@ -1,4 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
+import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { HttpService } from './http.service';
@@ -12,6 +13,9 @@ export class UploadFileService {
   }
 
   upload (fileData) {
+    if (!fileData) {
+      return of(null);
+    }
     let formData = new FormData();
     formData.append('file', fileData);
     return this.httpService.request('POST', this.url, formData)
