@@ -1,3 +1,4 @@
+@import '../../../../snap-zen/scss/variables';
 .paginator-component{
   .page-item{
     margin: 0 5px;
@@ -13,13 +14,13 @@
     display: inline-block;
   }
   .page-item:hover{
-    color: #409eff;
+    color: $color-primary;
   }
   .page-item-pre-next{
     padding: 0 10px;
   }
   .page-item.checked{
     color: #fff!important;
-    background-color: #409eff;
+    background-color: $color-primary;
   }
 }

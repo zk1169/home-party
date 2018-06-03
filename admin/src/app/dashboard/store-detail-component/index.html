@@ -4,7 +4,7 @@
             <label>门店名称</label>
             <mat-form-field flex>
                 <input matInput placeholder="门店名称" formControlName="name"/>
-                <mat-error *ngIf="formGroup.controls.name.hasError('required')">{{getErrorMessage('required','name')}}</mat-error>
+                <mat-error *ngIf="formGroup.controls.name.hasError('required')">{{getErrorMessage('required','门店名称')}}</mat-error>
             </mat-form-field>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
@@ -15,17 +15,16 @@
                     <mat-option *ngFor="let item of cityList" [value]="item.id">{{item.name}}</mat-option>
                 </mat-select>
                 <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
-                <mat-error *ngIf="formGroup.controls.city.hasError('required')">You must make a selection</mat-error>
-                <mat-error *ngIf="formGroup.controls.city.hasError('pattern') && !formGroup.controls.city.hasError('required')">
+                <mat-error *ngIf="formGroup.controls.city.hasError('required')">请选择城市</mat-error>
+                <!-- <mat-error *ngIf="formGroup.controls.city.hasError('pattern') && !formGroup.controls.city.hasError('required')">
                     Your selection is invalid
-                </mat-error>
+                </mat-error> -->
             </mat-form-field>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
             <label>地址</label>
             <mat-form-field flex>
                 <input matInput placeholder="地址" formControlName="address"/>
-                <mat-error *ngIf="formGroup.controls.address.hasError('required')">{{getErrorMessage('required','address')}}</mat-error>
             </mat-form-field>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
@@ -34,36 +33,36 @@
                 <mat-form-field flex="1">
                     <input matInput placeholder="封面价格" formControlName="price"/>
                     <span matSuffix>¥</span>
-                    <mat-error *ngIf="formGroup.controls.price.hasError('regexp')">{{getErrorMessage('regexp','price')}}</mat-error>
+                    <mat-error *ngIf="formGroup.controls.price.hasError('regexp')">{{getErrorMessage('regexp','价格')}}</mat-error>
                 </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
                 <mat-form-field flex="1">
                     <input matInput placeholder="周一至周四价格" formControlName="priceWorkday"/>
                     <span matSuffix>¥</span>
-                    <mat-error *ngIf="formGroup.controls.priceWorkday.hasError('regexp')">{{getErrorMessage('regexp','priceWorkday')}}</mat-error>
+                    <mat-error *ngIf="formGroup.controls.priceWorkday.hasError('regexp')">{{getErrorMessage('regexp','周一至周四价格')}}</mat-error>
                 </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
                 <mat-form-field flex="1">
                     <input matInput placeholder="周五至周日价格" formControlName="priceWeekend"/>
                     <span matSuffix>¥</span>
-                    <mat-error *ngIf="formGroup.controls.priceWeekend.hasError('regexp')">{{getErrorMessage('regexp','priceWeekend')}}</mat-error>
+                    <mat-error *ngIf="formGroup.controls.priceWeekend.hasError('regexp')">{{getErrorMessage('regexp','周五至周日价格')}}</mat-error>
                 </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
                 <mat-form-field flex="1">
                     <input matInput placeholder="整包价格" formControlName="allPrice"/>
                     <span matSuffix>¥</span>
-                    <mat-error *ngIf="formGroup.controls.allPrice.hasError('regexp')">{{getErrorMessage('regexp','allPrice')}}</mat-error>
+                    <mat-error *ngIf="formGroup.controls.allPrice.hasError('regexp')">{{getErrorMessage('regexp','整包价格')}}</mat-error>
                 </mat-form-field>
             </div>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
             <label>配备</label>
             <mat-form-field flex>
-                <input matInput placeholder="配备" formControlName="playItems"/>
+                <textarea matInput placeholder="配备" rows="2" formControlName="playItems"></textarea>
             </mat-form-field>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
             <label>预定电话</label>
             <mat-form-field flex>
                 <input matInput placeholder="预定电话" formControlName="orderNumber"/>
-                <mat-error *ngIf="formGroup.controls.orderNumber.hasError('regexp')">{{getErrorMessage('regexp','orderNumber')}}</mat-error>
+                <mat-error *ngIf="formGroup.controls.orderNumber.hasError('regexp')">{{getErrorMessage('regexp','预定电话')}}</mat-error>
             </mat-form-field>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
@@ -84,16 +83,19 @@
             <label>活动区图片</label>
             <upload-image [image]="formGroup.controls.section1" [max]="10" flex></upload-image>
         </div>
-        <!-- <div class="form-item" layout="row" layout-align="start center">
+        <div class="form-item" layout="row" layout-align="start center">
             <label>住宿区图片</label>
-            <upload-image [image]="imageList" [max]="1" flex></upload-image>
+            <upload-image [image]="formGroup.controls.section2" [max]="10" flex></upload-image>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
             <label>周边图片</label>
-            <upload-image [image]="imageList" [max]="1" flex></upload-image>
-        </div> -->
-        <div [zkBusy]="saveStoreAsync">
-            <button mat-raised-button (click)="saveStore()">保存</button>
+            <upload-image [image]="formGroup.controls.section3" [max]="10" flex></upload-image>
         </div>
+        <div>
+            <div class="submit-button" [zkBusy]="saveStoreAsync">
+                <button mat-raised-button color="primary" (click)="saveStore()">保存</button>
+            </div>
+        </div>
+        
     </div>
 </section>

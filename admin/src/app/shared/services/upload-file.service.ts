@@ -12,9 +12,9 @@ export class UploadFileService {
 
   }
 
-  upload (fileData) {
+  upload (fileData, url) {
     if (!fileData) {
-      return of(null);
+      return of(url);
     }
     let formData = new FormData();
     formData.append('file', fileData);

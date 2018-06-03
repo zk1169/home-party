@@ -9,6 +9,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { FormComponent, RegExpValidator } from '@src/app/models/form-component';
 import { EventBus } from '@src/app/shared';
 import { EventType, StatusType } from '@src/app/models/enum';
+import EventModel from '@src/app/models/event.model';
 import { StoreModel, CityModel } from '@src/app/models/store.model';
 import { StoreService, CityService } from '@src/app/shared';
 
@@ -98,6 +99,8 @@ export class StoreDetailComponent extends FormComponent implements OnInit {
         cover: new FormControl(store.cover),
         coverBig: new FormControl(store.coverBig),
         section1: new FormControl(store.section1),
+        section2: new FormControl(store.section2),
+        section3: new FormControl(store.section3),
         status: new FormControl(store.status, [Validators.required])
       });
     } else {
@@ -119,6 +122,8 @@ export class StoreDetailComponent extends FormComponent implements OnInit {
         cover: new FormControl(null),
         coverBig: new FormControl(null),
         section1: new FormControl([]),
+        section2: new FormControl([]),
+        section3: new FormControl([]),
         status: new FormControl(StatusType.ENABLE, [Validators.required]),
       });
     }
@@ -156,6 +161,7 @@ export class StoreDetailComponent extends FormComponent implements OnInit {
       .pipe(
         map(res => {
           this.eventNotice(EventType.PROGRESS_BAR ,false);
+          this.eventNotice(EventType.ALERT ,EventModel.getInfoEvent('保存成功'));
         })
       );
   }

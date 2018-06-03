@@ -7,7 +7,7 @@
         </mat-form-field>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <div [zkBusy]="saveCityAsync">
-            <button mat-raised-button (click)="addNewCity()">新增城市</button>
+            <button mat-raised-button color="primary" (click)="addNewCity()">新增城市</button>
         </div>
     </div>
     <mat-list role="list" class="list-wrap">
@@ -28,7 +28,9 @@
                     <span flex="50">{{item.name}}</span>
                     <span flex="10">{{item.status}}</span>
                     <span flex="15">{{item.c_time}}</span>
-                    <span flex="20"><a (click)="onOrOffLineCity(item.id, item.status)">{{item.status===1?'下线':'上线'}}</a></span>
+                    <span flex="20">
+                        <button mat-button color="primary" (click)="onOrOffLineCity(item.id, item.status)">{{item.status===1?'下线':'上线'}}</button>
+                    </span>
                 </div>
             </mat-list-item>
             <mat-divider></mat-divider>

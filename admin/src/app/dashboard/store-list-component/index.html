@@ -1,7 +1,7 @@
 <section>
     <div layout="row">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button mat-raised-button routerLink="/dashboard/store-detail">新增门店</button>
+        <button mat-raised-button color="primary" routerLink="/dashboard/store-detail">新增门店</button>
     </div>
     <mat-list role="list" class="list-wrap">
         <mat-list-item>
@@ -28,7 +28,9 @@
                         <img [src]="item.cover?.URL" alt="">
                     </span>
                     <!-- <span flex="10"><a [routerLink]="'/dashboard/store-detail/'+item.id">编辑</a></span> -->
-                    <span flex="10"><a [routerLink]="['/dashboard/store-detail', item.id]">编辑</a></span>
+                    <span flex="10">
+                        <button mat-button color="primary" [routerLink]="['/dashboard/store-detail', item.id]">编辑</button>
+                    </span>
                 </div>
             </mat-list-item>
             <mat-divider></mat-divider>

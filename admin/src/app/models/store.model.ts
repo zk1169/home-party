@@ -50,12 +50,14 @@ export class StoreModel extends BaseModel {
   initSectionImages(field, images) {
     _.forEach(images, (item ,index)=>{
       if (item && typeof(item) === 'string') {
-        if (this[field][index]) {
-          this[field][index].url = item;
-        } else {
-          const imageUploda = new ImageUploadModel({url: item});
-          this[field].push(imageUploda);
-        }
+        // if (this[field][index]) {
+        //   this[field][index].url = item;
+        // } else {
+        //   const imageUploda = new ImageUploadModel({url: item});
+        //   this[field].push(imageUploda);
+        // }
+        const imageUploda = new ImageUploadModel({url: item});
+        this[field].push(imageUploda);
       }
     });
   }

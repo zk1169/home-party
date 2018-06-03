@@ -1,4 +1,5 @@
 @import '~@angular/material/theming';
+@import './variables';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -7,20 +8,20 @@
 @include mat-core();
 
 $mat-home-party: (
-  50: #f17e01,
-  100: #f17e01,
-  200: #f17e01,
-  300: #f17e01,
-  400: #f17e01,
-  500: #f17e01,
-  600: #f17e01,
-  700: #f17e01,
-  800: #f17e01,
-  900: #f17e01,
-  A100: #f17e01,
-  A200: #f17e01,
-  A400: #f17e01,
-  A700: #f17e01,
+  50: $color-primary,
+  100: $color-primary,
+  200: $color-primary,
+  300: $color-primary,
+  400: $color-primary,
+  500: $color-primary,
+  600: $color-primary,
+  700: $color-primary,
+  800: $color-primary,
+  900: $color-primary,
+  A100: $color-primary,
+  A200: $color-primary,
+  A400: $color-primary,
+  A700: $color-primary,
   contrast: (
     50: $dark-primary-text,
     100: $dark-primary-text,
