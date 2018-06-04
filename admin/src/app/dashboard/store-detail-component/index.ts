@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import * as _ from 'lodash';
-import { Observable, merge } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 import { map, reduce } from 'rxjs/operators';
 import { FormControl, Validators, FormBuilder, NgForm, FormGroupDirective } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
@@ -49,26 +49,48 @@ export class StoreDetailComponent extends FormComponent implements OnInit {
     //   switchMap((params: ParamMap) =>
     //     this.service.getHero(params.get('id')))
     // );
-    merge(this.cityService.getAll(),this.storeService.getById(storeId))
+
+    // merge(this.cityService.getAll(),this.storeService.getById(storeId))
+    //   .pipe(
+    //     reduce((res1:any,res2:any)=>{
+    //       const result = {
+    //         cityList: null,
+    //         storeModel: null
+    //       };
+    //       if (res1.dataList) {
+    //         result.cityList = _.get(res1, 'dataList', []);
+    //         result.storeModel = res2;
+    //       } else {
+    //         result.cityList = _.get(res2, 'dataList', []);
+    //         result.storeModel = res1;
+    //       }
+    //       return result;
+    //     })
+    //   )
+    //   .subscribe(
+    //     (res)=>{
+    //       console.log(res);
+    //       if (res.storeModel) {
+    //         res.storeModel.id = storeId;
+    //       }
+    //       this.cityList = res.cityList;
+    //       this.initFormGroup(res.storeModel);
+    //     },
+    //     (err)=>{}
+    //   );
+    forkJoin([this.cityService.getAll(),this.storeService.getById(storeId)])
       .pipe(
-        reduce((res1:any,res2:any)=>{
+        map((res)=>{
           const result = {
-            cityList: null,
-            storeModel: null
+            cityList: _.get(res, '[0].dataList'),
+            storeModel: _.get(res, '[1]')
           };
-          if (res1.dataList) {
-            result.cityList = _.get(res1, 'dataList', []);
-            result.storeModel = res2;
-          } else {
-            result.cityList = _.get(res2, 'dataList', []);
-            result.storeModel = res1;
-          }
           return result;
         })
       )
       .subscribe(
         (res)=>{
-          console.log(res);
+          // console.log(res);
           if (res.storeModel) {
             res.storeModel.id = storeId;
           }

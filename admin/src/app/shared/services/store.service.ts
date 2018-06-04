@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { merge, of } from 'rxjs';
+import { merge, of, forkJoin } from 'rxjs';
 import { map, switchMap, reduce, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { HttpService } from './http.service';
@@ -29,72 +29,53 @@ export class StoreService {
           if (res) {
             storeModel.coverBig.url = res;
           }
-          // const map = new Map();
-          // _.forEach(storeModel.section1, item => {
-          //   map.set(this.uploadFileService.upload(item.file));
-          // });
-          
-          const section1Temp = storeModel.section1;
-          storeModel.section1 = [];
-          return merge(
-            this.uploadFileService.upload(_.get(section1Temp, '[0].file'), _.get(section1Temp, '[0].url')),
-            this.uploadFileService.upload(_.get(section1Temp, '[1].file'), _.get(section1Temp, '[1].url')),
-            this.uploadFileService.upload(_.get(section1Temp, '[2].file'), _.get(section1Temp, '[2].url')),
-            this.uploadFileService.upload(_.get(section1Temp, '[3].file'), _.get(section1Temp, '[3].url')),
-            this.uploadFileService.upload(_.get(section1Temp, '[4].file'), _.get(section1Temp, '[4].url')),
-            this.uploadFileService.upload(_.get(section1Temp, '[5].file'), _.get(section1Temp, '[5].url')),
-            this.uploadFileService.upload(_.get(section1Temp, '[6].file'), _.get(section1Temp, '[6].url')),
-            this.uploadFileService.upload(_.get(section1Temp, '[7].file'), _.get(section1Temp, '[7].url')),
-            this.uploadFileService.upload(_.get(section1Temp, '[8].file'), _.get(section1Temp, '[8].url')),
-            this.uploadFileService.upload(_.get(section1Temp, '[9].file'), _.get(section1Temp, '[9].url'))
-          );
+          if (storeModel.section1 && storeModel.section1.length > 0) {
+            return forkJoin(_.map(storeModel.section1, item => this.uploadFileService.upload(item.file, item.url)));
+          } else {
+            return of(null);
+          }
         }),
-        reduce((...res)=>{
-          storeModel.initSectionImages('section1', res);
+        map((res)=>{
+          console.log(`1.${res}`);
+          _.forEach(res, (item, index) => {
+            if (item) {
+              storeModel.section1[index].url = item;
+            }
+          });
           return of(null);
         }),
         switchMap((res)=>{
-          const section2Temp = storeModel.section2;
-          storeModel.section2 = [];
-          return merge(
-            this.uploadFileService.upload(_.get(section2Temp, '[0].file'), _.get(section2Temp, '[0].url')),
-            this.uploadFileService.upload(_.get(section2Temp, '[1].file'), _.get(section2Temp, '[1].url')),
-            this.uploadFileService.upload(_.get(section2Temp, '[2].file'), _.get(section2Temp, '[2].url')),
-            this.uploadFileService.upload(_.get(section2Temp, '[3].file'), _.get(section2Temp, '[3].url')),
-            this.uploadFileService.upload(_.get(section2Temp, '[4].file'), _.get(section2Temp, '[4].url')),
-            this.uploadFileService.upload(_.get(section2Temp, '[5].file'), _.get(section2Temp, '[5].url')),
-            this.uploadFileService.upload(_.get(section2Temp, '[6].file'), _.get(section2Temp, '[6].url')),
-            this.uploadFileService.upload(_.get(section2Temp, '[7].file'), _.get(section2Temp, '[7].url')),
-            this.uploadFileService.upload(_.get(section2Temp, '[8].file'), _.get(section2Temp, '[8].url')),
-            this.uploadFileService.upload(_.get(section2Temp, '[9].file'), _.get(section2Temp, '[9].url'))
-          );
+          if (storeModel.section2 && storeModel.section2.length > 0) {
+            return forkJoin(_.map(storeModel.section2, item => this.uploadFileService.upload(item.file, item.url)));
+          } else {
+            return of(null);
+          }
         }),
-        reduce((...res)=>{
-          storeModel.initSectionImages('section2', res);
+        map((res)=>{
+          _.forEach(res, (item, index) => {
+            if (item) {
+              storeModel.section2[index].url = item;
+            }
+          });
           return of(null);
         }),
         switchMap((res)=>{
-          const section3Temp = storeModel.section3;
-          storeModel.section3 = [];
-          return merge(
-            this.uploadFileService.upload(_.get(section3Temp, '[0].file'), _.get(section3Temp, '[0].url')),
-            this.uploadFileService.upload(_.get(section3Temp, '[1].file'), _.get(section3Temp, '[1].url')),
-            this.uploadFileService.upload(_.get(section3Temp, '[2].file'), _.get(section3Temp, '[2].url')),
-            this.uploadFileService.upload(_.get(section3Temp, '[3].file'), _.get(section3Temp, '[3].url')),
-            this.uploadFileService.upload(_.get(section3Temp, '[4].file'), _.get(section3Temp, '[4].url')),
-            this.uploadFileService.upload(_.get(section3Temp, '[5].file'), _.get(section3Temp, '[5].url')),
-            this.uploadFileService.upload(_.get(section3Temp, '[6].file'), _.get(section3Temp, '[6].url')),
-            this.uploadFileService.upload(_.get(section3Temp, '[7].file'), _.get(section3Temp, '[7].url')),
-            this.uploadFileService.upload(_.get(section3Temp, '[8].file'), _.get(section3Temp, '[8].url')),
-            this.uploadFileService.upload(_.get(section3Temp, '[9].file'), _.get(section3Temp, '[9].url'))
-          );
+          if (storeModel.section3 && storeModel.section3.length > 0) {
+            return forkJoin(_.map(storeModel.section3, item => this.uploadFileService.upload(item.file, item.url)));
+          } else {
+            return of(null);
+          }
         }),
-        reduce((...res)=>{
-          storeModel.initSectionImages('section3', res);
+        map((res)=>{
+          _.forEach(res, (item, index) => {
+            if (item) {
+              storeModel.section3[index].url = item;
+            }
+          });
           return of(null);
         }),
         switchMap((res)=>{
-          console.log(`4.${res}`);
+          // console.log(`4.${res}`);
           const data = storeModel.toJson();
           let method = null;
           let _url = this.url;
@@ -118,12 +99,101 @@ export class StoreService {
       );
   }
 
-  // save(fileData) {
-  //   return this.uploadFileService.upload(fileData)
+  // save(storeModel: StoreModel) {
+  //   return this.uploadFileService.upload(_.get(storeModel, 'cover.file'), _.get(storeModel, 'cover.url'))
   //     .pipe(
-  //       map((res) => {
-  //         debugger;
-  //         return res;
+  //       switchMap((res)=>{
+  //         // console.log(`1.${res}`);
+  //         if (res) {
+  //           storeModel.cover.url = res;
+  //         }
+  //         return this.uploadFileService.upload(_.get(storeModel, 'coverBig.file'), _.get(storeModel, 'coverBig.url'));
+  //       }),
+  //       switchMap((res)=>{
+  //         // console.log(`2.${res}`);
+  //         if (res) {
+  //           storeModel.coverBig.url = res;
+  //         }
+  //         const section1Temp = storeModel.section1;
+  //         storeModel.section1 = [];
+  //         return merge(
+  //           this.uploadFileService.upload(_.get(section1Temp, '[0].file'), _.get(section1Temp, '[0].url')),
+  //           this.uploadFileService.upload(_.get(section1Temp, '[1].file'), _.get(section1Temp, '[1].url')),
+  //           this.uploadFileService.upload(_.get(section1Temp, '[2].file'), _.get(section1Temp, '[2].url')),
+  //           this.uploadFileService.upload(_.get(section1Temp, '[3].file'), _.get(section1Temp, '[3].url')),
+  //           this.uploadFileService.upload(_.get(section1Temp, '[4].file'), _.get(section1Temp, '[4].url')),
+  //           this.uploadFileService.upload(_.get(section1Temp, '[5].file'), _.get(section1Temp, '[5].url')),
+  //           this.uploadFileService.upload(_.get(section1Temp, '[6].file'), _.get(section1Temp, '[6].url')),
+  //           this.uploadFileService.upload(_.get(section1Temp, '[7].file'), _.get(section1Temp, '[7].url')),
+  //           this.uploadFileService.upload(_.get(section1Temp, '[8].file'), _.get(section1Temp, '[8].url')),
+  //           this.uploadFileService.upload(_.get(section1Temp, '[9].file'), _.get(section1Temp, '[9].url'))
+  //         );
+  //       }),
+  //       reduce((...res)=>{
+  //         storeModel.initSectionImages('section1', res);
+  //         return of(null);
+  //       }),
+  //       switchMap((res)=>{
+  //         const section2Temp = storeModel.section2;
+  //         storeModel.section2 = [];
+  //         return merge(
+  //           this.uploadFileService.upload(_.get(section2Temp, '[0].file'), _.get(section2Temp, '[0].url')),
+  //           this.uploadFileService.upload(_.get(section2Temp, '[1].file'), _.get(section2Temp, '[1].url')),
+  //           this.uploadFileService.upload(_.get(section2Temp, '[2].file'), _.get(section2Temp, '[2].url')),
+  //           this.uploadFileService.upload(_.get(section2Temp, '[3].file'), _.get(section2Temp, '[3].url')),
+  //           this.uploadFileService.upload(_.get(section2Temp, '[4].file'), _.get(section2Temp, '[4].url')),
+  //           this.uploadFileService.upload(_.get(section2Temp, '[5].file'), _.get(section2Temp, '[5].url')),
+  //           this.uploadFileService.upload(_.get(section2Temp, '[6].file'), _.get(section2Temp, '[6].url')),
+  //           this.uploadFileService.upload(_.get(section2Temp, '[7].file'), _.get(section2Temp, '[7].url')),
+  //           this.uploadFileService.upload(_.get(section2Temp, '[8].file'), _.get(section2Temp, '[8].url')),
+  //           this.uploadFileService.upload(_.get(section2Temp, '[9].file'), _.get(section2Temp, '[9].url'))
+  //         );
+  //       }),
+  //       reduce((...res)=>{
+  //         storeModel.initSectionImages('section2', res);
+  //         return of(null);
+  //       }),
+  //       switchMap((res)=>{
+  //         const section3Temp = storeModel.section3;
+  //         storeModel.section3 = [];
+  //         return merge(
+  //           this.uploadFileService.upload(_.get(section3Temp, '[0].file'), _.get(section3Temp, '[0].url')),
+  //           this.uploadFileService.upload(_.get(section3Temp, '[1].file'), _.get(section3Temp, '[1].url')),
+  //           this.uploadFileService.upload(_.get(section3Temp, '[2].file'), _.get(section3Temp, '[2].url')),
+  //           this.uploadFileService.upload(_.get(section3Temp, '[3].file'), _.get(section3Temp, '[3].url')),
+  //           this.uploadFileService.upload(_.get(section3Temp, '[4].file'), _.get(section3Temp, '[4].url')),
+  //           this.uploadFileService.upload(_.get(section3Temp, '[5].file'), _.get(section3Temp, '[5].url')),
+  //           this.uploadFileService.upload(_.get(section3Temp, '[6].file'), _.get(section3Temp, '[6].url')),
+  //           this.uploadFileService.upload(_.get(section3Temp, '[7].file'), _.get(section3Temp, '[7].url')),
+  //           this.uploadFileService.upload(_.get(section3Temp, '[8].file'), _.get(section3Temp, '[8].url')),
+  //           this.uploadFileService.upload(_.get(section3Temp, '[9].file'), _.get(section3Temp, '[9].url'))
+  //         );
+  //       }),
+  //       reduce((...res)=>{
+  //         storeModel.initSectionImages('section3', res);
+  //         return of(null);
+  //       }),
+  //       switchMap((res)=>{
+  //         console.log(`4.${res}`);
+  //         const data = storeModel.toJson();
+  //         let method = null;
+  //         let _url = this.url;
+  //         if (data.id) {
+  //           method = 'PUT';
+  //           _url += `/${data.id}`;
+  //         } else {
+  //           method = 'POST';
+  //         }
+  //         return this.httpService.request(method, _url, data);
+  //       }),
+  //       map((res)=>{
+  //         // console.log(`5.${res}`);
+  //         storeModel.id = res.id;
+  //         return storeModel;
+  //       }),
+  //       catchError((err)=>{
+  //         console.error(err);
+  //         return err;
   //       })
   //     );
   // }

@@ -5,13 +5,6 @@
                     <img src="../../../assets/images/logo.png" alt="">
                 </div>
                 <div>
-                    <div class="text-right">
-                        <span class="collapse-nav text-center" (click)="menuShow=!menuShow">
-                            <svg class="icon caret-right" aria-hidden="true">
-                                <use xlink:href="#icon-caret-right"></use>
-                            </svg>
-                        </span>
-                    </div>
                     <ul>
                         <li class="menu-item" routerLink="/dashboard/liuyan" routerLinkActive="checked">
                             <a>
@@ -46,6 +39,16 @@
                             </a>
                         </li>
                     </ul>
+                    <div class="text-center menu-arrow">
+                        <span class="collapse-nav text-center" (click)="menuShow=!menuShow">
+                            <svg *ngIf="!menuShow" class="icon double-caret-right" aria-hidden="true">
+                                <use xlink:href="#icon-double-caret-right"></use>
+                            </svg>
+                            <svg *ngIf="menuShow" class="icon double-caret-left" aria-hidden="true">
+                                <use xlink:href="#icon-double-caret-left"></use>
+                            </svg>
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="dashboard-right" flex [class.dashboard-right-nav-show]="menuShow">
