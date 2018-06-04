@@ -39,6 +39,7 @@ export class SettingComponent extends FormComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.changePageTitle('设置');
     this.getAllConfig();
   }
 

@@ -182,7 +182,8 @@ router.route('/config/:type')
         ConfigModel.getByType(type, results => response(res, results), err => response(res, null, err));
     })
     .put((req, res) => {
-        response(res, true);
+        const configs = req.body;
+        ConfigModel.update(configs, results => response(res, results), err => response(res, null, err));
     });
 // router.route('/wechat/patsnap')
 //     .post((req, res) => {

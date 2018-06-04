@@ -22,6 +22,7 @@ export class CityComponent extends PageComponent implements OnInit{
     super(eventBus);
   }
   ngOnInit() {
+    this.changePageTitle('城市管理');
     this.getList(this.pageModel.page);
   }
 

@@ -1,4 +1,5 @@
 import { EventBus } from '@src/app/shared';
+import { EventType } from '@src/app/models/enum';
 
 export class BaseComponent {
     constructor(private eventBus : EventBus) {
@@ -12,6 +13,10 @@ export class BaseComponent {
      */
     eventNotice(event: string, params: any) {
         this.eventBus.notifyDataChanged(event, params);
+    }
+
+    changePageTitle(title) {
+        this.eventNotice(EventType.PAGE_TITLE_CHANGE, title);
     }
 
     /**

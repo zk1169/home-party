@@ -1,6 +1,11 @@
+@import '../../../snap-zen/scss/variables';
 $left-width:60px;
 $left-width-large:230px;
 $tool-bar-height:50px;
+$menuBackgroundColor: #2b333d;
+$menuCheckedBackgroundColor: #24272d;
+$menuBorderWidth: 4px;
+
 .dashboard-component {
     height: 100vh;
     .dashboard-left {
@@ -10,7 +15,7 @@ $tool-bar-height:50px;
         left: 0px;
         height: 100vh;
         width: $left-width;
-        background-color: #2b333d;
+        background-color: $menuBackgroundColor;
         color: #c5d0de;
         z-index: 101;
         transition-duration: .3s;
@@ -37,6 +42,7 @@ $tool-bar-height:50px;
             }
         }
         .menu-item {
+            border-left: solid $menuBorderWidth $menuBackgroundColor;
             cursor: pointer;
             width: $left-width-large;
             padding: 8px 15px 8px 20px;
@@ -49,8 +55,12 @@ $tool-bar-height:50px;
         }
         .menu-item:hover,
         .menu-item.checked {
-            background-color: #24272d;
+            border-left: solid $menuBorderWidth $menuCheckedBackgroundColor;
+            background-color: $menuCheckedBackgroundColor;
             color: #fff;
+        }
+        .menu-item.checked{
+            border-left: solid $menuBorderWidth $color-primary;
         }
     }
     .dashboard-right {
@@ -59,29 +69,31 @@ $tool-bar-height:50px;
         margin-left: $left-width;
         margin-top: $tool-bar-height;
         .dashboard-header {
+            transition-duration: .3s;
             z-index: 100;
             position: fixed;
             top: 0px;
             right: 0px;
             padding-right:20px;
             height: $tool-bar-height;
-            width: 100%;
+            width: calc(100% - #{$left-width});
             background-color: #fff;
             box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084);
             opacity: 0.9;
         }
+        .page-title{
+            padding-left: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
     }
     .dashboard-left-nav-show {
         width: $left-width-large;
-        // .collapse-nav {
-        //     width: 32px;
-        // }
-        // .left-side-top img{
-        //     height: 60px;
-        //     margin-top: 15px;
-        // }
     }
     .dashboard-right-nav-show {
         margin-left: $left-width-large;
+        .dashboard-header {
+            width: calc(100% - #{$left-width-large});
+        }
     }
 }

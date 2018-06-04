@@ -44,6 +44,7 @@ export class StoreDetailComponent extends FormComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.changePageTitle('门店编辑');
     const storeId = this.route.snapshot.paramMap.get('id');
     // this.route.paramMap.pipe(
     //   switchMap((params: ParamMap) =>

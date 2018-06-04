@@ -11,7 +11,7 @@
                                 <svg class="icon liuyan" aria-hidden="true">
                                     <use xlink:href="#icon-liuyan"></use>
                                 </svg>
-                                <span *ngIf="menuShow" class="menu-text">反馈列表</span>
+                                <span *ngIf="menuShow" class="menu-text">留言管理</span>
                             </a>
                         </li>
                         <li class="menu-item" routerLink="/dashboard/city" routerLinkActive="checked">
@@ -19,7 +19,7 @@
                                 <svg class="icon loupan" aria-hidden="true">
                                     <use xlink:href="#icon-loupan"></use>
                                 </svg>
-                                <span *ngIf="menuShow" class="menu-text">城市列表</span>
+                                <span *ngIf="menuShow" class="menu-text">城市管理</span>
                             </a>
                         </li>
                         <li class="menu-item" routerLink="/dashboard/store-list" routerLinkActive="checked">
@@ -27,7 +27,7 @@
                                 <svg class="icon mendianliebiao" aria-hidden="true">
                                     <use xlink:href="#icon-mendianliebiao"></use>
                                 </svg>
-                                <span *ngIf="menuShow" class="menu-text">门店列表</span>
+                                <span *ngIf="menuShow" class="menu-text">门店管理</span>
                             </a>
                         </li>
                         <li class="menu-item" routerLink="/dashboard/setting" routerLinkActive="checked">
@@ -52,14 +52,9 @@
                 </div>
             </div>
             <div class="dashboard-right" flex [class.dashboard-right-nav-show]="menuShow">
-                <div class="dashboard-header" layout="row" layout-align="end center">
+                <div flex class="dashboard-header" layout="row" layout-align="space-between center">
+                    <div class="page-title">{{pageTitle}}</div>
                     <div class="">
-                        <!-- <span>Admin</span>
-                        <a (click)="logOut()">
-                            <svg class="icon bars" aria-hidden="true">
-                                <use xlink:href="#icon-bars"></use>
-                            </svg>
-                        </a> -->
                         <button mat-button [matMenuTriggerFor]="menu">{{UserName}}</button>
                         <mat-menu #menu="matMenu">
                             <button mat-menu-item (click)="logOut()">退出系统</button>

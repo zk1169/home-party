@@ -17,6 +17,7 @@ export class StoreListComponent extends PageComponent implements OnInit{
     super(eventBus);
   }
   ngOnInit() {
+    this.changePageTitle('门店管理');
     this.getList(this.pageModel.page);
   }
 

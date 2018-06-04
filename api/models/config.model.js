@@ -28,6 +28,18 @@ class ConfigModel extends BaseModel{
             }, err => error(err));
     }
 
+    static update(config, success, error) {
+        const sqlArray = [];
+        _.forIn(config, (value, key) => {
+            sqlArray.push(`UPDATE t_config SET value='${value}' WHERE field='${key}'`);
+        });
+        const sql = sqlArray.join(';');
+        MYSQL_QUERY(sql, null,
+            (results) => {
+                success(true);
+            }, err => error(err));
+    }
+
     toModel(jsonObj) {
         super.toModel(jsonObj);
         this.field = jsonObj.field;

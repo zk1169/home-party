@@ -17,6 +17,7 @@ export class LiuyanComponent extends PageComponent implements OnInit{
     super(eventBus);
   }
   ngOnInit() {
+    this.changePageTitle('留言管理');
     this.getList(this.pageModel.page);
   }
 
