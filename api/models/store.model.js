@@ -107,7 +107,7 @@ class StoreModel extends BaseStatusModel{
               status='${this.status}',
               u_time='${this.u_time}' 
               WHERE id=${this.id}`;
-            console.log(sql);
+            // console.log(sql);
         } else {
             this.status = STATUS.ENABLE;
             super.initTime();

@@ -32,7 +32,7 @@ export class DashboardComponent extends BaseComponent {
   }
 
   get UserName() {
-    return _.get(this.appState, 'authModel.userName', 'Admin');
+    return _.get(this.appState, 'authModel.userName') || 'Admin';
   }
 
   logOut() {

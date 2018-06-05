@@ -283,8 +283,49 @@ router.route('/mail')
         });
     });
 
+
+// router.route('/importStore')
+//     .get((req, res) => {
+//         let timeDelay = 0;
+//         const CityList = require('./models/store.mock');
+//         _.forEach(CityList, (city, index1) => {
+//             _.forEach(city.storeList, (store, index2)=>{
+//                 store.cityId = city.id;
+//                 delete store.id;
+//                 store.section1 = '';
+//                 store.section2 = '';
+//                 store.section3 = '';
+//                 store.section4 = '';
+//                 store.section5 = '';
+//                 _.forEach(store.images, (image)=>{
+//                     if(image.section == '活动区') {
+//                         if (image.items && image.items.length>0) {
+//                             store.section1 = image.items.join(',');
+//                         }
+//                     } else if (image.section == '住宿区') {
+//                         if (image.items && image.items.length>0) {
+//                             store.section2 = image.items.join(',');
+//                         }
+//                     } else if (image.section == '周边') {
+//                         if (image.items && image.items.length>0) {
+//                             store.section3 = image.items.join(',');
+//                         }
+//                     }
+//                 });
+//                 console.log(store);
+//                 const storeModel = new StoreModel();
+//                 storeModel.toModel(store);
+//                 setTimeout(()=>{
+//                     storeModel.save(results => {}, err => {});
+//                 },timeDelay);
+//                 timeDelay += 100;
+//             });
+//         });
+//         res.json({ message: 'import ing!' });
+//     });
+
 router.get('/**', function(req, res) {
-    res.json({ message: 'hello kugou!' });   
+    res.json({ message: 'hello kugou!' });
 });
 
 module.exports = router;
