@@ -5,7 +5,7 @@ const MYSQL_QUERY = require('./mysql-pool');
 
 class ConfigModel extends BaseModel{
     getByField(success, error) {
-        const sql = `select * from t_config where field='${this.field}'`;
+        const sql = `select * from t_config where name='${this.name}'`;
         MYSQL_QUERY(sql, null,
             (results) => {
                 //if (results) {
@@ -22,7 +22,7 @@ class ConfigModel extends BaseModel{
             (results) => {
                 const model = {};
                 _.forEach(results, (item) => {
-                    model[item.field] = item.value;
+                    model[item.name] = item.nameValue;
                 });
                 success(model);
             }, err => error(err));
@@ -31,9 +31,10 @@ class ConfigModel extends BaseModel{
     static update(config, success, error) {
         const sqlArray = [];
         _.forIn(config, (value, key) => {
-            sqlArray.push(`UPDATE t_config SET value='${value}' WHERE field='${key}'`);
+            sqlArray.push(`UPDATE t_config SET nameValue='${value}' WHERE name='${key}'`);
         });
         const sql = sqlArray.join(';');
+        // const sql = 'select * from t_config; select * from t_config;';
         MYSQL_QUERY(sql, null,
             (results) => {
                 success(true);
@@ -42,8 +43,8 @@ class ConfigModel extends BaseModel{
 
     toModel(jsonObj) {
         super.toModel(jsonObj);
-        this.field = jsonObj.field;
-        this.value = jsonObj.value;
+        this.name = jsonObj.name;
+        this.nameValue = jsonObj.nameValue;
         return this;
     }
 }

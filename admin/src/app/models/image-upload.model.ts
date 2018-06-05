@@ -14,7 +14,8 @@ export class ImageUploadModel {
   }
 
   get URL(){
-    return `/${this.url}`;
+    // return `/${this.url}`;
+    return `http://1a27.top/${this.url}`;
   }
   
   toModel(jsonObj) {

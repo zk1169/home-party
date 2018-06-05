@@ -8,7 +8,7 @@
             <div layout="row" class="list-header">
                 <span flex="5">序号</span>
                 <span flex="10">城市</span>
-                <span flex="15">店名</span>
+                <span flex="35">店名</span>
                 <span flex="10">价格</span>
                 <span flex="10">预定电话</span>
                 <span flex="20">封面图</span>
@@ -21,11 +21,11 @@
                 <div layout="row" layout-align="start center" class="list-item">
                     <span flex="5">{{i+1}}</span>
                     <span flex="10">{{item.CityName}}</span>
-                    <span flex="15">{{item.name}}</span>
+                    <span flex="35">{{item.name}}</span>
                     <span flex="10">{{item.price}}</span>
                     <span flex="10">{{item.orderNumber}}</span>
                     <span flex="20">
-                        <img [src]="item.cover?.URL" alt="">
+                        <img [src]="item.cover?.URL" alt="" style="height: 50px;">
                     </span>
                     <!-- <span flex="10"><a [routerLink]="'/dashboard/store-detail/'+item.id">编辑</a></span> -->
                     <span flex="10">

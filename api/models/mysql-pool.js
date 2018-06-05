@@ -4,7 +4,8 @@ var pool = mysql.createPool({
     port     : '3306',
     user     : 'mgn',
     password : 'bn6HpSxbru9oaUzN',
-    database : 'mgn'
+    database : 'mgn',
+    multipleStatements: true
 });  
   
 var query=function(sql,options,success, error){
