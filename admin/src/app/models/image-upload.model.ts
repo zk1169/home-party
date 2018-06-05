@@ -8,14 +8,13 @@ export class ImageUploadModel {
   file: File;
   url: string;
 
-
 	constructor(jsonObj?){
     this.toModel(jsonObj);
   }
 
   get URL(){
-    // return `/${this.url}`;
-    return `http://1a27.top/${this.url}`;
+    return `/${this.url}`;
+    // return `http://1a27.top/${this.url}`;
   }
   
   toModel(jsonObj) {

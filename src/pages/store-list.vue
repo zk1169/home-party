@@ -12,7 +12,7 @@
                 <div class="city-name">{{city.cityName}}</div>
                 <div class="store-list" layout="row" layout-wrap>
                     <div v-for="store in city.storeList" :key="store.storeName" class="store-item" @click="storeClick(city.id, store.id)">
-                        <img class="cover" :src="store.cover" alt="">
+                        <img class="cover" :src="`http://1a27.top/${store.cover}`" alt="">
                         <div class="store-name">{{store.storeName}}</div>
                         <div class="store-address">{{store.address}}</div>
                         <div class="store-price">{{store.price}}</div>
@@ -26,8 +26,9 @@
 </template>
 
 <script>
+    import $ from 'jquery';
     import HpImage from '../components/hp-image';
-    import CityList from '../data/city-list';
+    // import CityList from '../data/city-list';
     
     export default {
         name: 'store-list',
@@ -36,10 +37,48 @@
         },
         data() {
             return {
-                cityList: CityList,
+                cityList: null,
             };
         },
         mounted() {
+            const url = '/api/store?page=1&size=100&ts='+new Date().getTime();
+            $.ajax({
+                // dataType: 'application/json;charset=utf-8',
+                type: "GET",
+                url,
+                success: (res) => {
+                    this.cityList = [];
+                    if (res && res.data && res.data.dataList) {
+                        for(let i=0;i<res.data.dataList.length;i++){
+                            const item = res.data.dataList[i];
+                            item.storeName = item.name;
+                            let cityIndex = -1;
+                            if (this.cityList.length>0) {
+                                for(let c=0;c<this.cityList.length;c++){
+                                    if(item.cityId===this.cityList[c].id){
+                                        cityIndex = c;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (cityIndex>-1) {
+                                this.cityList[cityIndex].storeList.push(item);
+                            } else {
+                                this.cityList.push({
+                                    id: item.cityId,
+                                    cityName: item.cityName,
+                                    storeList: [item]
+                                });
+                            }
+                        }
+                    }
+                },
+                error: (res) => {
+                    this.$eventHub.$emit('ALERT', {type: 'warning', message: '服务器忙，请稍后重试。'});
+                    // console.log('error');
+                    // debugger;
+                }
+            });
         },
         methods: {
             storeClick(cityId , storeId){
@@ -61,6 +100,7 @@
         }
         .store-list{
             .store-item{
+                min-width:330px;
                 position: relative;
                 overflow: hidden;
                 float: left;

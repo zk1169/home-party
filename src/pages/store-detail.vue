@@ -43,7 +43,7 @@
                 <div class="section-title">{{image.section}}</div>
                 <div layout="row" layout-wrap class="section-images">
                     <div flex="50" flex-xs="100" v-for="item in image.items" :key="item" class="image-item">
-                        <img :src="item" alt="">
+                        <img :src="`http://1a27.top/${item}`" alt="">
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@
 
 <script>
     import HpImage from '../components/hp-image';
-    import CityList from '../data/city-list';
+    // import CityList from '../data/city-list';
     import $ from 'jquery';
     
     export default {
@@ -63,11 +63,12 @@
             HpImage
         },
         data() {
-            const storeId = this.$route.params.storeId - 1;
-            const cityId = this.$route.params.cityId - 1;
+            // const storeId = this.$route.params.storeId - 1;
+            // const cityId = this.$route.params.cityId - 1;
             
             return {
-                store: CityList[cityId].storeList[storeId],
+                // store: CityList[cityId].storeList[storeId],
+                store: {},
                 // scrollIndex: -1,
                 storeMenuFixed: false
             };
@@ -80,6 +81,42 @@
             //         this[`section_${i}`] = document.getElementById(`section_id_${i}`).offsetTop;
             //     }
             // },2000);
+            const storeId = this.$route.params.storeId;
+            const url = `/api/store/${storeId}?ts=${new Date().getTime()}`;
+            $.ajax({
+                // dataType: 'application/json;charset=utf-8',
+                type: "GET",
+                url,
+                success: (res) => {
+                    const storeModel = res.data;
+                    storeModel.storeName = storeModel.name;
+                    storeModel.images = [];
+                    if (storeModel.section1) {
+                        storeModel.images.push({
+                            section: '活动区',
+                            items: storeModel.section1.split(',')
+                        });
+                    }
+                    if (storeModel.section2) {
+                        storeModel.images.push({
+                            section: '住宿区',
+                            items: storeModel.section2.split(',')
+                        });
+                    }
+                    if (storeModel.section3) {
+                        storeModel.images.push({
+                            section: '周边',
+                            items: storeModel.section3.split(',')
+                        });
+                    }
+                    this.store = res.data;
+                },
+                error: (res) => {
+                    this.$eventHub.$emit('ALERT', {type: 'warning', message: '服务器忙，请稍后重试。'});
+                    // console.log('error');
+                    // debugger;
+                }
+            });
         },
         computed: {
             storeSectionLength() {

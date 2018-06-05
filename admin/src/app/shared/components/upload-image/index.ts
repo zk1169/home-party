@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import * as _ from 'lodash';
 import { ImageUploadModel } from '@src/app/models/image-upload.model';
 
 @Component({
@@ -26,8 +27,9 @@ export class UploadImageComponent implements OnInit {
           imageList.push(this.image.value);
         }
         break;
+      default:
       case 'FormControl':
-        if(this.image.value && this.image.value.constructor.name === 'Array') {
+        if(_.isArray(this.image.value)) {
           imageList = this.image.value;
         } else {
           if (this.image.value) {
@@ -49,8 +51,9 @@ export class UploadImageComponent implements OnInit {
       case 'Object':
         this.image = fileInfo;
         break;
+      default:
       case 'FormControl':
-        if(this.image.value && this.image.value.constructor.name === 'Array') {
+        if(_.isArray(this.image.value)) {
           this.image.value.push(fileInfo);
         } else {
           this.image.setValue(fileInfo);
@@ -66,7 +69,7 @@ export class UploadImageComponent implements OnInit {
   }
 
   removeImage(index) {
-    if(this.image.value && this.image.value.constructor.name === 'Array') {
+    if(_.isArray(this.image.value)) {
       this.image.value.splice(index, 1);
     } else {
       this.image.setValue(null);

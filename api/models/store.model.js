@@ -11,7 +11,7 @@ class StoreModel extends BaseStatusModel{
             FROM t_store as ts 
             LEFT JOIN t_city as tc ON tc.id=ts.cityId
             WHERE 1=1 
-            ORDER BY ts.c_time ASC LIMIT ${start} , ${size}`;
+            ORDER BY ts.id ASC LIMIT ${start} , ${size}`;
         MYSQL_QUERY(sql, null,
             (results) => {
                 const modelList = [];
