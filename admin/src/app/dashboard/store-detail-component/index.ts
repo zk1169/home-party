@@ -8,8 +8,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 
 import { FormComponent, RegExpValidator } from '@src/app/models/form-component';
 import { EventBus } from '@src/app/shared';
-import { EventType, StatusType } from '@src/app/models/enum';
-import EventModel from '@src/app/models/event.model';
+import { StatusType } from '@src/app/models/enum';
 import { StoreModel, CityModel } from '@src/app/models/store.model';
 import { StoreService, CityService } from '@src/app/shared';
 
@@ -173,18 +172,18 @@ export class StoreDetailComponent extends FormComponent implements OnInit {
   }
 
   saveStore() {
-    // this.ngOnInit();
-    if (this.formGroup.errors) {
-      this.formGroup.updateValueAndValidity();
+    if (this.formGroup.invalid) {
+      _.forEach(this.formGroup.controls, item => item.markAsTouched());
+      this.warnAlert('门店信息输入有误');
       return;
     }
     const storeModel = new StoreModel().toModel(this.formGroup.value);
-    this.eventNotice(EventType.PROGRESS_BAR ,true);
+    this.startProgressBar();
     this.saveStoreAsync = this.storeService.save(storeModel)
       .pipe(
         map(res => {
-          this.eventNotice(EventType.PROGRESS_BAR ,false);
-          this.eventNotice(EventType.ALERT ,EventModel.getInfoEvent('保存成功'));
+          this.stopProgressBar();
+          this.successAlert('保存成功');
         })
       );
   }

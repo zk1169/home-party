@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthService, AppStateService, EventBus } from '@src/app/shared';
 import { BaseComponent } from '@src/app/models/base-component';
-import EventModel from '@src/app/models/event.model';
 import AuthModel from '@src/app/models/auth.model';
-import { EventType } from '@src/app/models/enum';
 
 @Component({
   selector: 'login-component',
@@ -26,14 +24,13 @@ export class LoginComponent extends BaseComponent {
   }
 
   login(){
-    this.eventNotice(EventType.PROGRESS_BAR ,true);
+    this.startProgressBar();
     this.loginAysn = this.authService.login(this.model)
       .pipe(
         map(res => {
-          this.eventNotice(EventType.PROGRESS_BAR ,false);
+          this.stopProgressBar();
           if (res) {
             this.appState.authModel = this.model;
-            // this.eventNotice(EventType.ALERT ,EventModel.getInfoEvent('登录成功'));
             if (this.appState.redirectUrl) {
               this.router.navigate([this.appState.redirectUrl]);
             } else {
@@ -41,7 +38,7 @@ export class LoginComponent extends BaseComponent {
             }
           } else {
             this.appState.authModel = null;
-            this.eventNotice(EventType.ALERT ,EventModel.getInfoEvent('用户名或密码错误'));
+            this.warnAlert('用户名或密码错误');
           }
         })
       );

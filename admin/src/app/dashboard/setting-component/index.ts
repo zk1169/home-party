@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { FormControl, Validators, FormBuilder, NgForm, FormGroupDirective } from '@angular/forms';
 import { FormComponent, RegExpValidator } from '@src/app/models/form-component';
 import { EventBus } from '@src/app/shared';
-import { EventType, ConfigType } from '@src/app/models/enum';
+import { ConfigType } from '@src/app/models/enum';
 import { ConfigService } from '@src/app/shared';
 
 @Component({
@@ -62,26 +62,27 @@ export class SettingComponent extends FormComponent implements OnInit {
   }
 
   getAllConfig() {
-    this.eventNotice(EventType.PROGRESS_BAR ,true);
+    this.startProgressBar;
     this.configService.getAll(ConfigType.NumberType)
       .subscribe(
         (res) => {
           // this.configModel = res;
           this.initFormGroup(res);
-          this.eventNotice(EventType.PROGRESS_BAR ,false);
+          this.stopProgressBar();
         },
         (err) => {
-          this.eventNotice(EventType.PROGRESS_BAR ,false);
+          this.stopProgressBar();
         }
       );
   }
 
   saveSetting() {
-    this.eventNotice(EventType.PROGRESS_BAR ,true);
+    this.startProgressBar;
     this.saveSettingAsync = this.configService.save(ConfigType.NumberType, this.formGroup.value)
       .pipe(
         map(res => {
-          this.eventNotice(EventType.PROGRESS_BAR ,false);
+          this.successAlert('保存成功');
+          this.stopProgressBar();
         })
       );
   }

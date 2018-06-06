@@ -5,7 +5,6 @@ import * as _ from 'lodash';
 import { AppStateService, AuthService } from '@src/app/shared';
 import { AlertDialog } from '../dialogs/alert';
 import { EventBus } from '@src/app/shared/index';
-import EventModel from '@src/app/models/event.model';
 import { BaseComponent } from '@src/app/models/base-component';
 import { EventType } from '@src/app/models/enum';
 

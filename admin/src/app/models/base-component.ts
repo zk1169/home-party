@@ -1,5 +1,6 @@
 import { EventBus } from '@src/app/shared';
-import { EventType } from '@src/app/models/enum';
+import { EventType } from './enum';
+import EventModel from './event.model';
 
 export class BaseComponent {
     constructor(private eventBus : EventBus) {
@@ -13,6 +14,26 @@ export class BaseComponent {
      */
     eventNotice(event: string, params: any) {
         this.eventBus.notifyDataChanged(event, params);
+    }
+
+    successAlert(msg) {
+        this.eventNotice(EventType.ALERT ,EventModel.getInfoEvent(msg));
+    }
+
+    warnAlert(msg) {
+        this.eventNotice(EventType.ALERT ,EventModel.getInfoEvent(msg));
+    }
+
+    errorAlert(msg) {
+        this.eventNotice(EventType.ALERT ,EventModel.getInfoEvent(msg));
+    }
+
+    startProgressBar() {
+        this.eventNotice(EventType.PROGRESS_BAR ,true);
+    }
+
+    stopProgressBar() {
+        this.eventNotice(EventType.PROGRESS_BAR ,false);
     }
 
     changePageTitle(title) {

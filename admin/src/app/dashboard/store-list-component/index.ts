@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { StoreService } from '@src/app/shared';
 import { PageComponent } from '@src/app/models/page-component.model';
 import { EventBus } from '@src/app/shared';
-import { EventType } from '@src/app/models/enum';
 
 @Component({
   selector: 'store-list-component',
@@ -22,15 +21,15 @@ export class StoreListComponent extends PageComponent implements OnInit{
   }
 
   getList(page) {
-    this.eventNotice(EventType.PROGRESS_BAR ,true);
+    this.startProgressBar();
     this.liuyanService.getList(page)
       .subscribe(
         (res) => {
           this.initPageModel(res);
-          this.eventNotice(EventType.PROGRESS_BAR ,false);
+          this.stopProgressBar();
         },
         (err) => {
-          this.eventNotice(EventType.PROGRESS_BAR ,false);
+          this.stopProgressBar();
           debugger;
         }
       );

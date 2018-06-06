@@ -5,7 +5,6 @@ import { Observable } from 'rxjs';
 import { CityService } from '@src/app/shared';
 import { PageComponent } from '@src/app/models/page-component.model';
 import { EventBus } from '@src/app/shared';
-import { EventType } from '@src/app/models/enum';
 
 @Component({
   selector: 'city-component',
@@ -27,15 +26,15 @@ export class CityComponent extends PageComponent implements OnInit{
   }
 
   getList(page) {
-    this.eventNotice(EventType.PROGRESS_BAR ,true);
+    this.startProgressBar();
     this.cityService.getList(page, 20)
       .subscribe(
         (res) => {
           this.initPageModel(res);
-          this.eventNotice(EventType.PROGRESS_BAR ,false);
+          this.stopProgressBar();
         },
         (err) => {
-          this.eventNotice(EventType.PROGRESS_BAR ,false);
+          this.stopProgressBar();
           debugger;
         }
       );
@@ -53,18 +52,17 @@ export class CityComponent extends PageComponent implements OnInit{
     if (!this.cityName) {
       return;
     }
-    this.eventNotice(EventType.PROGRESS_BAR ,true);
+    this.startProgressBar();
     this.saveCityAsync = this.cityService.addNewCity(this.cityName)
       .pipe(
         map(res => {
           this.getList(1);
-          // this.eventNotice(EventType.PROGRESS_BAR ,false);
         })
       );
   }
 
   onOrOffLineCity(cityId, status){
-    this.eventNotice(EventType.PROGRESS_BAR ,true);
+    this.startProgressBar();
     if (status) {
       this.cityService.offLineCity(cityId)
         .subscribe(
@@ -72,7 +70,7 @@ export class CityComponent extends PageComponent implements OnInit{
             this.getList(1);
           },
           (err) => {
-            this.eventNotice(EventType.PROGRESS_BAR ,false);
+            this.stopProgressBar();
           }
         );
     } else {
@@ -82,7 +80,7 @@ export class CityComponent extends PageComponent implements OnInit{
             this.getList(1);
           },
           (err) => {
-            this.eventNotice(EventType.PROGRESS_BAR ,false);
+            this.stopProgressBar();
           }
         );
     }
