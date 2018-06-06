@@ -92,7 +92,7 @@
                         <div layout="column" layout-align="start center">
                             <div class="text-left">
                                 <span class="fs-18" style="line-height: 25px;">已有加盟店</span><br>
-                                <span class="fs-36 font-bold" style="line-height: 50px;">27个</span>
+                                <span class="fs-36 font-bold" style="line-height: 50px;">{{config1.storeNumber}}个</span>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                         <div layout="column" layout-align="start center">
                             <div class="text-left">
                                 <span class="fs-18" style="line-height: 25px;">已入驻</span><br>
-                                <span class="fs-36 font-bold" style="line-height: 50px;">5个城市</span>
+                                <span class="fs-36 font-bold" style="line-height: 50px;">{{config1.cityNumber}}个城市</span>
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                         <div layout="column" layout-align="start center">
                             <div class="text-left">
                                 <span class="fs-18" style="line-height: 25px;">已有加盟商</span><br>
-                                <span class="fs-36 font-bold" style="line-height: 50px;">99人</span>
+                                <span class="fs-36 font-bold" style="line-height: 50px;">{{config1.partnerNumber}}人</span>
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                         <div layout="column" layout-align="start center">
                             <div class="text-left">
                                 <span class="fs-18" style="line-height: 25px;">品牌团队</span><br>
-                                <span class="fs-36 font-bold" style="line-height: 50px;">30人</span>
+                                <span class="fs-36 font-bold" style="line-height: 50px;">{{config1.teamNumber}}人</span>
                             </div>
                         </div>
                     </div>
@@ -288,6 +288,7 @@
             return {
                 firstScreenTop: this.isMobile?0:60,
                 lastScrollTop: 0,
+                config1: {},
                 carouselList: [
                     './static/images/index-carousel-1.jpg',
                     './static/images/index-carousel-2.jpg'
@@ -318,6 +319,19 @@
                 // window.onscroll = this.onScroll;
             }
             // document.onmousewheel = this.onScroll;
+
+            const url = `/api/config/1?ts=${new Date().getTime()}`;
+            $.ajax({
+                // dataType: 'application/json;charset=utf-8',
+                type: "GET",
+                url,
+                success: (res) => {
+                    this.config1 = res.data;
+                },
+                error: (res) => {
+                    this.$eventHub.$emit('ALERT', {type: 'warning', message: '服务器忙，请稍后重试。'});
+                }
+            });
         },
         methods: {
             onScroll(ev) {
