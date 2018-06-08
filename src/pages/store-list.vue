@@ -100,7 +100,7 @@
         }
         .store-list{
             .store-item{
-                min-width:330px;
+                width:330px;
                 position: relative;
                 overflow: hidden;
                 float: left;
