@@ -30,7 +30,6 @@ export class BannerListComponent extends PageComponent implements OnInit{
         },
         (err) => {
           this.stopProgressBar();
-          debugger;
         }
       );
   }

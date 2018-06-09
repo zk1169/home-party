@@ -1,103 +1,14 @@
 <section class="store-detail-component">
     <div class="form" [formGroup]="formGroup">
         <div class="form-item" layout="row" layout-align="start center">
-            <label>门店名称</label>
+            <label>页面名称</label>
             <mat-form-field flex>
-                <input matInput placeholder="门店名称" formControlName="name"/>
-                <mat-error *ngIf="formGroup.controls.name.hasError('required')">{{getErrorMessage('required','门店名称')}}</mat-error>
+                <input matInput placeholder="页面名称" disabled="true" formControlName="name"/>
             </mat-form-field>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
-            <label>城市</label>
-            <mat-form-field flex>
-                <mat-select placeholder="选择城市" formControlName="city" [errorStateMatcher]="matcher">
-                    <mat-option>请选择城市</mat-option>
-                    <mat-option *ngFor="let item of cityList" [value]="item.id">{{item.name}}</mat-option>
-                </mat-select>
-                <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
-                <mat-error *ngIf="formGroup.controls.city.hasError('required')">请选择城市</mat-error>
-                <!-- <mat-error *ngIf="formGroup.controls.city.hasError('pattern') && !formGroup.controls.city.hasError('required')">
-                    Your selection is invalid
-                </mat-error> -->
-            </mat-form-field>
-        </div>
-        <div class="form-item" layout="row" layout-align="start center">
-            <label>地址</label>
-            <mat-form-field flex>
-                <input matInput placeholder="地址" formControlName="address"/>
-            </mat-form-field>
-        </div>
-        <div class="form-item" layout="row" layout-align="start center">
-            <label>价格</label>
-            <div flex layout="row" class="form-field-group">
-                <mat-form-field flex="1">
-                    <input matInput placeholder="封面价格" formControlName="price"/>
-                    <span matSuffix>¥</span>
-                    <mat-error *ngIf="formGroup.controls.price.hasError('regexp')">{{getErrorMessage('regexp','价格')}}</mat-error>
-                </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
-                <mat-form-field flex="1">
-                    <input matInput placeholder="周一至周四价格" formControlName="priceWorkday"/>
-                    <span matSuffix>¥</span>
-                    <mat-error *ngIf="formGroup.controls.priceWorkday.hasError('regexp')">{{getErrorMessage('regexp','周一至周四价格')}}</mat-error>
-                </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
-                <mat-form-field flex="1">
-                    <input matInput placeholder="周五至周日价格" formControlName="priceWeekend"/>
-                    <span matSuffix>¥</span>
-                    <mat-error *ngIf="formGroup.controls.priceWeekend.hasError('regexp')">{{getErrorMessage('regexp','周五至周日价格')}}</mat-error>
-                </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
-                <mat-form-field flex="1">
-                    <input matInput placeholder="整包价格" formControlName="allPrice"/>
-                    <span matSuffix>¥</span>
-                    <mat-error *ngIf="formGroup.controls.allPrice.hasError('regexp')">{{getErrorMessage('regexp','整包价格')}}</mat-error>
-                </mat-form-field>
-            </div>
-        </div>
-        <div class="form-item" layout="row" layout-align="start center">
-            <label>配备</label>
-            <mat-form-field flex>
-                <textarea matInput placeholder="配备" rows="2" formControlName="playItems"></textarea>
-            </mat-form-field>
-        </div>
-        <div class="form-item" layout="row" layout-align="start center">
-            <label>预定电话</label>
-            <mat-form-field flex>
-                <input matInput placeholder="预定电话" formControlName="orderNumber"/>
-                <mat-error *ngIf="formGroup.controls.orderNumber.hasError('regexp')">{{getErrorMessage('regexp','预定电话')}}</mat-error>
-            </mat-form-field>
-        </div>
-        <div class="form-item" layout="row" layout-align="start center">
-            <label>开业时间</label>
-            <mat-form-field flex>
-                <input matInput placeholder="开业时间" formControlName="openTime"/>
-            </mat-form-field>
-        </div>
-        <div class="form-item" layout="row" layout-align="start center">
-            <label>状态</label>
-            <mat-form-field flex>
-                <mat-select formControlName="status">
-                    <mat-option *ngFor="let item of statusList" [value]="item.id">{{item.name}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-        <div class="form-item" layout="row" layout-align="start center">
-            <label>封面预览图</label>
-            <upload-image [image]="formGroup.controls.cover" [max]="1" flex></upload-image>
-        </div>
-        <div class="form-item" layout="row" layout-align="start center">
-            <label>封面大图</label>
-            <upload-image [image]="formGroup.controls.coverBig" [max]="1" flex></upload-image>
-        </div>
-        <div class="form-item" layout="row" layout-align="start center">
-            <label>活动区图片</label>
-            <upload-image [image]="formGroup.controls.section1" [max]="10" flex></upload-image>
-        </div>
-        <div class="form-item" layout="row" layout-align="start center">
-            <label>住宿区图片</label>
-            <upload-image [image]="formGroup.controls.section2" [max]="10" flex></upload-image>
-        </div>
-        <div class="form-item" layout="row" layout-align="start center">
-            <label>周边图片</label>
-            <upload-image [image]="formGroup.controls.section3" [max]="10" flex></upload-image>
+            <label>图片</label>
+            <upload-image [image]="formGroup.controls.images" [max]="10" flex></upload-image>
         </div>
         <div>
             <div class="submit-button" [zkBusy]="saveButtonAsync">

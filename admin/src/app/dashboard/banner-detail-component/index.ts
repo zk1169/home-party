@@ -58,13 +58,13 @@ export class BannerDetailComponent extends FormComponent implements OnInit {
     if (banner) {
       this.formGroup = this.fb.group({
         id: new FormControl(banner.id, [Validators.required]),
-        name: new FormControl(banner.name, [Validators.required]),
+        name: new FormControl({value:banner.name,disabled: true}, [Validators.required]),
         images: new FormControl(banner.images)
       });
     } else {
       this.formGroup = this.fb.group({
         id: new FormControl(0, [Validators.required]),
-        name: new FormControl('', [Validators.required]),
+        name: new FormControl({value:'',disabled: true}, [Validators.required]),
         images: new FormControl([])
       });
     }

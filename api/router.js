@@ -4,6 +4,7 @@ var LiuyanModel = require('./models/liuyan.model');
 var CityModel = require('./models/city.model');
 var ConfigModel = require('./models/config.model');
 var StoreModel = require('./models/store.model');
+var BannerModel = require('./models/banner.model');
 var base64encode = require('./base64-code');
 var config = require('./config/config.json');
 // var WechatAPI = require('wechat-api');
@@ -184,6 +185,29 @@ router.route('/store/status/:id')
     .delete((req, res) => {
         const storeId = req.params.id;
         StoreModel.deleteById(storeId, results => response(res, results), err => response(res, null, err));
+    });
+router.route('/banner')
+    .post((req, res) => {
+        const model = new BannerModel();
+        model.BannerModel(req.body);
+        model.save(results => response(res, results), err => response(res, null, err));
+    })
+    .get((req, res) => {
+        const query = {
+            page: _.get(req.query, 'page', 1),
+            size: _.get(req.query, 'size', 10)
+        };
+        BannerModel.getListAndTotal(query, results => response(res, results), err => response(res, null, err));
+    });
+router.route('/banner/:id')
+    .get((req, res) => {
+        const bannerId = req.params.id;
+        BannerModel.getById(bannerId, results => response(res, results), err => response(res, null, err));
+    })
+    .put((req, res) => {
+        const model = new BannerModel();
+        model.toModel(req.body);
+        model.save(results => response(res, results), err => response(res, null, err));
     });
 router.route('/config/:type')
     .get((req, res) => {
