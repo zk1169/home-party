@@ -12,10 +12,10 @@
                 <div class="city-name">{{city.cityName}}</div>
                 <div class="store-list" layout="row" layout-wrap>
                     <div v-for="store in city.storeList" :key="store.storeName" class="store-item" @click="storeClick(city.id, store.id)">
-                        <img class="cover" :src="`http://1a27.top/${store.cover}`" alt="">
+                        <img class="cover" :src="`http://1a27.top${store.cover}`" alt="">
                         <div class="store-name">{{store.storeName}}</div>
                         <div class="store-address">{{store.address}}</div>
-                        <div class="store-price">{{store.price}}</div>
+                        <div class="store-price">¥ {{store.price}}</div>
                     </div>
                 </div>
             </div>

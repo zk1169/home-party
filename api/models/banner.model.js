@@ -72,6 +72,7 @@ class BannerModel extends BaseStatusModel{
             sql = `UPDATE t_banner SET 
               name='${this.name}',
               images='${this.images}',
+              mobileImages='${this.mobileImages}',
               u_time='${this.u_time}' 
               WHERE id=${this.id}`;
             // console.log(sql);
@@ -82,11 +83,13 @@ class BannerModel extends BaseStatusModel{
               t_banner(
                 name, 
                 images,
+                mobileImages,
                 u_time, 
                 c_time) 
               VALUES (
                 '${this.name}', 
                 '${this.images}',
+                '${this.mobileImages}',
                 ${this.status}, 
                 '${this.u_time}', 
                 '${this.c_time}')`;
@@ -104,6 +107,7 @@ class BannerModel extends BaseStatusModel{
         super.toModel(jsonObj);
         this.name = jsonObj.name;
         this.images = jsonObj.images;
+        this.mobileImages = jsonObj.mobileImages;
         return this;
     }
 

@@ -33,22 +33,9 @@ export class BannerDetailComponent extends FormComponent implements OnInit {
     this.changePageTitle('Banner编辑');
     const bannerId = this.route.snapshot.paramMap.get('id');
     this.bannerService.getById(bannerId)
-      .pipe(
-        map((res)=>{
-          const result = {
-            cityList: _.get(res, '[0].dataList'),
-            storeModel: _.get(res, '[1]')
-          };
-          return result;
-        })
-      )
       .subscribe(
         (res)=>{
-          // console.log(res);
-          if (res.storeModel) {
-            res.storeModel.id = bannerId;
-          }
-          this.initFormGroup(res.storeModel);
+          this.initFormGroup(res);
         },
         (err)=>{}
       );
@@ -59,13 +46,15 @@ export class BannerDetailComponent extends FormComponent implements OnInit {
       this.formGroup = this.fb.group({
         id: new FormControl(banner.id, [Validators.required]),
         name: new FormControl({value:banner.name,disabled: true}, [Validators.required]),
-        images: new FormControl(banner.images)
+        images: new FormControl(banner.images),
+        mobileImages: new FormControl(banner.mobileImages)
       });
     } else {
       this.formGroup = this.fb.group({
         id: new FormControl(0, [Validators.required]),
         name: new FormControl({value:'',disabled: true}, [Validators.required]),
-        images: new FormControl([])
+        images: new FormControl([]),
+        mobileImages: new FormControl([])
       });
     }
   }
