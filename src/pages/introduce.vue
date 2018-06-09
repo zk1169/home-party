@@ -188,6 +188,7 @@
     import Carousel from 'element-ui/lib/carousel';
     import CarouselItem from 'element-ui/lib/carousel-item';
     import HpImage from '../components/hp-image';
+    import $ from 'jquery';
     
     export default {
         name: 'introduce',
@@ -208,6 +209,17 @@
         },
         mounted() {
             this.startTimer();
+            $.ajax({
+                // dataType: 'application/json;charset=utf-8',
+                type: "GET",
+                url: `/api/banner/name/introduce?ts=${new Date().getTime()}`,
+                success: (res) => {
+                    this.carouselList = res.data.images.split(',');
+                },
+                error: (res) => {
+                    this.$eventHub.$emit('ALERT', {type: 'warning', message: '服务器忙，请稍后重试。'});
+                }
+            });
         },
         methods: {
             startTimer() {

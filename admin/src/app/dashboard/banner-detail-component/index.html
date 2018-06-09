@@ -1,18 +1,19 @@
 <section class="store-detail-component">
     <div class="form" [formGroup]="formGroup">
-        <div class="form-item" layout="row" layout-align="start center">
+        <!-- <div class="form-item" layout="row" layout-align="start center">
             <label>页面名称</label>
             <mat-form-field flex>
-                <input matInput placeholder="页面名称" disabled="true" formControlName="name"/>
+                <input matInput placeholder="页面名称" formControlName="name"/>
             </mat-form-field>
-        </div>
+        </div> -->
+        <h2>{{pageName}}</h2>
         <div class="form-item" layout="row" layout-align="start center">
-            <label>图片</label>
-            <upload-image [image]="formGroup.controls.images" [max]="10" flex></upload-image>
+            <label>电脑端图片</label>
+            <upload-image [image]="formGroup.controls.images" [max]="maxImage" [showBigImage]="true" flex></upload-image>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
             <label>手机端图片</label>
-            <upload-image [image]="formGroup.controls.mobileImages" [max]="10" flex></upload-image>
+            <upload-image [image]="formGroup.controls.mobileImages" [max]="maxImage" [showBigImage]="true" flex></upload-image>
         </div>
         <div>
             <div class="submit-button" [zkBusy]="saveButtonAsync">

@@ -209,6 +209,11 @@ router.route('/banner/:id')
         model.toModel(req.body);
         model.save(results => response(res, results), err => response(res, null, err));
     });
+router.route('/banner/name/:id')
+    .get((req, res) => {
+        const bannerName = req.params.id;
+        BannerModel.getByName(bannerName, results => response(res, results), err => response(res, null, err));
+    })
 router.route('/config/:type')
     .get((req, res) => {
         const type = req.params.type;

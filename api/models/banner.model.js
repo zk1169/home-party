@@ -65,6 +65,20 @@ class BannerModel extends BaseStatusModel{
             }, err => error(err));
     }
 
+    static getByName(name, success, error) {
+        const sql = `select * from t_banner WHERE 1=1 AND name='${name}'`;
+        MYSQL_QUERY(sql, null,
+            (results) => {
+                if (results[0]) {
+                    const model = new BannerModel();
+                    model.toModel(results[0]);
+                    success(model);
+                } else {
+                    success({});
+                }
+            }, err => error(err));
+    }
+
     save(success, error) {
         let sql = null;
         if (this.id) {

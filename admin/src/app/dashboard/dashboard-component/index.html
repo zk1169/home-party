@@ -19,7 +19,7 @@
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-shuffling-banner"></use>
                                 </svg>
-                                <span *ngIf="menuShow" class="menu-text">banner管理</span>
+                                <span *ngIf="menuShow" class="menu-text">页面顶部图片管理</span>
                             </a>
                         </li>
                         <li class="menu-item" routerLink="/dashboard/city" routerLinkActive="checked">
@@ -66,7 +66,7 @@
                         <button mat-button [matMenuTriggerFor]="menu">{{UserName}}</button>
                         <mat-menu #menu="matMenu">
                             <button mat-menu-item (click)="logOut()">退出系统</button>
-                            <button mat-menu-item>Item 2</button>
+                            <!-- <button mat-menu-item>Item 2</button> -->
                         </mat-menu>
                     </div>
                 </div>

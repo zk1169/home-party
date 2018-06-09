@@ -1,7 +1,7 @@
 <template>
     <div class="story" style="overflow-x:hidden;">
         <div class="section1 relative">
-            <hp-image src="./static/images/store-s1.jpg" alt=""></hp-image>
+            <hp-image :src="headerImage" alt=""></hp-image>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title">我们从来都是有故事的年轻人 </div><br>
             </div>
@@ -109,6 +109,7 @@
 </template>
 
 <script>
+    import $ from 'jquery';
     import HpImage from '../components/hp-image';
     import StoryAndNews from '../data/story-list';
     
@@ -120,10 +121,22 @@
         data() {
             return {
                 storyList: StoryAndNews.storyList,
-                newsList: StoryAndNews.newsList
+                newsList: StoryAndNews.newsList,
+                headerImage: './static/images/store-s1.jpg'
             };
         },
         mounted() {
+            $.ajax({
+                // dataType: 'application/json;charset=utf-8',
+                type: "GET",
+                url: `/api/banner/name/story-list?ts=${new Date().getTime()}`,
+                success: (res) => {
+                    this.headerImage = res.data.images;
+                },
+                error: (res) => {
+                    this.$eventHub.$emit('ALERT', {type: 'warning', message: '服务器忙，请稍后重试。'});
+                }
+            });
         },
         methods: {
         },

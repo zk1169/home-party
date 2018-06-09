@@ -19,6 +19,8 @@ import { BannerService } from '@src/app/shared';
 export class BannerDetailComponent extends FormComponent implements OnInit {
 
   saveButtonAsync: Observable<any>;
+  pageName: String;
+  maxImage: Number;
   
   constructor(eventBus: EventBus, 
     private bannerService: BannerService,
@@ -30,11 +32,37 @@ export class BannerDetailComponent extends FormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.changePageTitle('Banner编辑');
+    this.changePageTitle('页面顶部图片编辑');
     const bannerId = this.route.snapshot.paramMap.get('id');
     this.bannerService.getById(bannerId)
       .subscribe(
         (res)=>{
+          switch(res.name) {
+            case 'home':
+              this.pageName = '首页头部图';
+              this.maxImage = 2;
+              break;
+            case 'introduce':
+              this.pageName = '行业介绍页头部图';
+              this.maxImage = 2;
+              break;
+            case 'brand':
+              this.pageName = '品牌介绍页头部图';
+              this.maxImage = 1;
+              break;
+            case 'store-list':
+              this.pageName = '门店展示页头部图';
+              this.maxImage = 1;
+              break;
+            case 'story-list':
+              this.pageName = '故事页头部图';
+              this.maxImage = 1;
+              break;
+            case 'jiameng':
+              this.pageName = '加盟合作页头部图';
+              this.maxImage = 1;
+              break;
+          }
           this.initFormGroup(res);
         },
         (err)=>{}
@@ -60,12 +88,18 @@ export class BannerDetailComponent extends FormComponent implements OnInit {
   }
 
   save() {
-    if (this.formGroup.invalid) {
+    if (!this.formGroup.value.images || this.formGroup.value.images.length === 0) {
       _.forEach(this.formGroup.controls, item => item.markAsTouched());
-      this.warnAlert('门店信息输入有误');
+      this.warnAlert('请至少选择一张图片');
       return;
     }
-    const bannerModel = new BannerModel().toModel(this.formGroup.value);
+    const formValue = {
+      id: this.formGroup.value.id,
+      name: this.formGroup.controls.name.value,
+      images: this.formGroup.value.images,
+      mobileImages: this.formGroup.value.mobileImages
+    };
+    const bannerModel = new BannerModel().toModel(formValue);
     this.startProgressBar();
     this.saveButtonAsync = this.bannerService.save(bannerModel)
       .pipe(

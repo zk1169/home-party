@@ -17,7 +17,7 @@
                 <div layout="row" layout-align="start center" class="list-item">
                     <span flex="30">{{item.name}}</span>
                     <span flex="65">
-                        <img [src]="item?.URL" alt="" style="height: 50px;">
+                        <img *ngFor="let image of item.images" [src]="image.URL" alt="" style="height:150px;margin-right:30px;">
                     </span>
                     <span flex="15">
                         <button mat-button color="primary" [routerLink]="['/dashboard/banner-detail', item.id]">编辑</button>

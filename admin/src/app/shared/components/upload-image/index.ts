@@ -12,6 +12,7 @@ export class UploadImageComponent implements OnInit {
 
   @Input('image') image: any;//Array<Object> | Object | FormControl;
   @Input('max') max: number = 1;
+  @Input('showBigImage') showBigImage: boolean;
   @Output() pageChanged = new EventEmitter<number>();
 
   constructor() {

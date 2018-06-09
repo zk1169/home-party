@@ -16,7 +16,7 @@ export class BannerListComponent extends PageComponent implements OnInit{
     super(eventBus);
   }
   ngOnInit() {
-    this.changePageTitle('Banner管理');
+    this.changePageTitle('页面顶部图片管理');
     this.getList(this.pageModel.page);
   }
 

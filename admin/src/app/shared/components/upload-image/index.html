@@ -1,5 +1,5 @@
 <section class="upload-image-component">
-    <div class="upload-file-wrap" *ngFor="let item of ImageList;let i=index;">
+    <div class="upload-file-wrap" *ngFor="let item of ImageList;let i=index;" [class.big-image-wrap]="showBigImage">
         <img *ngIf="item.base64" [src]="item.base64"/>
         <img *ngIf="!item.base64" [src]="item.URL"/>
         <div class="upload-file-close" (click)="removeImage(i)">

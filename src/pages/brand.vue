@@ -1,7 +1,7 @@
 <template>
     <div class="brand" style="overflow-x:hidden;">
         <div class="section1 relative">
-            <hp-image src="./static/images/b-s1.jpg" alt=""></hp-image>
+            <hp-image :src="headerImage" alt=""></hp-image>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title">因为更懂年轻人，所以我们受欢迎</div><br>
                 <!-- <div class="sub-tilte fs-18">目前华中最大互联网+连锁轰趴品牌</div> -->
@@ -215,6 +215,7 @@
     // import Carousel from 'element-ui/lib/carousel';
     // import CarouselItem from 'element-ui/lib/carousel-item';
     import HpImage from '../components/hp-image';
+    import $ from 'jquery';
     
     export default {
         name: 'brand',
@@ -250,6 +251,7 @@
                 //     './static/images/b-s1.jpg',
                 //     './static/images/b-s1.jpg'
                 // ],
+                headerImage: './static/images/b-s1.jpg',
                 teamList: [
                     './static/images/team-m1.png',
                     './static/images/team-m2.png',
@@ -263,6 +265,17 @@
         mounted() {
             this.setPos();
             this.timer = setInterval(this.setPos, 3000);
+            $.ajax({
+                // dataType: 'application/json;charset=utf-8',
+                type: "GET",
+                url: `/api/banner/name/brand?ts=${new Date().getTime()}`,
+                success: (res) => {
+                    this.headerImage = res.data.images;
+                },
+                error: (res) => {
+                    this.$eventHub.$emit('ALERT', {type: 'warning', message: '服务器忙，请稍后重试。'});
+                }
+            });
         },
         methods: {
             setPos(isClick) {

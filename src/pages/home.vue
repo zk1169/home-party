@@ -332,6 +332,17 @@
                     this.$eventHub.$emit('ALERT', {type: 'warning', message: '服务器忙，请稍后重试。'});
                 }
             });
+            $.ajax({
+                // dataType: 'application/json;charset=utf-8',
+                type: "GET",
+                url: `/api/banner/name/home?ts=${new Date().getTime()}`,
+                success: (res) => {
+                    this.carouselList = res.data.images.split(',');
+                },
+                error: (res) => {
+                    this.$eventHub.$emit('ALERT', {type: 'warning', message: '服务器忙，请稍后重试。'});
+                }
+            });
         },
         methods: {
             onScroll(ev) {

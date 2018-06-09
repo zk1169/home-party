@@ -1,8 +1,8 @@
 <template>
     <div class="jiameng">
         <div class="section1 relative">
-            <hp-image v-if="!isMobile" src="./static/images/j-s1.jpg" alt=""></hp-image>
-            <hp-image v-else src="./static/images/j-s1-mobile.jpg" alt=""></hp-image>
+            <hp-image v-if="!isMobile" :src="headerImage" alt=""></hp-image>
+            <hp-image v-else :src="headerImageMobile" alt=""></hp-image>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
                 <div class="title">谁抓住了年轻人的心，<br v-if="isMobile">谁就能掌握全新的机会！</div><br>
                 <div class="title" v-if="!isMobile">加入我们吧！</div>
@@ -133,6 +133,7 @@
 
 <script>
     import HpImage from '../components/hp-image';
+    import $ from 'jquery';
     
     export default {
         name: 'jiameng',
@@ -141,9 +142,23 @@
         },
         data() {
             return {
+                headerImage: './static/images/j-s1.jpg',
+                headerImageMobile: './static/images/j-s1-mobile.jpg'
             };
         },
         mounted() {
+            $.ajax({
+                // dataType: 'application/json;charset=utf-8',
+                type: "GET",
+                url: `/api/banner/name/jiameng?ts=${new Date().getTime()}`,
+                success: (res) => {
+                    this.headerImage = res.data.images;
+                    this.headerImageMobile = res.data.mobileImages;
+                },
+                error: (res) => {
+                    this.$eventHub.$emit('ALERT', {type: 'warning', message: '服务器忙，请稍后重试。'});
+                }
+            });
         },
         methods: {
         },
