@@ -72,6 +72,14 @@
             </mat-form-field>
         </div>
         <div class="form-item" layout="row" layout-align="start center">
+            <label>状态</label>
+            <mat-form-field flex>
+                <mat-select formControlName="status">
+                    <mat-option *ngFor="let item of statusList" [value]="item.id">{{item.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-item" layout="row" layout-align="start center">
             <label>封面预览图</label>
             <upload-image [image]="formGroup.controls.cover" [max]="1" flex></upload-image>
         </div>

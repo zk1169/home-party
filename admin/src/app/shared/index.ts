@@ -8,6 +8,8 @@ import { StoreService, CityService } from './services/store.service';
 import { ConfigService } from './services/config.service';
 import { CanDeactivateGuard, CanComponentDeactivate } from './services/can-deactivate-guard.service';
 
+import { StatusPipe, StatusList } from './pipes/status.pipe';
+
 export {
   HttpService,
   AuthService,
@@ -19,5 +21,7 @@ export {
   CityService,
   ConfigService,
   CanDeactivateGuard,
-  CanComponentDeactivate
+  CanComponentDeactivate,
+  StatusPipe,
+  StatusList
  };

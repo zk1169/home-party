@@ -26,7 +26,11 @@
                 <div layout="row" class="list-item">
                     <span flex="5">{{i+1}}</span>
                     <span flex="50">{{item.name}}</span>
-                    <span flex="10">{{item.status}}</span>
+                    <span flex="10">
+                        <span [ngClass]="'tag-status tag-status-'+item.status">
+                            {{item.status | statusPipe}}
+                        </span>
+                    </span>
                     <span flex="15">{{item.c_time}}</span>
                     <span flex="20">
                         <button mat-button color="primary" (click)="onOrOffLineCity(item.id, item.status)">{{item.status===1?'下线':'上线'}}</button>

@@ -24,6 +24,8 @@ import { ZkBusyDirective } from './directives/busy.directive';
 import { PaginatorComponent } from './components/paginator';
 import { UploadImageComponent } from './components/upload-image';
 
+import { StatusPipe } from './pipes/status.pipe'
+
 @NgModule({
   imports: [
     CommonModule,
@@ -48,6 +50,7 @@ import { UploadImageComponent } from './components/upload-image';
     ZkBusyDirective,
     PaginatorComponent,
     UploadImageComponent,
+    StatusPipe,
     // DialogAlert,
   ],
   exports: [
@@ -71,6 +74,7 @@ import { UploadImageComponent } from './components/upload-image';
     ZkBusyDirective,
     PaginatorComponent,
     UploadImageComponent,
+    StatusPipe,
     // DialogAlert
   ],
 })

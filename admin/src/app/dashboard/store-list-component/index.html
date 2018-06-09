@@ -8,11 +8,12 @@
             <div layout="row" class="list-header">
                 <span flex="5">序号</span>
                 <span flex="10">城市</span>
-                <span flex="35">店名</span>
+                <span flex="30">店名</span>
                 <span flex="10">价格</span>
                 <span flex="10">预定电话</span>
-                <span flex="20">封面图</span>
-                <span flex="10"></span>
+                <span flex="10">状态</span>
+                <span flex="10">封面图</span>
+                <span flex="15"></span>
             </div>
         </mat-list-item>
         <mat-divider></mat-divider>
@@ -21,15 +22,21 @@
                 <div layout="row" layout-align="start center" class="list-item">
                     <span flex="5" class="list-no">{{i+1}}</span>
                     <span flex="10">{{item.CityName}}</span>
-                    <span flex="35">{{item.name}}</span>
+                    <span flex="30">{{item.name}}</span>
                     <span flex="10">{{item.price}}</span>
                     <span flex="10">{{item.orderNumber}}</span>
-                    <span flex="20">
+                    <span flex="10">
+                        <span [ngClass]="'tag-status tag-status-'+item.status">
+                            {{item.status | statusPipe}}
+                        </span>
+                    </span>
+                    <span flex="10">
                         <img [src]="item.cover?.URL" alt="" style="height: 50px;">
                     </span>
                     <!-- <span flex="10"><a [routerLink]="'/dashboard/store-detail/'+item.id">编辑</a></span> -->
-                    <span flex="10">
+                    <span flex="15">
                         <button mat-button color="primary" [routerLink]="['/dashboard/store-detail', item.id]">编辑</button>
+                        <button mat-button color="primary" (click)="onOrOffLine(item.id, item.status)">{{item.status===1?'下线':'上线'}}</button>
                     </span>
                 </div>
             </mat-list-item>

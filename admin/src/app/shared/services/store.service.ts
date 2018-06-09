@@ -99,105 +99,6 @@ export class StoreService {
       );
   }
 
-  // save(storeModel: StoreModel) {
-  //   return this.uploadFileService.upload(_.get(storeModel, 'cover.file'), _.get(storeModel, 'cover.url'))
-  //     .pipe(
-  //       switchMap((res)=>{
-  //         // console.log(`1.${res}`);
-  //         if (res) {
-  //           storeModel.cover.url = res;
-  //         }
-  //         return this.uploadFileService.upload(_.get(storeModel, 'coverBig.file'), _.get(storeModel, 'coverBig.url'));
-  //       }),
-  //       switchMap((res)=>{
-  //         // console.log(`2.${res}`);
-  //         if (res) {
-  //           storeModel.coverBig.url = res;
-  //         }
-  //         const section1Temp = storeModel.section1;
-  //         storeModel.section1 = [];
-  //         return merge(
-  //           this.uploadFileService.upload(_.get(section1Temp, '[0].file'), _.get(section1Temp, '[0].url')),
-  //           this.uploadFileService.upload(_.get(section1Temp, '[1].file'), _.get(section1Temp, '[1].url')),
-  //           this.uploadFileService.upload(_.get(section1Temp, '[2].file'), _.get(section1Temp, '[2].url')),
-  //           this.uploadFileService.upload(_.get(section1Temp, '[3].file'), _.get(section1Temp, '[3].url')),
-  //           this.uploadFileService.upload(_.get(section1Temp, '[4].file'), _.get(section1Temp, '[4].url')),
-  //           this.uploadFileService.upload(_.get(section1Temp, '[5].file'), _.get(section1Temp, '[5].url')),
-  //           this.uploadFileService.upload(_.get(section1Temp, '[6].file'), _.get(section1Temp, '[6].url')),
-  //           this.uploadFileService.upload(_.get(section1Temp, '[7].file'), _.get(section1Temp, '[7].url')),
-  //           this.uploadFileService.upload(_.get(section1Temp, '[8].file'), _.get(section1Temp, '[8].url')),
-  //           this.uploadFileService.upload(_.get(section1Temp, '[9].file'), _.get(section1Temp, '[9].url'))
-  //         );
-  //       }),
-  //       reduce((...res)=>{
-  //         storeModel.initSectionImages('section1', res);
-  //         return of(null);
-  //       }),
-  //       switchMap((res)=>{
-  //         const section2Temp = storeModel.section2;
-  //         storeModel.section2 = [];
-  //         return merge(
-  //           this.uploadFileService.upload(_.get(section2Temp, '[0].file'), _.get(section2Temp, '[0].url')),
-  //           this.uploadFileService.upload(_.get(section2Temp, '[1].file'), _.get(section2Temp, '[1].url')),
-  //           this.uploadFileService.upload(_.get(section2Temp, '[2].file'), _.get(section2Temp, '[2].url')),
-  //           this.uploadFileService.upload(_.get(section2Temp, '[3].file'), _.get(section2Temp, '[3].url')),
-  //           this.uploadFileService.upload(_.get(section2Temp, '[4].file'), _.get(section2Temp, '[4].url')),
-  //           this.uploadFileService.upload(_.get(section2Temp, '[5].file'), _.get(section2Temp, '[5].url')),
-  //           this.uploadFileService.upload(_.get(section2Temp, '[6].file'), _.get(section2Temp, '[6].url')),
-  //           this.uploadFileService.upload(_.get(section2Temp, '[7].file'), _.get(section2Temp, '[7].url')),
-  //           this.uploadFileService.upload(_.get(section2Temp, '[8].file'), _.get(section2Temp, '[8].url')),
-  //           this.uploadFileService.upload(_.get(section2Temp, '[9].file'), _.get(section2Temp, '[9].url'))
-  //         );
-  //       }),
-  //       reduce((...res)=>{
-  //         storeModel.initSectionImages('section2', res);
-  //         return of(null);
-  //       }),
-  //       switchMap((res)=>{
-  //         const section3Temp = storeModel.section3;
-  //         storeModel.section3 = [];
-  //         return merge(
-  //           this.uploadFileService.upload(_.get(section3Temp, '[0].file'), _.get(section3Temp, '[0].url')),
-  //           this.uploadFileService.upload(_.get(section3Temp, '[1].file'), _.get(section3Temp, '[1].url')),
-  //           this.uploadFileService.upload(_.get(section3Temp, '[2].file'), _.get(section3Temp, '[2].url')),
-  //           this.uploadFileService.upload(_.get(section3Temp, '[3].file'), _.get(section3Temp, '[3].url')),
-  //           this.uploadFileService.upload(_.get(section3Temp, '[4].file'), _.get(section3Temp, '[4].url')),
-  //           this.uploadFileService.upload(_.get(section3Temp, '[5].file'), _.get(section3Temp, '[5].url')),
-  //           this.uploadFileService.upload(_.get(section3Temp, '[6].file'), _.get(section3Temp, '[6].url')),
-  //           this.uploadFileService.upload(_.get(section3Temp, '[7].file'), _.get(section3Temp, '[7].url')),
-  //           this.uploadFileService.upload(_.get(section3Temp, '[8].file'), _.get(section3Temp, '[8].url')),
-  //           this.uploadFileService.upload(_.get(section3Temp, '[9].file'), _.get(section3Temp, '[9].url'))
-  //         );
-  //       }),
-  //       reduce((...res)=>{
-  //         storeModel.initSectionImages('section3', res);
-  //         return of(null);
-  //       }),
-  //       switchMap((res)=>{
-  //         console.log(`4.${res}`);
-  //         const data = storeModel.toJson();
-  //         let method = null;
-  //         let _url = this.url;
-  //         if (data.id) {
-  //           method = 'PUT';
-  //           _url += `/${data.id}`;
-  //         } else {
-  //           method = 'POST';
-  //         }
-  //         return this.httpService.request(method, _url, data);
-  //       }),
-  //       map((res)=>{
-  //         // console.log(`5.${res}`);
-  //         storeModel.id = res.id;
-  //         return storeModel;
-  //       }),
-  //       catchError((err)=>{
-  //         console.error(err);
-  //         return err;
-  //       })
-  //     );
-  // }
-
   getById (id) {
     if (!id) {
       return of(null);
@@ -232,6 +133,23 @@ export class StoreService {
       );
   }
 
+  offLine (storeId) {
+    return this.httpService.request('DELETE', `${this.url}/status/${storeId}`)
+      .pipe(
+        map((res) => {
+          return res;
+        })
+      );
+  }
+
+  onLine (storeId) {
+    return this.httpService.request('PUT', `${this.url}/status/${storeId}`)
+      .pipe(
+        map((res) => {
+          return res;
+        })
+      );
+  }
 }
 
 @Injectable()

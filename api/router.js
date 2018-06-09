@@ -176,6 +176,15 @@ router.route('/store/:id')
         const storeId = req.params.id;
         StoreModel.deleteById(storeId, results => response(res, results), err => response(res, null, err));
     });
+router.route('/store/status/:id')
+    .put((req, res) => {
+        const storeId = req.params.id;
+        StoreModel.saveStatus(storeId, 1, results => response(res, results), err => response(res, null, err));
+    })
+    .delete((req, res) => {
+        const storeId = req.params.id;
+        StoreModel.deleteById(storeId, results => response(res, results), err => response(res, null, err));
+    });
 router.route('/config/:type')
     .get((req, res) => {
         const type = req.params.type;

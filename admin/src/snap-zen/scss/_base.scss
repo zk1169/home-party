@@ -477,3 +477,14 @@ template {
 .list-no{
   color: #999;
 }
+.tag-status{
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+.tag-status-0{
+  background-color: $color-border;
+}
+.tag-status-1{
+  background-color: $color-primary;
+  color: #fff;
+}

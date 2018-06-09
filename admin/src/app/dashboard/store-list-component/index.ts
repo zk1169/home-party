@@ -12,7 +12,7 @@ import { EventBus } from '@src/app/shared';
   providers: [StoreService]
 })
 export class StoreListComponent extends PageComponent implements OnInit{
-  constructor(private liuyanService:StoreService, eventBus : EventBus) {
+  constructor(private storeService:StoreService, eventBus : EventBus) {
     super(eventBus);
   }
   ngOnInit() {
@@ -22,7 +22,7 @@ export class StoreListComponent extends PageComponent implements OnInit{
 
   getList(page) {
     this.startProgressBar();
-    this.liuyanService.getList(page)
+    this.storeService.getList(page)
       .subscribe(
         (res) => {
           this.initPageModel(res);
@@ -37,5 +37,30 @@ export class StoreListComponent extends PageComponent implements OnInit{
 
   pageChanged(page) {
     this.getList(page);
+  }
+
+  onOrOffLine(storeId, status){
+    this.startProgressBar();
+    if (status) {
+      this.storeService.offLine(storeId)
+        .subscribe(
+          (res) => {
+            this.getList(this.pageModel.page);
+          },
+          (err) => {
+            this.stopProgressBar();
+          }
+        );
+    } else {
+      this.storeService.onLine(storeId)
+        .subscribe(
+          (res) => {
+            this.getList(this.pageModel.page);
+          },
+          (err) => {
+            this.stopProgressBar();
+          }
+        );
+    }
   }
 }
