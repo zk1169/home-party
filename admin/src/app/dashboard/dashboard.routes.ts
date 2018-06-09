@@ -8,6 +8,8 @@ import { SettingComponent } from './setting-component';
 import { CityComponent } from './city-component';
 import { StoreListComponent } from './store-list-component';
 import { StoreDetailComponent } from './store-detail-component';
+import { BannerListComponent } from './banner-list-component';
+import { BannerDetailComponent } from './banner-detail-component';
 import { CanDeactivateGuard } from '@src/app/shared/index';
 
 const routes: Routes = [{
@@ -21,7 +23,10 @@ const routes: Routes = [{
         { path: 'city', component: CityComponent },
         { path: 'store-list', component: StoreListComponent },
         { path: 'store-detail', component: StoreDetailComponent },
-        { path: 'store-detail/:id', component: StoreDetailComponent }
+        { path: 'store-detail/:id', component: StoreDetailComponent },
+        { path: 'banner-list', component: BannerListComponent },
+        { path: 'banner-detail', component: BannerDetailComponent },
+        { path: 'banner-detail/:id', component: BannerDetailComponent }
     ]
 }];
 

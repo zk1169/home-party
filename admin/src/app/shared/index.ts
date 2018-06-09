@@ -6,6 +6,7 @@ import { AuthGuard } from './services/auth-guard.service';
 import { LiuyanService } from './services/liuyan.service';
 import { StoreService, CityService } from './services/store.service';
 import { ConfigService } from './services/config.service';
+import { BannerService } from './services/banner.service';
 import { CanDeactivateGuard, CanComponentDeactivate } from './services/can-deactivate-guard.service';
 
 import { StatusPipe, StatusList } from './pipes/status.pipe';
@@ -20,6 +21,7 @@ export {
   StoreService,
   CityService,
   ConfigService,
+  BannerService,
   CanDeactivateGuard,
   CanComponentDeactivate,
   StatusPipe,

@@ -14,6 +14,8 @@ import { SettingComponent } from './setting-component';
 import { CityComponent } from './city-component';
 import { StoreListComponent } from './store-list-component';
 import { StoreDetailComponent } from './store-detail-component';
+import { BannerListComponent } from './banner-list-component';
+import { BannerDetailComponent } from './banner-detail-component';
 
 import { DashboardRoutes } from './dashboard.routes';
 import { MatDialogModule } from '@angular/material';
@@ -27,8 +29,10 @@ import { MatDialogModule } from '@angular/material';
         LiuyanComponent,
         SettingComponent,
         StoreListComponent,
-        CityComponent,
         StoreDetailComponent,
+        CityComponent,
+        BannerListComponent,
+        BannerDetailComponent,
         AlertDialog
     ],
     entryComponents: [ DashboardComponent, AlertDialog ],
