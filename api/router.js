@@ -167,6 +167,10 @@ router.route('/store')
         };
         StoreModel.getListAndTotal(query, results => response(res, results), err => response(res, null, err));
     });
+router.route('/store/status')
+    .get((req, res) => {
+        StoreModel.getListByStatus(1, results => response(res, results), err => response(res, null, err));
+    });
 router.route('/store/:id')
     .get((req, res) => {
         const storeId = req.params.id;

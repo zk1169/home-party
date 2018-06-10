@@ -23,6 +23,23 @@ class StoreModel extends BaseStatusModel{
             }, err => error(err));
     }
 
+    static getListByStatus(status, success, error) {
+        const sql = `SELECT ts.*, tc.name as cityName 
+            FROM t_store as ts 
+            LEFT JOIN t_city as tc ON tc.id=ts.cityId
+            WHERE 1=1 AND ts.status=${status}
+            ORDER BY ts.id ASC`;
+        MYSQL_QUERY(sql, null,
+            (results) => {
+                const modelList = [];
+                _.forEach(results, (item) => {
+                    const model = new StoreModel();
+                    modelList.push(model.toModel(item));
+                });
+                success(modelList);
+            }, err => error(err));
+    }
+
     static getTotalCount(success, error) {
         const sql = `SELECT COUNT(1) as total from t_store WHERE 1=1`;
         MYSQL_QUERY(sql, null,

@@ -42,16 +42,16 @@
             };
         },
         mounted() {
-            const url = '/api/store?page=1&size=100&ts='+new Date().getTime();
+            const url = '/api/store/status?ts='+new Date().getTime();
             $.ajax({
                 // dataType: 'application/json;charset=utf-8',
                 type: "GET",
                 url,
                 success: (res) => {
                     this.cityList = [];
-                    if (res && res.data && res.data.dataList) {
-                        for(let i=0;i<res.data.dataList.length;i++){
-                            const item = res.data.dataList[i];
+                    if (res && res.data) {
+                        for(let i=0;i<res.data.length;i++){
+                            const item = res.data[i];
                             item.storeName = item.name;
                             let cityIndex = -1;
                             if (this.cityList.length>0) {
