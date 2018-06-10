@@ -65,7 +65,7 @@ router.use(function(req, res, next) {
 router.route('/upload')
     .post((req, res) => {
         // console.log(req.file);
-        response(res, req.file.path);
+        response(res, `/${req.file.path}`);
     });
 router.route('/login')
     .post((req, res) => {
@@ -149,6 +149,10 @@ router.route('/city')
             size: _.get(req.query, 'size', 10)
         }
         CityModel.getListAndTotal(query, results => response(res, results), err => response(res, null, err));
+    });
+router.route('/city/status')
+    .get((req, res) => {
+        CityModel.getListByStatus(1, results => response(res, results), err => response(res, null, err));
     });
 router.route('/store')
     .post((req, res) => {

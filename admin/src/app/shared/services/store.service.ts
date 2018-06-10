@@ -188,7 +188,16 @@ export class CityService {
   }
 
   getAll() {
-    return this.getList(1, 1000);
+    return this.httpService.request('GET', `${this.url}/status`)
+      .pipe(
+        map((res) => {
+          const result = [];
+          _.forEach(res, (item) => {
+            result.push(new CityModel().toModel(item));
+          });
+          return result;
+        })
+      );
   }
 
   getList (page, size=10) {

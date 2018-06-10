@@ -84,7 +84,7 @@ export class StoreDetailComponent extends FormComponent implements OnInit {
       .pipe(
         map((res)=>{
           const result = {
-            cityList: _.get(res, '[0].dataList'),
+            cityList: _.get(res, '[0]'),
             storeModel: _.get(res, '[1]')
           };
           return result;

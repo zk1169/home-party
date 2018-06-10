@@ -24,7 +24,7 @@
         <div *ngFor="let item of pageModel.dataList;let i=index;">
             <mat-list-item role="listitem">
                 <div layout="row" class="list-item">
-                    <span flex="5">{{i+1}}</span>
+                    <span flex="5" class="list-no">{{i+1}}</span>
                     <span flex="50">{{item.name}}</span>
                     <span flex="10">
                         <span [ngClass]="'tag-status tag-status-'+item.status">

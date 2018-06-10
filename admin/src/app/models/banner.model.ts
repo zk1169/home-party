@@ -7,6 +7,47 @@ export class BannerModel extends BaseModel {
   images: Array<ImageUploadModel>;
   mobileImages: Array<ImageUploadModel>;
 
+  get maxImage(){
+    let max = 1;
+    switch(this.name) {
+      case 'home':
+      case 'introduce':
+        max = 2;
+        break;
+      case 'brand':
+      case 'store-list':
+      case 'story-list':
+      case 'jiameng':
+        max = 1;
+        break;
+    }
+    return max;
+  }
+  get pageName() {
+    let pName = null;
+    switch(this.name) {
+      case 'home':
+        pName = '首页头部图';
+        break;
+      case 'introduce':
+        pName = '行业介绍页头部图';
+        break;
+      case 'brand':
+        pName = '品牌介绍页头部图';
+        break;
+      case 'store-list':
+        pName = '门店展示页头部图';
+        break;
+      case 'story-list':
+        pName = '故事页头部图';
+        break;
+      case 'jiameng':
+        pName = '加盟合作页头部图';
+        break;
+    }
+    return pName;
+  }
+
 	constructor(){
 		super();
   }

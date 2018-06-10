@@ -11,7 +11,7 @@
             <label>电脑端图片</label>
             <upload-image [image]="formGroup.controls.images" [max]="maxImage" [showBigImage]="true" flex></upload-image>
         </div>
-        <div class="form-item" layout="row" layout-align="start center">
+        <div class="form-item" layout="row" layout-align="start center" *ngIf="pageName=='加盟合作页头部图'">
             <label>手机端图片</label>
             <upload-image [image]="formGroup.controls.mobileImages" [max]="maxImage" [showBigImage]="true" flex></upload-image>
         </div>

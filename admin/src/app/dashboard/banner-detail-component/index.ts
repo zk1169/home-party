@@ -37,32 +37,8 @@ export class BannerDetailComponent extends FormComponent implements OnInit {
     this.bannerService.getById(bannerId)
       .subscribe(
         (res)=>{
-          switch(res.name) {
-            case 'home':
-              this.pageName = '首页头部图';
-              this.maxImage = 2;
-              break;
-            case 'introduce':
-              this.pageName = '行业介绍页头部图';
-              this.maxImage = 2;
-              break;
-            case 'brand':
-              this.pageName = '品牌介绍页头部图';
-              this.maxImage = 1;
-              break;
-            case 'store-list':
-              this.pageName = '门店展示页头部图';
-              this.maxImage = 1;
-              break;
-            case 'story-list':
-              this.pageName = '故事页头部图';
-              this.maxImage = 1;
-              break;
-            case 'jiameng':
-              this.pageName = '加盟合作页头部图';
-              this.maxImage = 1;
-              break;
-          }
+          this.pageName = res.pageName;
+          this.maxImage = res.maxImage;
           this.initFormGroup(res);
         },
         (err)=>{}

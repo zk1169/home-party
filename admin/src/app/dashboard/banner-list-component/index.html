@@ -6,8 +6,8 @@
     <mat-list role="list" class="list-wrap">
         <mat-list-item>
             <div layout="row" class="list-header">
-                <span flex="10">页面</span>
-                <span flex="65">图片</span>
+                <span flex="15">页面</span>
+                <span flex="70">图片</span>
                 <span flex="15"></span>
             </div>
         </mat-list-item>
@@ -15,8 +15,8 @@
         <div *ngFor="let item of pageModel.dataList">
             <mat-list-item role="listitem">
                 <div layout="row" layout-align="start center" class="list-item">
-                    <span flex="30">{{item.name}}</span>
-                    <span flex="65">
+                    <span flex="15">{{item.pageName}}</span>
+                    <span flex="70">
                         <img *ngFor="let image of item.images" [src]="image.URL" alt="" style="height:150px;margin-right:30px;">
                     </span>
                     <span flex="15">

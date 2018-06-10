@@ -22,6 +22,22 @@ class CityModel extends BaseStatusModel{
             }, err => error(err));
     }
 
+    static getListByStatus(status, success, error) {
+        const sql = `SELECT * 
+            FROM t_city WHERE 1=1 AND status=${status} 
+            ORDER BY c_time ASC`;
+        MYSQL_QUERY(sql, null,
+            (results) => {
+                // console.log(`getList.result=${JSON.stringify(results)}`);
+                const modelList = [];
+                _.forEach(results, (item) => {
+                    const model = new CityModel();
+                    modelList.push(model.toModel(item));
+                });
+                success(modelList);
+            }, err => error(err));
+    }
+
     static getTotalCount(success, error) {
         const sql = `SELECT COUNT(1) as total from t_city WHERE 1=1`;
         MYSQL_QUERY(sql, null,
