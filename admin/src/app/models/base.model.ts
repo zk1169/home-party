@@ -1,4 +1,5 @@
 import * as moment from 'moment';
+// import * as moment from 'moment/min/moment.min';
 const DATE_FORMAT = 'YYYY-MM-DD HH:mm:ss';
 
 export class BaseModel{

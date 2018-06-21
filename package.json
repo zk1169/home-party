@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node build/dev-server.js",
     "dev": "node build/dev-server.js",
-    "build": "node build/build.js",
+    "build": "node build/build.js && cp favicon.ico ./dist/",
     "deploy-home-party": "rsync -avz dist/ root@47.100.58.136:/home/www/home-party/",
     "deploy-api": "rsync -avz api/ root@47.100.58.136:/home/www/api/",
     "deploy-admin": "rsync -avz admin/dist/homeparty/ root@47.100.58.136:/home/www/admin/",
