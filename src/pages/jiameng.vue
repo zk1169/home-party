@@ -95,7 +95,7 @@
                         </ul>
                     </div><br v-if="!isMobile"><br v-if="!isMobile">
                     <div class="text-center" style="height: 50px;">
-                        <a class="btn btn-primary bg" style="border-radius:0;cursor: default;">5万加盟费 +5万保证金+3%服务费</a>
+                        <a class="btn btn-primary bg" style="border-radius:0;cursor: default;">6万加盟费+6万保证金+4%服务费</a>
                     </div>
                 </div>
                 <div flex="5" flex-xs="0"></div>
@@ -123,7 +123,7 @@
                         </ul>
                     </div>
                     <div class="text-center">
-                        <a class="btn btn-primary bg" style="border-radius:0;cursor: default;">5万保证金+20%服务费</a>
+                        <a class="btn btn-primary bg" style="border-radius:0;cursor: default;">6万保证金+20%服务费</a>
                     </div>
                 </div>
             </div>

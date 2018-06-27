@@ -3,7 +3,7 @@
         <div class="section1 relative">
             <hp-image :src="headerImage" alt=""></hp-image>
             <div class="s1-text-wrap image-text-wrap" layout="column" layout-align="center center">
-                <div class="title">因为更懂年轻人，所以我们受欢迎</div><br>
+                <div class="title">因为懂年轻人，所以我们受欢迎</div><br>
                 <!-- <div class="sub-tilte fs-18">目前华中最大互联网+连锁轰趴品牌</div> -->
                 <a class="btn btn-white block" href="#/cooperation">了解加盟合作</a>
             </div>
@@ -17,7 +17,7 @@
                             <use xlink:href="#icon-zuanshi"></use>
                         </svg>
                     </div><br><br>
-                    <div class="text text-l3">打造中国领先的<br v-if="isMobile">专业派对文化<br>连锁品牌</div>
+                    <div class="text text-l3">打造中国<br v-if="isMobile">派对文化<br>连锁品牌</div>
                 </div>
                 <div class="p1-item text-center" flex="1">
                     <div class="circle-primary inline-block" :class="{'big':!isMobile}">
@@ -33,7 +33,7 @@
                             <use xlink:href="#icon-lianjie"></use>
                         </svg>
                     </div><br><br>
-                    <div class="text text-l3">打造中国领先的<br v-if="isMobile">综合性聚会<br>娱乐平台</div>
+                    <div class="text text-l3">打造中国<br v-if="isMobile">综合性聚会<br>娱乐平台</div>
                 </div>
             </div>
         </div>
@@ -47,22 +47,22 @@
                         <svg class="icon yizhanshi fs-60" aria-hidden="true">
                             <use xlink:href="#icon-yizhanshi"></use>
                         </svg><br><br>
-                        <div class="text-l2 font-bold">一站式服务</div><br>
-                        <div class="text-l1">为客户提供吃、喝、玩、住一站式服务，打造多种娱乐场景的集合，更适合年轻人聚会的轰趴品牌</div>
+                        <div class="text-l2 font-bold">多样化服务</div><br>
+                        <div class="text-l1">为客户提供吃、喝、玩、住多样化服务，打造多种娱乐场景的集合，适合年轻人聚会的轰趴品牌</div>
                     </div>
                     <div class="p1-item text-center" flex="1">
                         <svg class="icon dunpai fs-60" aria-hidden="true">
                             <use xlink:href="#icon-dunpai"></use>
                         </svg><br><br>
                         <div class="text-l2 font-bold">标准化管理</div><br>
-                        <div class="text-l1">打造轰趴行业标准化管理的行业准则，让客户享受到轰趴行业的五星级服务</div>
+                        <div class="text-l1">打造轰趴行业标准化管理的行业准则，让客户体验到轰趴行业的诚挚服务</div>
                     </div>
                     <div class="p1-item text-center" flex="1">
                         <svg class="icon guanjia fs-60" aria-hidden="true">
                             <use xlink:href="#icon-guanjia"></use>
                         </svg><br><br>
                         <div class="text-l2 font-bold">管家式服务</div><br>
-                        <div class="text-l1">通过专业化培训，让每位管家=初级厨师+活动策划师+布场达人+轰趴运营专员</div>
+                        <div class="text-l1">通过培训，让每位管家=初级厨师+活动策划师+布场达人+轰趴运营专员</div>
                     </div>
                 </div>
             </div>
@@ -153,7 +153,7 @@
                 <div flex="60" flex-xs="100" class="text-wrap" layout="column" layout-align="center center">
                     <div class="text-left">
                         <div class="fs-24">2个基本点：装修+定制</div><br>
-                        <div class="fs-18 color-grey">装修：专业的装修团队，优质的材料与设备供应渠道，打造主题鲜明性价比一流的轰趴馆<br>定制：每月主题活动派对，专业布场，打造特色活动IP，创造粉丝效益，建立行业壁垒</div>
+                        <div class="fs-18 color-grey">装修：成熟的装修团队，好的材料与设备供应渠道，打造主题鲜明性价比强的轰趴馆<br>定制：每月主题活动派对，场地布置，打造特色活动IP，制造粉丝效益，建立行业壁垒</div>
                     </div>
                 </div>
                 <div flex class="margin-left-10">
@@ -166,8 +166,8 @@
                 </div>
                 <div flex class="text-wrap margin-left-10" layout="column" layout-align="center center">
                     <div class="text-left">
-                        <div class="fs-24">3大核心：服务+SEO+地推</div><br>
-                        <div class="fs-18 color-grey">服务：一流的管理团队及培训体系，标准化的服务流程，完善的售后回访机制，以服务打动客户<br>SEO：强大的SEO推广团队，全渠道推广，海量曝光和优质口碑集群，强大的业务壁垒<br>地推：狼性的地推团队，强大的地推网络，完善的校园以及地域合伙人制度</div>
+                        <div class="fs-24">3大要点：服务+SEO+地推</div><br>
+                        <div class="fs-18 color-grey">服务：完善的管理团队及培训体系，标准化的服务流程，售后回访机制，以服务打动客户<br>SEO：成熟的SEO推广团队，全渠道推广，全面曝光口碑集群。<br>地推：狼性的地推团队，成熟的地推网络，完善的校园以及地域合伙人制度。</div>
                     </div>
                 </div>
             </div>
@@ -184,7 +184,7 @@
         </div>
 
         <div class="section3 text-center">
-            <div class="title">我们有牛掰的团队</div>
+            <div class="title">我们有成熟的团队</div>
             <div v-if="!isMobile" class="team-container relative">
                 <div v-for="(item, index) in teamList" :key="item" class="team-item" ref="teams" @click="teamMemberClick(index)">
                     <img :src="item" alt="">

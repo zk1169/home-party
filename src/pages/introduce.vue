@@ -15,7 +15,7 @@
         <div class="section2 text-center">
             <div class="paragrah">
                 <div class="title fs-36">一栋别墅，花样百出</div>
-                <div class="p1 text-l3 fs-18 color-grey">随着消费水平的提高，人们对娱乐的需求越大，对娱乐方式的要求也越高。别墅轰趴顺应时代的潮流悄然探头！从各种分析中我们能预见，它将以越来越流行和被普及的姿态，取代传统单一的娱乐方式。前期的市场已验证它的潜力，而此时，正是进入这个领域的最佳时期！</div>
+                <div class="p1 text-l3 fs-18 color-grey">随着消费水平的提升，人们对娱乐的需求越大，对娱乐方式的要求也越高。别墅轰趴顺应时代的潮流悄然探头！从分析中我们能预见，它将以越来越流行和被普及的姿态，取代传统单一的娱乐方式。前期的市场已验证它的潜能，而此时，正是进入这个领域的时期！</div>
             </div>
             <div v-if="!isMobile" class="inline-block" style="max-width: 1440px;width:100%;">
                 <div class="image-wrap" layout="column">
@@ -126,9 +126,9 @@
                 <div flex class="text-right margin-left-10">
                     <div class="fs-36" style="margin-bottom: 60px;">国内聚会存在的问题是什么？</div>
                     <div class="fs-24 text-l2">服务单一，转场难</div><br>
-                    <div class="fs-16 text-l1 color-grey">“每次跟朋友聚会都太单调了，但想玩的丰富点，那就要集体打车换场子，奔波过后，都没心思玩了，而且人多的话更众口难调！”</div><br><br><br><br>
+                    <div class="fs-16 text-l1 color-grey">“每次跟朋友聚会都太单调了，但想玩的丰富点，那就要集体打车换场子，奔波过后，都没心思玩了，而且人多的话众口难调！”</div><br><br><br><br>
                     <div class="fs-24 text-l2">费用高，体验差</div><br>
-                    <div class="fs-16 text-l1 color-grey">越想玩的好越贵，比如唱K加吃饭，再去玩玩桌游，这么多人还真不便宜，而且不能保证服务和环境的质量。</div>
+                    <div class="fs-16 text-l1 color-grey">越想玩的好越贵，比如唱K加吃饭，再去玩玩桌游，这么多人还真不便宜，而且不能保障服务和环境的质量。</div>
                 </div>
             </div>
         </div>

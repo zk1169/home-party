@@ -51,7 +51,7 @@
                             <use xlink:href="#icon-lingdai"></use>
                         </svg>
                         <div class="title text-l2 font-bold">品牌宗旨</div>
-                        <span class="text-l2">一站式服务</span><br>
+                        <span class="text-l2">多样化服务</span><br>
                         <span class="text-l2">标准化管理</span><br>
                         <span class="text-l2">管家式服务</span>
                     </div>
@@ -60,9 +60,9 @@
                             <use xlink:href="#icon-tianping"></use>
                         </svg>
                         <div class="title text-l2 font-bold">竞争优势</div>
-                        <span class="text-l2">强大而健全的团队</span><br>
-                        <span class="text-l2">强大的品牌影响力</span><br>
-                        <span class="text-l2">前沿的服务理念</span>
+                        <span class="text-l2">成熟健全的团队</span><br>
+                        <span class="text-l2">连锁品牌影响力</span><br>
+                        <span class="text-l2">完善的服务理念</span>
                     </div>
                     <div flex="1" flex-xs="50" class="section2-2-p-item">
                         <svg class="icon duoyuanhua" aria-hidden="true">
@@ -70,7 +70,7 @@
                         </svg>
                         <div class="title text-l2 font-bold">多元化盈利</div>
                         <span class="text-l2">拓展轰趴周边的盈利模式</span><br>
-                        <span class="text-l2">挖掘更新鲜的玩法</span><br>
+                        <span class="text-l2">挖掘多样化的玩法</span><br>
                         <span class="text-l2">多元化盈利</span>
                     </div>
                     <div flex="1" flex-xs="50" class="section2-2-p-item">
@@ -79,7 +79,7 @@
                         </svg>
                         <div class="title text-l2 font-bold">战略优势</div>
                         <span class="text-l2">2个基本点：装修+定制</span><br>
-                        <span class="text-l2">3大核心：服务+SEO+地推</span>
+                        <span class="text-l2">3大要点：服务+SEO+地推</span>
                     </div>
                 </div>
                 <a class="btn btn-primary block" href="#/brand">了解品牌 >></a>
