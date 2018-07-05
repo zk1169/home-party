@@ -16,6 +16,8 @@ import { StoreListComponent } from './store-list-component';
 import { StoreDetailComponent } from './store-detail-component';
 import { BannerListComponent } from './banner-list-component';
 import { BannerDetailComponent } from './banner-detail-component';
+import { StoryListComponent } from './story-list-component';
+import { StoryDetailComponent } from './story-detail-component';
 
 import { DashboardRoutes } from './dashboard.routes';
 import { MatDialogModule } from '@angular/material';
@@ -33,6 +35,8 @@ import { MatDialogModule } from '@angular/material';
         CityComponent,
         BannerListComponent,
         BannerDetailComponent,
+        StoryListComponent,
+        StoryDetailComponent,
         AlertDialog
     ],
     entryComponents: [ DashboardComponent, AlertDialog ],

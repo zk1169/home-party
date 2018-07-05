@@ -111,7 +111,7 @@
 <script>
     import $ from 'jquery';
     import HpImage from '../components/hp-image';
-    import StoryAndNews from '../data/story-list';
+    // import StoryAndNews from '../data/story-list';
     
     export default {
         name: 'story',
@@ -120,12 +120,36 @@
         },
         data() {
             return {
-                storyList: StoryAndNews.storyList,
-                newsList: StoryAndNews.newsList,
+                // storyList: StoryAndNews.storyList,
+                // newsList: StoryAndNews.newsList,
+                storyList: [],
+                newsList: [],
                 headerImage: './static/images/store-s1.jpg'
             };
         },
         mounted() {
+            const url = '/api/story/status?ts='+new Date().getTime();
+            $.ajax({
+                // dataType: 'application/json;charset=utf-8',
+                type: "GET",
+                url,
+                success: (res) => {
+                    if (res && res.data) {
+                        for(let i=0;i<res.data.length;i++){
+                            if (res.data[i].type === 1) {
+                                this.storyList.push(res.data[i]);
+                            } else {
+                                this.newsList.push(res.data[i]);
+                            }
+                        }
+                    }
+                },
+                error: (res) => {
+                    this.$eventHub.$emit('ALERT', {type: 'warning', message: '服务器忙，请稍后重试。'});
+                    // console.log('error');
+                    // debugger;
+                }
+            });
             $.ajax({
                 // dataType: 'application/json;charset=utf-8',
                 type: "GET",

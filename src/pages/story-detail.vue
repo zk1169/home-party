@@ -7,12 +7,14 @@
             <div flex="20" flex-xs="100" layout="column" layout-align="start center">
                 <img :src="storyModel.headerImg" alt="" style="width: 130px;"><br>
                 <span class="label fs-16">{{storyModel.label}}</span><br>
-                <span class="fs-16">人物：{{storyModel.storyName}}</span>
+                <span class="fs-16">人物：{{storyModel.name}}</span>
             </div>
             <div flex="80" flex-xs="100" class="right-content">
                 <div class="title fs-24 font-bold">{{storyModel.title}}</div>
                 <!-- <div class="content fs-16">{{storyModel.content}}</div> -->
-                <div class="content fs-16 color-grey" v-for="(item, index) in storyModel.paragraph" :key="index" v-html="item">
+                <!-- <div class="content fs-16 color-grey" v-for="(item, index) in storyModel.paragraph" :key="index" v-html="item">
+                </div> -->
+                <div class="content fs-16 color-grey" v-html="storyModel.paragraph">
                 </div>
             </div>
         </div>
@@ -21,18 +23,38 @@
 </template>
 
 <script>
-    import StoryAndNews from '../data/story-list';
+    // import StoryAndNews from '../data/story-list';
+    import $ from 'jquery';
 
     export default {
         name: 'story-detail',
         data() {
-            const storyId = this.$route.params.id - 1;
-            const storeOrNews = this.$route.params.type === '1' ? 'storyList' : 'newsList';
+            // const storyId = this.$route.params.id - 1;
+            // const storeOrNews = this.$route.params.type === '1' ? 'storyList' : 'newsList';
             return {
-                storyModel: StoryAndNews[storeOrNews][storyId]
+                // storyModel: StoryAndNews[storeOrNews][storyId]
+                storyModel: {},
             };
         },
         mounted() {
+            const id = this.$route.params.id;
+            const url = `/api/story/${id}?ts=${new Date().getTime()}`;
+            $.ajax({
+                // dataType: 'application/json;charset=utf-8',
+                type: "GET",
+                url,
+                success: (res) => {
+                    var paragraph = res.data.paragraph.replace(/ /g, '&nbsp;&nbsp;');
+                    paragraph = paragraph.replace(/↵/g, '<br>');
+                    res.data.paragraph = paragraph;
+                    this.storyModel = res.data;
+                },
+                error: (res) => {
+                    this.$eventHub.$emit('ALERT', {type: 'warning', message: '服务器忙，请稍后重试。'});
+                    // console.log('error');
+                    // debugger;
+                }
+            });
         },
         methods: {
         },

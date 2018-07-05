@@ -1,0 +1,76 @@
+<section class="store-detail-component">
+    <div class="form" [formGroup]="formGroup">
+        <div class="form-item" layout="row" layout-align="start center">
+            <label>人物名称</label>
+            <mat-form-field flex>
+                <input matInput placeholder="人物名称" formControlName="name"/>
+                <mat-error *ngIf="formGroup.controls.name.hasError('required')">{{getErrorMessage('required','人物名称')}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-item" layout="row" layout-align="start center">
+            <label>故事/新闻</label>
+            <mat-form-field flex>
+                <mat-select placeholder="选择故事/新闻" formControlName="type" [errorStateMatcher]="matcher">
+                    <mat-option value="1">故事</mat-option>
+                    <mat-option value="2">新闻</mat-option>
+                </mat-select>
+                <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                <mat-error *ngIf="formGroup.controls.type.hasError('required')">故事/新闻</mat-error>
+                <!-- <mat-error *ngIf="formGroup.controls.city.hasError('pattern') && !formGroup.controls.city.hasError('required')">
+                    Your selection is invalid
+                </mat-error> -->
+            </mat-form-field>
+        </div>
+        <div class="form-item" layout="row" layout-align="start center">
+            <label>标签</label>
+            <mat-form-field flex>
+                <input matInput placeholder="员工故事/加盟人故事" formControlName="label"/>
+            </mat-form-field>
+        </div>
+        <div class="form-item" layout="row" layout-align="start center">
+            <label>标题</label>
+            <mat-form-field flex>
+                <input matInput placeholder="标题" formControlName="title"/>
+            </mat-form-field>
+        </div>
+        <div class="form-item" layout="row" layout-align="start center">
+            <label>简介</label>
+            <mat-form-field flex>
+                <input matInput placeholder="简介" formControlName="content"/>
+                <mat-error *ngIf="formGroup.controls.content.hasError('regexp')">{{getErrorMessage('required','简介')}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-item" layout="row" layout-align="start center">
+            <label>文章内容</label>
+            <mat-form-field flex>
+                <input matInput placeholder="文章内容" formControlName="paragraph"/>
+            </mat-form-field>
+        </div>
+        <div class="form-item" layout="row" layout-align="start center">
+            <label>状态</label>
+            <mat-form-field flex>
+                <mat-select formControlName="status">
+                    <mat-option *ngFor="let item of statusList" [value]="item.id">{{item.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-item" layout="row" layout-align="start center">
+            <label>头像</label>
+            <upload-image [image]="formGroup.controls.headerImg" [max]="1" flex></upload-image>
+        </div>
+        <div class="form-item" layout="row" layout-align="start center">
+            <label>封面预览图</label>
+            <upload-image [image]="formGroup.controls.cover" [max]="1" flex></upload-image>
+        </div>
+        <div class="form-item" layout="row" layout-align="start center">
+            <label>封面大图</label>
+            <upload-image [image]="formGroup.controls.coverBig" [max]="1" flex></upload-image>
+        </div>
+        <div>
+            <div class="submit-button" [zkBusy]="saveStoreAsync">
+                <button mat-raised-button color="primary" (click)="saveStore()">保存</button>
+            </div>
+        </div>
+        
+    </div>
+</section>

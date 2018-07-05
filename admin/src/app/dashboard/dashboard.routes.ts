@@ -11,6 +11,8 @@ import { StoreDetailComponent } from './store-detail-component';
 import { BannerListComponent } from './banner-list-component';
 import { BannerDetailComponent } from './banner-detail-component';
 import { CanDeactivateGuard } from '@src/app/shared/index';
+import { StoryListComponent } from './story-list-component';
+import { StoryDetailComponent } from './story-detail-component';
 
 const routes: Routes = [{
     path: '',
@@ -26,7 +28,10 @@ const routes: Routes = [{
         { path: 'store-detail/:id', component: StoreDetailComponent },
         { path: 'banner-list', component: BannerListComponent },
         { path: 'banner-detail', component: BannerDetailComponent },
-        { path: 'banner-detail/:id', component: BannerDetailComponent }
+        { path: 'banner-detail/:id', component: BannerDetailComponent },
+        { path: 'story-list', component: StoryListComponent },
+        { path: 'story-detail', component: StoryDetailComponent },
+        { path: 'story-detail/:id', component: StoryDetailComponent },
     ]
 }];
 

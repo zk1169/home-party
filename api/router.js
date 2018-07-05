@@ -4,6 +4,7 @@ var LiuyanModel = require('./models/liuyan.model');
 var CityModel = require('./models/city.model');
 var ConfigModel = require('./models/config.model');
 var StoreModel = require('./models/store.model');
+var StoryModel = require('./models/story.model');
 var BannerModel = require('./models/banner.model');
 var base64encode = require('./base64-code');
 var config = require('./config/config.json');
@@ -231,6 +232,37 @@ router.route('/config/:type')
         const configs = req.body;
         ConfigModel.update(configs, results => response(res, results), err => response(res, null, err));
     });
+router.route('/story')
+    .post((req, res) => {
+        const story = new StoryModel();
+        story.toModel(req.body);
+        story.save(results => response(res, results), err => response(res, null, err));
+    })
+    .get((req, res) => {
+        const query = {
+            page: _.get(req.query, 'page', 1),
+            size: _.get(req.query, 'size', 10)
+        };
+        StoryModel.getListAndTotal(query, results => response(res, results), err => response(res, null, err));
+    });
+router.route('/story/status')
+    .get((req, res) => {
+        StoryModel.getListByStatus(1, results => response(res, results), err => response(res, null, err));
+    });
+router.route('/story/:id')
+    .get((req, res) => {
+        const storyId = req.params.id;
+        StoryModel.getById(storyId, results => response(res, results), err => response(res, null, err));
+    })
+    .put((req, res) => {
+        const storyModel = new StoryModel();
+        storyModel.toModel(req.body);
+        storyModel.save(results => response(res, results), err => response(res, null, err));
+    })
+    .delete((req, res) => {
+        const storyId = req.params.id;
+        StoryModel.deleteById(storyId, results => response(res, results), err => response(res, null, err));
+    });
 // router.route('/wechat/patsnap')
 //     .post((req, res) => {
 //         wechatModel.loop(req, res);
@@ -358,7 +390,6 @@ router.route('/mail')
 //                         }
 //                     }
 //                 });
-//                 console.log(store);
 //                 const storeModel = new StoreModel();
 //                 storeModel.toModel(store);
 //                 setTimeout(()=>{
@@ -366,6 +397,23 @@ router.route('/mail')
 //                 },timeDelay);
 //                 timeDelay += 100;
 //             });
+//         });
+//         res.json({ message: 'import ing!' });
+//     });
+
+// router.route('/importStory')
+//     .get((req, res) => {
+//         let timeDelay = 0;
+//         const {storyList, newsList} = require('./models/story.mock');
+//         _.forEach(_.concat(storyList, newsList), (item, index) => {
+//             delete item.id;
+//             item.paragraph = item.paragraph.join('↵');
+//             const storyModel = new StoryModel();
+//             storyModel.toModel(item);
+//             setTimeout(()=>{
+//                 storyModel.save(results => {}, err => {});
+//             },timeDelay);
+//             timeDelay += 100;
 //         });
 //         res.json({ message: 'import ing!' });
 //     });
