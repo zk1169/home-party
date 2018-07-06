@@ -102,7 +102,7 @@ class StoryModel extends BaseStatusModel{
         if (this.id) {
             super.setUTime();
             sql = `UPDATE t_story SET 
-              type=${this.type} 
+              type=${this.type}, 
               name='${this.name}',
               headerImg='${this.headerImg}',
               cover='${this.cover}',

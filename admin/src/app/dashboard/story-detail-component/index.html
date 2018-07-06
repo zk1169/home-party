@@ -11,8 +11,8 @@
             <label>故事/新闻</label>
             <mat-form-field flex>
                 <mat-select placeholder="选择故事/新闻" formControlName="type" [errorStateMatcher]="matcher">
-                    <mat-option value="1">故事</mat-option>
-                    <mat-option value="2">新闻</mat-option>
+                    <mat-option [value]="1">故事</mat-option>
+                    <mat-option [value]="2">新闻</mat-option>
                 </mat-select>
                 <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
                 <mat-error *ngIf="formGroup.controls.type.hasError('required')">故事/新闻</mat-error>

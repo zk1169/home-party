@@ -81,7 +81,7 @@ export class StoryDetailComponent extends FormComponent implements OnInit {
       this.formGroup = this.fb.group({
         id: new FormControl(0, [Validators.required]),
         name: new FormControl('', [Validators.required]),
-        type: new FormControl(null, [
+        type: new FormControl(1, [
           Validators.required,
           // Validators.pattern('valid'),
         ]),

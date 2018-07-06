@@ -263,6 +263,15 @@ router.route('/story/:id')
         const storyId = req.params.id;
         StoryModel.deleteById(storyId, results => response(res, results), err => response(res, null, err));
     });
+router.route('/story/status/:id')
+    .put((req, res) => {
+        const storyId = req.params.id;
+        StoryModel.saveStatus(storyId, 1, results => response(res, results), err => response(res, null, err));
+    })
+    .delete((req, res) => {
+        const storyId = req.params.id;
+        StoryModel.deleteById(storyId, results => response(res, results), err => response(res, null, err));
+    });
 // router.route('/wechat/patsnap')
 //     .post((req, res) => {
 //         wechatModel.loop(req, res);

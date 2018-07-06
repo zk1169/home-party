@@ -54,7 +54,12 @@ export class HttpService {
                 retry(1), // retry a failed request up to 1 times
                 // tap(res => console.log(`fetched heroes`)),
                 map((res:any) => {
-                    return res.data;
+                    if (_.get(res, 'status')) {
+                        return _.get(res, 'data');
+                    }
+                    alert('服务器异常，请联系管理员');
+                    return null;
+                    // return throwError('服务器异常，请联系管理员');
                 }),
                 catchError(this.handleError) // then handle the error
             );

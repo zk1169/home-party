@@ -9,8 +9,8 @@
                 <span flex="5">序号</span>
                 <span flex="5">类型</span>
                 <span flex="10">人物</span>
-                <span flex="15">标题</span>
-                <span flex="50">简介</span>
+                <span flex="55">标题</span>
+                <span flex="10">状态</span>
                 <span flex="15"></span>
             </div>
         </mat-list-item>
@@ -19,10 +19,14 @@
             <mat-list-item role="listitem">
                 <div layout="row" layout-align="start center" class="list-item">
                     <span flex="5" class="list-no">{{i+1}}</span>
-                    <span flex="5">{{item.type}}</span>
+                    <span flex="5">{{item.type===1?'故事':'新闻'}}</span>
                     <span flex="10">{{item.name}}</span>
-                    <span flex="15">{{item.title}}</span>
-                    <span flex="50">{{item.content}}</span>
+                    <span flex="55">{{item.title}}</span>
+                    <span flex="10">
+                        <span [ngClass]="'tag-status tag-status-'+item.status">
+                            {{item.status | statusPipe}}
+                        </span>
+                    </span>
                     <!-- <span flex="10"><a [routerLink]="'/dashboard/store-detail/'+item.id">编辑</a></span> -->
                     <span flex="15">
                         <button mat-button color="primary" [routerLink]="['/dashboard/story-detail', item.id]">编辑</button>
