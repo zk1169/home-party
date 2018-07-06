@@ -70,7 +70,7 @@ export class StoryModel extends BaseModel {
     jsonObj.coverBig = _.get(this, 'coverBig.url', '');
     jsonObj.title = this.title;
     jsonObj.label = this.label;
-    jsonObj.paragraph = this.paragraph;
+    jsonObj.paragraph = this.paragraph.replace(/↵/g, '\\n');
     jsonObj.content = this.content;
     return jsonObj;
   }

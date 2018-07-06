@@ -407,7 +407,7 @@ router.route('/mail')
 //         const {storyList, newsList} = require('./models/story.mock');
 //         _.forEach(_.concat(storyList, newsList), (item, index) => {
 //             delete item.id;
-//             item.paragraph = item.paragraph.join('↵');
+//             item.paragraph = item.paragraph.join('\\n');
 //             const storyModel = new StoryModel();
 //             storyModel.toModel(item);
 //             setTimeout(()=>{

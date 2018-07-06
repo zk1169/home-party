@@ -44,8 +44,8 @@
                 type: "GET",
                 url,
                 success: (res) => {
-                    var paragraph = res.data.paragraph.replace(/ /g, '&nbsp;&nbsp;');
-                    paragraph = paragraph.replace(/↵/g, '<br>');
+                    var paragraph = res.data.paragraph.replace(/ /g, '&nbsp;');
+                    paragraph = paragraph.replace(/\n/g, '<br>');
                     res.data.paragraph = paragraph;
                     this.storyModel = res.data;
                 },
